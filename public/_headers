@@ -1,0 +1,6 @@
+/images/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=31536000, immutable
+
+/workshop/*
+  Cache-Control: no-cache

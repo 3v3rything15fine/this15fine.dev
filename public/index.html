@@ -106,19 +106,10 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 #global-header:hover { background: var(--nord2); }
 #global-header:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: -2px; }
 #header-photo {
-  width: 40px; height: 40px;
+  width: 48px; height: 48px;
   border-radius: 50%;
   border: 2px solid var(--burgundy);
   object-fit: cover;
-  flex-shrink: 0;
-}
-#header-photo-placeholder {
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  border: 2px solid var(--burgundy);
-  background: var(--nord2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 16px;
   flex-shrink: 0;
 }
 #header-wordmark {
@@ -919,7 +910,20 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   margin: 16px 0;
 }
 .geo-badges img { height: 40px; }
-.geo-badges .geo-badge-cat { height: 80px; }
+.geo-badge-ascii {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  line-height: 1.15;
+  color: #88C0D0;
+  background: #2E3440;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 0;
+  white-space: pre;
+  min-width: 110px;
+  text-align: center;
+  transition: opacity 400ms ease;
+}
 .geo-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -991,6 +995,21 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   font-family: var(--mono);
   font-style: italic;
 }
+/* geocities mode: green bleeds into header + ticker */
+body.geo-mode #global-header {
+  background: #0a0022;
+  border-bottom-color: #00ff00;
+}
+body.geo-mode #global-header:hover { background: #12003a; }
+body.geo-mode #global-header .handle { color: #00ff00 !important; }
+body.geo-mode #global-header #header-sep { color: #00ff00; }
+body.geo-mode #global-header #header-tagline { color: #00ff00; opacity: 0.7; }
+body.geo-mode #ticker {
+  background: #0a0022;
+  border-bottom-color: #00ff00;
+}
+body.geo-mode #ticker-text { color: #00ff00; }
+body.geo-mode #section-header { color: #ffff00; }
 @keyframes geo-blink {
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
@@ -1058,9 +1077,9 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   <header id="global-header" role="banner" tabindex="0"
     onclick="navigateHome()" onkeydown="if(event.key==='Enter'||event.key===' ')navigateHome()"
     aria-label="Go to home — this15fine.dev">
-    <div id="header-photo-placeholder" aria-hidden="true">🔥</div>
+    <img id="header-photo" src="/images/jho-nolan.png" alt="Jason and Nolan">
     <div id="header-wordmark">
-      <span class="handle" style="color:var(--accent);transition:color var(--transition-slow);">3v3rything15fine</span><span id="header-sep"> | </span><span style="color:var(--nord5);font-weight:400;">this15fine.dev</span>
+      <span class="handle" style="color:var(--accent);transition:color var(--transition-slow);">3v3rything15fine</span><span id="header-sep"> | </span><span style="color:var(--nord5);font-weight:400;">this15fine.dev</span> <span class="fire">🔥</span>
     </div>
     <div id="header-tagline">researcher · practitioner · terminal enthusiast</div>
   </header>
@@ -1101,24 +1120,10 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
       </button>
     </nav>
 
-    <!-- Links -->
-    <div id="sidebar-links">
-      <div class="sidebar-link">
-        <span>↗</span><a href="https://github.com/3v3rything15fine" target="_blank" rel="noopener">github</a>
-      </div>
-      <div class="sidebar-link">
-        <span>✉</span><a href="mailto:jasonhobrien@proton.me">email</a>
-      </div>
-    </div>
   </aside>
 
   <!-- ===== MAIN ===== -->
   <main id="main" role="main">
-
-    <!-- Section header -->
-    <div id="section-header" aria-live="polite">
-      <div id="section-title"><span class="accent-word" id="accent-word">home</span></div>
-    </div>
 
     <!-- Ticker -->
     <div id="ticker" aria-live="polite" aria-atomic="true">
@@ -1249,7 +1254,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
             </div>
             <div class="tile-status-row">
               <span class="tile-dot green"></span>
-              <span>deployed · Cloudflare Pages</span>
+              <span>deployed · static hosting</span>
             </div>
           </div>
 
@@ -1301,7 +1306,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
             <div class="tile-body">
               Python · R · DuckDB · SQLite · Ollama · Fedora Linux · Podman · Raspberry Pi ·
               shell scripts held together with comments that say "this should not be necessary."
-              Framework 13 laptop. Pi-hole on a Pi Zero. <span class="hl">Everything is local. Everything is fine.</span>
+              <span class="hl">Everything is local. Everything is fine.</span>
             </div>
             <div class="tile-status-row">
               <span class="tile-dot green"></span>
@@ -1391,11 +1396,6 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
             Voice memos that become searchable notes.
             A horror-themed terminal learning environment, because bash documentation
             should not be the scariest thing you encounter.
-          </p>
-          <p>
-            The data stays local. The tools stay free.
-            Software that works for the person using it rather than the company selling it
-            is not a radical position, though it sometimes gets treated like one.
           </p>
           <div class="quip-aside">the cloud is someone else's computer. I prefer my problems to be local.</div>
           <div class="stack-line">
@@ -1654,7 +1654,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 
         <div class="geo-badges">
           <img src="/images/element-email-badge.svg" alt="Email me badge">
-          <img src="/images/element-cat-ascii.svg" alt="ASCII cat" class="geo-badge-cat">
+          <pre id="geo-ascii-art" class="geo-badge-ascii" aria-label="Rotating ASCII art"></pre>
           <img src="/images/element-terminal-prompt.svg" alt="Terminal prompt">
         </div>
 
@@ -1674,7 +1674,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
           <div class="geo-card">
             <span class="geo-card-icon">&#128187;</span>
             <h3>Self-Hosting Everything</h3>
-            <p>Fedora on a Framework 13. Pi-hole on a Pi Zero 2W. Ollama eating all the RAM. Everything self-hosted. Everything is fine. <span class="geo-blink">Everything is fine.</span></p>
+            <p>Fedora Linux. Local LLMs eating all the RAM. DNS sinkhole blocking the ads. Everything self-hosted. Everything is fine. <span class="geo-blink">Everything is fine.</span></p>
           </div>
           <div class="geo-card">
             <span class="geo-card-icon">&#128218;</span>
@@ -1735,25 +1735,14 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   <!-- ===== STATUS BAR ===== -->
   <footer id="status-bar" role="contentinfo">
     <a href="https://github.com/3v3rything15fine" style="color:var(--frost);text-decoration:none;">github</a>
-    <span style="opacity:0.3">·</span>
+    <span class="status-sep">·</span>
     <a href="mailto:jho.research@pm.me" style="color:var(--frost);text-decoration:none;">email</a>
     <span class="status-sep">·</span>
     <div class="status-item">
       <span class="status-dot"></span>
-      <span>this15fine.dev</span>
+      <span id="status-section">home</span>
     </div>
-    <span class="status-sep">·</span>
-    <div class="status-item" id="status-section">home</div>
-    <span class="status-sep">·</span>
-    <div class="status-item">
-      <span class="status-dot yellow"></span>
-      <span>SP26 · in progress</span>
-    </div>
-    <div id="status-right" class="status-item" style="gap:12px;">
-      <span>no tracking · no analytics · no cookies</span>
-      <span class="status-sep">·</span>
-      <span>built with curiosity and too many terminal windows</span>
-      <span class="status-sep">·</span>
+    <div id="status-right" class="status-item">
       <details style="display:inline;cursor:pointer;">
         <summary style="color:var(--nord4);opacity:0.55;font-style:italic;list-style:none;display:inline;">AI assisted · reviewed by Jason, probably</summary>
         <div style="position:absolute;bottom:var(--status-h);right:0;background:var(--nord1);border:1px solid var(--nord3);border-bottom:none;padding:14px 18px;font-size:11px;line-height:1.7;max-width:420px;z-index:200;">
@@ -1800,7 +1789,7 @@ const tickerItems = [
   "studying psychometrics and intermediate qualitative methods. learning to measure things properly and question whether they should be measured at all.",
   "reading about why instruments for grit and resilience might be measuring the same construct with different fonts.",
   "playing Dead Cells. still. the game is very patient with me and I am very patient with it.",
-  "running Fedora on a Framework 13. Pi-hole on a Pi Zero 2W. everything self-hosted. everything is fine.",
+  "running Fedora. self-hosting everything. the DNS sinkhole is blocking 23% of queries. everything is fine.",
   "thinking about Bronfenbrenner's ecological model and what it means when you try to measure an individual outcome that's actually a systems product.",
   "building NLP pipelines for computational discourse analysis. metaphor detection. modality shifts. all local. nobody's cloud.",
   "wondering if attribution theory and growth mindset research are really measuring different constructs or the same one from different angles.",
@@ -1833,7 +1822,7 @@ const currentlyItems = [
   "studying psychometrics. learning to measure things properly and question whether they should be measured at all.",
   "reading Nora Bateson on warm data. one of those books that keeps interrupting other books.",
   "playing Dead Cells. still. the game is very patient with me.",
-  "running Fedora on a Framework 13. self-hosting everything. everything is fine.",
+  "running Fedora. self-hosting everything. everything is fine.",
   "thinking about why every resilience instrument measures the anticipation of failure and not the response to it.",
   "building NLP pipelines for student narratives. metaphor detection. modality shifts. all local. nobody's cloud.",
   "wondering what grit and growth mindset are actually measuring and whether it's the same thing.",
@@ -1869,15 +1858,15 @@ function switchSection(name) {
   // Update accent CSS var
   document.documentElement.style.setProperty('--accent', s.accent);
 
+  // Toggle geocities mode
+  document.body.classList.toggle('geo-mode', name === 'geocities');
+
   // Update nav
   document.querySelectorAll('.nav-item').forEach(btn => {
     const active = btn.dataset.section === name;
     btn.classList.toggle('active', active);
     btn.setAttribute('aria-current', active ? 'page' : 'false');
   });
-
-  // Update section header
-  document.getElementById('accent-word').textContent = s.word;
 
   // Update ticker label
   document.getElementById('ticker-label').textContent = name === 'home' ? '→' : `// ${s.label} →`;
@@ -1900,6 +1889,37 @@ function switchSection(name) {
 
 function navigateHome() {
   switchSection('home');
+}
+
+// ===== GEOCITIES ASCII ART ROTATION =====
+const geoAsciiArt = [
+  " /\\_/\\\n( o.o )\n > ^ <\n/|   |\\\n(_|   |_)",
+  "  /\\_/\\\n ( -.- )\n  > ^ <\n  zzzZZ",
+  " ,_,\n(O,O)\n(   )\n-\"-\"-",
+  "  __\n<(o )___\n ( ._> /\n  `---'",
+  " .--.\n |o_o |\n |:_/ |\n//   \\ \\\n(|     | )\n/'\\_   _/`\\\n\\___)=(___/",
+  "   |\\_/|\n   |q p|   /}\n   ( 0 )\"\"\"\\\n   |\"^\"`    |\n   ||_/=\\\\__|",
+  "    .  .\n   / \\/ \\\n  (  ..  )\n   \\    /\n    \\  /\n     \\/",
+  " ><(((o>\n\n ><(((o>\n\n ><(((o>",
+  "  ___\n |[_]|\n |+ ;|\n `---'\n _|_|_",
+  " (\\(\\\n ( -.-)o\n o_(\")(\")",
+  "  |\\ /|\n  | . |\n  =\\_/=\n   |\n  /|\\\n / | \\",
+  "  _____\n /     \\\n| () () |\n \\  ^  /\n  |||||\n  |||||",
+  "    *\n   /|\\\n  / | \\\n /  |  \\\n/   *   \\\n    |\n    |",
+  "  ^   ^\n (o _ o)\n /  0  \\\n(_     _)\n  |   |\n  |___|",
+];
+let geoAsciiIdx = Math.floor(Math.random() * geoAsciiArt.length);
+const geoAsciiEl = document.getElementById('geo-ascii-art');
+if (geoAsciiEl) {
+  geoAsciiEl.textContent = geoAsciiArt[geoAsciiIdx];
+  setInterval(() => {
+    geoAsciiEl.style.opacity = '0';
+    setTimeout(() => {
+      geoAsciiIdx = (geoAsciiIdx + 1) % geoAsciiArt.length;
+      geoAsciiEl.textContent = geoAsciiArt[geoAsciiIdx];
+      geoAsciiEl.style.opacity = '1';
+    }, 400);
+  }, 4000);
 }
 
 // ===== FLOATING TEXT =====
@@ -2988,9 +3008,9 @@ if (!prefersReducedMotion) {
     { name: 'duckdb',        desc: 'analytical queries · student_narratives.ddb · 847K rows',     baseCpu: 12, baseMem: 14 },
     { name: 'python3',       desc: 'nlp_pipeline.py · metaphor detection pass · batch 7/12',       baseCpu: 31, baseMem: 22 },
     { name: 'r-session',     desc: 'propensity_model.R · trajectory cluster analysis',              baseCpu:  8, baseMem: 11 },
-    { name: 'pihole-FTL',    desc: 'dns sinkhole · blocking 23.4% of queries · pi zero 2W',        baseCpu:  2, baseMem:  3 },
+    { name: 'pihole-FTL',    desc: 'dns sinkhole · blocking 23.4% of queries',                      baseCpu:  2, baseMem:  3 },
     { name: 'podman',        desc: 'container runtime · 3 active · 0 distressed',                  baseCpu:  1, baseMem:  6 },
-    { name: 'ntfy',          desc: 'push notifications · cloudflare tunnel · this15fine.dev',       baseCpu:  0, baseMem:  2 },
+    { name: 'ntfy',          desc: 'push notifications · self-hosted · this15fine.dev',              baseCpu:  0, baseMem:  2 },
     { name: 'bash',          desc: 'process_narratives.sh · still running. has been for a while.', baseCpu:  4, baseMem:  1 },
   ];
 

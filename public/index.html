@@ -1182,7 +1182,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 
           <div class="section-viz" id="research-viz-wrap">
             <div class="viz-label">ecological systems · agents navigating nested contexts</div>
-            <canvas id="researchCanvas" width="640" height="240" aria-label="Bronfenbrenner ecological systems visualization — agents moving through microsystems, mesosystems, and exosystem forces, modeling students navigating intersecting institutional contexts"></canvas>
+            <canvas id="researchCanvas" width="900" height="360" aria-label="Bronfenbrenner ecological systems visualization — agents moving through microsystems, mesosystems, and exosystem forces, modeling students navigating intersecting institutional contexts"></canvas>
           </div>
 
           <p>
@@ -1337,7 +1337,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 
           <div class="section-viz" id="approach-viz-wrap">
             <div class="viz-label">systems map · click nodes to explore · drag to reposition</div>
-            <canvas id="conceptCanvas" width="800" height="480" style="width:100%;height:auto;" aria-label="Interactive systems map of theoretical frameworks — click nodes to expand details"></canvas>
+            <canvas id="conceptCanvas" width="960" height="540" style="width:100%;height:auto;" aria-label="Interactive systems map of theoretical frameworks — click nodes to expand details"></canvas>
           </div>
 
           <p>
@@ -1958,89 +1958,319 @@ if (!prefersReducedMotion) {
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
 
-  const W = 640, H = 240;
+  const W = 900, H = 360;
   canvas.width = W; canvas.height = H;
 
-  const BG = [30, 36, 48];
-  const FROST = '#88C0D0';
-  const GREEN = '#A3BE8C';
-  const YELLOW = '#EBCB8B';
+  const FROST   = '#88C0D0';
+  const GREEN   = '#A3BE8C';
+  const YELLOW  = '#EBCB8B';
   const MAGENTA = '#B48EAD';
 
-  // --- AGENTS ---
-  const N_AGENTS = 40;
-  const AGENT_R = 2.2;
-  const agents = Array.from({ length: N_AGENTS }, () => ({
-    x: Math.random() * W,
-    y: Math.random() * H,
-    vx: (Math.random() - 0.5) * 0.6,
-    vy: (Math.random() - 0.5) * 0.6,
-    col: [FROST, GREEN, MAGENTA, YELLOW][Math.floor(Math.random() * 4)],
-    phase: Math.random() * Math.PI * 2,
-  }));
-
-  // --- FIXED MESOSYSTEMS (institutions) ---
+  // --- FIXED MESOSYSTEMS (institutions) — scaled for larger canvas ---
   const fixedMeso = [
-    { x: W * 0.22, y: H * 0.4,  r: 52, label: 'university' },
-    { x: W * 0.58, y: H * 0.35, r: 44, label: 'workplace' },
-    { x: W * 0.82, y: H * 0.6,  r: 38, label: 'community' },
+    { x: W * 0.18, y: H * 0.42, r: 72, label: 'university',  color: FROST  },
+    { x: W * 0.52, y: H * 0.36, r: 62, label: 'workplace',   color: YELLOW },
+    { x: W * 0.80, y: H * 0.58, r: 56, label: 'community',   color: GREEN  },
   ];
 
-  // --- EMERGENT SYSTEMS STATE ---
-  let microsystems = [];
-  let emergentMeso = [];
+  // --- CORRIDORS between mesosystems ---
+  // Each corridor is a path agents can follow between two institutions
+  const corridors = [];
+  for (let i = 0; i < fixedMeso.length; i++) {
+    for (let j = i + 1; j < fixedMeso.length; j++) {
+      const a = fixedMeso[i], b = fixedMeso[j];
+      const mx = (a.x + b.x) / 2;
+      const my = (a.y + b.y) / 2;
+      // Slight curve offset perpendicular to the line
+      const dx = b.x - a.x, dy = b.y - a.y;
+      const len = Math.sqrt(dx * dx + dy * dy);
+      const nx = -dy / len, ny = dx / len;
+      const curveAmt = 20 + Math.random() * 15;
+      corridors.push({
+        from: i, to: j,
+        cx: mx + nx * curveAmt,
+        cy: my + ny * curveAmt,
+        ax: a.x, ay: a.y,
+        bx: b.x, by: b.y,
+      });
+    }
+  }
 
+  // --- AGENT PERSONALITY TYPES ---
+  // academic (frost), community (green), workplace (yellow), wanderer (magenta)
+  const PERSONALITY = {
+    academic:   { baseColor: [136, 192, 208], hex: FROST,   homeIdx: 0, speedMul: 0.8  },
+    workplace:  { baseColor: [235, 203, 139], hex: YELLOW,  homeIdx: 1, speedMul: 1.0  },
+    community:  { baseColor: [163, 190, 140], hex: GREEN,   homeIdx: 2, speedMul: 0.9  },
+    wanderer:   { baseColor: [180, 142, 173], hex: MAGENTA, homeIdx: -1, speedMul: 1.3 },
+  };
+  const PERSONALITY_KEYS = Object.keys(PERSONALITY);
+
+  // --- AGENTS ---
+  const N_AGENTS = 55;
+  const AGENT_R = 2.8;
+
+  function makeAgent(offCanvas) {
+    const pKey = PERSONALITY_KEYS[Math.floor(Math.random() * PERSONALITY_KEYS.length)];
+    const p = PERSONALITY[pKey];
+    let x, y;
+    if (offCanvas) {
+      // Spawn from an edge
+      const edge = Math.floor(Math.random() * 4);
+      if (edge === 0)      { x = -10; y = Math.random() * H; }
+      else if (edge === 1) { x = W + 10; y = Math.random() * H; }
+      else if (edge === 2) { x = Math.random() * W; y = -10; }
+      else                 { x = Math.random() * W; y = H + 10; }
+    } else {
+      x = Math.random() * W;
+      y = Math.random() * H;
+    }
+    return {
+      x, y,
+      vx: (Math.random() - 0.5) * 0.5 * p.speedMul,
+      vy: (Math.random() - 0.5) * 0.5 * p.speedMul,
+      personality: pKey,
+      baseColor: [...p.baseColor],
+      currentColor: [...p.baseColor],
+      homeIdx: p.homeIdx,
+      speedMul: p.speedMul,
+      phase: Math.random() * Math.PI * 2,
+      // Travel behavior
+      state: 'roam',          // 'roam', 'traveling', 'dwelling', 'leaving'
+      targetMeso: -1,
+      dwellTimer: 0,
+      travelProgress: 0,      // 0..1 along corridor
+      corridorIdx: -1,
+      corridorDir: 1,          // 1 = from->to, -1 = to->from
+      leaveAngle: 0,
+      stateTimer: 80 + Math.random() * 200,
+      // For off-canvas spawning
+      lifespan: offCanvas ? 300 + Math.random() * 500 : Infinity,
+      age: 0,
+    };
+  }
+
+  const agents = [];
+  for (let i = 0; i < N_AGENTS; i++) {
+    agents.push(makeAgent(false));
+  }
+
+  // Occasionally spawn agents from edges
+  let nextSpawnTime = 2;
+
+  // --- EMERGENT MESOSYSTEMS ---
+  let emergentMeso = [];
+  // --- MICROSYSTEMS ---
+  let microsystems = [];
   // --- EXOSYSTEM RIPPLES ---
   let ripples = [];
   let nextRippleTime = 0;
-
+  // --- POLICY WAVES (macrosystem) ---
+  let policyWaves = [];
+  let nextPolicyWaveTime = 3;
   // --- MACROSYSTEM STATE ---
   let macroPhase = 0;
-
   // --- TIME ---
   let t = 0;
   let running = false;
   let raf;
 
-  function fieldAngle(x, y, time) {
-    const s = 0.005;
-    return (
-      Math.sin(x * s * 1.1 + time * 0.25) * Math.cos(y * s * 0.9 + time * 0.18) +
-      Math.sin(x * s * 2.1 + y * s * 1.5 + time * 0.12) * 0.4
-    );
-  }
-
   function dist(a, b) {
     return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
   }
 
+  function fieldAngle(x, y, time) {
+    const s = 0.004;
+    return (
+      Math.sin(x * s * 1.1 + time * 0.2) * Math.cos(y * s * 0.9 + time * 0.15) +
+      Math.sin(x * s * 2.0 + y * s * 1.4 + time * 0.1) * 0.35
+    );
+  }
+
+  // Quadratic bezier point
+  function bezierPt(ax, ay, cx, cy, bx, by, t) {
+    const u = 1 - t;
+    return {
+      x: u * u * ax + 2 * u * t * cx + t * t * bx,
+      y: u * u * ay + 2 * u * t * cy + t * t * by,
+    };
+  }
+
+  // --- COLOR BLENDING for environmental influence ---
+  function lerpColor(c1, c2, amt) {
+    return [
+      c1[0] + (c2[0] - c1[0]) * amt,
+      c1[1] + (c2[1] - c1[1]) * amt,
+      c1[2] + (c2[2] - c1[2]) * amt,
+    ];
+  }
+
+  function colorToRgb(c) {
+    return `rgb(${Math.round(c[0])},${Math.round(c[1])},${Math.round(c[2])})`;
+  }
+
+  const MESO_COLORS = [
+    [136, 192, 208],  // university — frost
+    [235, 203, 139],  // workplace — yellow
+    [163, 190, 140],  // community — green
+  ];
+
   function updateAgents() {
-    const ATTRACT_MESO = 0.003;
-    const REPEL_AGENT = 0.15;
-    const REPEL_DIST = 12;
-    const FIELD_STR = 0.02;
-    const DAMP = 0.985;
-    const MAX_V = 0.8;
+    const ATTRACT_MESO = 0.004;
+    const REPEL_AGENT = 0.12;
+    const REPEL_DIST = 14;
+    const FIELD_STR = 0.015;
+    const DAMP = 0.982;
+    const MAX_V_BASE = 0.9;
 
-    agents.forEach(a => {
-      const angle = fieldAngle(a.x, a.y, t + a.phase);
-      a.vx += Math.cos(angle) * FIELD_STR;
-      a.vy += Math.sin(angle) * FIELD_STR;
+    // Check for policy wave effects
+    let policySpeedMul = 1;
+    let policyCluster = false;
 
-      let nearestMeso = null, nearestDist = Infinity;
-      fixedMeso.forEach(m => {
-        const d = dist(a, m);
-        if (d < nearestDist) { nearestDist = d; nearestMeso = m; }
-      });
-      if (nearestMeso && nearestDist < nearestMeso.r * 2.5) {
-        const dx = nearestMeso.x - a.x, dy = nearestMeso.y - a.y;
-        const d = nearestDist || 1;
-        const targetDist = nearestMeso.r * 0.7;
-        const pull = (d - targetDist) * ATTRACT_MESO;
-        a.vx += (dx / d) * pull;
-        a.vy += (dy / d) * pull;
+    policyWaves.forEach(pw => {
+      if (pw.alpha > 0.05) {
+        if (pw.type === 'accelerate') policySpeedMul = 1.4;
+        else if (pw.type === 'decelerate') policySpeedMul = 0.5;
+        else if (pw.type === 'cluster') policyCluster = true;
+      }
+    });
+
+    agents.forEach((a, idx) => {
+      a.age++;
+      a.stateTimer--;
+
+      const MAX_V = MAX_V_BASE * a.speedMul * policySpeedMul;
+
+      // State machine for agent travel behavior
+      if (a.state === 'roam') {
+        // Random field movement
+        const angle = fieldAngle(a.x, a.y, t + a.phase);
+        a.vx += Math.cos(angle) * FIELD_STR;
+        a.vy += Math.sin(angle) * FIELD_STR;
+
+        // Gentle attraction to home mesosystem (if not a wanderer)
+        if (a.homeIdx >= 0) {
+          const home = fixedMeso[a.homeIdx];
+          const d = dist(a, home);
+          if (d > home.r * 3) {
+            const pull = 0.001;
+            a.vx += (home.x - a.x) / d * pull;
+            a.vy += (home.y - a.y) / d * pull;
+          }
+        }
+
+        // Attraction to nearby mesosystems
+        fixedMeso.forEach(m => {
+          const d = dist(a, m);
+          if (d < m.r * 2.2 && d > 0) {
+            const targetDist = m.r * 0.6;
+            const pull = (d - targetDist) * ATTRACT_MESO;
+            a.vx += (m.x - a.x) / d * pull;
+            a.vy += (m.y - a.y) / d * pull;
+          }
+        });
+
+        // Policy clustering
+        if (policyCluster) {
+          const nearest = fixedMeso.reduce((best, m) => {
+            const d = dist(a, m);
+            return d < best.d ? { m, d } : best;
+          }, { m: null, d: Infinity });
+          if (nearest.m && nearest.d > nearest.m.r * 0.5) {
+            a.vx += (nearest.m.x - a.x) / nearest.d * 0.02;
+            a.vy += (nearest.m.y - a.y) / nearest.d * 0.02;
+          }
+        }
+
+        // Decide to travel
+        if (a.stateTimer <= 0) {
+          const roll = Math.random();
+          if (roll < 0.35 && a.personality !== 'wanderer') {
+            // Pick a corridor to travel along
+            const possibleCorridors = corridors.filter(c => {
+              const nearFrom = dist(a, fixedMeso[c.from]) < fixedMeso[c.from].r * 2.5;
+              const nearTo = dist(a, fixedMeso[c.to]) < fixedMeso[c.to].r * 2.5;
+              return nearFrom || nearTo;
+            });
+            if (possibleCorridors.length > 0) {
+              const chosen = possibleCorridors[Math.floor(Math.random() * possibleCorridors.length)];
+              a.state = 'traveling';
+              a.corridorIdx = corridors.indexOf(chosen);
+              // Determine direction
+              const dFrom = dist(a, fixedMeso[chosen.from]);
+              const dTo = dist(a, fixedMeso[chosen.to]);
+              a.corridorDir = dFrom < dTo ? 1 : -1;
+              a.travelProgress = a.corridorDir === 1 ? 0 : 1;
+            } else {
+              a.stateTimer = 60 + Math.random() * 120;
+            }
+          } else if (roll < 0.55 && a.personality === 'wanderer') {
+            // Wanderers sometimes head to a random mesosystem
+            a.targetMeso = Math.floor(Math.random() * fixedMeso.length);
+            a.state = 'dwelling';
+            a.dwellTimer = 80 + Math.random() * 150;
+            a.stateTimer = a.dwellTimer;
+          } else if (a.lifespan !== Infinity && a.age > a.lifespan * 0.7) {
+            // Time to leave
+            a.state = 'leaving';
+            a.leaveAngle = Math.atan2(a.y - H / 2, a.x - W / 2) + (Math.random() - 0.5) * 0.5;
+            a.stateTimer = 200;
+          } else {
+            a.stateTimer = 60 + Math.random() * 200;
+          }
+        }
+      } else if (a.state === 'traveling') {
+        // Move along corridor bezier
+        const corr = corridors[a.corridorIdx];
+        const speed = 0.006 * a.speedMul * policySpeedMul;
+        a.travelProgress += speed * a.corridorDir;
+
+        if (a.travelProgress >= 1 || a.travelProgress <= 0) {
+          // Arrived — dwell at destination
+          a.state = 'dwelling';
+          const destIdx = a.corridorDir === 1 ? corr.to : corr.from;
+          a.targetMeso = destIdx;
+          a.dwellTimer = 100 + Math.random() * 200;
+          a.stateTimer = a.dwellTimer;
+        } else {
+          const pt = bezierPt(corr.ax, corr.ay, corr.cx, corr.cy, corr.bx, corr.by, a.travelProgress);
+          // Steer toward bezier point
+          const dx = pt.x - a.x, dy = pt.y - a.y;
+          const d = Math.sqrt(dx * dx + dy * dy) || 1;
+          a.vx += (dx / d) * 0.12 * a.speedMul;
+          a.vy += (dy / d) * 0.12 * a.speedMul;
+        }
+      } else if (a.state === 'dwelling') {
+        // Stay near target mesosystem
+        if (a.targetMeso >= 0 && a.targetMeso < fixedMeso.length) {
+          const m = fixedMeso[a.targetMeso];
+          const d = dist(a, m);
+          if (d > m.r * 0.8) {
+            a.vx += (m.x - a.x) / d * 0.03;
+            a.vy += (m.y - a.y) / d * 0.03;
+          }
+          // Gentle orbit
+          const angle = fieldAngle(a.x, a.y, t + a.phase);
+          a.vx += Math.cos(angle) * FIELD_STR * 0.3;
+          a.vy += Math.sin(angle) * FIELD_STR * 0.3;
+        }
+        a.dwellTimer--;
+        if (a.stateTimer <= 0 || a.dwellTimer <= 0) {
+          a.state = 'roam';
+          a.stateTimer = 80 + Math.random() * 200;
+          a.targetMeso = -1;
+        }
+      } else if (a.state === 'leaving') {
+        // Head toward canvas edge
+        a.vx += Math.cos(a.leaveAngle) * 0.04;
+        a.vy += Math.sin(a.leaveAngle) * 0.04;
+        if (a.stateTimer <= 0 || a.x < -30 || a.x > W + 30 || a.y < -30 || a.y > H + 30) {
+          // Remove and possibly replace
+          Object.assign(a, makeAgent(true));
+        }
       }
 
+      // Agent-agent repulsion
       agents.forEach(b => {
         if (a === b) return;
         const dx = a.x - b.x, dy = a.y - b.y;
@@ -2052,35 +2282,81 @@ if (!prefersReducedMotion) {
         }
       });
 
+      // Ripple effects
       ripples.forEach(rip => {
         const dx = a.x - rip.x, dy = a.y - rip.y;
         const d = Math.sqrt(dx * dx + dy * dy) || 1;
         const ripDist = Math.abs(d - rip.r);
-        if (ripDist < 20) {
-          const push = 0.08 * rip.alpha * (1 - ripDist / 20);
+        if (ripDist < 25) {
+          const push = 0.06 * rip.alpha * (1 - ripDist / 25);
           a.vx += (dx / d) * push;
           a.vy += (dy / d) * push;
         }
       });
 
+      // Emergent meso attraction
+      emergentMeso.forEach(em => {
+        const d = dist(a, em);
+        if (d < em.r * 2 && d > em.r * 0.3) {
+          const pull = 0.008 * (em.life / em.maxLife);
+          a.vx += (em.x - a.x) / d * pull;
+          a.vy += (em.y - a.y) / d * pull;
+        }
+      });
+
+      // Damping and speed cap
       a.vx *= DAMP;
       a.vy *= DAMP;
       const speed = Math.sqrt(a.vx * a.vx + a.vy * a.vy);
-      if (speed > MAX_V) { a.vx = (a.vx / speed) * MAX_V; a.vy = (a.vy / speed) * MAX_V; }
+      if (speed > MAX_V) {
+        a.vx = (a.vx / speed) * MAX_V;
+        a.vy = (a.vy / speed) * MAX_V;
+      }
 
       a.x += a.vx;
       a.y += a.vy;
 
-      const margin = 8;
-      if (a.x < -margin) a.x += W + margin * 2;
-      if (a.x > W + margin) a.x -= W + margin * 2;
-      if (a.y < -margin) a.y += H + margin * 2;
-      if (a.y > H + margin) a.y -= H + margin * 2;
+      // Wrap or bounce at edges (only for non-leaving agents)
+      if (a.state !== 'leaving') {
+        const margin = 15;
+        if (a.x < -margin) a.x += W + margin * 2;
+        if (a.x > W + margin) a.x -= W + margin * 2;
+        if (a.y < -margin) a.y += H + margin * 2;
+        if (a.y > H + margin) a.y -= H + margin * 2;
+      }
+
+      // --- Environmental color influence ---
+      // Slowly shift agent color toward the mesosystem they're in
+      let inMesoIdx = -1;
+      fixedMeso.forEach((m, mi) => {
+        if (dist(a, m) < m.r) inMesoIdx = mi;
+      });
+      if (inMesoIdx >= 0) {
+        a.currentColor = lerpColor(a.currentColor, MESO_COLORS[inMesoIdx], 0.008);
+      } else {
+        // Drift back toward base color
+        a.currentColor = lerpColor(a.currentColor, a.baseColor, 0.003);
+      }
     });
+
+    // Spawn new agents from edges occasionally
+    t += 0.016;
+    if (t > nextSpawnTime && agents.length < 65) {
+      agents.push(makeAgent(true));
+      nextSpawnTime = t + 3 + Math.random() * 8;
+    }
+
+    // Remove agents that have been alive too long and are off-canvas
+    for (let i = agents.length - 1; i >= 0; i--) {
+      const a = agents[i];
+      if (a.lifespan !== Infinity && a.age > a.lifespan && (a.x < -20 || a.x > W + 20 || a.y < -20 || a.y > H + 20)) {
+        agents.splice(i, 1);
+      }
+    }
   }
 
   function detectMicrosystems() {
-    const MICRO_DIST = 18;
+    const MICRO_DIST = 22;
     const used = new Set();
     const newMicro = [];
 
@@ -2095,15 +2371,15 @@ if (!prefersReducedMotion) {
         const cx = group.reduce((s, idx) => s + agents[idx].x, 0) / group.length;
         const cy = group.reduce((s, idx) => s + agents[idx].y, 0) / group.length;
         let inFixed = false;
-        fixedMeso.forEach(m => { if (dist({ x: cx, y: cy }, m) < m.r * 0.8) inFixed = true; });
+        fixedMeso.forEach(m => { if (dist({ x: cx, y: cy }, m) < m.r * 0.7) inFixed = true; });
         if (!inFixed) {
-          let found = microsystems.find(m => dist(m, { x: cx, y: cy }) < 25 && m.life > 0);
+          let found = microsystems.find(m => dist(m, { x: cx, y: cy }) < 30 && m.life > 0);
           if (found) {
             found.x = cx; found.y = cy; found.agents = group;
             found.life = Math.min(found.maxLife, found.life + 2);
             newMicro.push(found);
           } else {
-            newMicro.push({ x: cx, y: cy, r: 20, agents: group, life: 40, maxLife: 80 });
+            newMicro.push({ x: cx, y: cy, r: 22, agents: group, life: 50, maxLife: 100 });
           }
           group.forEach(idx => used.add(idx));
         }
@@ -2116,7 +2392,7 @@ if (!prefersReducedMotion) {
   }
 
   function detectEmergentMeso() {
-    const CLUSTER_DIST = 28;
+    const CLUSTER_DIST = 32;
     const visited = new Set();
     const clusters = [];
 
@@ -2136,21 +2412,28 @@ if (!prefersReducedMotion) {
         const cx = group.reduce((s, idx) => s + agents[idx].x, 0) / group.length;
         const cy = group.reduce((s, idx) => s + agents[idx].y, 0) / group.length;
         let inFixed = false;
-        fixedMeso.forEach(m => { if (dist({ x: cx, y: cy }, m) < m.r) inFixed = true; });
+        fixedMeso.forEach(m => { if (dist({ x: cx, y: cy }, m) < m.r * 0.9) inFixed = true; });
         if (!inFixed) clusters.push({ agents: group, x: cx, y: cy });
       }
     });
 
     const newEmergent = [];
     clusters.forEach(c => {
-      let found = emergentMeso.find(m => dist(m, c) < 35 && m.life > 0);
+      let found = emergentMeso.find(m => dist(m, c) < 40 && m.life > 0);
       if (found) {
-        found.x = found.x * 0.8 + c.x * 0.2; found.y = found.y * 0.8 + c.y * 0.2;
-        found.agents = c.agents; found.life = Math.min(found.maxLife, found.life + 3);
-        found.r = 22 + c.agents.length * 3; newEmergent.push(found);
+        found.x = found.x * 0.85 + c.x * 0.15;
+        found.y = found.y * 0.85 + c.y * 0.15;
+        found.agents = c.agents;
+        found.life = Math.min(found.maxLife, found.life + 3);
+        found.r = 28 + c.agents.length * 3;
+        newEmergent.push(found);
       } else {
-        newEmergent.push({ x: c.x, y: c.y, r: 22 + c.agents.length * 3,
-          agents: c.agents, life: 60, maxLife: 120, pulsePhase: Math.random() * Math.PI * 2 });
+        newEmergent.push({
+          x: c.x, y: c.y, r: 28 + c.agents.length * 3,
+          agents: c.agents, life: 80, maxLife: 160,
+          pulsePhase: Math.random() * Math.PI * 2,
+          label: ['third space', 'study group', 'social gathering', 'informal network'][Math.floor(Math.random() * 4)],
+        });
       }
     });
     emergentMeso.forEach(m => {
@@ -2163,157 +2446,270 @@ if (!prefersReducedMotion) {
     if (t > nextRippleTime) {
       const edge = Math.floor(Math.random() * 4);
       let rx, ry;
-      if (edge === 0) { rx = -20; ry = Math.random() * H; }
-      else if (edge === 1) { rx = W + 20; ry = Math.random() * H; }
-      else if (edge === 2) { rx = Math.random() * W; ry = -20; }
-      else { rx = Math.random() * W; ry = H + 20; }
-      ripples.push({ x: rx, y: ry, r: 0, maxR: Math.max(W, H) * 0.8, alpha: 0.25, speed: 1.2 });
-      nextRippleTime = t + 4 + Math.random() * 6;
+      if (edge === 0)      { rx = -30; ry = Math.random() * H; }
+      else if (edge === 1) { rx = W + 30; ry = Math.random() * H; }
+      else if (edge === 2) { rx = Math.random() * W; ry = -30; }
+      else                 { rx = Math.random() * W; ry = H + 30; }
+      ripples.push({ x: rx, y: ry, r: 0, maxR: Math.max(W, H) * 0.85, alpha: 0.28, speed: 1.4 });
+      nextRippleTime = t + 3 + Math.random() * 5;
     }
-    ripples.forEach(rip => { rip.r += rip.speed; rip.alpha = 0.25 * (1 - rip.r / rip.maxR); });
+    ripples.forEach(rip => { rip.r += rip.speed; rip.alpha = 0.28 * (1 - rip.r / rip.maxR); });
     ripples = ripples.filter(rip => rip.alpha > 0.01);
+  }
+
+  function updatePolicyWaves() {
+    if (t > nextPolicyWaveTime) {
+      const types = ['accelerate', 'decelerate', 'cluster'];
+      const type = types[Math.floor(Math.random() * types.length)];
+      const colors = {
+        accelerate: 'rgba(163, 190, 140, ',  // green
+        decelerate: 'rgba(191, 97, 106, ',    // red
+        cluster:    'rgba(136, 192, 208, ',    // frost
+      };
+      policyWaves.push({
+        y: -40,
+        speed: 0.6 + Math.random() * 0.4,
+        alpha: 0.08 + Math.random() * 0.06,
+        maxAlpha: 0.08 + Math.random() * 0.06,
+        height: 30 + Math.random() * 20,
+        type: type,
+        colorBase: colors[type],
+      });
+      nextPolicyWaveTime = t + 8 + Math.random() * 14;
+    }
+    policyWaves.forEach(pw => {
+      pw.y += pw.speed;
+      // Fade in and out
+      if (pw.y < 40) pw.alpha = pw.maxAlpha * (pw.y + 40) / 80;
+      else if (pw.y > H - 40) pw.alpha = pw.maxAlpha * (H + 40 - pw.y) / 80;
+      else pw.alpha = pw.maxAlpha;
+    });
+    policyWaves = policyWaves.filter(pw => pw.y < H + 60);
   }
 
   let frameCount = 0;
 
   function draw() {
     frameCount++;
-    macroPhase += 0.001;
-    const macroHue1 = 210 + Math.sin(macroPhase) * 15;
-    const macroHue2 = 220 + Math.cos(macroPhase * 0.7) * 10;
-    const macroSat = 12 + Math.sin(macroPhase * 0.5) * 4;
-    const macroLight = 12 + Math.sin(macroPhase * 0.3) * 2;
+    macroPhase += 0.0025;
+
+    // --- MACROSYSTEM BACKGROUND — more visible gradient shift ---
+    const macroHue1 = 210 + Math.sin(macroPhase) * 25;
+    const macroHue2 = 225 + Math.cos(macroPhase * 0.6) * 18;
+    const macroSat = 14 + Math.sin(macroPhase * 0.4) * 6;
+    const macroLight = 12 + Math.sin(macroPhase * 0.25) * 4;
 
     ctx.fillStyle = `hsl(${macroHue1}, ${macroSat}%, ${macroLight}%)`;
     ctx.fillRect(0, 0, W, H);
 
     const macroGrad = ctx.createLinearGradient(
-      W * (0.3 + Math.sin(macroPhase * 0.4) * 0.2), 0,
-      W * (0.7 + Math.cos(macroPhase * 0.3) * 0.2), H
+      W * (0.2 + Math.sin(macroPhase * 0.3) * 0.3), 0,
+      W * (0.8 + Math.cos(macroPhase * 0.25) * 0.2), H
     );
-    macroGrad.addColorStop(0, `hsla(${macroHue2}, 15%, 15%, 0.3)`);
-    macroGrad.addColorStop(0.5, `hsla(${macroHue1 + 20}, 10%, 13%, 0.15)`);
-    macroGrad.addColorStop(1, `hsla(${macroHue2 - 10}, 12%, 14%, 0.25)`);
+    macroGrad.addColorStop(0, `hsla(${macroHue2}, 18%, 16%, 0.35)`);
+    macroGrad.addColorStop(0.5, `hsla(${macroHue1 + 30}, 12%, 14%, 0.2)`);
+    macroGrad.addColorStop(1, `hsla(${macroHue2 - 15}, 15%, 15%, 0.3)`);
     ctx.fillStyle = macroGrad;
     ctx.fillRect(0, 0, W, H);
 
-    t += 0.016;
+    // Second gradient layer for more depth
+    const macroGrad2 = ctx.createRadialGradient(
+      W * (0.5 + Math.sin(macroPhase * 0.2) * 0.3),
+      H * (0.5 + Math.cos(macroPhase * 0.15) * 0.3),
+      0,
+      W * 0.5, H * 0.5, W * 0.6
+    );
+    macroGrad2.addColorStop(0, `hsla(${macroHue1 + 40}, 20%, 18%, 0.12)`);
+    macroGrad2.addColorStop(1, 'transparent');
+    ctx.fillStyle = macroGrad2;
+    ctx.fillRect(0, 0, W, H);
+
     updateAgents();
     updateRipples();
-    // Run clustering detection every 6 frames for performance
-    if (frameCount % 6 === 0) { detectMicrosystems(); detectEmergentMeso(); }
+    updatePolicyWaves();
+    if (frameCount % 5 === 0) { detectMicrosystems(); detectEmergentMeso(); }
+
+    // --- POLICY WAVES ---
+    policyWaves.forEach(pw => {
+      const grad = ctx.createLinearGradient(0, pw.y - pw.height / 2, 0, pw.y + pw.height / 2);
+      grad.addColorStop(0, pw.colorBase + '0)');
+      grad.addColorStop(0.3, pw.colorBase + pw.alpha + ')');
+      grad.addColorStop(0.5, pw.colorBase + (pw.alpha * 1.2) + ')');
+      grad.addColorStop(0.7, pw.colorBase + pw.alpha + ')');
+      grad.addColorStop(1, pw.colorBase + '0)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, pw.y - pw.height / 2, W, pw.height);
+    });
 
     // --- EXOSYSTEM RIPPLES ---
     ripples.forEach(rip => {
       ctx.beginPath();
       ctx.arc(rip.x, rip.y, rip.r, 0, Math.PI * 2);
       ctx.strokeStyle = `rgba(94, 129, 172, ${rip.alpha})`;
-      ctx.lineWidth = 1.5;
+      ctx.lineWidth = 1.8;
       ctx.stroke();
-      if (rip.r > 10) {
+      if (rip.r > 12) {
         ctx.beginPath();
-        ctx.arc(rip.x, rip.y, rip.r - 6, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(94, 129, 172, ${rip.alpha * 0.4})`;
-        ctx.lineWidth = 0.5;
+        ctx.arc(rip.x, rip.y, rip.r - 8, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(94, 129, 172, ${rip.alpha * 0.35})`;
+        ctx.lineWidth = 0.6;
         ctx.stroke();
       }
     });
 
+    // --- CORRIDORS (faint paths between mesosystems) ---
+    corridors.forEach(c => {
+      ctx.beginPath();
+      ctx.moveTo(c.ax, c.ay);
+      ctx.quadraticCurveTo(c.cx, c.cy, c.bx, c.by);
+      ctx.strokeStyle = 'rgba(94, 129, 172, 0.06)';
+      ctx.lineWidth = 12;
+      ctx.stroke();
+      ctx.strokeStyle = 'rgba(94, 129, 172, 0.04)';
+      ctx.lineWidth = 24;
+      ctx.stroke();
+    });
+
     // --- FIXED MESOSYSTEMS ---
     fixedMeso.forEach(m => {
+      // Outer glow
       ctx.beginPath();
-      ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(163, 190, 140, 0.06)';
+      ctx.arc(m.x, m.y, m.r + 8, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(163, 190, 140, 0.02)';
       ctx.fill();
+      // Fill
       ctx.beginPath();
       ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(163, 190, 140, 0.25)';
-      ctx.lineWidth = 1;
+      ctx.fillStyle = 'rgba(163, 190, 140, 0.07)';
+      ctx.fill();
+      // Border
+      ctx.beginPath();
+      ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(163, 190, 140, 0.3)';
+      ctx.lineWidth = 1.2;
       ctx.stroke();
-      ctx.font = '8px JetBrains Mono, monospace';
-      ctx.fillStyle = 'rgba(163, 190, 140, 0.35)';
+      // Label — larger, clearer
+      ctx.font = '600 14px JetBrains Mono, monospace';
+      ctx.fillStyle = 'rgba(163, 190, 140, 0.5)';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText(m.label, m.x, m.y + m.r + 10);
+      ctx.fillText(m.label, m.x, m.y + m.r + 16);
     });
 
     // --- EMERGENT MESOSYSTEMS ---
     emergentMeso.forEach(em => {
-      const alpha = Math.min(1, em.life / 30) * 0.15;
-      const pulse = 1 + Math.sin(t * 2 + em.pulsePhase) * 0.06;
+      const alpha = Math.min(1, em.life / 40) * 0.18;
+      const pulse = 1 + Math.sin(t * 2.5 + em.pulsePhase) * 0.08;
       const r = em.r * pulse;
       ctx.beginPath();
       ctx.arc(em.x, em.y, r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(235, 203, 139, ${alpha})`;
+      ctx.fillStyle = `rgba(235, 203, 139, ${alpha * 0.6})`;
       ctx.fill();
       ctx.beginPath();
       ctx.arc(em.x, em.y, r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(235, 203, 139, ${alpha * 1.5})`;
-      ctx.lineWidth = 0.8;
-      ctx.setLineDash([3, 3]);
+      ctx.strokeStyle = `rgba(235, 203, 139, ${alpha * 1.8})`;
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4, 4]);
       ctx.stroke();
       ctx.setLineDash([]);
+      // Label for emergent mesosystem
+      if (em.life > 30 && em.label) {
+        ctx.font = '10px JetBrains Mono, monospace';
+        ctx.fillStyle = `rgba(235, 203, 139, ${alpha * 2})`;
+        ctx.textAlign = 'center';
+        ctx.fillText(em.label, em.x, em.y + r + 10);
+      }
     });
 
-    // --- MICROSYSTEMS ---
+    // --- MICROSYSTEMS (bonds between 2-3 agents) ---
     microsystems.forEach(ms => {
-      const alpha = Math.min(1, ms.life / 20) * 0.25;
+      const alpha = Math.min(1, ms.life / 25) * 0.3;
+      // Draw a connecting circle
       ctx.beginPath();
       ctx.arc(ms.x, ms.y, ms.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(136, 192, 208, ${alpha * 0.4})`;
+      ctx.fillStyle = `rgba(136, 192, 208, ${alpha * 0.3})`;
       ctx.fill();
       ctx.beginPath();
       ctx.arc(ms.x, ms.y, ms.r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(136, 192, 208, ${alpha})`;
-      ctx.lineWidth = 0.6;
+      ctx.strokeStyle = `rgba(136, 192, 208, ${alpha * 0.8})`;
+      ctx.lineWidth = 0.7;
       ctx.stroke();
+      // Draw connecting lines between agents in the microsystem
+      if (ms.agents && ms.agents.length >= 2) {
+        ctx.lineWidth = 0.5;
+        for (let i = 0; i < ms.agents.length; i++) {
+          for (let j = i + 1; j < ms.agents.length; j++) {
+            const ai = agents[ms.agents[i]], aj = agents[ms.agents[j]];
+            if (ai && aj) {
+              ctx.beginPath();
+              ctx.moveTo(ai.x, ai.y);
+              ctx.lineTo(aj.x, aj.y);
+              ctx.strokeStyle = `rgba(136, 192, 208, ${alpha * 0.6})`;
+              ctx.stroke();
+            }
+          }
+        }
+      }
     });
 
     // --- AGENTS ---
     agents.forEach(a => {
       let inMeso = false;
       fixedMeso.forEach(m => { if (dist(a, m) < m.r) inMeso = true; });
+
+      // Glow for traveling agents
+      if (a.state === 'traveling') {
+        ctx.beginPath();
+        ctx.arc(a.x, a.y, AGENT_R * 2.5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${Math.round(a.currentColor[0])},${Math.round(a.currentColor[1])},${Math.round(a.currentColor[2])},0.12)`;
+        ctx.fill();
+      }
+
       ctx.beginPath();
       ctx.arc(a.x, a.y, AGENT_R, 0, Math.PI * 2);
-      ctx.fillStyle = a.col;
-      ctx.globalAlpha = inMeso ? 0.9 : 0.7;
+      ctx.fillStyle = colorToRgb(a.currentColor);
+      ctx.globalAlpha = inMeso ? 0.92 : (a.state === 'leaving' ? 0.4 : 0.72);
       ctx.fill();
       ctx.globalAlpha = 1;
     });
 
-    // Faint proximity connections (draw separately to reduce overdraw)
+    // Proximity connections
     ctx.lineWidth = 0.4;
     for (let i = 0; i < agents.length; i++) {
       for (let j = i + 1; j < agents.length; j++) {
         const d = dist(agents[i], agents[j]);
-        if (d < 15) {
+        if (d < 18) {
           ctx.beginPath();
           ctx.moveTo(agents[i].x, agents[i].y);
           ctx.lineTo(agents[j].x, agents[j].y);
-          ctx.strokeStyle = `rgba(136, 192, 208, ${0.08 * (1 - d / 15)})`;
+          ctx.strokeStyle = `rgba(136, 192, 208, ${0.1 * (1 - d / 18)})`;
           ctx.stroke();
         }
       }
     }
 
-    // --- LEGEND ---
-    const legendX = W - 150, legendY = H - 58;
-    ctx.font = '7px JetBrains Mono, monospace';
+    // --- LEGEND — larger, clearer ---
+    const legendX = W - 220, legendY = H - 82;
+    ctx.font = '11px JetBrains Mono, monospace';
     ctx.textAlign = 'left';
     const legendItems = [
-      [FROST, 'microsystem (transient)'],
-      [GREEN, 'mesosystem (institution)'],
-      [YELLOW, 'emergent mesosystem'],
-      ['rgba(94,129,172,0.7)', 'exosystem (ripple)'],
+      [FROST,   'microsystem (transient bond)'],
+      [GREEN,   'mesosystem (institution)'],
+      [YELLOW,  'emergent mesosystem (third space)'],
+      ['rgba(94,129,172,0.8)', 'exosystem (ripple)'],
+      [MAGENTA, 'macrosystem (policy wave)'],
     ];
+    // Legend background
+    ctx.fillStyle = 'rgba(30, 36, 48, 0.65)';
+    ctx.fillRect(legendX - 6, legendY - 6, 226, legendItems.length * 15 + 10);
     legendItems.forEach(([col, lbl], i) => {
-      const ly = legendY + i * 12;
+      const ly = legendY + i * 15;
       ctx.fillStyle = col;
-      ctx.globalAlpha = 0.5;
-      ctx.fillRect(legendX, ly, 6, 6);
+      ctx.globalAlpha = 0.7;
+      ctx.fillRect(legendX, ly, 8, 8);
       ctx.globalAlpha = 1;
-      ctx.fillStyle = 'rgba(205, 212, 223, 0.4)';
-      ctx.fillText(lbl, legendX + 10, ly + 5);
+      ctx.fillStyle = 'rgba(205, 212, 223, 0.55)';
+      ctx.fillText(lbl, legendX + 14, ly + 7);
     });
 
     raf = requestAnimationFrame(draw);
@@ -2327,7 +2723,7 @@ if (!prefersReducedMotion) {
     cancelAnimationFrame(raf);
   }
 
-  ctx.fillStyle = `rgb(${BG[0]},${BG[1]},${BG[2]})`;
+  ctx.fillStyle = 'rgb(30,36,48)';
   ctx.fillRect(0, 0, W, H);
 
   const researchObserver = new IntersectionObserver(entries => {
@@ -2424,10 +2820,10 @@ if (!prefersReducedMotion) {
   const canvas = document.getElementById('conceptCanvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const W = 800, H = 480;
+  const W = 960, H = 540;
   canvas.width = W; canvas.height = H;
 
-  // Node types: theory (framework), method (how I study), concept (key idea), practice (in the work)
+  // Node types
   const TYPES = {
     theory:   { color: '#88C0D0', bg: '#1a2d38' },
     method:   { color: '#A3BE8C', bg: '#1e2a1e' },
@@ -2436,38 +2832,28 @@ if (!prefersReducedMotion) {
     anchor:   { color: '#BF616A', bg: '#2a1a1c' },
   };
 
-  // Rectangular chip nodes (Obsidian-style)
+  // Nodes — organic, scattered positions with more spacing
   const nodes = [
-    // Anchors
-    { id:0,  type:'anchor',   label:'student in context',   sub:'the unit of analysis',           x:340, y:190, w:148, h:38, pinned:true },
-    // Theories
-    { id:1,  type:'theory',   label:'Bronfenbrenner',       sub:'nested ecological systems',       x:120, y:80,  w:132, h:38 },
-    { id:2,  type:'theory',   label:'Luhmann',              sub:'self-referential systems',        x:540, y:80,  w:128, h:38 },
-    { id:3,  type:'theory',   label:'complex adaptive',     sub:'emergence & nonlinearity',        x:560, y:200, w:128, h:38 },
-    { id:4,  type:'theory',   label:'complex responsive',   sub:'meaning in interaction',          x:540, y:310, w:140, h:38 },
+    // Anchor (center)
+    { id:0,  type:'anchor',   label:'student in context',   sub:'the unit of analysis',           x:480, y:270, w:170, h:44, pinned:true },
+    // Theories — spread around the periphery
+    { id:1,  type:'theory',   label:'Bronfenbrenner',       sub:'nested ecological systems',       x:110, y:95,  w:155, h:44 },
+    { id:2,  type:'theory',   label:'Luhmann',              sub:'self-referential systems',        x:800, y:80,  w:150, h:44 },
+    { id:3,  type:'theory',   label:'complex adaptive',     sub:'emergence & nonlinearity',        x:830, y:260, w:155, h:44 },
+    { id:4,  type:'theory',   label:'complex responsive',   sub:'meaning in interaction',          x:760, y:440, w:165, h:44 },
     // Concepts
-    { id:5,  type:'concept',  label:'attribution',          sub:'explanation shapes next action',  x:120, y:200, w:122, h:38 },
-    { id:6,  type:'concept',  label:'asset-based',          sub:'start from strength',             x:120, y:310, w:118, h:38 },
-    { id:7,  type:'concept',  label:'self-worth theory',    sub:'performance as identity signal',  x:310, y:330, w:132, h:38 },
+    { id:5,  type:'concept',  label:'attribution',          sub:'explanation shapes next action',  x:130, y:280, w:145, h:44 },
+    { id:6,  type:'concept',  label:'asset-based',          sub:'start from strength',             x:120, y:430, w:140, h:44 },
+    { id:7,  type:'concept',  label:'self-worth theory',    sub:'performance as identity signal',  x:420, y:460, w:160, h:44 },
     // Methods
-    { id:8,  type:'method',   label:'mixed methods',        sub:'numbers + narrative together',    x:310, y:60,  w:126, h:38 },
-    { id:9,  type:'method',   label:'discourse analysis',   sub:'language as data',                x:120, y:310, w:126, h:38 },
-    { id:10, type:'method',   label:'trajectory typology',  sub:'map the actual paths taken',      x:490, y:140, w:136, h:38 },
+    { id:8,  type:'method',   label:'mixed methods',        sub:'numbers + narrative together',    x:380, y:70,  w:150, h:44 },
+    { id:9,  type:'method',   label:'discourse analysis',   sub:'language as data',                x:260, y:420, w:155, h:44 },
+    { id:10, type:'method',   label:'trajectory typology',  sub:'map the actual paths taken',      x:700, y:170, w:160, h:44 },
     // Practice
-    { id:11, type:'practice', label:'instrument design',    sub:'build what can see the question', x:310, y:130, w:138, h:38 },
+    { id:11, type:'practice', label:'instrument design',    sub:'build what can see the question', x:400, y:170, w:165, h:44 },
   ];
 
-  // Reposition node 9 to avoid overlap with node 6
-  nodes[9].x = 200; nodes[9].y = 330;
-  // Spread initial positions
-  const initPos = [
-    [340,190],[110,75],[550,70],[570,200],[550,320],
-    [110,195],[110,310],[320,340],[310,55],[210,330],
-    [495,135],[310,128]
-  ];
-  nodes.forEach((n,i) => { n.x = initPos[i][0]; n.y = initPos[i][1]; });
-
-  // Edges: [from, to, label, style]  style: 'feeds'|'shapes'|'informs'|'constrains'|'uses'
+  // Edges
   const edges = [
     [1,0,'shapes context','shapes'],
     [2,0,'defines system','shapes'],
@@ -2499,7 +2885,6 @@ if (!prefersReducedMotion) {
   let dragNode = -1, dragOffX = 0, dragOffY = 0;
   let raf2, running2 = false;
 
-  // Node bounds
   function nb(n) { return { x:n.x-n.w/2, y:n.y-n.h/2, w:n.w, h:n.h }; }
 
   function hitTest(mx, my) {
@@ -2510,11 +2895,10 @@ if (!prefersReducedMotion) {
     return -1;
   }
 
-  // Edge connection point on rect border toward another node
   function edgePoint(n, tx, ty) {
     const cx = n.x, cy = n.y;
     const dx = tx - cx, dy = ty - cy;
-    const hw = n.w/2 + 2, hh = n.h/2 + 2;
+    const hw = n.w/2 + 3, hh = n.h/2 + 3;
     const absDx = Math.abs(dx), absDy = Math.abs(dy);
     if (absDx === 0 && absDy === 0) return {x:cx, y:cy};
     if (absDx/hw > absDy/hh) {
@@ -2528,29 +2912,38 @@ if (!prefersReducedMotion) {
 
   function drawArrow(x1,y1,x2,y2,col) {
     const angle = Math.atan2(y2-y1, x2-x1);
-    const len = 7;
+    const len = 8;
     ctx.beginPath();
     ctx.moveTo(x2, y2);
     ctx.lineTo(x2 - len*Math.cos(angle-0.4), y2 - len*Math.sin(angle-0.4));
     ctx.moveTo(x2, y2);
     ctx.lineTo(x2 - len*Math.cos(angle+0.4), y2 - len*Math.sin(angle+0.4));
     ctx.strokeStyle = col;
-    ctx.lineWidth = 1.5;
+    ctx.lineWidth = 1.6;
     ctx.stroke();
   }
 
+  // Gentler physics — lower repulsion, softer springs, more damping
   function physics() {
-    const REPEL = 5000, SPRING_K = 0.018, DAMP = 0.82, CENTER = 0.004;
-    const REST = 180;
+    const REPEL = 6000;
+    const SPRING_K = 0.008;   // much softer springs
+    const DAMP = 0.75;        // more damping = gentler float
+    const CENTER = 0.002;
+    const REST = 220;          // longer rest length = more spacing
+
     nodes.forEach((a,i) => {
       if (a.pinned || i === dragNode) return;
       let fx=0, fy=0;
+
+      // Node-node repulsion
       nodes.forEach((b,j) => {
         if (i===j) return;
         const dx=a.x-b.x, dy=a.y-b.y, d2=dx*dx+dy*dy+1;
         const f = REPEL/d2;
         fx+=dx*f; fy+=dy*f;
       });
+
+      // Edge springs
       edges.forEach(([ia,ib]) => {
         if (ia!==i && ib!==i) return;
         const other=nodes[ia===i?ib:ia];
@@ -2559,11 +2952,28 @@ if (!prefersReducedMotion) {
         const stretch=(d-REST)*SPRING_K;
         fx+=dx/d*stretch; fy+=dy/d*stretch;
       });
+
+      // Gentle centering
       fx+=(W/2-a.x)*CENTER; fy+=(H/2-a.y)*CENTER;
+
+      // Gentle organic drift (subtle floating)
+      const driftAngle = Math.sin(Date.now() * 0.0003 + i * 1.7) * 0.15;
+      fx += Math.cos(driftAngle) * 0.03;
+      fy += Math.sin(driftAngle) * 0.03;
+
       vx[i]=(vx[i]+fx)*DAMP;
       vy[i]=(vy[i]+fy)*DAMP;
-      a.x=Math.max(a.w/2+4, Math.min(W-a.w/2-4, a.x+vx[i]));
-      a.y=Math.max(a.h/2+4, Math.min(H-a.h/2-4, a.y+vy[i]));
+
+      // Clamp velocity to prevent snapping
+      const speed = Math.sqrt(vx[i]*vx[i] + vy[i]*vy[i]);
+      const MAX_SPEED = 1.2;
+      if (speed > MAX_SPEED) {
+        vx[i] = (vx[i]/speed) * MAX_SPEED;
+        vy[i] = (vy[i]/speed) * MAX_SPEED;
+      }
+
+      a.x=Math.max(a.w/2+8, Math.min(W-a.w/2-8, a.x+vx[i]));
+      a.y=Math.max(a.h/2+8, Math.min(H-a.h/2-8, a.y+vy[i]));
     });
   }
 
@@ -2578,20 +2988,28 @@ if (!prefersReducedMotion) {
       const p1=edgePoint(a,b.x,b.y), p2=edgePoint(b,a.x,a.y);
       const isActive=(hovered===ia||hovered===ib||selected===ia||selected===ib);
       const col=isActive ? EDGE_COLORS[style].replace(/[\d.]+\)$/, '0.9)') : EDGE_COLORS[style];
+
+      // Curved edges for more organic look
+      const mx = (p1.x+p2.x)/2, my = (p1.y+p2.y)/2;
+      const dx = p2.x-p1.x, dy = p2.y-p1.y;
+      const len = Math.sqrt(dx*dx+dy*dy);
+      const nx = -dy/len, ny = dx/len;
+      const curveAmt = len * 0.06;
+      const cpx = mx + nx * curveAmt, cpy = my + ny * curveAmt;
+
       ctx.beginPath();
       ctx.moveTo(p1.x,p1.y);
-      ctx.lineTo(p2.x,p2.y);
+      ctx.quadraticCurveTo(cpx, cpy, p2.x,p2.y);
       ctx.strokeStyle=col;
-      ctx.lineWidth=isActive?1.5:1;
+      ctx.lineWidth=isActive?1.8:1;
       ctx.stroke();
-      drawArrow(p1.x,p1.y,p2.x,p2.y,col);
+      drawArrow(cpx,cpy,p2.x,p2.y,col);
 
       if (isActive) {
-        const mx=(p1.x+p2.x)/2, my=(p1.y+p2.y)/2;
-        ctx.font='8px JetBrains Mono,monospace';
-        ctx.fillStyle='rgba(221,226,234,0.75)';
+        ctx.font='11px JetBrains Mono,monospace';
+        ctx.fillStyle='rgba(221,226,234,0.8)';
         ctx.textAlign='center';
-        ctx.fillText(label, mx, my-5);
+        ctx.fillText(label, cpx, cpy-7);
       }
     });
 
@@ -2600,50 +3018,58 @@ if (!prefersReducedMotion) {
       const isHov=hovered===i, isSel=selected===i;
       const t=TYPES[n.type];
       const b=nb(n);
+      const cornerR = 5;
 
       // Shadow on active
       if (isHov||isSel) {
-        ctx.shadowColor=t.color; ctx.shadowBlur=12;
+        ctx.shadowColor=t.color; ctx.shadowBlur=16;
       }
 
+      // Rounded rectangle
       ctx.fillStyle=isHov||isSel ? t.bg : '#1e2430';
       ctx.strokeStyle=t.color;
-      ctx.lineWidth=isHov||isSel?2:1;
+      ctx.lineWidth=isHov||isSel?2.2:1;
       ctx.beginPath();
-      ctx.rect(b.x,b.y,b.w,b.h);
+      ctx.roundRect(b.x, b.y, b.w, b.h, cornerR);
       ctx.fill(); ctx.stroke();
       ctx.shadowBlur=0;
 
       // Type pip
       ctx.fillStyle=t.color;
-      ctx.fillRect(b.x+4, b.y+6, 3, b.h-12);
+      ctx.beginPath();
+      ctx.roundRect(b.x+5, b.y+7, 4, b.h-14, 2);
+      ctx.fill();
 
-      // Label
-      ctx.font=`${isSel?600:500} 11px JetBrains Mono,monospace`;
+      // Label — larger text
+      ctx.font=`${isSel?600:500} 14px JetBrains Mono,monospace`;
       ctx.fillStyle=isHov||isSel?'#edf0f4':t.color;
       ctx.textAlign='left';
       ctx.textBaseline='middle';
-      ctx.fillText(n.label, b.x+14, b.y+(isSel&&n.sub?12:b.h/2));
+      ctx.fillText(n.label, b.x+16, b.y+(isSel&&n.sub?14:b.h/2));
 
-      // Sub label
+      // Sub label — larger, always visible on hover/select
       if (n.sub && (isHov||isSel)) {
-        ctx.font='9px JetBrains Mono,monospace';
-        ctx.fillStyle='rgba(205,212,223,0.7)';
-        ctx.fillText(n.sub, b.x+14, b.y+b.h-10);
+        ctx.font='12px JetBrains Mono,monospace';
+        ctx.fillStyle='rgba(205,212,223,0.75)';
+        ctx.fillText(n.sub, b.x+16, b.y+b.h-11);
       }
     });
 
-    // Legend (small, top-right)
+    // Legend — larger, top-right
     const types = [['theory','framework'],['method','how I look'],['concept','key idea'],['practice','in the work'],['anchor','unit of analysis']];
-    ctx.font='8px JetBrains Mono,monospace';
+    ctx.font='12px JetBrains Mono,monospace';
+    // Legend background
+    const lx0 = W - 170, ly0 = 6;
+    ctx.fillStyle = 'rgba(30, 36, 48, 0.7)';
+    ctx.fillRect(lx0 - 6, ly0 - 2, 174, types.length * 18 + 8);
     types.forEach(([k,lbl],i) => {
-      const lx=W-130, ly=8+i*14;
+      const lx=lx0, ly=ly0+4+i*18;
       ctx.fillStyle=TYPES[k].color;
-      ctx.fillRect(lx,ly+1,8,8);
-      ctx.fillStyle='rgba(205,212,223,0.5)';
+      ctx.fillRect(lx,ly+1,10,10);
+      ctx.fillStyle='rgba(205,212,223,0.6)';
       ctx.textAlign='left';
       ctx.textBaseline='middle';
-      ctx.fillText(lbl, lx+12, ly+5);
+      ctx.fillText(lbl, lx+16, ly+6);
     });
 
     physics();
@@ -2665,8 +3091,8 @@ if (!prefersReducedMotion) {
     if (dragNode>=0) {
       nodes[dragNode].x=x-dragOffX;
       nodes[dragNode].y=y-dragOffY;
-      nodes[dragNode].x=Math.max(nodes[dragNode].w/2+4, Math.min(W-nodes[dragNode].w/2-4, nodes[dragNode].x));
-      nodes[dragNode].y=Math.max(nodes[dragNode].h/2+4, Math.min(H-nodes[dragNode].h/2-4, nodes[dragNode].y));
+      nodes[dragNode].x=Math.max(nodes[dragNode].w/2+8, Math.min(W-nodes[dragNode].w/2-8, nodes[dragNode].x));
+      nodes[dragNode].y=Math.max(nodes[dragNode].h/2+8, Math.min(H-nodes[dragNode].h/2-8, nodes[dragNode].y));
     }
   });
   canvas.addEventListener('mousedown', e => {

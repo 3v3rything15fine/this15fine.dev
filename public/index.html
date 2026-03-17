@@ -46,7 +46,7 @@
   --section-header-h: 48px;
   --ticker-h: 36px;
   --status-h: 32px;
-  --currently-h: 110px;
+  --currently-h: auto;
 
   --font: 'JetBrains Mono', 'Liberation Mono', 'Courier New', monospace;
   --transition: 200ms ease;
@@ -151,7 +151,8 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 
 /* Currently block */
 #currently-block {
-  height: var(--currently-h);
+  min-height: 72px;
+  max-height: 140px;
   padding: 12px 16px;
   border-bottom: 1px solid var(--nord3);
   display: flex;
@@ -161,6 +162,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   transition: border-color var(--transition-slow);
   flex-shrink: 0;
   cursor: pointer;
+  overflow: hidden;
 }
 #currently-block:hover { background: var(--nord2); }
 #currently-label {
@@ -190,8 +192,9 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   line-height: 1.45;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
   transition: opacity 300ms ease;
 }
 
@@ -509,7 +512,8 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 
 /* ===== SECTION PROSE ===== */
 .section-prose {
-  max-width: 680px;
+  max-width: min(680px, calc(100vw - var(--sidebar-w) - 56px));
+  width: 100%;
 }
 .section-prose p {
   margin-bottom: 16px;
@@ -547,7 +551,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 .method-tag:hover { border-color: var(--accent); color: var(--accent); }
 
 .stack-line {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--nord3);
   padding: 10px 14px;
   border: 1px solid var(--nord3);
@@ -578,10 +582,10 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   display: block;
   width: 100%;
   height: auto;
-  max-height: 260px;
+  max-height: 480px;
 }
 .viz-label {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -591,7 +595,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   transition: color var(--transition-slow);
 }
 .viz-caption {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--nord4);
   opacity: 0.55;
   padding: 6px 14px 8px;
@@ -645,7 +649,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 }
 
 /* ===== APPROACH LAYOUT ===== */
-.approach-layout { max-width: 720px; }
+.approach-layout { max-width: min(720px, calc(100vw - var(--sidebar-w) - 56px)); width: 100%; }
 .approach-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -697,13 +701,13 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   padding: 12px 14px;
 }
 .rmp-name {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--nord6);
   margin-bottom: 6px;
 }
 .rmp-desc {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--nord5);    /* bumped for legibility */
   line-height: 1.6;
 }
@@ -860,6 +864,17 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 .data-stat .ds-label { font-size: 11px; color: var(--nord3); line-height: 1.4; }
 .data-stat .ds-caveat { font-size: 10px; color: var(--nord3); margin-top: 4px; font-style: italic; }
 
+/* background section side-by-side layout */
+.bg-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 20px 0;
+}
+.bg-split .section-prose {
+  max-width: none;
+}
+
 /* background timeline */
 .timeline {
   position: relative;
@@ -891,9 +906,9 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   transition: background var(--transition);
 }
 .tl-node:hover::before { background: var(--accent-background); }
-.tl-year { font-size: 10px; color: var(--aurora-yellow); font-weight: 600; letter-spacing: 0.06em; margin-bottom: 3px; }
-.tl-title { font-size: 13px; font-weight: 600; color: var(--nord6); margin-bottom: 4px; }
-.tl-desc { font-size: 12px; color: var(--nord4); line-height: 1.5; }
+.tl-year { font-size: 12px; color: var(--aurora-yellow); font-weight: 600; letter-spacing: 0.06em; margin-bottom: 3px; }
+.tl-title { font-size: 15px; font-weight: 600; color: var(--nord6); margin-bottom: 4px; }
+.tl-desc { font-size: 14px; color: var(--nord4); line-height: 1.5; }
 .tl-node.current::before { background: var(--aurora-yellow); box-shadow: 0 0 6px var(--aurora-yellow); }
 </style>
 </head>
@@ -1206,7 +1221,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
             </div>
           </div>
 
-          <div class="quip-aside">"grit" and "resilience" may be the same construct wearing different university press covers.</div>
+          <div class="quip-aside">every time someone says "grit" in a meeting, a psychometrician adds another item to their measurement critique.</div>
 
           <p>
             The thing that keeps this grounded: every measurement decision eventually lands
@@ -1251,13 +1266,14 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
       <!-- BACKGROUND -->
       <section class="section-panel" id="panel-background" aria-labelledby="background-heading">
         <h2 id="background-heading" class="sr-only">Background</h2>
-        <div class="section-prose">
 
-          <div class="section-viz" id="bg-viz-wrap">
+          <div class="section-viz" id="bg-viz-wrap" style="max-width:min(680px, calc(100vw - var(--sidebar-w) - 56px));">
             <div class="viz-label">arc of practice · practitioner → researcher → both</div>
-            <canvas id="bgArcCanvas" width="640" height="140" aria-label="Animated arc showing path from practitioner through doctoral research to both simultaneously"></canvas>
+            <canvas id="bgArcCanvas" width="640" height="140" style="width:100%;height:auto;" aria-label="Animated arc showing path from practitioner through doctoral research to both simultaneously"></canvas>
           </div>
 
+          <div class="bg-split">
+            <div class="section-prose">
           <p>
             I argued against creating the program I now run.
             On the committee that proposed it, I was the dissenting voice.
@@ -1266,10 +1282,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
             Both seemed worth showing up for.
           </p>
           <p>
-            I failed 45 credit hours as an undergraduate. Did some other things. Came back.
-            Ended up building support systems for students who, like me at various earlier points,
-            had left the academy for lack of fit. Hired within 20 minutes of the screening interview.
-            That history isn't incidental to the work. It's the foundation of it.
+            My undergraduate transcript has 45 credit hours of F's on it, which is honestly an impressive amount of not-getting-it-right. I left, did some other things, eventually came back and found my way into student affairs — building support systems for people navigating the same kind of rough patches I'd been through. The path wasn't planned, but it turns out lived experience is pretty good training material.
           </p>
           <p>
             Don't change the student. Change the system's understanding of the student.
@@ -1284,6 +1297,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
             The practitioner side keeps asking whether any of that
             <span class="hl">actually helps the person in the room.</span>
           </p>
+            </div>
 
           <!-- Timeline -->
           <div class="timeline" role="list" aria-label="Career timeline">
@@ -1313,7 +1327,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
               <div class="tl-desc">[ timeline: optimistic ]</div>
             </div>
           </div>
-        </div>
+          </div>
       </section>
 
       <!-- HOW I THINK -->
@@ -1323,7 +1337,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 
           <div class="section-viz" id="approach-viz-wrap">
             <div class="viz-label">systems map · click nodes to explore · drag to reposition</div>
-            <canvas id="conceptCanvas" width="680" height="380" aria-label="Interactive systems map of theoretical frameworks — click nodes to expand details"></canvas>
+            <canvas id="conceptCanvas" width="800" height="480" style="width:100%;height:auto;" aria-label="Interactive systems map of theoretical frameworks — click nodes to expand details"></canvas>
           </div>
 
           <p>
@@ -1482,6 +1496,10 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 
   <!-- ===== STATUS BAR ===== -->
   <footer id="status-bar" role="contentinfo">
+    <a href="https://github.com/3v3rything15fine" style="color:var(--frost);text-decoration:none;">github</a>
+    <span style="opacity:0.3">·</span>
+    <a href="mailto:jho.research@pm.me" style="color:var(--frost);text-decoration:none;">email</a>
+    <span class="status-sep">·</span>
     <div class="status-item">
       <span class="status-dot"></span>
       <span>this15fine.dev</span>
@@ -1499,7 +1517,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
       <span>built with curiosity and too many terminal windows</span>
       <span class="status-sep">·</span>
       <details style="display:inline;cursor:pointer;">
-        <summary style="color:var(--nord4);opacity:0.55;font-style:italic;list-style:none;display:inline;">AI assisted · reviewed by Jason</summary>
+        <summary style="color:var(--nord4);opacity:0.55;font-style:italic;list-style:none;display:inline;">AI assisted · reviewed by Jason, probably</summary>
         <div style="position:absolute;bottom:var(--status-h);right:0;background:var(--nord1);border:1px solid var(--nord3);border-bottom:none;padding:14px 18px;font-size:11px;line-height:1.7;max-width:420px;z-index:200;">
           <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--nord5);margin-bottom:8px;">AI Co-Authorship Statement</div>
           <div style="color:var(--nord4);">
@@ -2406,7 +2424,7 @@ if (!prefersReducedMotion) {
   const canvas = document.getElementById('conceptCanvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
-  const W = 680, H = 380;
+  const W = 800, H = 480;
   canvas.width = W; canvas.height = H;
 
   // Node types: theory (framework), method (how I study), concept (key idea), practice (in the work)

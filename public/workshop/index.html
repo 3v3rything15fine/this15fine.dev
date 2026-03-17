@@ -216,6 +216,9 @@
   <div class="note">
     <strong>Images:</strong> All signatures use self-hosted images from
     <code>this15fine.dev/images/</code>. No Google Drive dependency.
+    Copy pastes as rich HTML &mdash; images should render directly in Gmail,
+    Apple Mail, and Proton Mail. If images don't appear, the email client
+    may be blocking remote images (check &ldquo;display images&rdquo; setting).
   </div>
   <div class="note">
     <strong>Dark mode:</strong> Email clients invert differently &mdash;
@@ -381,10 +384,22 @@ function copyHTML() {
   const p = profiles[currentTab];
   const q = quotes[qIdx];
   const html = buildSig(p, q);
-  navigator.clipboard.writeText(html).then(() => {
+  // Copy as both rich HTML (for paste into email) and plain text (for source view)
+  const blob = new Blob([html], { type: 'text/html' });
+  const textBlob = new Blob([html], { type: 'text/plain' });
+  navigator.clipboard.write([
+    new ClipboardItem({ 'text/html': blob, 'text/plain': textBlob })
+  ]).then(() => {
     const t = document.getElementById('toast');
     t.classList.add('show');
     setTimeout(() => t.classList.remove('show'), 1800);
+  }).catch(() => {
+    // Fallback for browsers that don't support ClipboardItem
+    navigator.clipboard.writeText(html).then(() => {
+      const t = document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 1800);
+    });
   });
 }
 

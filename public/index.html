@@ -295,14 +295,13 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 
 /* Ticker */
 #ticker {
-  height: var(--ticker-h);
+  min-height: var(--ticker-h);
   display: flex;
-  align-items: center;
-  padding: 0 16px;
+  align-items: flex-start;
+  padding: 8px 16px;
   background: var(--nord1);
   border-bottom: 1px solid var(--nord3);
   flex-shrink: 0;
-  overflow: hidden;
 }
 #ticker-label {
   font-size: 10px;
@@ -312,6 +311,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   color: var(--accent);
   white-space: nowrap;
   margin-right: 12px;
+  margin-top: 2px;
   transition: color var(--transition-slow);
 }
 #ticker-label::before {
@@ -327,9 +327,7 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 #ticker-text {
   font-size: 12px;
   color: var(--nord4);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.5;
   transition: opacity 300ms ease;
 }
 #ticker-text.fading { opacity: 0; }
@@ -864,6 +862,147 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 .data-stat .ds-label { font-size: 11px; color: var(--nord3); line-height: 1.4; }
 .data-stat .ds-caveat { font-size: 10px; color: var(--nord3); margin-top: 4px; font-style: italic; }
 
+/* ===== GEOCITIES SECTION ===== */
+#panel-geocities {
+  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+  background: #1a0a2e;
+  color: #00ff00;
+  padding: 24px;
+  image-rendering: pixelated;
+}
+#panel-geocities.active {
+  background: #1a0a2e;
+}
+.geo-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 12px 0;
+}
+.geo-marquee-inner {
+  display: inline-block;
+  animation: geo-scroll 18s linear infinite;
+  font-size: 14px;
+  color: #ff00ff;
+  text-shadow: 0 0 6px #ff00ff;
+  letter-spacing: 0.15em;
+}
+@keyframes geo-scroll {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.geo-welcome {
+  text-align: center;
+  margin: 16px 0 8px;
+}
+.geo-welcome h2 {
+  font-size: 24px;
+  color: #ffff00;
+  text-shadow: 2px 2px #ff6600, 0 0 10px #ffff00;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+  margin: 0;
+}
+.geo-welcome .geo-subtitle {
+  font-size: 11px;
+  color: #00ffff;
+  margin-top: 4px;
+  font-style: italic;
+}
+.geo-fire { width: 100%; max-width: 600px; margin: 8px auto; display: block; }
+.geo-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+.geo-badges img { height: 40px; }
+.geo-badges .geo-badge-cat { height: 80px; }
+.geo-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 16px 0;
+}
+.geo-card {
+  background: #0a0022;
+  border: 2px solid #00ff00;
+  padding: 14px;
+  box-shadow: 0 0 8px rgba(0, 255, 0, 0.15);
+}
+.geo-card h3 {
+  font-size: 14px;
+  color: #ff6600;
+  margin: 0 0 6px;
+  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+  text-transform: uppercase;
+}
+.geo-card p {
+  font-size: 12px;
+  color: #00ff00;
+  line-height: 1.55;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+}
+.geo-card .geo-card-icon {
+  font-size: 22px;
+  margin-bottom: 6px;
+  display: block;
+}
+.geo-guestbook {
+  margin: 20px 0 8px;
+  border: 2px dashed #ff00ff;
+  padding: 14px;
+  text-align: center;
+}
+.geo-guestbook p {
+  font-size: 12px;
+  color: #00ffff;
+  line-height: 1.6;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+}
+.geo-guestbook a {
+  color: #ffff00;
+  text-decoration: underline;
+}
+.geo-counter-wrap {
+  text-align: center;
+  margin: 16px 0 8px;
+}
+.geo-counter-wrap img { max-width: 300px; }
+.geo-terminal-wrap {
+  text-align: center;
+  margin: 12px 0;
+}
+.geo-terminal-wrap img { max-width: 400px; }
+.geo-construction {
+  text-align: center;
+  margin: 12px 0;
+}
+.geo-construction img { max-width: 160px; }
+.geo-disclaimer {
+  text-align: center;
+  font-size: 10px;
+  color: #888;
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-style: italic;
+}
+@keyframes geo-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.geo-blink { animation: geo-blink 1s step-end infinite; }
+.geo-rainbow {
+  background: linear-gradient(90deg, #ff0000, #ff6600, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* background section side-by-side layout */
 .bg-split {
   display: grid;
@@ -956,6 +1095,9 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
       </button>
       <button class="nav-item" data-section="work" onclick="switchSection('work')">
         <span class="nav-prefix">//</span> the work
+      </button>
+      <button class="nav-item" data-section="geocities" onclick="switchSection('geocities')">
+        <span class="nav-prefix">~</span> my first website
       </button>
     </nav>
 
@@ -1491,6 +1633,102 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
         </div>
       </section>
 
+      <!-- MY FIRST WEBSITE (geocities) -->
+      <section class="section-panel" id="panel-geocities" aria-labelledby="geocities-heading">
+        <h2 id="geocities-heading" class="sr-only">My First Website</h2>
+
+        <div class="geo-construction">
+          <img src="/images/element-under-construction.svg" alt="Under construction sign">
+        </div>
+
+        <div class="geo-welcome">
+          <h2 class="geo-rainbow">~* Welcome to Jason's Homepage *~</h2>
+          <div class="geo-subtitle">est. 1997 (spiritually) &middot; best viewed at 800x600 &middot; Netscape Navigator recommended</div>
+        </div>
+
+        <img src="/images/element-fire-divider.svg" alt="" class="geo-fire" role="presentation">
+
+        <div class="geo-marquee" aria-hidden="true">
+          <span class="geo-marquee-inner">*** WELCOME TO MY PAGE *** YOU ARE VISITOR #00006797 *** SIGN MY GUESTBOOK *** LAST UPDATED: YESTERDAY PROBABLY *** THIS PAGE IS BEST VIEWED WITH YOUR EYES ***</span>
+        </div>
+
+        <div class="geo-badges">
+          <img src="/images/element-email-badge.svg" alt="Email me badge">
+          <img src="/images/element-cat-ascii.svg" alt="ASCII cat" class="geo-badge-cat">
+          <img src="/images/element-terminal-prompt.svg" alt="Terminal prompt">
+        </div>
+
+        <img src="/images/element-fire-divider.svg" alt="" class="geo-fire" role="presentation">
+
+        <div class="geo-cards">
+          <div class="geo-card">
+            <span class="geo-card-icon">&#127918;</span>
+            <h3>Dead Cells</h3>
+            <p>Still playing. Still dying. The game is very patient with me and I am very patient with it. Current streak: 0. Personal best streak: also 0, but with more conviction.</p>
+          </div>
+          <div class="geo-card">
+            <span class="geo-card-icon">&#128008;</span>
+            <h3>Nolan (The Cat)</h3>
+            <p>Gray. Supervisory. Sits on whatever I'm currently looking at. His methodology is unclear but his commitment is total. Chief Research Obstruction Officer.</p>
+          </div>
+          <div class="geo-card">
+            <span class="geo-card-icon">&#128187;</span>
+            <h3>Self-Hosting Everything</h3>
+            <p>Fedora on a Framework 13. Pi-hole on a Pi Zero 2W. Ollama eating all the RAM. Everything self-hosted. Everything is fine. <span class="geo-blink">Everything is fine.</span></p>
+          </div>
+          <div class="geo-card">
+            <span class="geo-card-icon">&#128218;</span>
+            <h3>Currently Reading</h3>
+            <p>Nora Bateson on warm data. Luhmann on self-referential systems (tab open for two weeks). Whatever paper Dr. Osman assigned that I should have read by now.</p>
+          </div>
+          <div class="geo-card">
+            <span class="geo-card-icon">&#127925;</span>
+            <h3>Music Situation</h3>
+            <p>Anything that works with headphones and a terminal. Ambient when writing. Something louder when debugging. Silence when the code is winning.</p>
+          </div>
+          <div class="geo-card">
+            <span class="geo-card-icon">&#9749;</span>
+            <h3>Coffee Protocol</h3>
+            <p>Black. Large. Before the first commit. The second cup is aspirational. The third is a dependency. Decaf is a thought experiment I've never run.</p>
+          </div>
+          <div class="geo-card">
+            <span class="geo-card-icon">&#128083;</span>
+            <h3>Fashion</h3>
+            <p>LL Bean flannel in Texas. This is a personality trait. The PhD dress code is "whatever doesn't have cat hair on it" which means nothing qualifies.</p>
+          </div>
+          <div class="geo-card">
+            <span class="geo-card-icon">&#128375;</span>
+            <h3>Terminal Survival School</h3>
+            <p>Building a horror-themed learn-bash environment. Because learning the command line shouldn't feel like reading a manual. It should feel like surviving one.</p>
+          </div>
+        </div>
+
+        <img src="/images/element-fire-divider.svg" alt="" class="geo-fire" role="presentation">
+
+        <div class="geo-guestbook">
+          <p>&#128214; <strong>SIGN MY GUESTBOOK</strong> &#128214;</p>
+          <p>just kidding. but you can <a href="mailto:jasonhobrien@proton.me">email me</a> if you want.</p>
+          <p>or don't. I'm a geocities page, not a cop.</p>
+        </div>
+
+        <div class="geo-counter-wrap">
+          <img src="/images/element-visitor-counter.svg" alt="Visitor counter showing 00006797">
+        </div>
+
+        <div class="geo-terminal-wrap">
+          <img src="/images/element-terminal-prompt.svg" alt="Terminal prompt">
+        </div>
+
+        <div class="geo-construction">
+          <img src="/images/element-under-construction.svg" alt="Under construction sign">
+        </div>
+
+        <div class="geo-disclaimer">
+          [ this section is a love letter to the internet that taught me to view source. ]<br>
+          [ the rest of the site is the version that grew up. this is the version that didn't have to. ]
+        </div>
+      </section>
+
     </div><!-- /content-body -->
   </main>
 
@@ -1552,6 +1790,7 @@ const SECTIONS = {
   background: { label: 'background',  accent: '#EBCB8B', word: 'background' },
   approach:   { label: 'how i think', accent: '#B48EAD', word: 'how i think' },
   work:       { label: 'the work',    accent: '#BF616A', word: 'the work' },
+  geocities:  { label: 'my first website', accent: '#d4943a', word: 'my first website' },
 };
 
 let currentSection = 'home';

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" width="2560" height="1440">
+  <rect width="2560" height="1440" fill="#2E3440"/>
+  <!-- Background gradient shapes -->
+  <circle cx="400" cy="300" r="380" fill="#3B4252" opacity="0.8"/>
+  <circle cx="2200" cy="1200" r="420" fill="#434C5E" opacity="0.7"/>
+  <circle cx="1280" cy="720" r="600" fill="#3B4252" opacity="0.4"/>
+  <!-- Frost accent circles -->
+  <circle cx="200" cy="900" r="180" fill="#88C0D0" opacity="0.25"/>
+  <circle cx="2400" cy="200" r="140" fill="#81A1C1" opacity="0.3"/>
+  <circle cx="1800" cy="400" r="200" fill="#8FBCBB" opacity="0.2"/>
+  <circle cx="600" cy="1200" r="160" fill="#5E81AC" opacity="0.3"/>
+  <!-- Aurora accent shapes -->
+  <ellipse cx="900" cy="200" rx="300" ry="120" fill="#A3BE8C" opacity="0.15" transform="rotate(-20 900 200)"/>
+  <ellipse cx="1700" cy="1100" rx="350" ry="140" fill="#B48EAD" opacity="0.15" transform="rotate(15 1700 1100)"/>
+  <ellipse cx="300" cy="600" rx="180" ry="80" fill="#EBCB8B" opacity="0.12" transform="rotate(-35 300 600)"/>
+  <ellipse cx="2100" cy="700" rx="220" ry="90" fill="#BF616A" opacity="0.12" transform="rotate(25 2100 700)"/>
+  <!-- Geometric polygon accents -->
+  <polygon points="1280,420 1480,720 1080,720" fill="#88C0D0" opacity="0.12"/>
+  <polygon points="1280,1020 1480,720 1080,720" fill="#81A1C1" opacity="0.10"/>
+  <polygon points="100,100 200,300 0,300" fill="#8FBCBB" opacity="0.2"/>
+  <polygon points="2460,1340 2560,1140 2360,1140" fill="#A3BE8C" opacity="0.2"/>
+  <!-- Small accent dots (Nord frost) -->
+  <circle cx="1280" cy="720" r="8" fill="#88C0D0" opacity="0.9"/>
+  <circle cx="640" cy="360" r="5" fill="#8FBCBB" opacity="0.7"/>
+  <circle cx="1920" cy="360" r="5" fill="#81A1C1" opacity="0.7"/>
+  <circle cx="640" cy="1080" r="5" fill="#5E81AC" opacity="0.7"/>
+  <circle cx="1920" cy="1080" r="5" fill="#88C0D0" opacity="0.7"/>
+  <!-- Top left watermark area: subtle Nord wordmark -->
+  <text x="80" y="1400" font-family="monospace" font-size="14" fill="#4C566A" opacity="0.6">Nord</text>
+</svg>

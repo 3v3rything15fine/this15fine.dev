@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" rx="4" fill="#2E3440"/>
+  <text font-family="monospace" font-size="11" fill="#88C0D0">
+    <tspan x="18" y="24"> /\_/\</tspan>
+    <tspan x="18" y="38">( o.o )</tspan>
+    <tspan x="18" y="52"> > ^ &lt;</tspan>
+    <tspan x="18" y="66">/|   |\</tspan>
+    <tspan x="18" y="80">(_|   |_)</tspan>
+  </text>
+</svg>

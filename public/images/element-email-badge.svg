@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 40" width="120" height="40">
+  <rect width="120" height="40" rx="4" fill="#2E3440" stroke="#4C566A" stroke-width="1"/>
+  <!-- Envelope icon -->
+  <rect x="8" y="11" width="22" height="16" rx="2" fill="none" stroke="#88C0D0" stroke-width="1.5"/>
+  <polyline points="8,11 19,22 30,11" fill="none" stroke="#88C0D0" stroke-width="1.5"/>
+  <line x1="8" y1="27" x2="14" y2="20" stroke="#88C0D0" stroke-width="1" opacity="0.5"/>
+  <line x1="30" y1="27" x2="24" y2="20" stroke="#88C0D0" stroke-width="1" opacity="0.5"/>
+  <!-- Text -->
+  <text x="40" y="18" font-family="monospace" font-size="8" fill="#8FBCBB" font-weight="bold">EMAIL</text>
+  <text x="40" y="30" font-family="monospace" font-size="8" fill="#88C0D0" font-weight="bold">ME!</text>
+  <!-- Small decorative dot -->
+  <circle cx="110" cy="8" r="3" fill="#BF616A" opacity="0.7"/>
+</svg>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" width="2560" height="1440">
+  <rect width="2560" height="1440" fill="#2E3440"/>
+  <!-- Horizontal traces -->
+  <line x1="0" y1="200" x2="800" y2="200" stroke="#3B4252" stroke-width="1.5"/>
+  <line x1="120" y1="400" x2="1200" y2="400" stroke="#3B4252" stroke-width="1"/>
+  <line x1="300" y1="600" x2="2560" y2="600" stroke="#434C5E" stroke-width="1"/>
+  <line x1="0" y1="840" x2="1800" y2="840" stroke="#3B4252" stroke-width="1.5"/>
+  <line x1="400" y1="1080" x2="2560" y2="1080" stroke="#434C5E" stroke-width="1"/>
+  <line x1="0" y1="1260" x2="2100" y2="1260" stroke="#3B4252" stroke-width="1"/>
+  <!-- Vertical traces -->
+  <line x1="640" y1="0" x2="640" y2="600" stroke="#3B4252" stroke-width="1"/>
+  <line x1="1280" y1="200" x2="1280" y2="1440" stroke="#434C5E" stroke-width="1"/>
+  <line x1="1920" y1="0" x2="1920" y2="840" stroke="#3B4252" stroke-width="1.5"/>
+  <line x1="480" y1="400" x2="480" y2="1260" stroke="#434C5E" stroke-width="1"/>
+  <line x1="2200" y1="600" x2="2200" y2="1440" stroke="#3B4252" stroke-width="1"/>
+  <!-- Frost blue accent traces -->
+  <polyline points="800,200 800,400 1200,400" fill="none" stroke="#88C0D0" stroke-width="1.5" opacity="0.4"/>
+  <polyline points="640,600 640,840 1280,840" fill="none" stroke="#8FBCBB" stroke-width="1.5" opacity="0.35"/>
+  <polyline points="1920,840 1920,1080 2200,1080" fill="none" stroke="#88C0D0" stroke-width="1.5" opacity="0.3"/>
+  <polyline points="480,1260 480,1080 400,1080" fill="none" stroke="#8FBCBB" stroke-width="1" opacity="0.4"/>
+  <polyline points="1280,200 1280,400 1200,400" fill="none" stroke="#88C0D0" stroke-width="1" opacity="0.25"/>
+  <!-- Circuit nodes (junction dots) -->
+  <circle cx="800" cy="200" r="4" fill="#88C0D0" opacity="0.6"/>
+  <circle cx="800" cy="400" r="3" fill="#8FBCBB" opacity="0.5"/>
+  <circle cx="1200" cy="400" r="4" fill="#88C0D0" opacity="0.6"/>
+  <circle cx="640" cy="600" r="3" fill="#8FBCBB" opacity="0.5"/>
+  <circle cx="640" cy="840" r="4" fill="#88C0D0" opacity="0.6"/>
+  <circle cx="1280" cy="840" r="3" fill="#8FBCBB" opacity="0.5"/>
+  <circle cx="1920" cy="840" r="4" fill="#88C0D0" opacity="0.5"/>
+  <circle cx="1920" cy="1080" r="3" fill="#8FBCBB" opacity="0.4"/>
+  <circle cx="2200" cy="1080" r="4" fill="#88C0D0" opacity="0.5"/>
+  <circle cx="480" cy="1260" r="3" fill="#8FBCBB" opacity="0.5"/>
+  <circle cx="480" cy="1080" r="4" fill="#88C0D0" opacity="0.5"/>
+  <circle cx="400" cy="1080" r="3" fill="#8FBCBB" opacity="0.4"/>
+  <circle cx="1280" cy="200" r="3" fill="#88C0D0" opacity="0.4"/>
+  <circle cx="1280" cy="400" r="4" fill="#8FBCBB" opacity="0.5"/>
+  <!-- IC chip outlines -->
+  <rect x="770" y="370" width="60" height="60" rx="4" fill="none" stroke="#88C0D0" stroke-width="1" opacity="0.25"/>
+  <rect x="610" y="810" width="60" height="60" rx="4" fill="none" stroke="#8FBCBB" stroke-width="1" opacity="0.2"/>
+  <rect x="1890" y="1050" width="60" height="60" rx="4" fill="none" stroke="#88C0D0" stroke-width="1" opacity="0.2"/>
+  <!-- Smaller secondary traces (background depth) -->
+  <line x1="100" y1="100" x2="100" y2="500" stroke="#3B4252" stroke-width="0.5" opacity="0.5"/>
+  <line x1="100" y1="100" x2="400" y2="100" stroke="#3B4252" stroke-width="0.5" opacity="0.5"/>
+  <line x1="2400" y1="300" x2="2400" y2="700" stroke="#3B4252" stroke-width="0.5" opacity="0.5"/>
+  <line x1="2100" y1="300" x2="2400" y2="300" stroke="#3B4252" stroke-width="0.5" opacity="0.5"/>
+  <line x1="1600" y1="1200" x2="1600" y2="1440" stroke="#3B4252" stroke-width="0.5" opacity="0.5"/>
+  <line x1="1600" y1="1200" x2="2000" y2="1200" stroke="#434C5E" stroke-width="0.5" opacity="0.4"/>
+  <line x1="200" y1="900" x2="200" y2="1100" stroke="#434C5E" stroke-width="0.5" opacity="0.4"/>
+  <line x1="200" y1="900" x2="500" y2="900" stroke="#3B4252" stroke-width="0.5" opacity="0.5"/>
+  <!-- Tiny accent nodes on secondary traces -->
+  <circle cx="100" cy="100" r="2" fill="#4C566A" opacity="0.6"/>
+  <circle cx="400" cy="100" r="2" fill="#4C566A" opacity="0.6"/>
+  <circle cx="2400" cy="300" r="2" fill="#4C566A" opacity="0.6"/>
+  <circle cx="2400" cy="700" r="2" fill="#4C566A" opacity="0.6"/>
+  <circle cx="200" cy="900" r="2" fill="#4C566A" opacity="0.6"/>
+  <!-- Faint glow behind primary accent traces -->
+  <polyline points="800,200 800,400 1200,400" fill="none" stroke="#88C0D0" stroke-width="6" opacity="0.06"/>
+  <polyline points="640,600 640,840 1280,840" fill="none" stroke="#8FBCBB" stroke-width="6" opacity="0.05"/>
+</svg>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 30" width="600" height="30">
+  <!-- Base line -->
+  <line x1="0" y1="22" x2="600" y2="22" stroke="#b35540" stroke-width="1.5" opacity="0.4"/>
+  <!-- Flame motifs repeated along the divider -->
+  <g opacity="0.9">
+    <!-- Flame 1 -->
+    <path d="M50,22 Q48,14 50,8 Q52,14 54,10 Q53,16 54,22 Z" fill="#d4943a"/>
+    <path d="M50,22 Q49,16 51,12 Q52,17 53,22 Z" fill="#b35540" opacity="0.7"/>
+    <!-- Flame 2 -->
+    <path d="M120,22 Q118,14 120,8 Q122,14 124,10 Q123,16 124,22 Z" fill="#d4943a"/>
+    <path d="M120,22 Q119,16 121,12 Q122,17 123,22 Z" fill="#b35540" opacity="0.7"/>
+    <!-- Flame 3 -->
+    <path d="M190,22 Q188,14 190,8 Q192,14 194,10 Q193,16 194,22 Z" fill="#d4943a"/>
+    <path d="M190,22 Q189,16 191,12 Q192,17 193,22 Z" fill="#b35540" opacity="0.7"/>
+    <!-- Flame 4 -->
+    <path d="M260,22 Q258,14 260,8 Q262,14 264,10 Q263,16 264,22 Z" fill="#d4943a"/>
+    <path d="M260,22 Q259,16 261,12 Q262,17 263,22 Z" fill="#b35540" opacity="0.7"/>
+    <!-- Flame 5 -->
+    <path d="M330,22 Q328,14 330,8 Q332,14 334,10 Q333,16 334,22 Z" fill="#d4943a"/>
+    <path d="M330,22 Q329,16 331,12 Q332,17 333,22 Z" fill="#b35540" opacity="0.7"/>
+    <!-- Flame 6 -->
+    <path d="M400,22 Q398,14 400,8 Q402,14 404,10 Q403,16 404,22 Z" fill="#d4943a"/>
+    <path d="M400,22 Q399,16 401,12 Q402,17 403,22 Z" fill="#b35540" opacity="0.7"/>
+    <!-- Flame 7 -->
+    <path d="M470,22 Q468,14 470,8 Q472,14 474,10 Q473,16 474,22 Z" fill="#d4943a"/>
+    <path d="M470,22 Q469,16 471,12 Q472,17 473,22 Z" fill="#b35540" opacity="0.7"/>
+    <!-- Flame 8 -->
+    <path d="M540,22 Q538,14 540,8 Q542,14 544,10 Q543,16 544,22 Z" fill="#d4943a"/>
+    <path d="M540,22 Q539,16 541,12 Q542,17 543,22 Z" fill="#b35540" opacity="0.7"/>
+  </g>
+  <!-- Embers / sparks -->
+  <circle cx="85" cy="18" r="1" fill="#EBCB8B" opacity="0.5"/>
+  <circle cx="155" cy="16" r="0.8" fill="#d4943a" opacity="0.4"/>
+  <circle cx="225" cy="17" r="1" fill="#EBCB8B" opacity="0.5"/>
+  <circle cx="295" cy="15" r="0.8" fill="#d4943a" opacity="0.4"/>
+  <circle cx="365" cy="18" r="1" fill="#EBCB8B" opacity="0.5"/>
+  <circle cx="435" cy="16" r="0.8" fill="#d4943a" opacity="0.4"/>
+  <circle cx="505" cy="17" r="1" fill="#EBCB8B" opacity="0.5"/>
+  <circle cx="575" cy="15" r="0.8" fill="#d4943a" opacity="0.4"/>
+</svg>

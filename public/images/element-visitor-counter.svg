@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 60" width="300" height="60">
+  <rect width="300" height="60" rx="4" fill="#2E3440" stroke="#4C566A" stroke-width="1"/>
+  <!-- Inner bezel -->
+  <rect x="4" y="4" width="292" height="52" rx="3" fill="#3B4252"/>
+  <!-- Label -->
+  <text x="150" y="18" font-family="monospace" font-size="9" fill="#88C0D0" text-anchor="middle" opacity="0.8">YOU ARE VISITOR #</text>
+  <!-- Counter display -->
+  <rect x="60" y="24" width="180" height="28" rx="2" fill="#2E3440" stroke="#434C5E" stroke-width="1"/>
+  <!-- Individual digit cells -->
+  <g font-family="monospace" font-size="18" fill="#A3BE8C" font-weight="bold">
+    <rect x="62" y="26" width="21" height="24" fill="#2E3440"/>
+    <text x="72.5" y="44" text-anchor="middle">0</text>
+    <rect x="84.5" y="26" width="21" height="24" fill="#2E3440"/>
+    <text x="95" y="44" text-anchor="middle">0</text>
+    <rect x="107" y="26" width="21" height="24" fill="#2E3440"/>
+    <text x="117.5" y="44" text-anchor="middle">0</text>
+    <rect x="129.5" y="26" width="21" height="24" fill="#2E3440"/>
+    <text x="140" y="44" text-anchor="middle">0</text>
+    <rect x="152" y="26" width="21" height="24" fill="#2E3440"/>
+    <text x="162.5" y="44" text-anchor="middle">6</text>
+    <rect x="174.5" y="26" width="21" height="24" fill="#2E3440"/>
+    <text x="185" y="44" text-anchor="middle">7</text>
+    <rect x="197" y="26" width="21" height="24" fill="#2E3440"/>
+    <text x="207.5" y="44" text-anchor="middle">9</text>
+    <rect x="219.5" y="26" width="21" height="24" fill="#2E3440"/>
+    <text x="230" y="44" text-anchor="middle">7</text>
+  </g>
+  <!-- Separator lines between digits -->
+  <g stroke="#434C5E" stroke-width="0.5" opacity="0.5">
+    <line x1="83.5" y1="26" x2="83.5" y2="50"/>
+    <line x1="106" y1="26" x2="106" y2="50"/>
+    <line x1="128.5" y1="26" x2="128.5" y2="50"/>
+    <line x1="151" y1="26" x2="151" y2="50"/>
+    <line x1="173.5" y1="26" x2="173.5" y2="50"/>
+    <line x1="196" y1="26" x2="196" y2="50"/>
+    <line x1="218.5" y1="26" x2="218.5" y2="50"/>
+  </g>
+</svg>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" width="2560" height="1440">
+  <rect width="2560" height="1440" fill="#2E3440"/>
+  <!-- Contour group 1: large feature center-left -->
+  <ellipse cx="900" cy="700" rx="500" ry="350" fill="none" stroke="#3B4252" stroke-width="1.2" transform="rotate(-8 900 700)"/>
+  <ellipse cx="900" cy="700" rx="420" ry="290" fill="none" stroke="#3B4252" stroke-width="1" transform="rotate(-8 900 700)"/>
+  <ellipse cx="900" cy="700" rx="340" ry="230" fill="none" stroke="#434C5E" stroke-width="1" transform="rotate(-8 900 700)"/>
+  <ellipse cx="900" cy="700" rx="260" ry="170" fill="none" stroke="#434C5E" stroke-width="0.8" transform="rotate(-8 900 700)"/>
+  <ellipse cx="900" cy="700" rx="180" ry="110" fill="none" stroke="#4C566A" stroke-width="0.8" transform="rotate(-8 900 700)"/>
+  <ellipse cx="900" cy="700" rx="100" ry="55" fill="none" stroke="#4C566A" stroke-width="0.7" transform="rotate(-8 900 700)"/>
+  <!-- Frost accent on innermost contour -->
+  <ellipse cx="900" cy="700" rx="40" ry="20" fill="none" stroke="#88C0D0" stroke-width="0.8" opacity="0.35" transform="rotate(-8 900 700)"/>
+  <!-- Contour group 2: upper right -->
+  <ellipse cx="2000" cy="350" rx="380" ry="260" fill="none" stroke="#3B4252" stroke-width="1" transform="rotate(12 2000 350)"/>
+  <ellipse cx="2000" cy="350" rx="300" ry="200" fill="none" stroke="#3B4252" stroke-width="0.8" transform="rotate(12 2000 350)"/>
+  <ellipse cx="2000" cy="350" rx="220" ry="140" fill="none" stroke="#434C5E" stroke-width="0.8" transform="rotate(12 2000 350)"/>
+  <ellipse cx="2000" cy="350" rx="140" ry="80" fill="none" stroke="#4C566A" stroke-width="0.7" transform="rotate(12 2000 350)"/>
+  <ellipse cx="2000" cy="350" rx="60" ry="30" fill="none" stroke="#8FBCBB" stroke-width="0.7" opacity="0.3" transform="rotate(12 2000 350)"/>
+  <!-- Contour group 3: lower right -->
+  <ellipse cx="2100" cy="1100" rx="320" ry="220" fill="none" stroke="#3B4252" stroke-width="1" transform="rotate(-5 2100 1100)"/>
+  <ellipse cx="2100" cy="1100" rx="240" ry="160" fill="none" stroke="#434C5E" stroke-width="0.8" transform="rotate(-5 2100 1100)"/>
+  <ellipse cx="2100" cy="1100" rx="160" ry="100" fill="none" stroke="#4C566A" stroke-width="0.7" transform="rotate(-5 2100 1100)"/>
+  <ellipse cx="2100" cy="1100" rx="80" ry="45" fill="none" stroke="#4C566A" stroke-width="0.6" transform="rotate(-5 2100 1100)"/>
+  <!-- Contour group 4: far left edge -->
+  <ellipse cx="150" cy="400" rx="250" ry="300" fill="none" stroke="#3B4252" stroke-width="1" transform="rotate(20 150 400)"/>
+  <ellipse cx="150" cy="400" rx="180" ry="220" fill="none" stroke="#434C5E" stroke-width="0.8" transform="rotate(20 150 400)"/>
+  <ellipse cx="150" cy="400" rx="110" ry="140" fill="none" stroke="#4C566A" stroke-width="0.7" transform="rotate(20 150 400)"/>
+  <!-- Contour group 5: bottom left -->
+  <ellipse cx="400" cy="1200" rx="280" ry="200" fill="none" stroke="#3B4252" stroke-width="0.8" transform="rotate(-15 400 1200)"/>
+  <ellipse cx="400" cy="1200" rx="200" ry="140" fill="none" stroke="#434C5E" stroke-width="0.7" transform="rotate(-15 400 1200)"/>
+  <ellipse cx="400" cy="1200" rx="120" ry="80" fill="none" stroke="#4C566A" stroke-width="0.6" transform="rotate(-15 400 1200)"/>
+  <!-- Long sweeping contour lines connecting features -->
+  <path d="M0,500 Q400,480 700,520 Q1000,560 1400,530 Q1800,500 2200,540 Q2400,560 2560,550" fill="none" stroke="#3B4252" stroke-width="0.6" opacity="0.7"/>
+  <path d="M0,900 Q300,920 600,880 Q900,840 1200,870 Q1600,910 2000,880 Q2300,860 2560,890" fill="none" stroke="#3B4252" stroke-width="0.6" opacity="0.7"/>
+  <path d="M0,1100 Q500,1060 1000,1090 Q1500,1120 2000,1070 Q2300,1050 2560,1080" fill="none" stroke="#434C5E" stroke-width="0.5" opacity="0.5"/>
+  <path d="M0,200 Q600,230 1200,190 Q1800,150 2560,200" fill="none" stroke="#3B4252" stroke-width="0.5" opacity="0.5"/>
+  <!-- Frost accent on one sweeping line -->
+  <path d="M0,700 Q500,720 1000,680 Q1500,640 2000,690 Q2300,710 2560,700" fill="none" stroke="#88C0D0" stroke-width="0.6" opacity="0.15"/>
+  <!-- Elevation markers -->
+  <text x="870" y="705" font-family="monospace" font-size="9" fill="#4C566A" opacity="0.5">2840</text>
+  <text x="1975" y="355" font-family="monospace" font-size="9" fill="#4C566A" opacity="0.5">1960</text>
+  <text x="2075" y="1105" font-family="monospace" font-size="9" fill="#4C566A" opacity="0.5">1420</text>
+</svg>

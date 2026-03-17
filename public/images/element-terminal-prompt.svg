@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 40" width="400" height="40">
+  <style>
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .cursor { animation: blink 1s step-end infinite; }
+  </style>
+  <rect width="400" height="40" rx="4" fill="#2E3440"/>
+  <rect x="2" y="2" width="396" height="36" rx="3" fill="#3B4252"/>
+  <!-- Window dots -->
+  <circle cx="14" cy="12" r="4" fill="#BF616A" opacity="0.8"/>
+  <circle cx="26" cy="12" r="4" fill="#EBCB8B" opacity="0.8"/>
+  <circle cx="38" cy="12" r="4" fill="#A3BE8C" opacity="0.8"/>
+  <!-- Prompt text -->
+  <text y="28" font-family="monospace" font-size="12">
+    <tspan x="12" fill="#A3BE8C">jason</tspan>
+    <tspan fill="#4C566A">@</tspan>
+    <tspan fill="#88C0D0">3v3rything15fine</tspan>
+    <tspan fill="#4C566A"> </tspan>
+    <tspan fill="#5E81AC">~</tspan>
+    <tspan fill="#D8DEE9"> $</tspan>
+  </text>
+  <!-- Blinking cursor -->
+  <rect class="cursor" x="298" y="18" width="7" height="14" fill="#88C0D0"/>
+</svg>

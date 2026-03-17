@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" width="2560" height="1440">
+  <rect width="2560" height="1440" fill="#171e13"/>
+  <!-- Constellation dots — scattered amber stars -->
+  <circle cx="320" cy="180" r="2" fill="#d4943a" opacity="0.8"/>
+  <circle cx="480" cy="120" r="1.5" fill="#d4943a" opacity="0.6"/>
+  <circle cx="700" cy="260" r="2.5" fill="#d4943a" opacity="0.7"/>
+  <circle cx="1100" cy="150" r="1.8" fill="#d4943a" opacity="0.5"/>
+  <circle cx="1350" cy="320" r="2" fill="#d4943a" opacity="0.7"/>
+  <circle cx="1600" cy="100" r="1.5" fill="#d4943a" opacity="0.6"/>
+  <circle cx="1850" cy="280" r="2.2" fill="#d4943a" opacity="0.8"/>
+  <circle cx="2100" cy="170" r="1.8" fill="#d4943a" opacity="0.5"/>
+  <circle cx="2350" cy="240" r="2" fill="#d4943a" opacity="0.7"/>
+  <circle cx="200" cy="500" r="1.5" fill="#d4943a" opacity="0.5"/>
+  <circle cx="550" cy="620" r="2" fill="#d4943a" opacity="0.6"/>
+  <circle cx="900" cy="480" r="1.8" fill="#d4943a" opacity="0.7"/>
+  <circle cx="1200" cy="560" r="2.5" fill="#d4943a" opacity="0.8"/>
+  <circle cx="1500" cy="500" r="1.5" fill="#d4943a" opacity="0.5"/>
+  <circle cx="1800" cy="600" r="2" fill="#d4943a" opacity="0.6"/>
+  <circle cx="2050" cy="520" r="1.8" fill="#d4943a" opacity="0.7"/>
+  <circle cx="2400" cy="580" r="2" fill="#d4943a" opacity="0.5"/>
+  <circle cx="380" cy="800" r="2" fill="#d4943a" opacity="0.7"/>
+  <circle cx="680" cy="900" r="1.5" fill="#d4943a" opacity="0.5"/>
+  <circle cx="1000" cy="780" r="2.2" fill="#d4943a" opacity="0.8"/>
+  <circle cx="1300" cy="850" r="1.8" fill="#d4943a" opacity="0.6"/>
+  <circle cx="1700" cy="820" r="2" fill="#d4943a" opacity="0.7"/>
+  <circle cx="2000" cy="900" r="1.5" fill="#d4943a" opacity="0.5"/>
+  <circle cx="2300" cy="780" r="2.5" fill="#d4943a" opacity="0.7"/>
+  <circle cx="150" cy="1100" r="1.8" fill="#d4943a" opacity="0.6"/>
+  <circle cx="500" cy="1050" r="2" fill="#d4943a" opacity="0.7"/>
+  <circle cx="800" cy="1150" r="1.5" fill="#d4943a" opacity="0.5"/>
+  <circle cx="1150" cy="1080" r="2.2" fill="#d4943a" opacity="0.8"/>
+  <circle cx="1450" cy="1200" r="2" fill="#d4943a" opacity="0.6"/>
+  <circle cx="1750" cy="1100" r="1.8" fill="#d4943a" opacity="0.7"/>
+  <circle cx="2100" cy="1180" r="2" fill="#d4943a" opacity="0.5"/>
+  <circle cx="2450" cy="1050" r="1.5" fill="#d4943a" opacity="0.6"/>
+  <circle cx="300" cy="1350" r="2" fill="#d4943a" opacity="0.7"/>
+  <circle cx="650" cy="1300" r="1.8" fill="#d4943a" opacity="0.5"/>
+  <circle cx="1050" cy="1380" r="2" fill="#d4943a" opacity="0.6"/>
+  <circle cx="1600" cy="1350" r="2.5" fill="#d4943a" opacity="0.7"/>
+  <circle cx="2000" cy="1400" r="1.5" fill="#d4943a" opacity="0.5"/>
+  <circle cx="2350" cy="1320" r="2" fill="#d4943a" opacity="0.7"/>
+  <!-- Constellation lines connecting some stars -->
+  <line x1="320" y1="180" x2="480" y2="120" stroke="#d4943a" stroke-width="0.5" opacity="0.2"/>
+  <line x1="480" y1="120" x2="700" y2="260" stroke="#d4943a" stroke-width="0.5" opacity="0.2"/>
+  <line x1="700" y1="260" x2="900" y2="480" stroke="#d4943a" stroke-width="0.5" opacity="0.15"/>
+  <line x1="1100" y1="150" x2="1350" y2="320" stroke="#d4943a" stroke-width="0.5" opacity="0.2"/>
+  <line x1="1350" y1="320" x2="1200" y2="560" stroke="#d4943a" stroke-width="0.5" opacity="0.15"/>
+  <line x1="1850" y1="280" x2="2100" y2="170" stroke="#d4943a" stroke-width="0.5" opacity="0.2"/>
+  <line x1="2100" y1="170" x2="2350" y2="240" stroke="#d4943a" stroke-width="0.5" opacity="0.2"/>
+  <line x1="1000" y1="780" x2="1300" y2="850" stroke="#d4943a" stroke-width="0.5" opacity="0.15"/>
+  <line x1="1300" y1="850" x2="1700" y2="820" stroke="#d4943a" stroke-width="0.5" opacity="0.15"/>
+  <line x1="1700" y1="820" x2="2000" y2="900" stroke="#d4943a" stroke-width="0.5" opacity="0.15"/>
+  <line x1="1150" y1="1080" x2="1450" y2="1200" stroke="#d4943a" stroke-width="0.5" opacity="0.15"/>
+  <line x1="1450" y1="1200" x2="1750" y2="1100" stroke="#d4943a" stroke-width="0.5" opacity="0.15"/>
+  <!-- A few brighter "star" highlights -->
+  <circle cx="1200" cy="560" r="3.5" fill="#d4943a" opacity="0.15"/>
+  <circle cx="1200" cy="560" r="1.5" fill="#d4943a" opacity="0.9"/>
+  <circle cx="700" cy="260" r="3" fill="#d4943a" opacity="0.12"/>
+  <circle cx="700" cy="260" r="1.5" fill="#d4943a" opacity="0.85"/>
+  <circle cx="2300" cy="780" r="3.5" fill="#d4943a" opacity="0.12"/>
+  <circle cx="2300" cy="780" r="1.5" fill="#d4943a" opacity="0.85"/>
+  <!-- Subtle green tint in corners for depth -->
+  <circle cx="0" cy="1440" r="400" fill="#5e8c4a" opacity="0.04"/>
+  <circle cx="2560" cy="0" r="350" fill="#5a8a9a" opacity="0.03"/>
+</svg>

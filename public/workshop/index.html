@@ -171,14 +171,15 @@
 
 <div class="header">
   <h1>// signature workshop v3</h1>
-  <p>hosted images &middot; light + dark &middot; cycling disclaimers &middot; four variants</p>
+  <p>hosted images &middot; light + dark &middot; cycling disclaimers &middot; five variants</p>
 </div>
 
 <div class="tabs" role="tablist" aria-label="Signature variants">
-  <button class="tab active" role="tab" aria-selected="true" onclick="switchTab('blurgity_ai')">blurgity33 (ai)</button>
-  <button class="tab" role="tab" aria-selected="false" onclick="switchTab('blurgity_solo')">blurgity33 (solo)</button>
-  <button class="tab" role="tab" aria-selected="false" onclick="switchTab('research')">jho.research</button>
-  <button class="tab" role="tab" aria-selected="false" onclick="switchTab('proton')">proton.me</button>
+  <button class="tab active" role="tab" aria-selected="true" onclick="switchTab('jason_ai')">jason@ (ai)</button>
+  <button class="tab" role="tab" aria-selected="false" onclick="switchTab('jason_solo')">jason@ (solo)</button>
+  <button class="tab" role="tab" aria-selected="false" onclick="switchTab('claude')">claude@</button>
+  <button class="tab" role="tab" aria-selected="false" onclick="switchTab('research')">research</button>
+  <button class="tab" role="tab" aria-selected="false" onclick="switchTab('proton')">proton</button>
 </div>
 
 <div class="controls">
@@ -287,23 +288,24 @@ const disclaimers_solo = [
 // PROFILES
 // ============================================================
 const profiles = {
-  blurgity_ai:   { name: "Jason O'Brien",    email: "blurgity33@gmail.com",   github: "github.com/3v3rything15fine", avatar: "claude", disc: "ai" },
-  blurgity_solo: { name: "Jason O'Brien",    email: "blurgity33@gmail.com",   github: "github.com/3v3rything15fine", avatar: "claude", disc: "solo" },
-  research:      { name: "Jason H. O'Brien", email: "jho.research@pm.me",     github: "github.com/3v3rything15fine", avatar: "claude", disc: "solo" },
-  proton:        { name: "Jason H. O'Brien", email: "jasonhobrien@proton.me", github: "github.com/3v3rything15fine", avatar: "headshot", disc: "solo" },
+  jason_ai:      { name: "Jason O'Brien",    email: "jason@this15fine.dev",          github: "github.com/3v3rything15fine", avatar: "headshot", disc: "ai" },
+  jason_solo:    { name: "Jason O'Brien",    email: "jason@this15fine.dev",          github: "github.com/3v3rything15fine", avatar: "headshot", disc: "solo" },
+  claude:        { name: "Jason H. O'Brien", email: "jho.c-o.claude@this15fine.dev", github: "github.com/3v3rything15fine", avatar: "claude",   disc: "ai" },
+  research:      { name: "Jason H. O'Brien", email: "jho.research@pm.me",           github: "github.com/3v3rything15fine", avatar: "headshot", disc: "solo" },
+  proton:        { name: "Jason H. O'Brien", email: "jasonhobrien@proton.me",       github: "github.com/3v3rything15fine", avatar: "headshot", disc: "solo" },
 };
 
 // ============================================================
 // STATE
 // ============================================================
-let currentTab = 'blurgity_ai';
+let currentTab = 'jason_ai';
 let qIdx = Math.floor(Math.random() * quotes.length);
 let dIdx_ai = Math.floor(Math.random() * disclaimers_ai.length);
 let dIdx_solo = Math.floor(Math.random() * disclaimers_solo.length);
 
 function switchTab(tab) {
   currentTab = tab;
-  const names = ['blurgity_ai','blurgity_solo','research','proton'];
+  const names = ['jason_ai','jason_solo','claude','research','proton'];
   document.querySelectorAll('.tab').forEach((t,i) => {
     const a = names[i] === tab;
     t.classList.toggle('active', a);

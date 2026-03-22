@@ -11,8 +11,8 @@
       "centrality": 0.015127,
       "degree": 6,
       "position": {
-        "x": 657.8,
-        "y": 422.1
+        "x": 456.0,
+        "y": 278.0
       },
       "connections": [
         "ci-7355-overview",
@@ -36,8 +36,8 @@
       "centrality": 0.002915,
       "degree": 3,
       "position": {
-        "x": 869.7,
-        "y": 172.8
+        "x": 228.7,
+        "y": 60.0
       },
       "connections": [
         "bronfenbrenner-ecological-systems",
@@ -58,8 +58,8 @@
       "centrality": 0.006385,
       "degree": 2,
       "position": {
-        "x": 60.0,
-        "y": 60.0
+        "x": 940.0,
+        "y": 740.0
       },
       "connections": [
         "home",
@@ -78,8 +78,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 559.3,
-        "y": 740.0
+        "x": 60.0,
+        "y": 363.8
       },
       "connections": [
         "bronfenbrenner-ecological-systems"
@@ -95,8 +95,8 @@
       "centrality": 0.000177,
       "degree": 2,
       "position": {
-        "x": 329.4,
-        "y": 223.2
+        "x": 721.5,
+        "y": 531.9
       },
       "connections": [
         "bronfenbrenner-ecological-systems",
@@ -113,8 +113,8 @@
       "centrality": 0.012435,
       "degree": 11,
       "position": {
-        "x": 940.0,
-        "y": 591.9
+        "x": 759.8,
+        "y": 104.2
       },
       "connections": [
         "mullainathan2014",
@@ -139,16 +139,6 @@
   ],
   "edges": [
     {
-      "source": "vault-audit-report",
-      "target": "bronfenbrenner-ecological-systems",
-      "weight": 1
-    },
-    {
-      "source": "ci-7355-overview",
-      "target": "bronfenbrenner-ecological-systems",
-      "weight": 1
-    },
-    {
       "source": "literature-review",
       "target": "bronfenbrenner-ecological-systems",
       "weight": 1
@@ -156,6 +146,16 @@
     {
       "source": "literature-review",
       "target": "citations-to-import",
+      "weight": 1
+    },
+    {
+      "source": "vault-audit-report",
+      "target": "bronfenbrenner-ecological-systems",
+      "weight": 1
+    },
+    {
+      "source": "ci-7355-overview",
+      "target": "bronfenbrenner-ecological-systems",
       "weight": 1
     },
     {

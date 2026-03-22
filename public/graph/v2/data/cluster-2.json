@@ -11,8 +11,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 60.0,
-        "y": 584.0
+        "x": 833.8,
+        "y": 678.6
       },
       "connections": [
         "adams2014"
@@ -28,8 +28,8 @@
       "centrality": 0.000115,
       "degree": 5,
       "position": {
-        "x": 767.1,
-        "y": 170.7
+        "x": 917.0,
+        "y": 432.8
       },
       "connections": [
         "basic-needs-insecurity",
@@ -52,8 +52,8 @@
       "centrality": 0.012753,
       "degree": 13,
       "position": {
-        "x": 417.7,
-        "y": 502.9
+        "x": 608.0,
+        "y": 411.7
       },
       "connections": [
         "2026-03-21",
@@ -81,8 +81,8 @@
       "centrality": 0.000177,
       "degree": 8,
       "position": {
-        "x": 927.4,
-        "y": 458.8
+        "x": 912.9,
+        "y": 116.9
       },
       "connections": [
         "financial-literacy-measurement",
@@ -105,8 +105,8 @@
       "centrality": 0.0,
       "degree": 3,
       "position": {
-        "x": 667.6,
-        "y": 158.1
+        "x": 188.1,
+        "y": 67.9
       },
       "connections": [
         "lit-review-matrix",
@@ -126,8 +126,8 @@
       "centrality": 0.039807,
       "degree": 27,
       "position": {
-        "x": 605.7,
-        "y": 336.1
+        "x": 627.8,
+        "y": 367.0
       },
       "connections": [
         "theoretical-framework-map",
@@ -156,8 +156,8 @@
       "centrality": 0.000253,
       "degree": 13,
       "position": {
-        "x": 790.1,
-        "y": 584.9
+        "x": 662.5,
+        "y": 109.0
       },
       "connections": [
         "theoretical-framework-map",
@@ -182,8 +182,8 @@
       "centrality": 0.001167,
       "degree": 5,
       "position": {
-        "x": 345.0,
-        "y": 640.5
+        "x": 60.0,
+        "y": 271.6
       },
       "connections": [
         "lit-review-matrix",
@@ -205,8 +205,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 129.7,
-        "y": 60.0
+        "x": 280.0,
+        "y": 740.0
       },
       "connections": [
         "emergency-aid-and-holistic-support"
@@ -222,8 +222,8 @@
       "centrality": 0.001493,
       "degree": 15,
       "position": {
-        "x": 503.6,
-        "y": 404.1
+        "x": 442.3,
+        "y": 335.2
       },
       "connections": [
         "theoretical-framework-map",
@@ -250,8 +250,8 @@
       "centrality": 0.000855,
       "degree": 13,
       "position": {
-        "x": 731.6,
-        "y": 666.5
+        "x": 528.8,
+        "y": 87.7
       },
       "connections": [
         "financial-literacy-measurement",
@@ -276,8 +276,8 @@
       "centrality": 0.037701,
       "degree": 23,
       "position": {
-        "x": 401.5,
-        "y": 289.4
+        "x": 445.7,
+        "y": 472.2
       },
       "connections": [
         "goldrick-rab2023",
@@ -305,8 +305,8 @@
       "centrality": 0.000575,
       "degree": 6,
       "position": {
-        "x": 846.1,
-        "y": 337.0
+        "x": 940.0,
+        "y": 266.9
       },
       "connections": [
         "financial-literacy",
@@ -329,8 +329,8 @@
       "centrality": 0.002598,
       "degree": 16,
       "position": {
-        "x": 682.0,
-        "y": 416.1
+        "x": 663.2,
+        "y": 269.9
       },
       "connections": [
         "coggin2025",
@@ -355,8 +355,8 @@
       "centrality": 0.019828,
       "degree": 27,
       "position": {
-        "x": 749.0,
-        "y": 459.4
+        "x": 724.6,
+        "y": 221.4
       },
       "connections": [
         "financial-education-strategy-reflections",
@@ -383,8 +383,8 @@
       "centrality": 0.000789,
       "degree": 13,
       "position": {
-        "x": 857.6,
-        "y": 507.4
+        "x": 815.4,
+        "y": 142.1
       },
       "connections": [
         "gatti2024",
@@ -409,8 +409,8 @@
       "centrality": 0.027987,
       "degree": 25,
       "position": {
-        "x": 740.6,
-        "y": 525.0
+        "x": 676.4,
+        "y": 191.8
       },
       "connections": [
         "theoretical-framework-map",
@@ -439,8 +439,8 @@
       "centrality": 0.002725,
       "degree": 12,
       "position": {
-        "x": 789.2,
-        "y": 658.7
+        "x": 608.5,
+        "y": 60.0
       },
       "connections": [
         "financial-literacy-measurement",
@@ -467,8 +467,8 @@
       "centrality": 0.000866,
       "degree": 12,
       "position": {
-        "x": 425.0,
-        "y": 338.2
+        "x": 346.5,
+        "y": 412.1
       },
       "connections": [
         "basic-needs-insecurity",
@@ -495,8 +495,8 @@
       "centrality": 0.000627,
       "degree": 14,
       "position": {
-        "x": 856.0,
-        "y": 568.1
+        "x": 758.9,
+        "y": 100.3
       },
       "connections": [
         "financial-literacy-measurement",
@@ -521,8 +521,8 @@
       "centrality": 0.002776,
       "degree": 14,
       "position": {
-        "x": 468.5,
-        "y": 456.6
+        "x": 372.8,
+        "y": 325.6
       },
       "connections": [
         "theoretical-framework-map",
@@ -549,8 +549,8 @@
       "centrality": 0.000416,
       "degree": 13,
       "position": {
-        "x": 520.5,
-        "y": 306.1
+        "x": 495.2,
+        "y": 404.9
       },
       "connections": [
         "theoretical-framework-map",
@@ -577,8 +577,8 @@
       "centrality": 0.00029,
       "degree": 12,
       "position": {
-        "x": 657.2,
-        "y": 575.1
+        "x": 552.8,
+        "y": 163.8
       },
       "connections": [
         "theoretical-framework-map",
@@ -603,8 +603,8 @@
       "centrality": 0.000348,
       "degree": 13,
       "position": {
-        "x": 689.2,
-        "y": 650.8
+        "x": 486.8,
+        "y": 115.0
       },
       "connections": [
         "financial-education-under-scarcity",
@@ -629,8 +629,8 @@
       "centrality": 0.000308,
       "degree": 12,
       "position": {
-        "x": 483.3,
-        "y": 350.2
+        "x": 339.1,
+        "y": 362.5
       },
       "connections": [
         "theoretical-framework-map",
@@ -657,8 +657,8 @@
       "centrality": 0.010863,
       "degree": 20,
       "position": {
-        "x": 680.0,
-        "y": 521.8
+        "x": 588.7,
+        "y": 203.0
       },
       "connections": [
         "theoretical-framework-map",
@@ -687,8 +687,8 @@
       "centrality": 0.031937,
       "degree": 31,
       "position": {
-        "x": 619.8,
-        "y": 486.5
+        "x": 501.0,
+        "y": 232.3
       },
       "connections": [
         "annotation-color-system",
@@ -715,8 +715,8 @@
       "centrality": 0.001162,
       "degree": 5,
       "position": {
-        "x": 421.6,
-        "y": 740.0
+        "x": 81.1,
+        "y": 176.7
       },
       "connections": [
         "lit-review-matrix",
@@ -738,8 +738,8 @@
       "centrality": 0.002746,
       "degree": 13,
       "position": {
-        "x": 734.7,
-        "y": 395.2
+        "x": 805.6,
+        "y": 268.9
       },
       "connections": [
         "basic-needs-insecurity",
@@ -766,8 +766,8 @@
       "centrality": 0.00047,
       "degree": 14,
       "position": {
-        "x": 560.2,
-        "y": 447.0
+        "x": 613.7,
+        "y": 313.3
       },
       "connections": [
         "theoretical-framework-map",
@@ -794,8 +794,8 @@
       "centrality": 0.000345,
       "degree": 11,
       "position": {
-        "x": 861.7,
-        "y": 428.9
+        "x": 884.1,
+        "y": 180.7
       },
       "connections": [
         "financial-literacy-measurement",
@@ -820,8 +820,8 @@
       "centrality": 0.008402,
       "degree": 15,
       "position": {
-        "x": 599.3,
-        "y": 659.2
+        "x": 404.8,
+        "y": 204.4
       },
       "connections": [
         "theoretical-framework-map",
@@ -849,8 +849,8 @@
       "centrality": 0.003223,
       "degree": 11,
       "position": {
-        "x": 632.6,
-        "y": 719.9
+        "x": 357.9,
+        "y": 110.3
       },
       "connections": [
         "taylor2025",
@@ -878,8 +878,8 @@
       "centrality": 0.00073,
       "degree": 8,
       "position": {
-        "x": 940.0,
-        "y": 528.3
+        "x": 854.0,
+        "y": 66.9
       },
       "connections": [
         "financial-literacy-measurement",
@@ -904,8 +904,8 @@
       "centrality": 0.000196,
       "degree": 10,
       "position": {
-        "x": 470.1,
-        "y": 221.0
+        "x": 357.6,
+        "y": 462.3
       },
       "connections": [
         "emergency-aid-and-holistic-support",
@@ -932,8 +932,8 @@
       "centrality": 0.000142,
       "degree": 12,
       "position": {
-        "x": 785.4,
-        "y": 501.2
+        "x": 718.1,
+        "y": 162.9
       },
       "connections": [
         "theoretical-framework-map",
@@ -958,8 +958,8 @@
       "centrality": 0.009598,
       "degree": 20,
       "position": {
-        "x": 579.0,
-        "y": 374.0
+        "x": 571.1,
+        "y": 350.8
       },
       "connections": [
         "theoretical-framework-map",
@@ -987,8 +987,8 @@
       "centrality": 0.001137,
       "degree": 13,
       "position": {
-        "x": 585.3,
-        "y": 621.6
+        "x": 418.9,
+        "y": 170.7
       },
       "connections": [
         "theoretical-framework-map",
@@ -1013,8 +1013,8 @@
       "centrality": 0.003533,
       "degree": 17,
       "position": {
-        "x": 535.5,
-        "y": 548.9
+        "x": 380.6,
+        "y": 256.7
       },
       "connections": [
         "theoretical-framework-map",
@@ -1039,8 +1039,8 @@
       "centrality": 0.073356,
       "degree": 49,
       "position": {
-        "x": 645.6,
-        "y": 464.3
+        "x": 558.7,
+        "y": 246.3
       },
       "connections": [
         "human-capital-theory",
@@ -1070,8 +1070,8 @@
       "centrality": 0.001294,
       "degree": 14,
       "position": {
-        "x": 566.5,
-        "y": 299.7
+        "x": 479.7,
+        "y": 373.1
       },
       "connections": [
         "emergency-aid-and-holistic-support",
@@ -1091,23 +1091,1028 @@
   ],
   "edges": [
     {
-      "source": "taylor2025",
+      "source": "goldrick-rab2023",
       "target": "basic-needs-insecurity",
       "weight": 1
     },
     {
-      "source": "taylor2025",
+      "source": "goldrick-rab2023",
+      "target": "emergency-aid-and-holistic-support",
+      "weight": 1
+    },
+    {
+      "source": "goldrick-rab2023",
       "target": "financial-education-under-scarcity",
       "weight": 1
     },
     {
-      "source": "taylor2025",
+      "source": "goldrick-rab2023",
       "target": "lit-review-matrix",
       "weight": 1
     },
     {
-      "source": "taylor2025",
+      "source": "goldrick-rab2023",
+      "target": "curs-harpernd",
+      "weight": 1
+    },
+    {
+      "source": "goldrick-rab2023",
+      "target": "francis-nixnd",
+      "weight": 1
+    },
+    {
+      "source": "goldrick-rab2023",
+      "target": "goldrick-rab-cadynd",
+      "weight": 1
+    },
+    {
+      "source": "goldrick-rab2023",
+      "target": "scarcity-theory",
+      "weight": 1
+    },
+    {
+      "source": "goldrick-rab2023",
+      "target": "rossman2022",
+      "weight": 1
+    },
+    {
+      "source": "goldrick-rab2023",
+      "target": "hillnd",
+      "weight": 1
+    },
+    {
+      "source": "goldrick-rab2023",
+      "target": "zimmerman2025",
+      "weight": 1
+    },
+    {
+      "source": "goldrick-rab2023",
+      "target": "theoretical-framework-map",
+      "weight": 3
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "emergency-aid-and-holistic-support",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "financial-education-under-scarcity",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "lit-review-matrix",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "curs-harpernd",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "francis-nixnd",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "hillnd",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "mullainathan2014",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "rossman2022",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "taylor2025",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "scarcity-theory",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "basic-needs-insecurity",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
+      "target": "theoretical-framework-map",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "260313-1on1-jeanette",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "basic-needs-insecurity",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "emergency-aid-and-holistic-support",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "financial-education-under-scarcity",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "financial-self-efficacy",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "human-capital-theory",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "curs-harpernd",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "francis-nixnd",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "goldrick-rab-cadynd",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "mullainathan2014",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "rossman2022",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "taylor2025",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
       "target": "adams2014",
+      "weight": 1
+    },
+    {
+      "source": "scarcity-theory",
+      "target": "theoretical-framework-map",
+      "weight": 4
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "annotation-color-system",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "emergency-aid-and-holistic-support",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "financial-education-under-scarcity",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "financial-literacy-measurement",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "lit-review-matrix",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "peer-mentoring-effectiveness",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "human-capital-theory",
+      "weight": 4
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "financial-literacy",
+      "weight": 2
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "financial-self-efficacy",
+      "weight": 4
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "basic-needs-insecurity",
+      "weight": 4
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "mullainathan2014",
+      "weight": 3
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "harper2023",
+      "weight": 3
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "salas-velasco2022",
+      "weight": 4
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "schuman-nd",
+      "weight": 3
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "taylor2025",
+      "weight": 4
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "goldrick-rab-cadynd",
+      "weight": 3
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "hillnd",
+      "weight": 2
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "curs-harpernd",
+      "weight": 2
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "peer-mentoring",
+      "weight": 2
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "gatti2024",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "peach2017",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "aera2014",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "price2017",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "moorend",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "coggin2025",
+      "weight": 2
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "durband2012",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "flec2019",
+      "weight": 1
+    },
+    {
+      "source": "theoretical-framework-map",
+      "target": "francis-nixnd",
+      "weight": 1
+    },
+    {
+      "source": "adams2014",
+      "target": "2026-03-21",
+      "weight": 1
+    },
+    {
+      "source": "adams2014",
+      "target": "basic-needs-insecurity",
+      "weight": 1
+    },
+    {
+      "source": "adams2014",
+      "target": "emergency-aid-and-holistic-support",
+      "weight": 1
+    },
+    {
+      "source": "adams2014",
+      "target": "lit-review-matrix",
+      "weight": 1
+    },
+    {
+      "source": "adams2014",
+      "target": "moorend",
+      "weight": 1
+    },
+    {
+      "source": "adams2014",
+      "target": "mullainathan2014",
+      "weight": 1
+    },
+    {
+      "source": "adams2014",
+      "target": "goldrick-rab-cadynd",
+      "weight": 1
+    },
+    {
+      "source": "adams2014",
+      "target": "taylor2025",
+      "weight": 1
+    },
+    {
+      "source": "adams2014",
+      "target": "schuman-nd",
+      "weight": 1
+    },
+    {
+      "source": "adams2014",
+      "target": "peer-mentoring",
+      "weight": 1
+    },
+    {
+      "source": "crisp2013",
+      "target": "emergency-aid-and-holistic-support",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "annotation-color-system",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "emergency-aid-and-holistic-support",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "financial-education-under-scarcity",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "financial-literacy-measurement",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "harper2023",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "coggin2025",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "salas-velasco2022",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "gatti2024",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "rossman2022",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "curs-harpernd",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "hillnd",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "francis-nixnd",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "taylor2025",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "schuman-nd",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "goldrick-rab-cadynd",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "peach2017",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "moorend",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "mullainathan2014",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "henager2025",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "flec2019",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "durband2012",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "creswell2018",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "miles2014",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "price2017",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "aera2014",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "peer-mentoring-effectiveness",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "financial-literacy-measurement",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "aera2014",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "coggin2025",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "durband2012",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "flec2019",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "financial-self-efficacy",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "human-capital-theory",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "salas-velasco2022",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "peach2017",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "price2017",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
+      "target": "moorend",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
+      "target": "coggin2025",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
+      "target": "harper2023",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
+      "target": "salas-velasco2022",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
+      "target": "henager2025",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
+      "target": "mullainathan2014",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
+      "target": "taylor2025",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
+      "target": "human-capital-theory",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
+      "target": "financial-self-efficacy",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
+      "target": "basic-needs-insecurity",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
+      "target": "financial-education-strategy-reflections",
+      "weight": 1
+    },
+    {
+      "source": "salas-velasco2022",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "salas-velasco2022",
+      "target": "financial-self-efficacy",
+      "weight": 1
+    },
+    {
+      "source": "salas-velasco2022",
+      "target": "human-capital-theory",
+      "weight": 1
+    },
+    {
+      "source": "salas-velasco2022",
+      "target": "coggin2025",
+      "weight": 1
+    },
+    {
+      "source": "salas-velasco2022",
+      "target": "harper2023",
+      "weight": 1
+    },
+    {
+      "source": "salas-velasco2022",
+      "target": "henager2025",
+      "weight": 1
+    },
+    {
+      "source": "salas-velasco2022",
+      "target": "moorend",
+      "weight": 1
+    },
+    {
+      "source": "salas-velasco2022",
+      "target": "peach2017",
+      "weight": 1
+    },
+    {
+      "source": "curs-harpernd",
+      "target": "basic-needs-insecurity",
+      "weight": 1
+    },
+    {
+      "source": "curs-harpernd",
+      "target": "emergency-aid-and-holistic-support",
+      "weight": 1
+    },
+    {
+      "source": "curs-harpernd",
+      "target": "human-capital-theory",
+      "weight": 1
+    },
+    {
+      "source": "curs-harpernd",
+      "target": "rossman2022",
+      "weight": 1
+    },
+    {
+      "source": "curs-harpernd",
+      "target": "francis-nixnd",
+      "weight": 1
+    },
+    {
+      "source": "curs-harpernd",
+      "target": "harper2023",
+      "weight": 1
+    },
+    {
+      "source": "curs-harpernd",
+      "target": "hillnd",
+      "weight": 1
+    },
+    {
+      "source": "curs-harpernd",
+      "target": "mullainathan2014",
+      "weight": 1
+    },
+    {
+      "source": "curs-harpernd",
+      "target": "taylor2025",
+      "weight": 1
+    },
+    {
+      "source": "schuman-nd",
+      "target": "financial-self-efficacy",
+      "weight": 1
+    },
+    {
+      "source": "schuman-nd",
+      "target": "durband2012",
+      "weight": 1
+    },
+    {
+      "source": "schuman-nd",
+      "target": "flec2019",
+      "weight": 1
+    },
+    {
+      "source": "schuman-nd",
+      "target": "harper2023",
+      "weight": 1
+    },
+    {
+      "source": "schuman-nd",
+      "target": "henager2025",
+      "weight": 1
+    },
+    {
+      "source": "schuman-nd",
+      "target": "miles2014",
+      "weight": 1
+    },
+    {
+      "source": "schuman-nd",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "schuman-nd",
+      "target": "peer-mentoring",
+      "weight": 1
+    },
+    {
+      "source": "schuman-nd",
+      "target": "taylor2025",
+      "weight": 1
+    },
+    {
+      "source": "schuman-nd",
+      "target": "peer-mentoring-effectiveness",
+      "weight": 1
+    },
+    {
+      "source": "financial-literacy-measurement",
+      "target": "peach2017",
+      "weight": 1
+    },
+    {
+      "source": "financial-literacy-measurement",
+      "target": "moorend",
+      "weight": 1
+    },
+    {
+      "source": "financial-literacy-measurement",
+      "target": "durband2012",
+      "weight": 1
+    },
+    {
+      "source": "financial-literacy-measurement",
+      "target": "flec2019",
+      "weight": 1
+    },
+    {
+      "source": "financial-literacy-measurement",
+      "target": "aera2014",
+      "weight": 1
+    },
+    {
+      "source": "financial-literacy-measurement",
+      "target": "price2017",
+      "weight": 1
+    },
+    {
+      "source": "financial-literacy-measurement",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "financial-literacy-measurement",
+      "target": "financial-self-efficacy",
+      "weight": 1
+    },
+    {
+      "source": "financial-literacy-measurement",
+      "target": "human-capital-theory",
+      "weight": 1
+    },
+    {
+      "source": "financial-literacy-measurement",
+      "target": "financial-education-strategy-reflections",
+      "weight": 1
+    },
+    {
+      "source": "hillnd",
+      "target": "emergency-aid-and-holistic-support",
+      "weight": 1
+    },
+    {
+      "source": "hillnd",
+      "target": "human-capital-theory",
+      "weight": 1
+    },
+    {
+      "source": "hillnd",
+      "target": "francis-nixnd",
+      "weight": 1
+    },
+    {
+      "source": "hillnd",
+      "target": "goldrick-rab-cadynd",
+      "weight": 1
+    },
+    {
+      "source": "hillnd",
+      "target": "basic-needs-insecurity",
+      "weight": 1
+    },
+    {
+      "source": "hillnd",
+      "target": "rossman2022",
+      "weight": 1
+    },
+    {
+      "source": "basic-needs-insecurity",
+      "target": "260313-1on1-jeanette",
+      "weight": 1
+    },
+    {
+      "source": "basic-needs-insecurity",
+      "target": "mullainathan2014",
+      "weight": 1
+    },
+    {
+      "source": "basic-needs-insecurity",
+      "target": "goldrick-rab-cadynd",
+      "weight": 1
+    },
+    {
+      "source": "basic-needs-insecurity",
+      "target": "taylor2025",
+      "weight": 1
+    },
+    {
+      "source": "basic-needs-insecurity",
+      "target": "francis-nixnd",
+      "weight": 1
+    },
+    {
+      "source": "basic-needs-insecurity",
+      "target": "moorend",
+      "weight": 1
+    },
+    {
+      "source": "basic-needs-insecurity",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "basic-needs-insecurity",
+      "target": "emergency-aid-and-holistic-support",
+      "weight": 1
+    },
+    {
+      "source": "basic-needs-insecurity",
+      "target": "financial-education-strategy-reflections",
+      "weight": 1
+    },
+    {
+      "source": "basic-needs-insecurity",
+      "target": "rossman2022",
+      "weight": 1
+    },
+    {
+      "source": "coggin2025",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "coggin2025",
+      "target": "human-capital-theory",
+      "weight": 1
+    },
+    {
+      "source": "coggin2025",
+      "target": "aera2014",
+      "weight": 1
+    },
+    {
+      "source": "coggin2025",
+      "target": "financial-self-efficacy",
+      "weight": 1
+    },
+    {
+      "source": "coggin2025",
+      "target": "harper2023",
+      "weight": 1
+    },
+    {
+      "source": "coggin2025",
+      "target": "flec2019",
+      "weight": 1
+    },
+    {
+      "source": "coggin2025",
+      "target": "durband2012",
+      "weight": 1
+    },
+    {
+      "source": "coggin2025",
+      "target": "henager2025",
+      "weight": 1
+    },
+    {
+      "source": "henager2025",
+      "target": "durband2012",
+      "weight": 1
+    },
+    {
+      "source": "henager2025",
+      "target": "flec2019",
+      "weight": 1
+    },
+    {
+      "source": "henager2025",
+      "target": "harper2023",
+      "weight": 1
+    },
+    {
+      "source": "henager2025",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "henager2025",
+      "target": "financial-self-efficacy",
+      "weight": 1
+    },
+    {
+      "source": "henager2025",
+      "target": "peer-mentoring",
+      "weight": 1
+    },
+    {
+      "source": "henager2025",
+      "target": "taylor2025",
+      "weight": 1
+    },
+    {
+      "source": "henager2025",
+      "target": "peer-mentoring-effectiveness",
+      "weight": 1
+    },
+    {
+      "source": "peach2017",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "peach2017",
+      "target": "financial-self-efficacy",
+      "weight": 1
+    },
+    {
+      "source": "peach2017",
+      "target": "human-capital-theory",
+      "weight": 1
+    },
+    {
+      "source": "peach2017",
+      "target": "aera2014",
+      "weight": 1
+    },
+    {
+      "source": "peach2017",
+      "target": "moorend",
+      "weight": 1
+    },
+    {
+      "source": "peach2017",
+      "target": "price2017",
+      "weight": 1
+    },
+    {
+      "source": "rossman2022",
+      "target": "emergency-aid-and-holistic-support",
+      "weight": 1
+    },
+    {
+      "source": "rossman2022",
+      "target": "francis-nixnd",
       "weight": 1
     },
     {
@@ -1118,11 +2123,6 @@
     {
       "source": "taylor2025",
       "target": "durband2012",
-      "weight": 1
-    },
-    {
-      "source": "taylor2025",
-      "target": "henager2025",
       "weight": 1
     },
     {
@@ -1137,27 +2137,7 @@
     },
     {
       "source": "taylor2025",
-      "target": "schuman-nd",
-      "weight": 1
-    },
-    {
-      "source": "taylor2025",
       "target": "peer-mentoring",
-      "weight": 1
-    },
-    {
-      "source": "taylor2025",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "taylor2025",
-      "target": "zimmerman2025",
-      "weight": 1
-    },
-    {
-      "source": "taylor2025",
-      "target": "curs-harpernd",
       "weight": 1
     },
     {
@@ -1171,534 +2151,49 @@
       "weight": 1
     },
     {
-      "source": "taylor2025",
-      "target": "theoretical-framework-map",
-      "weight": 4
-    },
-    {
-      "source": "price2017",
-      "target": "financial-literacy-measurement",
-      "weight": 1
-    },
-    {
-      "source": "price2017",
+      "source": "flec2019",
       "target": "financial-literacy",
       "weight": 1
     },
     {
-      "source": "price2017",
-      "target": "lit-review-matrix",
-      "weight": 1
-    },
-    {
-      "source": "price2017",
-      "target": "aera2014",
-      "weight": 1
-    },
-    {
-      "source": "price2017",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "price2017",
-      "target": "peach2017",
-      "weight": 1
-    },
-    {
-      "source": "price2017",
-      "target": "theoretical-framework-map",
-      "weight": 1
-    },
-    {
-      "source": "rossman2022",
-      "target": "emergency-aid-and-holistic-support",
-      "weight": 1
-    },
-    {
-      "source": "rossman2022",
-      "target": "lit-review-matrix",
-      "weight": 1
-    },
-    {
-      "source": "rossman2022",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "rossman2022",
-      "target": "francis-nixnd",
-      "weight": 1
-    },
-    {
-      "source": "rossman2022",
-      "target": "goldrick-rab2023",
-      "weight": 1
-    },
-    {
-      "source": "rossman2022",
-      "target": "hillnd",
-      "weight": 1
-    },
-    {
-      "source": "rossman2022",
-      "target": "basic-needs-insecurity",
-      "weight": 1
-    },
-    {
-      "source": "rossman2022",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "rossman2022",
-      "target": "zimmerman2025",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "financial-education-under-scarcity",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "financial-self-efficacy",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "lit-review-matrix",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "coggin2025",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "flec2019",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "salas-velasco2022",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "schuman-nd",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "mullainathan2014",
-      "weight": 1
-    },
-    {
-      "source": "harper2023",
-      "target": "theoretical-framework-map",
-      "weight": 3
-    },
-    {
-      "source": "miles2014",
-      "target": "lit-review-matrix",
-      "weight": 1
-    },
-    {
-      "source": "miles2014",
-      "target": "creswell2018",
-      "weight": 1
-    },
-    {
-      "source": "miles2014",
-      "target": "schuman-nd",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab2023",
-      "target": "basic-needs-insecurity",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab2023",
-      "target": "emergency-aid-and-holistic-support",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab2023",
-      "target": "financial-education-under-scarcity",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab2023",
-      "target": "lit-review-matrix",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab2023",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab2023",
-      "target": "francis-nixnd",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab2023",
-      "target": "goldrick-rab-cadynd",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab2023",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab2023",
-      "target": "hillnd",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab2023",
-      "target": "zimmerman2025",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab2023",
-      "target": "theoretical-framework-map",
-      "weight": 3
-    },
-    {
-      "source": "aera2014",
-      "target": "financial-literacy-measurement",
-      "weight": 1
-    },
-    {
-      "source": "aera2014",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "aera2014",
-      "target": "lit-review-matrix",
-      "weight": 1
-    },
-    {
-      "source": "aera2014",
-      "target": "peach2017",
-      "weight": 1
-    },
-    {
-      "source": "aera2014",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "aera2014",
-      "target": "coggin2025",
-      "weight": 1
-    },
-    {
-      "source": "aera2014",
-      "target": "theoretical-framework-map",
-      "weight": 1
-    },
-    {
-      "source": "peer-mentoring-effectiveness",
-      "target": "schuman-nd",
-      "weight": 1
-    },
-    {
-      "source": "peer-mentoring-effectiveness",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "peer-mentoring-effectiveness",
+      "source": "flec2019",
       "target": "durband2012",
       "weight": 1
     },
     {
-      "source": "peer-mentoring-effectiveness",
-      "target": "peer-mentoring",
-      "weight": 1
-    },
-    {
-      "source": "peer-mentoring-effectiveness",
-      "target": "financial-self-efficacy",
-      "weight": 1
-    },
-    {
-      "source": "peer-mentoring-effectiveness",
+      "source": "flec2019",
       "target": "human-capital-theory",
       "weight": 1
     },
     {
-      "source": "peer-mentoring-effectiveness",
-      "target": "theoretical-framework-map",
+      "source": "flec2019",
+      "target": "harper2023",
       "weight": 1
     },
     {
-      "source": "peer-mentoring-effectiveness",
-      "target": "lit-review-matrix",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "financial-education-under-scarcity",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "financial-literacy-measurement",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "moorend",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "hillnd",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "coggin2025",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "salas-velasco2022",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "peach2017",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "durband2012",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "peer-mentoring",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "flec2019",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "goldrick-rab-cadynd",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "theoretical-framework-map",
-      "weight": 4
-    },
-    {
-      "source": "schuman-nd",
-      "target": "financial-self-efficacy",
-      "weight": 1
-    },
-    {
-      "source": "schuman-nd",
-      "target": "lit-review-matrix",
-      "weight": 1
-    },
-    {
-      "source": "schuman-nd",
-      "target": "durband2012",
-      "weight": 1
-    },
-    {
-      "source": "schuman-nd",
-      "target": "flec2019",
-      "weight": 1
-    },
-    {
-      "source": "schuman-nd",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "schuman-nd",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "schuman-nd",
-      "target": "peer-mentoring",
-      "weight": 1
-    },
-    {
-      "source": "schuman-nd",
-      "target": "adams2014",
-      "weight": 1
-    },
-    {
-      "source": "schuman-nd",
-      "target": "theoretical-framework-map",
-      "weight": 3
-    },
-    {
-      "source": "crisp2013",
+      "source": "goldrick-rab-cadynd",
       "target": "emergency-aid-and-holistic-support",
       "weight": 1
     },
     {
-      "source": "creswell2018",
-      "target": "lit-review-matrix",
+      "source": "goldrick-rab-cadynd",
+      "target": "creswell2018",
       "weight": 1
     },
     {
-      "source": "creswell2018",
-      "target": "goldrick-rab-cadynd",
+      "source": "goldrick-rab-cadynd",
+      "target": "human-capital-theory",
       "weight": 1
     },
     {
-      "source": "2026-03-21",
-      "target": "adams2014",
+      "source": "goldrick-rab-cadynd",
+      "target": "francis-nixnd",
       "weight": 1
     },
     {
-      "source": "peach2017",
-      "target": "financial-literacy-measurement",
+      "source": "goldrick-rab-cadynd",
+      "target": "mullainathan2014",
       "weight": 1
-    },
-    {
-      "source": "peach2017",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "peach2017",
-      "target": "financial-self-efficacy",
-      "weight": 1
-    },
-    {
-      "source": "peach2017",
-      "target": "lit-review-matrix",
-      "weight": 1
-    },
-    {
-      "source": "peach2017",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "peach2017",
-      "target": "moorend",
-      "weight": 1
-    },
-    {
-      "source": "peach2017",
-      "target": "salas-velasco2022",
-      "weight": 1
-    },
-    {
-      "source": "peach2017",
-      "target": "theoretical-framework-map",
-      "weight": 1
-    },
-    {
-      "source": "mullainathan2014",
-      "target": "basic-needs-insecurity",
-      "weight": 1
-    },
-    {
-      "source": "mullainathan2014",
-      "target": "financial-education-under-scarcity",
-      "weight": 1
-    },
-    {
-      "source": "mullainathan2014",
-      "target": "lit-review-matrix",
-      "weight": 1
-    },
-    {
-      "source": "mullainathan2014",
-      "target": "adams2014",
-      "weight": 1
-    },
-    {
-      "source": "mullainathan2014",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "mullainathan2014",
-      "target": "goldrick-rab-cadynd",
-      "weight": 1
-    },
-    {
-      "source": "mullainathan2014",
-      "target": "moorend",
-      "weight": 1
-    },
-    {
-      "source": "mullainathan2014",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "mullainathan2014",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "mullainathan2014",
-      "target": "zimmerman2025",
-      "weight": 1
-    },
-    {
-      "source": "mullainathan2014",
-      "target": "theoretical-framework-map",
-      "weight": 3
     },
     {
       "source": "financial-self-efficacy",
@@ -1707,22 +2202,12 @@
     },
     {
       "source": "financial-self-efficacy",
-      "target": "financial-education-under-scarcity",
-      "weight": 1
-    },
-    {
-      "source": "financial-self-efficacy",
-      "target": "financial-literacy-measurement",
-      "weight": 1
-    },
-    {
-      "source": "financial-self-efficacy",
       "target": "financial-literacy",
       "weight": 1
     },
     {
       "source": "financial-self-efficacy",
-      "target": "salas-velasco2022",
+      "target": "harper2023",
       "weight": 1
     },
     {
@@ -1737,127 +2222,77 @@
     },
     {
       "source": "financial-self-efficacy",
-      "target": "scarcity-theory",
+      "target": "peer-mentoring-effectiveness",
       "weight": 1
     },
     {
-      "source": "financial-self-efficacy",
-      "target": "coggin2025",
-      "weight": 1
-    },
-    {
-      "source": "financial-self-efficacy",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "financial-self-efficacy",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "financial-self-efficacy",
-      "target": "theoretical-framework-map",
-      "weight": 4
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "annotation-color-system",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "emergency-aid-and-holistic-support",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "financial-education-under-scarcity",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "financial-literacy-measurement",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "coggin2025",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "salas-velasco2022",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "hillnd",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
+      "source": "emergency-aid-and-holistic-support",
       "target": "francis-nixnd",
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
-      "target": "zimmerman2025",
+      "source": "financial-education-strategy-reflections",
+      "target": "financial-literacy",
+      "weight": 2
+    },
+    {
+      "source": "harper2023",
+      "target": "financial-literacy",
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
-      "target": "goldrick-rab-cadynd",
+      "source": "harper2023",
+      "target": "mullainathan2014",
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
+      "source": "mullainathan2014",
       "target": "moorend",
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
-      "target": "adams2014",
+      "source": "mullainathan2014",
+      "target": "financial-literacy",
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
-      "target": "henager2025",
+      "source": "miles2014",
+      "target": "creswell2018",
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
-      "target": "flec2019",
+      "source": "human-capital-theory",
+      "target": "financial-literacy",
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
+      "source": "human-capital-theory",
+      "target": "moorend",
+      "weight": 1
+    },
+    {
+      "source": "human-capital-theory",
       "target": "durband2012",
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
-      "target": "theoretical-framework-map",
+      "source": "human-capital-theory",
+      "target": "peer-mentoring",
       "weight": 1
     },
     {
-      "source": "durband2012",
-      "target": "financial-literacy-measurement",
+      "source": "human-capital-theory",
+      "target": "peer-mentoring-effectiveness",
       "weight": 1
     },
     {
-      "source": "durband2012",
-      "target": "coggin2025",
+      "source": "price2017",
+      "target": "financial-literacy",
+      "weight": 1
+    },
+    {
+      "source": "price2017",
+      "target": "aera2014",
       "weight": 1
     },
     {
@@ -1872,467 +2307,32 @@
     },
     {
       "source": "durband2012",
-      "target": "henager2025",
+      "target": "peer-mentoring-effectiveness",
       "weight": 1
     },
     {
-      "source": "durband2012",
-      "target": "flec2019",
-      "weight": 1
-    },
-    {
-      "source": "durband2012",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "durband2012",
-      "target": "theoretical-framework-map",
-      "weight": 1
-    },
-    {
-      "source": "hillnd",
-      "target": "emergency-aid-and-holistic-support",
-      "weight": 1
-    },
-    {
-      "source": "hillnd",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "hillnd",
-      "target": "francis-nixnd",
-      "weight": 1
-    },
-    {
-      "source": "hillnd",
-      "target": "goldrick-rab-cadynd",
-      "weight": 1
-    },
-    {
-      "source": "hillnd",
-      "target": "basic-needs-insecurity",
-      "weight": 1
-    },
-    {
-      "source": "hillnd",
-      "target": "zimmerman2025",
-      "weight": 1
-    },
-    {
-      "source": "hillnd",
-      "target": "theoretical-framework-map",
-      "weight": 2
-    },
-    {
-      "source": "moorend",
-      "target": "basic-needs-insecurity",
-      "weight": 1
-    },
-    {
-      "source": "moorend",
-      "target": "financial-literacy-measurement",
-      "weight": 1
-    },
-    {
-      "source": "moorend",
+      "source": "260313-1on1-jeanette",
       "target": "financial-literacy",
       "weight": 1
     },
     {
-      "source": "moorend",
-      "target": "adams2014",
-      "weight": 1
-    },
-    {
-      "source": "moorend",
-      "target": "salas-velasco2022",
-      "weight": 1
-    },
-    {
-      "source": "moorend",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "moorend",
-      "target": "theoretical-framework-map",
-      "weight": 1
-    },
-    {
-      "source": "theoretical-framework-map",
-      "target": "annotation-color-system",
-      "weight": 1
-    },
-    {
-      "source": "theoretical-framework-map",
-      "target": "emergency-aid-and-holistic-support",
-      "weight": 1
-    },
-    {
-      "source": "theoretical-framework-map",
-      "target": "financial-education-under-scarcity",
-      "weight": 1
-    },
-    {
-      "source": "theoretical-framework-map",
-      "target": "financial-literacy-measurement",
-      "weight": 1
-    },
-    {
-      "source": "theoretical-framework-map",
+      "source": "aera2014",
       "target": "financial-literacy",
-      "weight": 2
+      "weight": 1
     },
     {
-      "source": "theoretical-framework-map",
-      "target": "scarcity-theory",
-      "weight": 4
+      "source": "financial-literacy",
+      "target": "moorend",
+      "weight": 1
     },
     {
-      "source": "theoretical-framework-map",
-      "target": "basic-needs-insecurity",
-      "weight": 4
-    },
-    {
-      "source": "theoretical-framework-map",
-      "target": "salas-velasco2022",
-      "weight": 4
-    },
-    {
-      "source": "theoretical-framework-map",
-      "target": "goldrick-rab-cadynd",
-      "weight": 3
-    },
-    {
-      "source": "theoretical-framework-map",
-      "target": "curs-harpernd",
-      "weight": 2
-    },
-    {
-      "source": "theoretical-framework-map",
+      "source": "financial-literacy",
       "target": "peer-mentoring",
-      "weight": 2
-    },
-    {
-      "source": "theoretical-framework-map",
-      "target": "gatti2024",
       "weight": 1
     },
     {
-      "source": "theoretical-framework-map",
-      "target": "coggin2025",
-      "weight": 2
-    },
-    {
-      "source": "theoretical-framework-map",
-      "target": "flec2019",
-      "weight": 1
-    },
-    {
-      "source": "theoretical-framework-map",
-      "target": "zimmerman2025",
-      "weight": 1
-    },
-    {
-      "source": "theoretical-framework-map",
-      "target": "francis-nixnd",
-      "weight": 1
-    },
-    {
-      "source": "zimmerman2025",
-      "target": "emergency-aid-and-holistic-support",
-      "weight": 1
-    },
-    {
-      "source": "zimmerman2025",
-      "target": "financial-education-under-scarcity",
-      "weight": 1
-    },
-    {
-      "source": "zimmerman2025",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "zimmerman2025",
-      "target": "francis-nixnd",
-      "weight": 1
-    },
-    {
-      "source": "zimmerman2025",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "zimmerman2025",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "zimmerman2025",
-      "target": "basic-needs-insecurity",
-      "weight": 1
-    },
-    {
-      "source": "flec2019",
-      "target": "financial-literacy-measurement",
-      "weight": 1
-    },
-    {
-      "source": "flec2019",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "flec2019",
-      "target": "coggin2025",
-      "weight": 1
-    },
-    {
-      "source": "flec2019",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "flec2019",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "financial-education-strategy-reflections",
-      "target": "financial-literacy",
-      "weight": 2
-    },
-    {
-      "source": "financial-education-strategy-reflections",
-      "target": "basic-needs-insecurity",
-      "weight": 1
-    },
-    {
-      "source": "financial-education-strategy-reflections",
-      "target": "financial-education-under-scarcity",
-      "weight": 1
-    },
-    {
-      "source": "financial-education-strategy-reflections",
-      "target": "financial-literacy-measurement",
-      "weight": 1
-    },
-    {
-      "source": "260313-1on1-jeanette",
-      "target": "basic-needs-insecurity",
-      "weight": 1
-    },
-    {
-      "source": "260313-1on1-jeanette",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "260313-1on1-jeanette",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "financial-literacy-measurement",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "financial-literacy-measurement",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "peer-mentoring",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "peer-mentoring",
-      "target": "adams2014",
-      "weight": 1
-    },
-    {
-      "source": "peer-mentoring",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "francis-nixnd",
-      "target": "basic-needs-insecurity",
-      "weight": 1
-    },
-    {
-      "source": "francis-nixnd",
-      "target": "emergency-aid-and-holistic-support",
-      "weight": 1
-    },
-    {
-      "source": "francis-nixnd",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "francis-nixnd",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "francis-nixnd",
-      "target": "goldrick-rab-cadynd",
-      "weight": 1
-    },
-    {
-      "source": "financial-education-under-scarcity",
-      "target": "coggin2025",
-      "weight": 1
-    },
-    {
-      "source": "financial-education-under-scarcity",
-      "target": "salas-velasco2022",
-      "weight": 1
-    },
-    {
-      "source": "financial-education-under-scarcity",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "financial-education-under-scarcity",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "financial-education-under-scarcity",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "financial-education-under-scarcity",
-      "target": "basic-needs-insecurity",
-      "weight": 1
-    },
-    {
-      "source": "emergency-aid-and-holistic-support",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "emergency-aid-and-holistic-support",
-      "target": "goldrick-rab-cadynd",
-      "weight": 1
-    },
-    {
-      "source": "emergency-aid-and-holistic-support",
-      "target": "adams2014",
-      "weight": 1
-    },
-    {
-      "source": "emergency-aid-and-holistic-support",
-      "target": "basic-needs-insecurity",
-      "weight": 1
-    },
-    {
-      "source": "emergency-aid-and-holistic-support",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "basic-needs-insecurity",
-      "target": "goldrick-rab-cadynd",
-      "weight": 1
-    },
-    {
-      "source": "basic-needs-insecurity",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "basic-needs-insecurity",
-      "target": "adams2014",
-      "weight": 1
-    },
-    {
-      "source": "basic-needs-insecurity",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "basic-needs-insecurity",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "curs-harpernd",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "scarcity-theory",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "scarcity-theory",
-      "target": "goldrick-rab-cadynd",
-      "weight": 1
-    },
-    {
-      "source": "scarcity-theory",
-      "target": "adams2014",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab-cadynd",
-      "target": "adams2014",
-      "weight": 1
-    },
-    {
-      "source": "salas-velasco2022",
-      "target": "financial-literacy",
-      "weight": 1
-    },
-    {
-      "source": "salas-velasco2022",
-      "target": "coggin2025",
-      "weight": 1
-    },
-    {
-      "source": "salas-velasco2022",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "salas-velasco2022",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "financial-literacy",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "financial-literacy",
-      "target": "coggin2025",
-      "weight": 1
-    },
-    {
-      "source": "financial-literacy",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "henager2025",
-      "target": "coggin2025",
-      "weight": 1
-    },
-    {
-      "source": "coggin2025",
-      "target": "gatti2024",
+      "source": "peer-mentoring-effectiveness",
+      "target": "peer-mentoring",
       "weight": 1
     }
   ],

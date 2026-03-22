@@ -350,18 +350,6 @@
       }
     },
     {
-      "id": "henager2025",
-      "label": "Financial Wellness, Curricular, and Co-Curricular Approaches",
-      "type": "literature",
-      "cluster": 2,
-      "centrality": 0.000348,
-      "degree": 13,
-      "position": {
-        "x": 774.4,
-        "y": 391.9
-      }
-    },
-    {
       "id": "human-capital-theory",
       "label": "Human Capital Theory",
       "type": "general",
@@ -538,6 +526,18 @@
       }
     },
     {
+      "id": "self-authorship",
+      "label": "Self-Authorship",
+      "type": "general",
+      "cluster": 3,
+      "centrality": 0.030108,
+      "degree": 13,
+      "position": {
+        "x": 491.2,
+        "y": 388.1
+      }
+    },
+    {
       "id": "student-meaning-making-about-difficulty",
       "label": "student-meaning-making-about-difficulty",
       "type": "inquiry",
@@ -701,6 +701,11 @@
     },
     {
       "source": "advising-as-education",
+      "target": "self-authorship",
+      "weight": 1
+    },
+    {
+      "source": "advising-as-education",
       "target": "deficit-models",
       "weight": 1
     },
@@ -728,6 +733,11 @@
       "source": "b3-cds-cma-study",
       "target": "deficit-models",
       "weight": 1
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "self-authorship",
+      "weight": 2
     },
     {
       "source": "b3-cds-cma-study",
@@ -1096,6 +1106,11 @@
     },
     {
       "source": "deficit-labeling-and-institutional-framing",
+      "target": "self-authorship",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
       "target": "vault-graph-analysis",
       "weight": 1
     },
@@ -1256,11 +1271,6 @@
     },
     {
       "source": "financial-education-under-scarcity",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "financial-education-under-scarcity",
       "target": "mullainathan2014",
       "weight": 1
     },
@@ -1386,11 +1396,6 @@
     },
     {
       "source": "financial-literacy",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "financial-literacy",
       "target": "mullainathan2014",
       "weight": 1
     },
@@ -1446,12 +1451,12 @@
     },
     {
       "source": "financial-self-efficacy",
-      "target": "henager2025",
+      "target": "peer-mentoring-effectiveness",
       "weight": 1
     },
     {
       "source": "financial-self-efficacy",
-      "target": "peer-mentoring-effectiveness",
+      "target": "self-authorship",
       "weight": 1
     },
     {
@@ -1507,6 +1512,11 @@
     {
       "source": "human-capital-theory",
       "target": "peer-mentoring-effectiveness",
+      "weight": 1
+    },
+    {
+      "source": "human-capital-theory",
+      "target": "self-authorship",
       "weight": 1
     },
     {
@@ -1581,11 +1591,6 @@
     },
     {
       "source": "lit-review-matrix",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
       "target": "durband2012",
       "weight": 1
     },
@@ -1651,11 +1656,6 @@
     },
     {
       "source": "coggin2025",
-      "target": "henager2025",
-      "weight": 1
-    },
-    {
-      "source": "coggin2025",
       "target": "theoretical-framework-map",
       "weight": 2
     },
@@ -1697,11 +1697,6 @@
     {
       "source": "durband2012",
       "target": "peer-mentoring",
-      "weight": 1
-    },
-    {
-      "source": "durband2012",
-      "target": "henager2025",
       "weight": 1
     },
     {
@@ -1788,26 +1783,6 @@
       "source": "goldrick-rab2023",
       "target": "theoretical-framework-map",
       "weight": 3
-    },
-    {
-      "source": "henager2025",
-      "target": "peer-mentoring",
-      "weight": 1
-    },
-    {
-      "source": "henager2025",
-      "target": "schuman-nd",
-      "weight": 1
-    },
-    {
-      "source": "henager2025",
-      "target": "taylor2025",
-      "weight": 1
-    },
-    {
-      "source": "henager2025",
-      "target": "peer-mentoring-effectiveness",
-      "weight": 1
     },
     {
       "source": "moorend",
@@ -1926,6 +1901,11 @@
     },
     {
       "source": "post-failure-academic-recovery",
+      "target": "self-authorship",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
       "target": "vault-graph-analysis",
       "weight": 3
     },
@@ -1953,6 +1933,16 @@
       "source": "scarcity-theory",
       "target": "theoretical-framework-map",
       "weight": 4
+    },
+    {
+      "source": "self-authorship",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "self-authorship",
+      "target": "theoretical-framework-map",
+      "weight": 1
     },
     {
       "source": "systems-thinking-and-epistemic-justice",

@@ -11,8 +11,8 @@
       "centrality": 0.000544,
       "degree": 2,
       "position": {
-        "x": 940.0,
-        "y": 311.0
+        "x": 121.2,
+        "y": 324.1
       },
       "connections": [
         "post-failure-academic-recovery",
@@ -31,8 +31,8 @@
       "centrality": 0.00045,
       "degree": 5,
       "position": {
-        "x": 310.4,
-        "y": 353.7
+        "x": 413.9,
+        "y": 223.1
       },
       "connections": [
         "b3-cds-cma-study",
@@ -54,8 +54,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 880.7,
-        "y": 180.3
+        "x": 60.0,
+        "y": 463.7
       },
       "connections": [
         "student-meaning-making-about-difficulty"
@@ -71,8 +71,8 @@
       "centrality": 0.000544,
       "degree": 2,
       "position": {
-        "x": 421.1,
-        "y": 112.0
+        "x": 724.8,
+        "y": 609.5
       },
       "connections": [
         "post-failure-academic-recovery",
@@ -91,8 +91,8 @@
       "centrality": 0.001075,
       "degree": 5,
       "position": {
-        "x": 60.0,
-        "y": 460.1
+        "x": 758.9,
+        "y": 60.0
       },
       "connections": [
         "academic-resilience",
@@ -115,8 +115,8 @@
       "centrality": 0.002898,
       "degree": 9,
       "position": {
-        "x": 297.9,
-        "y": 454.5
+        "x": 585.1,
+        "y": 202.6
       },
       "connections": [
         "discourse-analysis",
@@ -142,8 +142,8 @@
       "centrality": 0.00062,
       "degree": 5,
       "position": {
-        "x": 375.2,
-        "y": 740.0
+        "x": 940.0,
+        "y": 268.3
       },
       "connections": [
         "academic-resilience",
@@ -167,8 +167,8 @@
       "centrality": 0.005362,
       "degree": 11,
       "position": {
-        "x": 369.7,
-        "y": 491.9
+        "x": 614.9,
+        "y": 266.9
       },
       "connections": [
         "conceptual-metaphor-theory",
@@ -196,8 +196,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 911.4,
-        "y": 451.7
+        "x": 404.9,
+        "y": 740.0
       },
       "connections": [
         "student-meaning-making-about-difficulty"
@@ -213,8 +213,8 @@
       "centrality": 0.005663,
       "degree": 6,
       "position": {
-        "x": 160.9,
-        "y": 527.5
+        "x": 493.3,
+        "y": 64.4
       },
       "connections": [
         "creswell2018",
@@ -238,8 +238,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 589.0,
-        "y": 60.0
+        "x": 107.4,
+        "y": 598.7
       },
       "connections": [
         "student-meaning-making-about-difficulty"
@@ -255,8 +255,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 791.8,
-        "y": 562.8
+        "x": 230.1,
+        "y": 700.4
       },
       "connections": [
         "student-meaning-making-about-difficulty"
@@ -272,8 +272,8 @@
       "centrality": 0.030108,
       "degree": 13,
       "position": {
-        "x": 491.0,
-        "y": 584.6
+        "x": 743.5,
+        "y": 362.3
       },
       "connections": [
         "b3-cds-cma-study",
@@ -303,8 +303,8 @@
       "centrality": 0.053107,
       "degree": 16,
       "position": {
-        "x": 607.2,
-        "y": 337.8
+        "x": 425.5,
+        "y": 466.0
       },
       "connections": [
         "discourse-analysis",
@@ -332,8 +332,8 @@
       "centrality": 0.000544,
       "degree": 2,
       "position": {
-        "x": 756.4,
-        "y": 86.6
+        "x": 587.0,
+        "y": 712.9
       },
       "connections": [
         "post-failure-academic-recovery",
@@ -352,12 +352,7 @@
       "weight": 1
     },
     {
-      "source": "ajjawi2020",
-      "target": "student-meaning-making-about-difficulty",
-      "weight": 1
-    },
-    {
-      "source": "bledsoe2024",
+      "source": "wilson2019",
       "target": "student-meaning-making-about-difficulty",
       "weight": 1
     },
@@ -392,43 +387,23 @@
       "weight": 2
     },
     {
-      "source": "de-7301-overview",
-      "target": "self-authorship",
-      "weight": 1
-    },
-    {
-      "source": "llm-qualitative-coding-reliability",
-      "target": "conceptual-metaphor-theory",
-      "weight": 1
-    },
-    {
-      "source": "llm-qualitative-coding-reliability",
-      "target": "b3-cds-cma-findings",
-      "weight": 1
-    },
-    {
-      "source": "baxter magolda2009",
-      "target": "student-meaning-making-about-difficulty",
-      "weight": 1
-    },
-    {
-      "source": "lundell1999",
-      "target": "student-meaning-making-about-difficulty",
-      "weight": 1
-    },
-    {
-      "source": "self-authorship",
-      "target": "conceptual-metaphor-theory",
-      "weight": 1
-    },
-    {
-      "source": "self-authorship",
-      "target": "student-meaning-making-about-difficulty",
+      "source": "student-meaning-making-about-difficulty",
+      "target": "baxter magolda2009",
       "weight": 1
     },
     {
       "source": "student-meaning-making-about-difficulty",
-      "target": "wilson2019",
+      "target": "lundell1999",
+      "weight": 1
+    },
+    {
+      "source": "student-meaning-making-about-difficulty",
+      "target": "ajjawi2020",
+      "weight": 1
+    },
+    {
+      "source": "student-meaning-making-about-difficulty",
+      "target": "bledsoe2024",
       "weight": 1
     },
     {
@@ -443,6 +418,31 @@
     },
     {
       "source": "student-meaning-making-about-difficulty",
+      "target": "self-authorship",
+      "weight": 1
+    },
+    {
+      "source": "student-meaning-making-about-difficulty",
+      "target": "b3-cds-cma-findings",
+      "weight": 1
+    },
+    {
+      "source": "self-authorship",
+      "target": "conceptual-metaphor-theory",
+      "weight": 1
+    },
+    {
+      "source": "self-authorship",
+      "target": "de-7301-overview",
+      "weight": 1
+    },
+    {
+      "source": "llm-qualitative-coding-reliability",
+      "target": "conceptual-metaphor-theory",
+      "weight": 1
+    },
+    {
+      "source": "llm-qualitative-coding-reliability",
       "target": "b3-cds-cma-findings",
       "weight": 1
     },

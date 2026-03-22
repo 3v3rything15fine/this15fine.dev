@@ -1,0 +1,379 @@
+{
+  "clusterId": 4,
+  "label": "Advising as Education & Critical Pedagogy",
+  "color": "#B48EAD",
+  "nodes": [
+    {
+      "id": "adelman2006",
+      "label": "The toolbox revisited: Paths to degree completion from high school through college",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 153.1,
+        "y": 576.8
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "attewell2016",
+      "label": "How many credits should an undergraduate take?",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 513.6,
+        "y": 740.0
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "blekic2020",
+      "label": "Continuing and transfer students: Exploring retention and second-year success",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 940.0,
+        "y": 276.8
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "boumi2021",
+      "label": "Quantifying the impact of student enrollment patterns using a Hidden Markov Model",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 796.5,
+        "y": 158.8
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "chan2022",
+      "label": "Do credit momentum policies through the 15 to Finish improve academic progression and completion of low-income, first-generation students? Evidence from a college promise program",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 60.0,
+        "y": 431.2
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "crosta2014",
+      "label": "Intensity and attachment: How the chaotic enrollment patterns of community college students relate to educational outcomes",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 417.6,
+        "y": 91.5
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "engel2025",
+      "label": "Grasp all, lose all: The impact of multiple enrollments and above-full-time study loads on course completion",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 698.2,
+        "y": 664.4
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "enrollment-patterns-as-adaptation",
+      "label": "enrollment-patterns-as-adaptation",
+      "type": "inquiry",
+      "cluster": 4,
+      "centrality": 0.125302,
+      "degree": 24,
+      "position": {
+        "x": 513.8,
+        "y": 394.4
+      },
+      "connections": [
+        "attewell2016",
+        "chan2022",
+        "knox2022",
+        "engel2025",
+        "crosta2014",
+        "boumi2021",
+        "tompkins2015",
+        "adelman2006",
+        "heil2014",
+        "blekic2020"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Student Success & Resilience",
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "heil2014",
+      "label": "College selectivity and degree completion",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 210.8,
+        "y": 132.5
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "jenkins2022",
+      "label": "Stop stifling entering students' talent and drive and help them build momentum on a path to college and career success",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 937.7,
+        "y": 437.5
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "knox2022",
+      "label": "The influence of academic momentum and associate degree credit requirements on community college student degree completion",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 626.7,
+        "y": 60.0
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "monaghan2015",
+      "label": "The community college route to the bachelor's degree",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 888.9,
+        "y": 596.5
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "tompkins2015",
+      "label": "A comprehensive review and synthesis of the literature on late registration",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 123.4,
+        "y": 279.4
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "workflow-improvements",
+      "label": "Knowledge Management Workflow Improvements",
+      "type": "general",
+      "cluster": 4,
+      "centrality": 0.002274,
+      "degree": 2,
+      "position": {
+        "x": 308.6,
+        "y": 683.4
+      },
+      "connections": [
+        "post-failure-academic-recovery",
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "attewell2016",
+      "target": "enrollment-patterns-as-adaptation",
+      "weight": 1
+    },
+    {
+      "source": "jenkins2022",
+      "target": "enrollment-patterns-as-adaptation",
+      "weight": 1
+    },
+    {
+      "source": "heil2014",
+      "target": "enrollment-patterns-as-adaptation",
+      "weight": 1
+    },
+    {
+      "source": "adelman2006",
+      "target": "enrollment-patterns-as-adaptation",
+      "weight": 1
+    },
+    {
+      "source": "monaghan2015",
+      "target": "enrollment-patterns-as-adaptation",
+      "weight": 1
+    },
+    {
+      "source": "workflow-improvements",
+      "target": "enrollment-patterns-as-adaptation",
+      "weight": 1
+    },
+    {
+      "source": "blekic2020",
+      "target": "enrollment-patterns-as-adaptation",
+      "weight": 1
+    },
+    {
+      "source": "crosta2014",
+      "target": "enrollment-patterns-as-adaptation",
+      "weight": 1
+    },
+    {
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "chan2022",
+      "weight": 1
+    },
+    {
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "knox2022",
+      "weight": 1
+    },
+    {
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "engel2025",
+      "weight": 1
+    },
+    {
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "boumi2021",
+      "weight": 1
+    },
+    {
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "tompkins2015",
+      "weight": 1
+    }
+  ],
+  "stats": {
+    "nodeCount": 14,
+    "edgeCount": 13,
+    "density": 0.1429,
+    "bridgeNodes": [
+      "enrollment-patterns-as-adaptation",
+      "workflow-improvements"
+    ],
+    "gaps": [
+      {
+        "communityA": 3,
+        "communityB": 4,
+        "labelA": "Systems Thinking & Epistemic Justice",
+        "labelB": "Advising as Education & Critical Pedagogy",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
+        "communityA": 4,
+        "communityB": 5,
+        "labelA": "Advising as Education & Critical Pedagogy",
+        "labelB": "Coursework",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
+        "communityA": 2,
+        "communityB": 4,
+        "labelA": "Post-Failure Recovery & Deficit Framing",
+        "labelB": "Advising as Education & Critical Pedagogy",
+        "crossEdges": 1,
+        "density": 0.001742
+      },
+      {
+        "communityA": 0,
+        "communityB": 4,
+        "labelA": "Student Success & Resilience",
+        "labelB": "Advising as Education & Critical Pedagogy",
+        "crossEdges": 2,
+        "density": 0.001931
+      },
+      {
+        "communityA": 1,
+        "communityB": 4,
+        "labelA": "Financial Literacy & Scarcity",
+        "labelB": "Advising as Education & Critical Pedagogy",
+        "crossEdges": 9,
+        "density": 0.01312
+      }
+    ]
+  }
+}

@@ -1,0 +1,520 @@
+{
+  "clusterId": 3,
+  "label": "Systems Thinking & Epistemic Justice",
+  "color": "#EBCB8B",
+  "nodes": [
+    {
+      "id": "ajjawi2020",
+      "label": "Persisting students' explanations of and emotional responses to academic failure",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.000544,
+      "degree": 2,
+      "position": {
+        "x": 940.0,
+        "y": 311.0
+      },
+      "connections": [
+        "post-failure-academic-recovery",
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "b3-cds-cma-findings",
+      "label": "B3 CDS/CMA Study -- Detailed Findings",
+      "type": "general",
+      "cluster": 3,
+      "centrality": 0.00045,
+      "degree": 5,
+      "position": {
+        "x": 310.4,
+        "y": 353.7
+      },
+      "connections": [
+        "b3-cds-cma-study",
+        "conceptual-metaphor-theory",
+        "discourse-analysis",
+        "llm-qualitative-coding-reliability",
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "baxter magolda2009",
+      "label": "The activity of meaning making: A holistic perspective on college student development",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 880.7,
+        "y": 180.3
+      },
+      "connections": [
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "bledsoe2024",
+      "label": "From setback to success: A restorative momentum model of success for students returning from academic dismissal",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.000544,
+      "degree": 2,
+      "position": {
+        "x": 421.1,
+        "y": 112.0
+      },
+      "connections": [
+        "post-failure-academic-recovery",
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "ci-7151-overview",
+      "label": "CI 7151 - Research Apprenticeship",
+      "type": "course",
+      "cluster": 3,
+      "centrality": 0.001075,
+      "degree": 5,
+      "position": {
+        "x": 60.0,
+        "y": 460.1
+      },
+      "connections": [
+        "academic-resilience",
+        "bobcats-bounce-back-notes",
+        "conceptual-metaphor-theory",
+        "discourse-analysis",
+        "home"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Student Success & Resilience",
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "conceptual-metaphor-theory",
+      "label": "Conceptual Metaphor Theory",
+      "type": "general",
+      "cluster": 3,
+      "centrality": 0.002898,
+      "degree": 9,
+      "position": {
+        "x": 297.9,
+        "y": 454.5
+      },
+      "connections": [
+        "discourse-analysis",
+        "b3-cds-cma-findings",
+        "b3-cds-cma-study",
+        "academic-resilience",
+        "deficit-models",
+        "self-authorship",
+        "ci-7151-overview",
+        "llm-qualitative-coding-reliability",
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "de-7301-overview",
+      "label": "DE 7301 - Understanding Learners in Developmental Education Contexts",
+      "type": "course",
+      "cluster": 3,
+      "centrality": 0.00062,
+      "degree": 5,
+      "position": {
+        "x": 375.2,
+        "y": 740.0
+      },
+      "connections": [
+        "academic-resilience",
+        "self-authorship",
+        "discourse-analysis",
+        "home",
+        "theoretical-framework-map"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Student Success & Resilience",
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "discourse-analysis",
+      "label": "Discourse Analysis",
+      "type": "general",
+      "cluster": 3,
+      "centrality": 0.005362,
+      "degree": 11,
+      "position": {
+        "x": 369.7,
+        "y": 491.9
+      },
+      "connections": [
+        "conceptual-metaphor-theory",
+        "student-meaning-making-about-difficulty",
+        "b3-cds-cma-findings",
+        "b3-cds-cma-study",
+        "deficit-labeling-and-institutional-framing",
+        "deficit-models",
+        "epistemic-injustice",
+        "academic-resilience",
+        "de-7301-overview",
+        "ci-7151-overview"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Student Success & Resilience",
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "gilar-corbi2020",
+      "label": "Academic achievement and failure in university studies: Motivational and emotional factors",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 911.4,
+        "y": 451.7
+      },
+      "connections": [
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "llm-qualitative-coding-reliability",
+      "label": "llm-qualitative-coding-reliability",
+      "type": "inquiry",
+      "cluster": 3,
+      "centrality": 0.005663,
+      "degree": 6,
+      "position": {
+        "x": 160.9,
+        "y": 527.5
+      },
+      "connections": [
+        "creswell2018",
+        "miles2014",
+        "discourse-analysis",
+        "conceptual-metaphor-theory",
+        "b3-cds-cma-study",
+        "b3-cds-cma-findings"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "lundell1999",
+      "label": "Toward a theory of developmental education: The centrality of discourse",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 589.0,
+        "y": 60.0
+      },
+      "connections": [
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "lundell2007",
+      "label": "Student standpoints about access programs in higher education",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 791.8,
+        "y": 562.8
+      },
+      "connections": [
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "self-authorship",
+      "label": "Self-Authorship",
+      "type": "general",
+      "cluster": 3,
+      "centrality": 0.030108,
+      "degree": 13,
+      "position": {
+        "x": 491.0,
+        "y": 584.6
+      },
+      "connections": [
+        "b3-cds-cma-study",
+        "advising-as-education",
+        "conceptual-metaphor-theory",
+        "de-7301-overview",
+        "deficit-labeling-and-institutional-framing",
+        "home",
+        "post-failure-academic-recovery",
+        "human-capital-theory",
+        "financial-self-efficacy",
+        "self-determination-theory"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Student Success & Resilience",
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing",
+        "Coursework"
+      ]
+    },
+    {
+      "id": "student-meaning-making-about-difficulty",
+      "label": "student-meaning-making-about-difficulty",
+      "type": "inquiry",
+      "cluster": 3,
+      "centrality": 0.053107,
+      "degree": 16,
+      "position": {
+        "x": 607.2,
+        "y": 337.8
+      },
+      "connections": [
+        "discourse-analysis",
+        "baxter magolda2009",
+        "lundell1999",
+        "lundell2007",
+        "ajjawi2020",
+        "wilson2019",
+        "bledsoe2024",
+        "gilar-corbi2020",
+        "conceptual-metaphor-theory",
+        "self-authorship"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Student Success & Resilience",
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "wilson2019",
+      "label": "Sinking or swimming in an academic pool",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.000544,
+      "degree": 2,
+      "position": {
+        "x": 756.4,
+        "y": 86.6
+      },
+      "connections": [
+        "post-failure-academic-recovery",
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "lundell2007",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "ajjawi2020",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "bledsoe2024",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "discourse-analysis",
+      "target": "b3-cds-cma-findings",
+      "weight": 1
+    },
+    {
+      "source": "discourse-analysis",
+      "target": "conceptual-metaphor-theory",
+      "weight": 2
+    },
+    {
+      "source": "discourse-analysis",
+      "target": "de-7301-overview",
+      "weight": 1
+    },
+    {
+      "source": "discourse-analysis",
+      "target": "ci-7151-overview",
+      "weight": 1
+    },
+    {
+      "source": "discourse-analysis",
+      "target": "llm-qualitative-coding-reliability",
+      "weight": 1
+    },
+    {
+      "source": "discourse-analysis",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 2
+    },
+    {
+      "source": "de-7301-overview",
+      "target": "self-authorship",
+      "weight": 1
+    },
+    {
+      "source": "llm-qualitative-coding-reliability",
+      "target": "conceptual-metaphor-theory",
+      "weight": 1
+    },
+    {
+      "source": "llm-qualitative-coding-reliability",
+      "target": "b3-cds-cma-findings",
+      "weight": 1
+    },
+    {
+      "source": "baxter magolda2009",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "lundell1999",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "self-authorship",
+      "target": "conceptual-metaphor-theory",
+      "weight": 1
+    },
+    {
+      "source": "self-authorship",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "student-meaning-making-about-difficulty",
+      "target": "wilson2019",
+      "weight": 1
+    },
+    {
+      "source": "student-meaning-making-about-difficulty",
+      "target": "gilar-corbi2020",
+      "weight": 1
+    },
+    {
+      "source": "student-meaning-making-about-difficulty",
+      "target": "conceptual-metaphor-theory",
+      "weight": 1
+    },
+    {
+      "source": "student-meaning-making-about-difficulty",
+      "target": "b3-cds-cma-findings",
+      "weight": 1
+    },
+    {
+      "source": "conceptual-metaphor-theory",
+      "target": "b3-cds-cma-findings",
+      "weight": 1
+    },
+    {
+      "source": "conceptual-metaphor-theory",
+      "target": "ci-7151-overview",
+      "weight": 1
+    }
+  ],
+  "stats": {
+    "nodeCount": 15,
+    "edgeCount": 22,
+    "density": 0.2095,
+    "bridgeNodes": [
+      "ajjawi2020",
+      "b3-cds-cma-findings",
+      "bledsoe2024",
+      "ci-7151-overview",
+      "conceptual-metaphor-theory",
+      "de-7301-overview",
+      "discourse-analysis",
+      "llm-qualitative-coding-reliability",
+      "self-authorship",
+      "student-meaning-making-about-difficulty",
+      "wilson2019"
+    ],
+    "gaps": [
+      {
+        "communityA": 3,
+        "communityB": 4,
+        "labelA": "Systems Thinking & Epistemic Justice",
+        "labelB": "Advising as Education & Critical Pedagogy",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
+        "communityA": 0,
+        "communityB": 3,
+        "labelA": "Student Success & Resilience",
+        "labelB": "Systems Thinking & Epistemic Justice",
+        "crossEdges": 9,
+        "density": 0.008108
+      },
+      {
+        "communityA": 2,
+        "communityB": 3,
+        "labelA": "Post-Failure Recovery & Deficit Framing",
+        "labelB": "Systems Thinking & Epistemic Justice",
+        "crossEdges": 6,
+        "density": 0.009756
+      },
+      {
+        "communityA": 3,
+        "communityB": 5,
+        "labelA": "Systems Thinking & Epistemic Justice",
+        "labelB": "Coursework",
+        "crossEdges": 1,
+        "density": 0.011111
+      },
+      {
+        "communityA": 1,
+        "communityB": 3,
+        "labelA": "Financial Literacy & Scarcity",
+        "labelB": "Systems Thinking & Epistemic Justice",
+        "crossEdges": 20,
+        "density": 0.027211
+      }
+    ]
+  }
+}

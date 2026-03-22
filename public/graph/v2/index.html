@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vault Graph</title>
+  <meta name="description" content="Interactive knowledge graph explorer for student success research.">
+  <meta name="theme-color" content="#2E3440">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header / Breadcrumb -->
+  <header class="header">
+    <nav class="breadcrumb" id="breadcrumb" aria-label="Navigation">
+      <span class="current">Overview</span>
+    </nav>
+    <button class="btn-back" id="btn-back" aria-label="Back to overview">
+      <span>&larr;</span> Overview
+    </button>
+  </header>
+
+  <!-- Graph Canvas -->
+  <div class="graph-container">
+    <div class="loading" id="loading">
+      <div class="loading-spinner"></div>
+      <span>Loading graph...</span>
+    </div>
+    <div id="cy" role="img" aria-label="Knowledge graph visualization"></div>
+    <div class="graph-hint" id="graph-hint">Tap a research thread to explore</div>
+  </div>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+  <!-- Sidebar Panel -->
+  <aside class="sidebar" id="sidebar" aria-label="Node details">
+    <div class="sidebar-header">
+      <div class="sidebar-title" id="sidebar-title"></div>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close panel">&times;</button>
+    </div>
+    <div class="sidebar-body" id="sidebar-body"></div>
+  </aside>
+
+  <!-- Stats Ribbon -->
+  <div class="stats-ribbon" id="stats-ribbon" aria-label="Graph statistics"></div>
+
+  <!-- Research Threads -->
+  <h2 class="section-heading">Research Threads</h2>
+  <div class="bento-grid" id="bento-grid"></div>
+
+  <!-- Structural Gaps -->
+  <h2 class="section-heading">Structural Gaps</h2>
+  <div class="gaps-section" id="gaps-section"></div>
+
+  <!-- Footer -->
+  <footer class="footer" id="footer"></footer>
+
+  <!-- Cytoscape.js -->
+  <script src="https://unpkg.com/cytoscape@3/dist/cytoscape.min.js"></script>
+  <!-- App -->
+  <script src="app.js"></script>
+</body>
+</html>

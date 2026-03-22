@@ -1,0 +1,154 @@
+{
+  "generated": "2026-03-22T14:39:03.166518-05:00",
+  "vaultPath": "brain-external",
+  "totalNotes": 290,
+  "totalLinks": 690,
+  "communities": 6,
+  "singletons": 91,
+  "clusterFiles": [
+    "cluster-0.json",
+    "cluster-1.json",
+    "cluster-2.json",
+    "cluster-3.json",
+    "cluster-4.json",
+    "cluster-5.json"
+  ],
+  "clusterLabels": {
+    "0": "Student Success & Resilience",
+    "1": "Financial Literacy & Scarcity",
+    "2": "Post-Failure Recovery & Deficit Framing",
+    "3": "Systems Thinking & Epistemic Justice",
+    "4": "Advising as Education & Critical Pedagogy",
+    "5": "Coursework"
+  },
+  "clusterColors": {
+    "0": "#88C0D0",
+    "1": "#A3BE8C",
+    "2": "#BF616A",
+    "3": "#EBCB8B",
+    "4": "#B48EAD",
+    "5": "#D08770"
+  },
+  "structuralGaps": [
+    {
+      "communityA": 3,
+      "communityB": 4,
+      "labelA": "Systems Thinking & Epistemic Justice",
+      "labelB": "Advising as Education & Critical Pedagogy",
+      "crossEdges": 0,
+      "density": 0.0
+    },
+    {
+      "communityA": 4,
+      "communityB": 5,
+      "labelA": "Advising as Education & Critical Pedagogy",
+      "labelB": "Coursework",
+      "crossEdges": 0,
+      "density": 0.0
+    },
+    {
+      "communityA": 2,
+      "communityB": 4,
+      "labelA": "Post-Failure Recovery & Deficit Framing",
+      "labelB": "Advising as Education & Critical Pedagogy",
+      "crossEdges": 1,
+      "density": 0.001742
+    },
+    {
+      "communityA": 0,
+      "communityB": 4,
+      "labelA": "Student Success & Resilience",
+      "labelB": "Advising as Education & Critical Pedagogy",
+      "crossEdges": 2,
+      "density": 0.001931
+    },
+    {
+      "communityA": 0,
+      "communityB": 3,
+      "labelA": "Student Success & Resilience",
+      "labelB": "Systems Thinking & Epistemic Justice",
+      "crossEdges": 9,
+      "density": 0.008108
+    },
+    {
+      "communityA": 2,
+      "communityB": 3,
+      "labelA": "Post-Failure Recovery & Deficit Framing",
+      "labelB": "Systems Thinking & Epistemic Justice",
+      "crossEdges": 6,
+      "density": 0.009756
+    },
+    {
+      "communityA": 0,
+      "communityB": 2,
+      "labelA": "Student Success & Resilience",
+      "labelB": "Post-Failure Recovery & Deficit Framing",
+      "crossEdges": 32,
+      "density": 0.010547
+    },
+    {
+      "communityA": 3,
+      "communityB": 5,
+      "labelA": "Systems Thinking & Epistemic Justice",
+      "labelB": "Coursework",
+      "crossEdges": 1,
+      "density": 0.011111
+    },
+    {
+      "communityA": 0,
+      "communityB": 5,
+      "labelA": "Student Success & Resilience",
+      "labelB": "Coursework",
+      "crossEdges": 5,
+      "density": 0.011261
+    },
+    {
+      "communityA": 1,
+      "communityB": 4,
+      "labelA": "Financial Literacy & Scarcity",
+      "labelB": "Advising as Education & Critical Pedagogy",
+      "crossEdges": 9,
+      "density": 0.01312
+    },
+    {
+      "communityA": 0,
+      "communityB": 1,
+      "labelA": "Student Success & Resilience",
+      "labelB": "Financial Literacy & Scarcity",
+      "crossEdges": 54,
+      "density": 0.014892
+    },
+    {
+      "communityA": 2,
+      "communityB": 5,
+      "labelA": "Post-Failure Recovery & Deficit Framing",
+      "labelB": "Coursework",
+      "crossEdges": 4,
+      "density": 0.01626
+    },
+    {
+      "communityA": 1,
+      "communityB": 5,
+      "labelA": "Financial Literacy & Scarcity",
+      "labelB": "Coursework",
+      "crossEdges": 5,
+      "density": 0.017007
+    },
+    {
+      "communityA": 1,
+      "communityB": 2,
+      "labelA": "Financial Literacy & Scarcity",
+      "labelB": "Post-Failure Recovery & Deficit Framing",
+      "crossEdges": 38,
+      "density": 0.018915
+    },
+    {
+      "communityA": 1,
+      "communityB": 3,
+      "labelA": "Financial Literacy & Scarcity",
+      "labelB": "Systems Thinking & Epistemic Justice",
+      "crossEdges": 20,
+      "density": 0.027211
+    }
+  ]
+}

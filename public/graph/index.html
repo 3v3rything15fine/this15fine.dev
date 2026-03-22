@@ -329,8 +329,31 @@ details summary:hover { text-decoration: underline; }
   <div class="breadcrumb"><a href="/">this15fine.dev</a> / graph</div>
   <h1>Vault Graph</h1>
   <p class="subtitle">3D network visualizations of an Obsidian knowledge vault — co-occurrence and link structure analyzed with NLTK, NetworkX, and Plotly.</p>
-  <p class="meta">Last updated: 2026-03-21</p>
+  <p class="meta">Last updated: 2026-03-22</p>
 </header>
+
+<!-- Research Context -->
+<section class="report-section">
+  <h2>What This Is</h2>
+  <div class="report-panel">
+    <p>This is a network analysis of an Obsidian knowledge vault maintained by a doctoral student in Curriculum &amp; Instruction at Texas State University. The vault contains approximately 280 connected notes and 170 literature notes organized around 13 inquiry notes&mdash;research questions that structure ongoing reading, writing, and thinking.</p>
+
+    <h3>Research Program</h3>
+    <p>The vault tracks several interconnected lines of inquiry, all centered on how students experience and recover from academic difficulty in higher education:</p>
+    <ul>
+      <li><strong>Post-failure academic recovery.</strong> When students fall below a 2.0 GPA, what distinguishes sustained recovery from cycling back or departure? The Bobcats Bounce Back (B3) program at Texas State is the primary research site&mdash;an outbound intervention that reframes GPA difficulty as one navigable adversity among many, not a deficit.</li>
+      <li><strong>Deficit framing and institutional labeling.</strong> Labels like "at-risk" and "academically deficient" locate failure within students rather than structures. The vault documents how these labels shape both staff behavior and student self-perception, and what asset-based alternatives look like in practice.</li>
+      <li><strong>Student meaning-making.</strong> Students on academic probation construct their experience through metaphors (JOURNEY, COMPETITION, TOOLS/MACHINES, ECONOMIC) and discourse patterns that reveal how they understand their own agency. Institutional messaging often misaligns with these organic frameworks.</li>
+      <li><strong>Systems thinking and epistemic justice.</strong> Systems thinking is the most consistent analytical thread across the vault, but it carries an ethical warning: those who define feedback loops control the system. This line of inquiry asks who gets to define academic success and failure.</li>
+      <li><strong>Advising as education.</strong> If academic advising is fundamentally educational, what should advisors teach? B3 enacts this philosophy: conversations center on academic self-image, task/value assessment, and demystifying policies&mdash;building capacity rather than dependency.</li>
+      <li><strong>Financial literacy and basic needs.</strong> Financial education alone cannot resolve structural barriers. The vault tracks the tension between human capital theory (knowledge as investment) and scarcity theory (resource scarcity taxes cognitive capacity regardless of knowledge).</li>
+      <li><strong>Enrollment patterns as adaptation.</strong> Part-time enrollment, stop-outs, and non-standard credit loads are often rational adaptations to work, caregiving, and financial constraints&mdash;not failures to launch.</li>
+    </ul>
+
+    <h3>Vault Structure</h3>
+    <p>The vault uses a flat, inquiry-driven graph structure rather than a folder hierarchy. Thirteen inquiry notes serve as organizing questions, each linking to literature, concepts, methods, and projects. Concept notes (retention theory, deficit models, self-authorship, etc.) act as connective tissue between inquiry threads. The <code>home</code> note is the primary hub, linking to all major sections. Literature notes follow a <code>@citekey</code> convention and connect to the inquiry notes that draw on them.</p>
+  </div>
+</section>
 
 <!-- Graph Cards -->
 <div class="graph-cards">
@@ -459,15 +482,15 @@ details summary:hover { text-decoration: underline; }
     <details>
       <summary>Link Clusters (top 7 of 95)</summary>
       <div class="cluster-summary">
-        <div class="cluster-chip"><span class="cluster-id">Cluster 0</span> <span class="cluster-size">(81)</span> — b3-research-hub, resilience, retention</div>
-        <div class="cluster-chip"><span class="cluster-id">Cluster 1</span> <span class="cluster-size">(40)</span> — financial-literacy, frameworks, scarcity</div>
-        <div class="cluster-chip"><span class="cluster-id">Cluster 2</span> <span class="cluster-size">(29)</span> — post-failure-recovery, deficit-labeling</div>
-        <div class="cluster-chip"><span class="cluster-id">Cluster 3</span> <span class="cluster-size">(24)</span> — systems-thinking, epistemic-justice</div>
-        <div class="cluster-chip"><span class="cluster-id">Cluster 4</span> <span class="cluster-size">(13)</span> — advising-as-education, critical-pedagogy</div>
-        <div class="cluster-chip"><span class="cluster-id">Cluster 5</span> <span class="cluster-size">(3)</span> — phil-5322 coursework</div>
-        <div class="cluster-chip"><span class="cluster-id">Cluster 6</span> <span class="cluster-size">(2)</span> — oced-5361 coursework</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 0</span> <span class="cluster-size">(81 notes)</span> — B3 student success research: academic resilience, retention theory, engagement effects, bounce-back rates, program evaluation</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 1</span> <span class="cluster-size">(40 notes)</span> — Financial literacy and scarcity: human capital theory, financial self-efficacy, basic needs insecurity, peer mentoring, the theoretical framework map</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 2</span> <span class="cluster-size">(29 notes)</span> — Post-failure academic recovery and deficit framing: institutional labeling, student meaning-making, discourse analysis, metaphor studies</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 3</span> <span class="cluster-size">(24 notes)</span> — Systems thinking, ecological models, and epistemic justice: Bronfenbrenner, Fricker, appreciative inquiry, who defines the system</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 4</span> <span class="cluster-size">(13 notes)</span> — Advising as education: critical pedagogy (Freire, hooks, Dewey), advising ethics, the drama triangle, self-authorship as developmental target</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 5</span> <span class="cluster-size">(3 notes)</span> — PHIL 5322 coursework: professional ethics, contested goods, adversarial professional relationships, NACADA ethics</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 6</span> <span class="cluster-size">(2 notes)</span> — OCED 5361 coursework: organizational communication</div>
       </div>
-      <p style="font-size: 12px; color: var(--nord3); margin-top: 8px;">+ 88 singleton clusters (isolated notes)</p>
+      <p style="font-size: 12px; color: var(--nord3); margin-top: 8px;">+ 88 singleton clusters (isolated notes with no wikilinks to other notes in the vault)</p>
     </details>
 
     <h4>Structural Gaps (Link Graph)</h4>
@@ -484,6 +507,33 @@ details summary:hover { text-decoration: underline; }
     <div class="suggestion-item">3. Connect <strong>post-failure-academic-recovery</strong> with <strong>advising-as-education</strong> — clusters of 29 and 13 notes are nearly isolated</div>
     <div class="suggestion-item">4. Connect <strong>post-failure-academic-recovery</strong> with <strong>phil-5322-overview</strong> — clusters of 29 and 3 notes are nearly isolated</div>
     <div class="suggestion-item">5. Connect <strong>systems-thinking-and-epistemic-justice</strong> with <strong>phil-5322-overview</strong> — clusters of 24 and 3 notes are nearly isolated</div>
+
+    <h3>What the Gaps Mean</h3>
+    <p>The structural gaps above are not accidents of organization. They reflect real disconnections in how the research program is currently articulated.</p>
+
+    <h4>The theoretical framework is disconnected from advising practice</h4>
+    <p>Cluster 1 (the theoretical framework map, financial literacy, scarcity theory) and Cluster 4 (advising as education, critical pedagogy) have no cross-links despite sharing a fundamental premise: if advising is teaching, the theoretical framework maps the domain knowledge advisors should draw from. The human capital vs. scarcity tension&mdash;whether financial education works when students lack material resources&mdash;is directly relevant to what advisors encounter in B3 conversations about academic self-image and resource navigation. Without this connection, the theoretical architecture exists as an abstract literature exercise rather than informing the practice it describes.</p>
+
+    <h4>Post-failure recovery and advising practice developed in parallel</h4>
+    <p>Cluster 2 (post-failure recovery, deficit labeling, student meaning-making) and Cluster 4 (advising as education) both address how students navigate difficulty, but from separate starting points. The recovery literature asks what distinguishes sustained recovery from relapse; the advising literature asks what advisors should teach. B3 sits at their intersection&mdash;recovery IS the curriculum&mdash;but the vault does not yet make this connection explicit. Linking them would clarify that supporting students through GPA difficulty is not a remedial add-on but the paradigm case of advising as education.</p>
+
+    <h4>Coursework is isolated from the research it informed</h4>
+    <p>Cluster 5 (PHIL 5322, professional ethics) is a 3-note island. This is a structural problem because the professional ethics analysis of contested goods (grades, credentials, access) and adversarial professional relationships directly informs three active research threads: (1) the theoretical framework's treatment of human capital and who benefits, (2) post-failure recovery and the ethics of labeling students as failing, and (3) systems thinking and who gets to define what counts as success. These connections exist intellectually but not yet in the vault graph.</p>
+
+    <h4>Systems thinking lacks a normative anchor</h4>
+    <p>Cluster 3 (systems thinking, epistemic justice) asks who gets to define feedback loops and system boundaries. Cluster 5 (professional ethics) asks who gets to define contested goods and professional obligations. These are the same question asked from different disciplinary positions. Connecting them would give the systems thinking inquiry the ethical grounding it currently references but does not link to.</p>
+
+    <h3>How This Fuels Inquiry</h3>
+    <p>The graph analysis serves three practical purposes for ongoing doctoral work:</p>
+
+    <h4>1. Identifying where to read next</h4>
+    <p>Structural gaps between clusters indicate where the literature review has not yet built bridges. The disconnection between advising-as-education and the theoretical framework, for example, suggests a need for literature that examines financial advising as a pedagogical practice&mdash;not just a knowledge-transfer exercise. Similarly, the isolation of professional ethics coursework from active research threads suggests revisiting those course materials with current research questions in mind.</p>
+
+    <h4>2. Informing which inquiry notes to develop</h4>
+    <p>The bridge nodes (home, post-failure-academic-recovery, deficit-models, enrollment-patterns-as-adaptation) carry the most betweenness centrality&mdash;they connect the most communities. These are the notes where new reading and thinking will have the greatest structural impact on the vault. By contrast, the 88 singleton clusters represent notes that are not yet integrated into any research thread and may need to be either connected or reconsidered.</p>
+
+    <h4>3. Writing bridging notes</h4>
+    <p>The suggested connections above are actionable: each one identifies two clusters that share conceptual territory but lack explicit links. Creating even a single wikilink between them merges their communities in the graph, making related literature visible during writing and reducing the chance that relevant sources are overlooked during dissertation composition. The five suggested connections in this report, if implemented, would reduce the number of disconnected clusters from 7 to 3.</p>
 
   </div>
 </section>

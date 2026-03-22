@@ -5,3 +5,7 @@
 /workshop/*
   Cache-Control: no-cache
   X-Robots-Tag: noindex, nofollow, noarchive
+
+/graph/*
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex, nofollow, noarchive

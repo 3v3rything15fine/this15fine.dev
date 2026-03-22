@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vault Graph — this15fine.dev</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --nord0: #1e2430;
+  --nord1: #252d3a;
+  --nord2: #2e3848;
+  --nord3: #3d4f66;
+  --nord4: #cdd4df;
+  --nord5: #dde2ea;
+  --nord6: #edf0f4;
+  --frost: #88C0D0;
+  --frost-deep: #5E81AC;
+  --frost-warm: #8FBCBB;
+  --aurora-green: #A3BE8C;
+  --aurora-yellow: #EBCB8B;
+  --aurora-red: #BF616A;
+  --aurora-magenta: #B48EAD;
+  --burgundy: #6B3040;
+  --magenta-bright: #B048A8;
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-elevated: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--nord0);
+  color: var(--nord4);
+  font-family: 'JetBrains Mono', 'Liberation Mono', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--frost); text-decoration: none; transition: color var(--transition-fast); }
+a:hover { text-decoration: underline; }
+a:visited { color: var(--frost-deep); }
+a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px; }
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 24px; }
+}
+
+/* Header */
+header {
+  border-bottom: 2px solid var(--burgundy);
+  padding-bottom: 24px;
+  margin-bottom: 48px;
+}
+
+header .breadcrumb {
+  font-size: 12px;
+  color: var(--nord3);
+  margin-bottom: 12px;
+}
+
+header .breadcrumb a { color: var(--frost-deep); }
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--nord6);
+  margin-bottom: 8px;
+}
+
+header .subtitle {
+  font-size: 14px;
+  color: var(--nord4);
+  font-weight: 400;
+}
+
+header .meta {
+  font-size: 12px;
+  color: var(--nord3);
+  margin-top: 12px;
+}
+
+/* Graph cards */
+.graph-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 64px;
+}
+
+@media (max-width: 640px) {
+  .graph-cards { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: var(--nord1);
+  border: 1px solid var(--nord3);
+  border-radius: 6px;
+  padding: 20px;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.card:hover {
+  border-color: var(--frost);
+  box-shadow: var(--shadow-elevated);
+}
+
+.card h2 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--nord6);
+  margin-bottom: 8px;
+}
+
+.card .card-stats {
+  font-size: 12px;
+  color: var(--aurora-magenta);
+  margin-bottom: 12px;
+}
+
+.card p {
+  font-size: 13px;
+  color: var(--nord4);
+  margin-bottom: 16px;
+}
+
+.card .btn {
+  display: inline-block;
+  background: var(--nord2);
+  color: var(--nord4);
+  border: 1px solid var(--nord3);
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.card .btn:hover {
+  background: var(--frost);
+  color: var(--nord0);
+  border-color: var(--frost);
+  text-decoration: none;
+}
+
+.card .btn:visited { color: var(--nord4); }
+.card .btn:hover:visited { color: var(--nord0); }
+
+/* Report section */
+.report-section {
+  margin-bottom: 64px;
+}
+
+.report-section > h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--nord6);
+  border-bottom: 1px solid var(--nord3);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+
+.report-panel {
+  background: var(--nord1);
+  border: 1px solid var(--nord3);
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.report-panel h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--frost);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.report-panel h3:first-child { margin-top: 0; }
+
+.report-panel h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--frost-warm);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.report-panel p {
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.report-panel ul, .report-panel ol {
+  margin-left: 20px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.report-panel li { margin-bottom: 4px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 12px;
+}
+
+th {
+  text-align: left;
+  color: var(--nord6);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--nord3);
+  background: var(--nord2);
+}
+
+th:first-child { border-radius: 4px 0 0 0; }
+th:last-child { border-radius: 0 4px 0 0; }
+
+td {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--nord2);
+  color: var(--nord4);
+}
+
+tr:hover td { background: rgba(136, 192, 208, 0.05); }
+
+.centrality { color: var(--aurora-yellow); }
+.node-name { color: var(--frost); font-weight: 500; }
+.bridges { color: var(--aurora-magenta); font-size: 11px; }
+.gap-arrow { color: var(--aurora-red); }
+
+/* Cluster summary */
+.cluster-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cluster-chip {
+  background: var(--nord2);
+  border: 1px solid var(--nord3);
+  border-radius: 4px;
+  padding: 8px 10px;
+  font-size: 11px;
+}
+
+.cluster-chip .cluster-id {
+  color: var(--aurora-magenta);
+  font-weight: 600;
+}
+
+.cluster-chip .cluster-size {
+  color: var(--aurora-yellow);
+}
+
+/* Structural gaps */
+.gap-item {
+  background: var(--nord2);
+  border-left: 3px solid var(--aurora-red);
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 0 4px 4px 0;
+  font-size: 12px;
+}
+
+.suggestion-item {
+  background: var(--nord2);
+  border-left: 3px solid var(--aurora-green);
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  border-radius: 0 4px 4px 0;
+  font-size: 12px;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--nord3);
+  padding-top: 24px;
+  font-size: 12px;
+  color: var(--nord3);
+  text-align: center;
+}
+
+footer a { color: var(--frost-deep); }
+
+/* Toggle details */
+details {
+  margin-bottom: 12px;
+}
+
+details summary {
+  cursor: pointer;
+  color: var(--frost);
+  font-weight: 500;
+  font-size: 13px;
+  padding: 4px 0;
+  user-select: none;
+}
+
+details summary:hover { text-decoration: underline; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div class="breadcrumb"><a href="/">this15fine.dev</a> / graph</div>
+  <h1>Vault Graph</h1>
+  <p class="subtitle">3D network visualizations of an Obsidian knowledge vault — co-occurrence and link structure analyzed with NLTK, NetworkX, and Plotly.</p>
+  <p class="meta">Last updated: 2026-03-21</p>
+</header>
+
+<!-- Graph Cards -->
+<div class="graph-cards">
+  <div class="card">
+    <h2>Co-occurrence Network</h2>
+    <div class="card-stats">4,812 nodes &middot; 51,691 edges &middot; 24 communities</div>
+    <p>Word co-occurrence across vault notes. Reveals thematic clusters and conceptual bridges between topics.</p>
+    <a href="cooccurrence_3d.html" class="btn">Open 3D Graph</a>
+  </div>
+  <div class="card">
+    <h2>Link Network</h2>
+    <div class="card-stats">280 nodes &middot; 772 edges &middot; 95 communities</div>
+    <p>Wikilink connections between vault notes. Shows the explicit knowledge structure and its gaps.</p>
+    <a href="link_3d.html" class="btn">Open 3D Graph</a>
+  </div>
+</div>
+
+<!-- Report: Co-occurrence -->
+<section class="report-section">
+  <h2>Analysis Report</h2>
+  <div class="report-panel">
+
+    <h3>Co-occurrence Graph</h3>
+
+    <h4>Bridge Nodes</h4>
+    <p>These nodes connect multiple communities — conceptual bridges in the vault.</p>
+    <table>
+      <thead>
+        <tr><th>Node</th><th>Home</th><th>Bridges To</th><th>Centrality</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="node-name">student</td><td>0</td><td class="bridges">1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 17</td><td class="centrality">0.0498</td></tr>
+        <tr><td class="node-name">year</td><td>5</td><td class="bridges">0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 14, 15, 16, 17, 19</td><td class="centrality">0.0371</td></tr>
+        <tr><td class="node-name">author</td><td>5</td><td class="bridges">0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 14, 15, 16, 17</td><td class="centrality">0.0335</td></tr>
+        <tr><td class="node-name">key</td><td>5</td><td class="bridges">0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 13</td><td class="centrality">0.0334</td></tr>
+        <tr><td class="node-name">journal</td><td>5</td><td class="bridges">0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 14, 15, 17</td><td class="centrality">0.0302</td></tr>
+        <tr><td class="node-name">use</td><td>1</td><td class="bridges">0, 2, 3, 4, 5, 7, 8, 9, 10, 11</td><td class="centrality">0.0270</td></tr>
+        <tr><td class="node-name">education</td><td>3</td><td class="bridges">0, 1, 2, 4, 5, 6, 7, 8, 9, 20</td><td class="centrality">0.0265</td></tr>
+        <tr><td class="node-name">academic</td><td>0</td><td class="bridges">1, 2, 3, 4, 5, 6, 7, 8, 10</td><td class="centrality">0.0230</td></tr>
+        <tr><td class="node-name">need</td><td>3</td><td class="bridges">0, 1, 2, 4, 5, 6, 7, 8, 9, 17</td><td class="centrality">0.0213</td></tr>
+        <tr><td class="node-name">data</td><td>0</td><td class="bridges">1, 2, 3, 4, 5, 7, 8, 12</td><td class="centrality">0.0195</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Most Central Nodes</h4>
+    <table>
+      <thead><tr><th>Node</th><th>Betweenness Centrality</th></tr></thead>
+      <tbody>
+        <tr><td class="node-name">student</td><td class="centrality">0.0498</td></tr>
+        <tr><td class="node-name">year</td><td class="centrality">0.0371</td></tr>
+        <tr><td class="node-name">author</td><td class="centrality">0.0335</td></tr>
+        <tr><td class="node-name">key</td><td class="centrality">0.0334</td></tr>
+        <tr><td class="node-name">journal</td><td class="centrality">0.0302</td></tr>
+        <tr><td class="node-name">use</td><td class="centrality">0.0270</td></tr>
+        <tr><td class="node-name">education</td><td class="centrality">0.0265</td></tr>
+        <tr><td class="node-name">academic</td><td class="centrality">0.0230</td></tr>
+        <tr><td class="node-name">need</td><td class="centrality">0.0213</td></tr>
+        <tr><td class="node-name">data</td><td class="centrality">0.0195</td></tr>
+      </tbody>
+    </table>
+
+    <details>
+      <summary>Major Clusters (top 10 of 24)</summary>
+      <div class="cluster-summary">
+        <div class="cluster-chip"><span class="cluster-id">Cluster 0</span> <span class="cluster-size">(1,104)</span> — student, academic, model</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 1</span> <span class="cluster-size">(923)</span> — note, use, file</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 2</span> <span class="cluster-size">(770)</span> — metaphor, paper, analysis</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 3</span> <span class="cluster-size">(744)</span> — ability, acceptance, research</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 4</span> <span class="cluster-size">(509)</span> — absence, accessibility, act</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 5</span> <span class="cluster-size">(413)</span> — adelman, american, argument</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 6</span> <span class="cluster-size">(76)</span> — analogy, attendee, bag</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 7</span> <span class="cluster-size">(64)</span> — adapt, athlete, calibration</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 8</span> <span class="cluster-size">(62)</span> — acoustic, analytic, authentic</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 9</span> <span class="cluster-size">(51)</span> — anomaly, bourdieu, cultural</div>
+      </div>
+    </details>
+
+    <h4>Structural Gaps</h4>
+    <p>Community pairs with weak or missing connections -- potential areas for new linking notes.</p>
+    <div class="gap-item"><span class="gap-arrow">--</span> <strong>Cluster 0</strong> (student, academic) <span class="gap-arrow">&harr;</span> <strong>Cluster 15</strong> (andrew, scott) — 0 cross-edges</div>
+    <div class="gap-item"><span class="gap-arrow">--</span> <strong>Cluster 0</strong> (student, academic) <span class="gap-arrow">&harr;</span> <strong>Cluster 16</strong> (rogers, benford) — 0 cross-edges</div>
+    <div class="gap-item"><span class="gap-arrow">--</span> <strong>Cluster 0</strong> (student, academic) <span class="gap-arrow">&harr;</span> <strong>Cluster 19</strong> (xinyi, beasley) — 0 cross-edges</div>
+    <div class="gap-item"><span class="gap-arrow">--</span> <strong>Cluster 1</strong> (note, use) <span class="gap-arrow">&harr;</span> <strong>Cluster 16</strong> (rogers, benford) — 0 cross-edges</div>
+    <div class="gap-item"><span class="gap-arrow">--</span> <strong>Cluster 1</strong> (note, use) <span class="gap-arrow">&harr;</span> <strong>Cluster 19</strong> (xinyi, beasley) — 0 cross-edges</div>
+
+    <!-- Link Graph -->
+    <h3>Link Graph</h3>
+
+    <h4>Bridge Nodes</h4>
+    <p>Notes that connect multiple vault communities via explicit wikilinks.</p>
+    <table>
+      <thead>
+        <tr><th>Note</th><th>Home</th><th>Bridges To</th><th>Centrality</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="node-name">home</td><td>0</td><td class="bridges">1, 3, 4, 5, 6</td><td class="centrality">0.1282</td></tr>
+        <tr><td class="node-name">post-failure-academic-recovery</td><td>2</td><td class="bridges">0</td><td class="centrality">0.0673</td></tr>
+        <tr><td class="node-name">deficit-models</td><td>0</td><td class="bridges">1, 2, 3, 4</td><td class="centrality">0.0665</td></tr>
+        <tr><td class="node-name">enrollment-patterns-as-adaptation</td><td>0</td><td class="bridges">1, 2</td><td class="centrality">0.0608</td></tr>
+        <tr><td class="node-name">systems-thinking-and-epistemic-justice</td><td>3</td><td class="bridges">0</td><td class="centrality">0.0552</td></tr>
+        <tr><td class="node-name">advising-as-education</td><td>4</td><td class="bridges">0, 3</td><td class="centrality">0.0483</td></tr>
+        <tr><td class="node-name">deficit-labeling-and-institutional-framing</td><td>2</td><td class="bridges">0, 3</td><td class="centrality">0.0418</td></tr>
+        <tr><td class="node-name">bobcats-bounce-back-notes</td><td>0</td><td class="bridges">1, 2, 3, 4</td><td class="centrality">0.0384</td></tr>
+        <tr><td class="node-name">retention-theory</td><td>0</td><td class="bridges">1, 4</td><td class="centrality">0.0383</td></tr>
+        <tr><td class="node-name">student-meaning-making-about-difficulty</td><td>0</td><td class="bridges">2</td><td class="centrality">0.0268</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Most Central Notes</h4>
+    <table>
+      <thead><tr><th>Note</th><th>Betweenness Centrality</th></tr></thead>
+      <tbody>
+        <tr><td class="node-name">home</td><td class="centrality">0.1282</td></tr>
+        <tr><td class="node-name">post-failure-academic-recovery</td><td class="centrality">0.0673</td></tr>
+        <tr><td class="node-name">deficit-models</td><td class="centrality">0.0665</td></tr>
+        <tr><td class="node-name">enrollment-patterns-as-adaptation</td><td class="centrality">0.0608</td></tr>
+        <tr><td class="node-name">systems-thinking-and-epistemic-justice</td><td class="centrality">0.0552</td></tr>
+        <tr><td class="node-name">advising-as-education</td><td class="centrality">0.0483</td></tr>
+        <tr><td class="node-name">engagement-causality-and-timing</td><td class="centrality">0.0443</td></tr>
+        <tr><td class="node-name">deficit-labeling-and-institutional-framing</td><td class="centrality">0.0418</td></tr>
+        <tr><td class="node-name">bobcats-bounce-back-notes</td><td class="centrality">0.0384</td></tr>
+        <tr><td class="node-name">retention-theory</td><td class="centrality">0.0383</td></tr>
+      </tbody>
+    </table>
+
+    <details>
+      <summary>Link Clusters (top 7 of 95)</summary>
+      <div class="cluster-summary">
+        <div class="cluster-chip"><span class="cluster-id">Cluster 0</span> <span class="cluster-size">(81)</span> — b3-research-hub, resilience, retention</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 1</span> <span class="cluster-size">(40)</span> — financial-literacy, frameworks, scarcity</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 2</span> <span class="cluster-size">(29)</span> — post-failure-recovery, deficit-labeling</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 3</span> <span class="cluster-size">(24)</span> — systems-thinking, epistemic-justice</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 4</span> <span class="cluster-size">(13)</span> — advising-as-education, critical-pedagogy</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 5</span> <span class="cluster-size">(3)</span> — phil-5322 coursework</div>
+        <div class="cluster-chip"><span class="cluster-id">Cluster 6</span> <span class="cluster-size">(2)</span> — oced-5361 coursework</div>
+      </div>
+      <p style="font-size: 12px; color: var(--nord3); margin-top: 8px;">+ 88 singleton clusters (isolated notes)</p>
+    </details>
+
+    <h4>Structural Gaps (Link Graph)</h4>
+    <p>Note clusters with no explicit wikilinks between them.</p>
+    <div class="gap-item"><strong>Cluster 1</strong> (frameworks, financial-literacy) <span class="gap-arrow">&harr;</span> <strong>Cluster 4</strong> (advising-as-education, pedagogy) — 0 cross-edges</div>
+    <div class="gap-item"><strong>Cluster 1</strong> (frameworks, financial-literacy) <span class="gap-arrow">&harr;</span> <strong>Cluster 5</strong> (phil-5322) — 0 cross-edges</div>
+    <div class="gap-item"><strong>Cluster 2</strong> (post-failure-recovery, deficit-labeling) <span class="gap-arrow">&harr;</span> <strong>Cluster 4</strong> (advising-as-education, pedagogy) — 0 cross-edges</div>
+    <div class="gap-item"><strong>Cluster 2</strong> (post-failure-recovery, deficit-labeling) <span class="gap-arrow">&harr;</span> <strong>Cluster 5</strong> (phil-5322) — 0 cross-edges</div>
+    <div class="gap-item"><strong>Cluster 3</strong> (systems-thinking, epistemic-justice) <span class="gap-arrow">&harr;</span> <strong>Cluster 5</strong> (phil-5322) — 0 cross-edges</div>
+
+    <h4>Suggested Connections</h4>
+    <div class="suggestion-item">1. Connect <strong>theoretical-framework-map</strong> with <strong>advising-as-education</strong> — clusters of 40 and 13 notes are nearly isolated</div>
+    <div class="suggestion-item">2. Connect <strong>theoretical-framework-map</strong> with <strong>phil-5322-overview</strong> — clusters of 40 and 3 notes are nearly isolated</div>
+    <div class="suggestion-item">3. Connect <strong>post-failure-academic-recovery</strong> with <strong>advising-as-education</strong> — clusters of 29 and 13 notes are nearly isolated</div>
+    <div class="suggestion-item">4. Connect <strong>post-failure-academic-recovery</strong> with <strong>phil-5322-overview</strong> — clusters of 29 and 3 notes are nearly isolated</div>
+    <div class="suggestion-item">5. Connect <strong>systems-thinking-and-epistemic-justice</strong> with <strong>phil-5322-overview</strong> — clusters of 24 and 3 notes are nearly isolated</div>
+
+  </div>
+</section>
+
+<footer>
+  <p><a href="/">this15fine.dev</a> &middot; vault-graph analysis powered by NLTK + NetworkX + Plotly</p>
+</footer>
+
+</div>
+</body>
+</html>

@@ -10,692 +10,154 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-/* ── Reset & Variables ─────────────────────────────────────────────── */
 :root {
-  --nord0: #2E3440;
-  --nord0-deep: #1e2430;
-  --nord1: #3B4252;
-  --nord2: #434C5E;
-  --nord3: #4C566A;
-  --nord4: #D8DEE9;
-  --nord5: #E5E9F0;
-  --nord6: #ECEFF4;
-  --frost: #88C0D0;
-  --frost-deep: #5E81AC;
-  --frost-warm: #8FBCBB;
-  --aurora-green: #A3BE8C;
-  --aurora-yellow: #EBCB8B;
-  --aurora-red: #BF616A;
-  --aurora-magenta: #B48EAD;
-  --aurora-orange: #D08770;
-  --burgundy: #6B3040;
+  --nord0: #2E3440; --nord0-deep: #1e2430; --nord1: #3B4252; --nord2: #434C5E;
+  --nord3: #4C566A; --nord4: #D8DEE9; --nord5: #E5E9F0; --nord6: #ECEFF4;
+  --frost: #88C0D0; --frost-deep: #5E81AC; --frost-warm: #8FBCBB;
+  --aurora-green: #A3BE8C; --aurora-yellow: #EBCB8B; --aurora-red: #BF616A;
+  --aurora-magenta: #B48EAD; --aurora-orange: #D08770; --burgundy: #6B3040;
   --magenta-bright: #B048A8;
-  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-elevated: 0 4px 16px rgba(0,0,0,0.5);
   --transition-fast: 150ms ease;
-  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-expand: 400ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-body {
-  background: var(--nord0-deep);
-  color: var(--nord4);
-  font-family: 'JetBrains Mono', 'Liberation Mono', 'Courier New', monospace;
-  font-size: 14px;
-  line-height: 1.6;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-a { color: var(--frost); text-decoration: none; transition: color var(--transition-fast); }
-a:hover { text-decoration: underline; }
-a:visited { color: var(--frost-deep); }
-a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px; }
-
-/* ── Layout ────────────────────────────────────────────────────────── */
-.container {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 48px;
-}
-
-@media (max-width: 768px) {
-  .container { padding: 0 20px; }
-}
-
-/* ── Header ────────────────────────────────────────────────────────── */
-.hero {
-  padding: 48px 0 32px;
-}
-
-.hero .breadcrumb {
-  font-size: 12px;
-  color: var(--nord3);
-  margin-bottom: 16px;
-}
-
-.hero .breadcrumb a { color: var(--frost-deep); }
-
-.hero h1 {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--nord6);
-  margin-bottom: 8px;
-  line-height: 1.2;
-}
-
-.hero .subtitle {
-  font-size: 14px;
-  color: var(--nord4);
-  max-width: 640px;
-  margin-bottom: 24px;
-}
-
-/* ── Stats Bar ─────────────────────────────────────────────────────── */
-.stats-bar {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-  padding: 20px 0;
-  border-top: 2px solid var(--burgundy);
-  border-bottom: 1px solid var(--nord3);
-  margin-bottom: 48px;
-}
-
-.stat-item {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.stat-number {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--frost);
-  font-variant-numeric: tabular-nums;
-}
-
-.stat-label {
-  font-size: 12px;
-  color: var(--nord3);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* ── Section Layout ────────────────────────────────────────────────── */
-.section {
-  margin-bottom: 64px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.section-heading {
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--nord3);
-  margin-bottom: 20px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--nord2);
-}
-
-/* ── Graph Section ─────────────────────────────────────────────────── */
-.graph-section {
-  background: var(--nord0);
-  border: 1px solid var(--nord3);
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 48px;
-}
-
-.graph-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  background: var(--nord1);
-  border-bottom: 1px solid var(--nord3);
-  font-size: 12px;
-}
-
-.graph-toolbar .graph-label {
-  color: var(--nord5);
-  font-weight: 500;
-}
-
-.graph-toolbar .graph-hint {
-  color: var(--nord3);
-  font-style: italic;
-}
-
-#main-graph {
-  width: 100%;
-  height: 480px;
-  cursor: grab;
-}
-
-#main-graph:active { cursor: grabbing; }
-
-@media (max-width: 768px) {
-  #main-graph { height: 360px; }
-}
-
-/* ── Thread Cards (Bento Grid) ─────────────────────────────────────── */
-.thread-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 16px;
-}
-
-@media (max-width: 480px) {
-  .thread-grid { grid-template-columns: 1fr; }
-}
-
-.thread-card {
-  background: var(--nord1);
-  border: 1px solid var(--nord3);
-  border-radius: 8px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: border-color var(--transition-normal),
-              box-shadow var(--transition-normal),
-              transform var(--transition-normal);
-  -webkit-tap-highlight-color: transparent;
-}
-
-.thread-card:hover {
-  border-color: var(--frost);
-  box-shadow: var(--shadow-elevated);
-  transform: translateY(-2px);
-}
-
-.thread-card.expanded {
-  grid-column: 1 / -1;
-  transform: none;
-}
-
-.thread-card.expanded:hover {
-  transform: none;
-}
-
-.card-accent {
-  height: 3px;
-  width: 100%;
-}
-
-.card-header {
-  padding: 16px 20px 12px;
-}
-
-.card-header h3 {
-  font-size: 15px;
-  font-weight: 600;
-  color: var(--nord6);
-  margin-bottom: 4px;
-  line-height: 1.3;
-}
-
-.card-question {
-  font-size: 12px;
-  font-style: italic;
-  color: var(--frost-warm);
-  margin-bottom: 12px;
-  line-height: 1.5;
-}
-
-.card-stats {
-  display: flex;
-  gap: 16px;
-  font-size: 11px;
-}
-
-.card-stat {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.card-stat .num {
-  color: var(--nord6);
-  font-weight: 600;
-}
-
-.card-stat .lbl {
-  color: var(--nord3);
-}
-
-.card-expand-icon {
-  display: inline-block;
-  font-size: 10px;
-  color: var(--nord3);
-  transition: transform var(--transition-normal);
-  margin-left: auto;
-}
-
-.thread-card.expanded .card-expand-icon {
-  transform: rotate(180deg);
-}
-
-/* ── Expanded Card Content ─────────────────────────────────────────── */
-.card-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height var(--transition-expand);
-}
-
-.thread-card.expanded .card-body {
-  max-height: 2000px;
-}
-
-.card-body-inner {
-  padding: 0 20px 20px;
-  border-top: 1px solid var(--nord2);
-}
-
-.card-finding {
-  background: var(--nord0-deep);
-  border-left: 3px solid var(--frost);
-  padding: 12px 16px;
-  margin: 16px 0;
-  font-size: 13px;
-  color: var(--nord5);
-  border-radius: 0 6px 6px 0;
-  line-height: 1.6;
-}
-
-.card-finding .finding-label {
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--frost);
-  font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.mini-graph-container {
-  width: 100%;
-  height: 300px;
-  background: var(--nord0-deep);
-  border: 1px solid var(--nord2);
-  border-radius: 6px;
-  margin: 16px 0;
-  position: relative;
-}
-
-.mini-graph-loading {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--nord3);
-  font-size: 12px;
-}
-
-.card-bridges {
-  margin: 16px 0;
-}
-
-.card-bridges h4 {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--nord3);
-  margin-bottom: 8px;
-}
-
-.bridge-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.bridge-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: var(--nord2);
-  border: 1px solid var(--nord3);
-  border-radius: 4px;
-  padding: 4px 10px;
-  font-size: 11px;
-  color: var(--nord4);
-}
-
-.bridge-chip .arrow { color: var(--aurora-yellow); }
-
-.card-notes {
-  margin: 16px 0 0;
-}
-
-.card-notes h4 {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--nord3);
-  margin-bottom: 8px;
-}
-
-.note-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 4px;
-}
-
-.note-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 8px;
-  border-radius: 3px;
-  font-size: 11px;
-  color: var(--nord4);
-  transition: background var(--transition-fast);
-  cursor: pointer;
-}
-
-.note-item:hover {
-  background: var(--nord2);
-}
-
-.note-type-badge {
-  display: inline-block;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.note-type-badge.inquiry { background: var(--frost); }
-.note-type-badge.literature { background: var(--aurora-green); }
-.note-type-badge.general { background: var(--nord4); }
-.note-type-badge.course { background: var(--aurora-magenta); }
-
-.note-centrality {
-  color: var(--nord3);
-  font-size: 10px;
-  margin-left: auto;
-  font-variant-numeric: tabular-nums;
-}
-
-/* ── Structural Gaps ───────────────────────────────────────────────── */
-.gaps-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 12px;
-}
-
-.gap-card {
-  background: var(--nord1);
-  border: 1px solid var(--nord3);
-  border-left: 3px solid var(--aurora-red);
-  border-radius: 0 8px 8px 0;
-  padding: 16px 20px;
-  cursor: pointer;
-  transition: border-color var(--transition-normal),
-              box-shadow var(--transition-normal);
-}
-
-.gap-card:hover {
-  border-color: var(--aurora-red);
-  box-shadow: var(--shadow-elevated);
-}
-
-.gap-card.active {
-  border-left-color: var(--aurora-yellow);
-  background: var(--nord2);
-}
-
-.gap-communities {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.gap-comm-name {
-  color: var(--nord5);
-}
-
-.gap-arrow {
-  color: var(--aurora-red);
-  font-size: 16px;
-}
-
-.gap-detail {
-  font-size: 11px;
-  color: var(--nord3);
-}
-
-.gap-density-bar {
-  width: 100%;
-  height: 3px;
-  background: var(--nord2);
-  border-radius: 2px;
-  margin-top: 10px;
-  overflow: hidden;
-}
-
-.gap-density-fill {
-  height: 100%;
-  background: var(--aurora-red);
-  border-radius: 2px;
-  transition: width var(--transition-normal);
-}
-
-/* ── Node Sidebar ──────────────────────────────────────────────────── */
-.sidebar-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-normal);
-  z-index: 90;
-}
-
-.sidebar-overlay.open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 360px;
-  max-width: 90vw;
-  height: 100vh;
-  background: var(--nord1);
-  border-left: 1px solid var(--nord3);
-  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.4);
-  transform: translateX(100%);
-  transition: transform var(--transition-normal);
-  z-index: 100;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-
-.sidebar.open {
-  transform: translateX(0);
-}
-
-.sidebar-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: 24px 20px 16px;
-  border-bottom: 1px solid var(--nord2);
-  position: sticky;
-  top: 0;
-  background: var(--nord1);
-  z-index: 1;
-}
-
-.sidebar-title {
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--nord6);
-  line-height: 1.3;
-  flex: 1;
-}
-
-.sidebar-close {
-  background: none;
-  border: 1px solid var(--nord3);
-  border-radius: 4px;
-  color: var(--nord4);
-  font-size: 18px;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background var(--transition-fast), border-color var(--transition-fast);
-  flex-shrink: 0;
-  margin-left: 12px;
-}
-
-.sidebar-close:hover {
-  background: var(--nord2);
-  border-color: var(--frost);
-}
-
-.sidebar-body {
-  padding: 20px;
-}
-
-.sidebar-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.sidebar-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 10px;
-  border-radius: 4px;
-  font-size: 10px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.sidebar-badge.type-inquiry { background: rgba(136, 192, 208, 0.15); color: var(--frost); }
-.sidebar-badge.type-literature { background: rgba(163, 190, 140, 0.15); color: var(--aurora-green); }
-.sidebar-badge.type-general { background: rgba(216, 222, 233, 0.1); color: var(--nord4); }
-.sidebar-badge.type-course { background: rgba(180, 142, 173, 0.15); color: var(--aurora-magenta); }
-.sidebar-badge.bridge { background: rgba(235, 203, 139, 0.15); color: var(--aurora-yellow); }
-
-.sidebar-stat-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.sidebar-stat {
-  background: var(--nord0-deep);
-  border-radius: 4px;
-  padding: 10px 12px;
-}
-
-.sidebar-stat .val {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--frost);
-}
-
-.sidebar-stat .label {
-  font-size: 10px;
-  color: var(--nord3);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.sidebar-connections {
-  margin-top: 16px;
-}
-
-.sidebar-connections h4 {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--nord3);
-  margin-bottom: 8px;
-}
-
-.sidebar-conn-item {
-  padding: 6px 8px;
-  border-radius: 3px;
-  font-size: 12px;
-  color: var(--nord4);
-  cursor: pointer;
-  transition: background var(--transition-fast);
-}
-
-.sidebar-conn-item:hover {
-  background: var(--nord2);
-  color: var(--frost);
-}
-
-/* ── About Section ─────────────────────────────────────────────────── */
-.about-panel {
-  background: var(--nord1);
-  border: 1px solid var(--nord3);
-  border-radius: 8px;
-  padding: 24px;
-}
-
-.about-panel p {
-  font-size: 13px;
-  color: var(--nord4);
-  margin-bottom: 12px;
-  line-height: 1.7;
-}
-
-.about-panel p:last-child { margin-bottom: 0; }
-
-/* ── Footer ────────────────────────────────────────────────────────── */
-.footer {
-  border-top: 1px solid var(--nord3);
-  padding: 24px 0 48px;
-  font-size: 12px;
-  color: var(--nord3);
-  text-align: center;
-}
-
-.footer a { color: var(--frost-deep); }
-
-/* ── Reduced Motion ────────────────────────────────────────────────── */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-  }
-  .section { opacity: 1; transform: none; }
-  .thread-card:hover { transform: none; }
+  --transition-normal: 300ms cubic-bezier(0.4,0,0.2,1);
+  --transition-expand: 400ms cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--nord0-deep);color:var(--nord4);font-family:'JetBrains Mono','Liberation Mono','Courier New',monospace;font-size:14px;line-height:1.6;min-height:100vh;overflow-x:hidden}
+a{color:var(--frost);text-decoration:none;transition:color var(--transition-fast)}
+a:hover{text-decoration:underline}a:visited{color:var(--frost-deep)}
+a:focus-visible{outline:2px solid var(--magenta-bright);outline-offset:2px}
+
+.container{max-width:1080px;margin:0 auto;padding:0 48px}
+@media(max-width:768px){.container{padding:0 20px}}
+
+/* Hero */
+.hero{padding:48px 0 24px}
+.hero .breadcrumb{font-size:12px;color:var(--nord3);margin-bottom:16px}
+.hero .breadcrumb a{color:var(--frost-deep)}
+.hero h1{font-size:28px;font-weight:700;color:var(--nord6);margin-bottom:8px;line-height:1.2}
+.hero .subtitle{font-size:14px;color:var(--nord4);max-width:640px;margin-bottom:24px}
+
+/* Stats */
+.stats-bar{display:flex;gap:32px;flex-wrap:wrap;padding:16px 0;border-top:2px solid var(--burgundy);border-bottom:1px solid var(--nord3);margin-bottom:32px}
+.stat-item{display:flex;align-items:baseline;gap:8px}
+.stat-number{font-size:28px;font-weight:700;color:var(--frost);font-variant-numeric:tabular-nums}
+.stat-label{font-size:12px;color:var(--nord3);text-transform:uppercase;letter-spacing:0.05em}
+
+/* Graph */
+.graph-wrap{background:var(--nord0);border:1px solid var(--nord3);border-radius:12px;overflow:hidden;margin-bottom:16px}
+.graph-toolbar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;background:var(--nord1);border-bottom:1px solid var(--nord3);font-size:12px}
+.graph-toolbar .label{color:var(--nord5);font-weight:500}
+.graph-toolbar .hint{color:var(--nord3);font-style:italic}
+#main-graph{width:100%;height:500px;cursor:grab}
+#main-graph:active{cursor:grabbing}
+@media(max-width:768px){#main-graph{height:380px}}
+
+/* Detail Panel — below graph */
+.detail-panel{background:var(--nord1);border:1px solid var(--nord3);border-radius:8px;margin-bottom:32px;overflow:hidden;max-height:0;opacity:0;transition:max-height var(--transition-expand),opacity var(--transition-normal),margin var(--transition-normal)}
+.detail-panel.open{max-height:600px;opacity:1;margin-bottom:32px}
+.detail-header{display:flex;align-items:flex-start;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--nord2)}
+.detail-title{font-size:18px;font-weight:600;color:var(--nord6);line-height:1.3;flex:1}
+.detail-close{background:none;border:1px solid var(--nord3);border-radius:4px;color:var(--nord4);font-size:16px;width:28px;height:28px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background var(--transition-fast);flex-shrink:0;margin-left:12px}
+.detail-close:hover{background:var(--nord2);border-color:var(--frost)}
+.detail-body{padding:16px 20px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:640px){.detail-body{grid-template-columns:1fr}}
+.detail-meta{display:flex;flex-wrap:wrap;gap:6px;grid-column:1/-1;margin-bottom:4px}
+.badge{display:inline-flex;padding:3px 10px;border-radius:4px;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em}
+.badge.inquiry{background:rgba(136,192,208,0.15);color:var(--frost)}
+.badge.literature{background:rgba(163,190,140,0.15);color:var(--aurora-green)}
+.badge.general{background:rgba(216,222,233,0.1);color:var(--nord4)}
+.badge.course{background:rgba(180,142,173,0.15);color:var(--aurora-magenta)}
+.badge.bridge{background:rgba(235,203,139,0.15);color:var(--aurora-yellow)}
+.detail-stat{background:var(--nord0-deep);border-radius:6px;padding:12px 16px}
+.detail-stat .val{font-size:24px;font-weight:700;color:var(--frost)}
+.detail-stat .lbl{font-size:10px;color:var(--nord3);text-transform:uppercase;letter-spacing:0.05em}
+.detail-rq{grid-column:1/-1;background:var(--nord0-deep);border-left:3px solid var(--frost-warm);padding:12px 16px;border-radius:0 6px 6px 0}
+.detail-rq .rq-label{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--frost-warm);font-weight:600;margin-bottom:4px}
+.detail-rq p{font-size:13px;font-style:italic;color:var(--nord5);margin:0}
+.detail-finding{grid-column:1/-1;background:var(--nord0-deep);border-left:3px solid var(--frost);padding:12px 16px;border-radius:0 6px 6px 0}
+.detail-finding .f-label{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--frost);font-weight:600;margin-bottom:4px}
+.detail-finding p{font-size:13px;color:var(--nord5);margin:0}
+.detail-connections{grid-column:1/-1}
+.detail-connections h4{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--nord3);margin-bottom:8px}
+.conn-grid{display:flex;flex-wrap:wrap;gap:6px}
+.conn-chip{background:var(--nord2);border:1px solid var(--nord3);border-radius:4px;padding:3px 10px;font-size:11px;color:var(--nord4);cursor:pointer;transition:background var(--transition-fast),border-color var(--transition-fast)}
+.conn-chip:hover{background:var(--nord1);border-color:var(--frost);color:var(--frost)}
+.detail-bridges{grid-column:1/-1}
+.detail-bridges h4{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--nord3);margin-bottom:8px}
+.bridge-chip{display:inline-flex;align-items:center;gap:4px;background:var(--nord2);border:1px solid var(--nord3);border-radius:4px;padding:3px 10px;font-size:11px;color:var(--aurora-yellow);margin-right:6px;margin-bottom:4px}
+
+/* Sections */
+.section{margin-bottom:48px;opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.section.visible{opacity:1;transform:translateY(0)}
+.section-heading{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--nord3);margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--nord2)}
+
+/* Thread Cards */
+.thread-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+@media(max-width:480px){.thread-grid{grid-template-columns:1fr}}
+.thread-card{background:var(--nord1);border:1px solid var(--nord3);border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color var(--transition-normal),box-shadow var(--transition-normal),transform var(--transition-normal);-webkit-tap-highlight-color:transparent}
+.thread-card:hover{border-color:var(--frost);box-shadow:var(--shadow-elevated);transform:translateY(-2px)}
+.thread-card.expanded{grid-column:1/-1;transform:none}
+.thread-card.expanded:hover{transform:none}
+.card-accent{height:3px;width:100%}
+.card-header{padding:16px 20px 12px}
+.card-header h3{font-size:15px;font-weight:600;color:var(--nord6);margin-bottom:4px;line-height:1.3}
+.card-question{font-size:12px;font-style:italic;color:var(--frost-warm);margin-bottom:12px;line-height:1.5}
+.card-stats{display:flex;gap:16px;font-size:11px}
+.card-stat{display:flex;align-items:center;gap:4px}
+.card-stat .num{color:var(--nord6);font-weight:600}
+.card-stat .lbl{color:var(--nord3)}
+.card-expand-icon{display:inline-block;font-size:10px;color:var(--nord3);transition:transform var(--transition-normal);margin-left:auto}
+.thread-card.expanded .card-expand-icon{transform:rotate(180deg)}
+
+/* Expanded card body */
+.card-body{max-height:0;overflow:hidden;transition:max-height var(--transition-expand)}
+.thread-card.expanded .card-body{max-height:2000px}
+.card-body-inner{padding:0 20px 20px;border-top:1px solid var(--nord2)}
+.card-finding{background:var(--nord0-deep);border-left:3px solid var(--frost);padding:12px 16px;margin:16px 0;font-size:13px;color:var(--nord5);border-radius:0 6px 6px 0;line-height:1.6}
+.card-finding .finding-label{font-size:10px;text-transform:uppercase;letter-spacing:0.08em;color:var(--frost);font-weight:600;margin-bottom:4px}
+.mini-graph-container{width:100%;height:300px;background:var(--nord0-deep);border:1px solid var(--nord2);border-radius:6px;margin:16px 0;position:relative}
+.mini-graph-loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--nord3);font-size:12px}
+.card-bridges h4,.card-notes h4{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--nord3);margin-bottom:8px}
+.card-bridges{margin:16px 0}.card-notes{margin:16px 0 0}
+.bridge-list{display:flex;flex-wrap:wrap;gap:6px}
+.note-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:4px}
+.note-item{display:flex;align-items:center;gap:6px;padding:4px 8px;border-radius:3px;font-size:11px;color:var(--nord4);transition:background var(--transition-fast);cursor:pointer}
+.note-item:hover{background:var(--nord2)}
+.note-type-badge{display:inline-block;width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.note-type-badge.inquiry{background:var(--frost)}.note-type-badge.literature{background:var(--aurora-green)}
+.note-type-badge.general{background:var(--nord4)}.note-type-badge.course{background:var(--aurora-magenta)}
+.note-centrality{color:var(--nord3);font-size:10px;margin-left:auto;font-variant-numeric:tabular-nums}
+
+/* Gaps */
+.gaps-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.gap-card{background:var(--nord1);border:1px solid var(--nord3);border-left:3px solid var(--aurora-red);border-radius:0 8px 8px 0;padding:16px 20px;cursor:pointer;transition:border-color var(--transition-normal),box-shadow var(--transition-normal)}
+.gap-card:hover{border-color:var(--aurora-red);box-shadow:var(--shadow-elevated)}
+.gap-card.active{border-left-color:var(--aurora-yellow);background:var(--nord2)}
+.gap-communities{display:flex;align-items:center;gap:8px;margin-bottom:8px;font-size:13px;font-weight:500;flex-wrap:wrap}
+.gap-comm-name{color:var(--nord5)}.gap-arrow{color:var(--aurora-red);font-size:16px}
+.gap-detail{font-size:11px;color:var(--nord3)}
+.gap-density-bar{width:100%;height:3px;background:var(--nord2);border-radius:2px;margin-top:10px;overflow:hidden}
+.gap-density-fill{height:100%;background:var(--aurora-red);border-radius:2px}
+
+/* About */
+.about-panel{background:var(--nord1);border:1px solid var(--nord3);border-radius:8px;padding:24px}
+.about-panel p{font-size:13px;color:var(--nord4);margin-bottom:12px;line-height:1.7}
+.about-panel p:last-child{margin-bottom:0}
+
+/* Footer */
+.footer{border-top:1px solid var(--nord3);padding:24px 0 48px;font-size:12px;color:var(--nord3);text-align:center}
+.footer a{color:var(--frost-deep)}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:0.01ms!important;animation-duration:0.01ms!important}
+  .section{opacity:1;transform:none}.thread-card:hover{transform:none}
 }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <!-- Hero -->
   <section class="hero">
     <div class="breadcrumb"><a href="/">this15fine.dev</a> / graph</div>
     <h1>Vault Graph</h1>
@@ -703,42 +165,36 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
     how notes, inquiry threads, and literature connect across a doctoral
     research program in student success.</p>
   </section>
-
-  <!-- Stats Bar -->
   <div class="stats-bar" id="stats-bar">
-    <div class="stat-item">
-      <span class="stat-number" data-target="0" id="stat-notes">0</span>
-      <span class="stat-label">notes</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number" data-target="0" id="stat-links">0</span>
-      <span class="stat-label">links</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number" data-target="0" id="stat-threads">0</span>
-      <span class="stat-label">research threads</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number" data-target="0" id="stat-gaps">0</span>
-      <span class="stat-label">structural gaps</span>
-    </div>
+    <div class="stat-item"><span class="stat-number" id="stat-notes">0</span><span class="stat-label">notes</span></div>
+    <div class="stat-item"><span class="stat-number" id="stat-links">0</span><span class="stat-label">links</span></div>
+    <div class="stat-item"><span class="stat-number" id="stat-threads">0</span><span class="stat-label">research threads</span></div>
+    <div class="stat-item"><span class="stat-number" id="stat-gaps">0</span><span class="stat-label">structural gaps</span></div>
   </div>
 </div>
 
-<!-- Main Graph (full-bleed) -->
+<!-- Graph -->
 <section class="section visible" id="graph-section">
   <div class="container">
-    <div class="graph-section">
+    <div class="graph-wrap">
       <div class="graph-toolbar">
-        <span class="graph-label">Link Network Overview</span>
-        <span class="graph-hint" id="graph-hint">Click a node to explore. Hover threads below to highlight.</span>
+        <span class="label">Link Network Overview</span>
+        <span class="hint" id="graph-hint">Tap a node to see details below</span>
       </div>
       <div id="main-graph"></div>
+    </div>
+    <!-- Detail panel — populates below graph on node tap -->
+    <div class="detail-panel" id="detail-panel">
+      <div class="detail-header">
+        <div class="detail-title" id="detail-title"></div>
+        <button class="detail-close" id="detail-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="detail-body" id="detail-body"></div>
     </div>
   </div>
 </section>
 
-<!-- Research Threads -->
+<!-- Threads -->
 <section class="section" id="threads-section">
   <div class="container">
     <h2 class="section-heading">Research Threads</h2>
@@ -746,13 +202,13 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   </div>
 </section>
 
-<!-- Structural Gaps -->
+<!-- Gaps -->
 <section class="section" id="gaps-section">
   <div class="container">
     <h2 class="section-heading">Structural Gaps</h2>
-    <p style="font-size: 13px; color: var(--nord4); margin-bottom: 20px; max-width: 640px;">
-      Community pairs with weak or missing connections — potential areas for
-      bridging notes. Tap a gap to highlight both threads in the graph above.
+    <p style="font-size:13px;color:var(--nord4);margin-bottom:20px;max-width:640px;">
+      Community pairs with weak or missing connections. Tap a gap to highlight
+      both threads in the graph above.
     </p>
     <div class="gaps-grid" id="gaps-grid"></div>
   </div>
@@ -769,723 +225,241 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="container">
-    <p><a href="/">this15fine.dev</a> &middot; vault-graph analysis &middot;
-    generated <span id="generated-date"></span></p>
-  </div>
-</footer>
+<footer class="footer"><div class="container">
+  <p><a href="/">this15fine.dev</a> &middot; vault-graph analysis &middot; generated <span id="generated-date"></span></p>
+</div></footer>
 
-<!-- Sidebar Overlay -->
-<div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-<!-- Sidebar -->
-<aside class="sidebar" id="sidebar">
-  <div class="sidebar-header">
-    <div class="sidebar-title" id="sidebar-title"></div>
-    <button class="sidebar-close" id="sidebar-close" aria-label="Close panel">&times;</button>
-  </div>
-  <div class="sidebar-body" id="sidebar-body"></div>
-</aside>
-
-<!-- Cytoscape.js -->
 <script src="https://unpkg.com/cytoscape@3/dist/cytoscape.min.js"></script>
-
 <script>
-(function () {
-  'use strict';
-
-  /* ── State ──────────────────────────────────────────────────────── */
-  let cy = null;
-  let meta = null;
-  let overviewData = null;
-  let clusterCache = {};
-  let expandedCard = null;
-  let miniCyInstances = {};
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const CLUSTER_COLORS = [
-    '#88C0D0', '#A3BE8C', '#BF616A', '#EBCB8B',
-    '#B48EAD', '#D08770', '#8FBCBB', '#81A1C1',
-  ];
-
-  /* ── DOM ────────────────────────────────────────────────────────── */
-  const $mainGraph = document.getElementById('main-graph');
-  const $threadGrid = document.getElementById('thread-grid');
-  const $gapsGrid = document.getElementById('gaps-grid');
-  const $sidebar = document.getElementById('sidebar');
-  const $sidebarOverlay = document.getElementById('sidebar-overlay');
-  const $sidebarTitle = document.getElementById('sidebar-title');
-  const $sidebarBody = document.getElementById('sidebar-body');
-  const $sidebarClose = document.getElementById('sidebar-close');
-
-  /* ── Init ───────────────────────────────────────────────────────── */
-  async function init() {
-    try {
-      meta = await fetchJSON('data/meta.json');
-      overviewData = await fetchJSON('data/overview.json');
-      animateStats();
-      renderMainGraph();
-      renderThreadCards();
-      renderGaps();
-      renderFooter();
-      setupScrollAnimations();
-    } catch (err) {
-      console.error('Failed to initialize:', err);
-      $mainGraph.innerHTML = '<p style="padding:40px;color:#BF616A;">Failed to load graph data.</p>';
-    }
-  }
-
-  async function fetchJSON(url) {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
-    return res.json();
-  }
-
-  /* ── Stats Animation ────────────────────────────────────────────── */
-  function animateStats() {
-    const gapCount = (meta.structuralGaps || []).filter(g => g.density < 0.015).length;
-    const targets = {
-      'stat-notes': meta.totalNotes,
-      'stat-links': meta.totalLinks,
-      'stat-threads': meta.communities,
-      'stat-gaps': gapCount,
-    };
-
-    Object.entries(targets).forEach(([id, target]) => {
-      const el = document.getElementById(id);
-      if (reducedMotion) { el.textContent = target; return; }
-      let current = 0;
-      const step = Math.max(1, Math.ceil(target / 40));
-      const interval = setInterval(() => {
-        current = Math.min(current + step, target);
-        el.textContent = current;
-        if (current >= target) clearInterval(interval);
-      }, 30);
-    });
-  }
-
-  /* ── Main Graph ─────────────────────────────────────────────────── */
-  function renderMainGraph() {
-    const elements = [];
-
-    overviewData.nodes.forEach(n => {
-      const color = CLUSTER_COLORS[n.cluster] || '#4C566A';
-      const isInquiry = n.type === 'inquiry';
-      const size = isInquiry
-        ? 20 + Math.min(n.degree * 1.5, 30)
-        : 8 + Math.min(n.degree * 0.8, 16);
-
-      elements.push({
-        group: 'nodes',
-        data: {
-          id: n.id,
-          label: isInquiry ? formatLabel(n.id) : '',
-          fullLabel: n.label || n.id,
-          type: n.type,
-          cluster: n.cluster,
-          centrality: n.centrality,
-          degree: n.degree,
-          color: color,
-          size: size,
-          researchQuestion: n.researchQuestion || '',
-          keyFinding: n.keyFinding || '',
-          noteCount: n.noteCount || 0,
-        },
-        position: { x: n.position.x, y: n.position.y },
-      });
-    });
-
-    overviewData.edges.forEach(e => {
-      elements.push({
-        group: 'edges',
-        data: {
-          source: e.source,
-          target: e.target,
-          weight: e.weight,
-        },
-      });
-    });
-
-    cy = cytoscape({
-      container: $mainGraph,
-      elements: elements,
-      style: [
-        {
-          selector: 'node',
-          style: {
-            'background-color': 'data(color)',
-            'width': 'data(size)',
-            'height': 'data(size)',
-            'label': 'data(label)',
-            'font-size': 9,
-            'font-family': "'JetBrains Mono', monospace",
-            'color': '#D8DEE9',
-            'text-valign': 'bottom',
-            'text-margin-y': 6,
-            'text-outline-color': '#2E3440',
-            'text-outline-width': 2,
-            'border-width': 0,
-            'border-color': '#ECEFF4',
-            'transition-property': 'background-color, border-width, width, height, opacity',
-            'transition-duration': reducedMotion ? '1ms' : '200ms',
-          },
-        },
-        {
-          selector: 'edge',
-          style: {
-            'width': 1,
-            'line-color': 'rgba(76, 86, 106, 0.4)',
-            'curve-style': 'bezier',
-            'opacity': 0.5,
-            'transition-property': 'line-color, width, opacity',
-            'transition-duration': reducedMotion ? '1ms' : '200ms',
-          },
-        },
-        {
-          selector: 'node.highlighted',
-          style: {
-            'border-width': 2,
-            'border-color': '#ECEFF4',
-            'z-index': 10,
-          },
-        },
-        {
-          selector: 'node.dimmed',
-          style: {
-            'opacity': 0.15,
-          },
-        },
-        {
-          selector: 'edge.dimmed',
-          style: {
-            'opacity': 0.05,
-          },
-        },
-        {
-          selector: 'edge.highlighted',
-          style: {
-            'line-color': 'rgba(136, 192, 208, 0.6)',
-            'width': 2,
-            'opacity': 0.8,
-          },
-        },
-      ],
-      layout: { name: 'preset' },
-      minZoom: 0.3,
-      maxZoom: 3,
-      wheelSensitivity: 0.3,
-      boxSelectionEnabled: false,
-    });
-
-    // Click node → open sidebar
-    cy.on('tap', 'node', (evt) => {
-      const node = evt.target;
-      openSidebar(node.data());
-    });
-
-    // Tap background → clear highlights
-    cy.on('tap', (evt) => {
-      if (evt.target === cy) {
-        clearHighlights();
-      }
-    });
-  }
-
-  function formatLabel(slug) {
-    return slug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-  }
-
-  /* ── Graph Highlighting ─────────────────────────────────────────── */
-  function highlightCluster(clusterId) {
-    clearHighlights();
-    cy.nodes().forEach(node => {
-      if (node.data('cluster') === clusterId) {
-        node.addClass('highlighted');
-      } else {
-        node.addClass('dimmed');
-      }
-    });
-    cy.edges().forEach(edge => {
-      const src = cy.getElementById(edge.data('source'));
-      const tgt = cy.getElementById(edge.data('target'));
-      if (src.data('cluster') === clusterId && tgt.data('cluster') === clusterId) {
-        edge.addClass('highlighted');
-      } else {
-        edge.addClass('dimmed');
-      }
-    });
-  }
-
-  function highlightGap(clusterA, clusterB) {
-    clearHighlights();
-    cy.nodes().forEach(node => {
-      const c = node.data('cluster');
-      if (c === clusterA || c === clusterB) {
-        node.addClass('highlighted');
-      } else {
-        node.addClass('dimmed');
-      }
-    });
-    cy.edges().forEach(edge => {
-      const src = cy.getElementById(edge.data('source'));
-      const tgt = cy.getElementById(edge.data('target'));
-      const sc = src.data('cluster');
-      const tc = tgt.data('cluster');
-      const relevant = (sc === clusterA || sc === clusterB) && (tc === clusterA || tc === clusterB);
-      if (relevant) {
-        edge.addClass('highlighted');
-      } else {
-        edge.addClass('dimmed');
-      }
-    });
-  }
-
-  function clearHighlights() {
-    cy.elements().removeClass('highlighted dimmed');
-  }
-
-  /* ── Thread Cards ───────────────────────────────────────────────── */
-  function renderThreadCards() {
-    // Get inquiry nodes, sorted by centrality
-    const inquiries = overviewData.nodes
-      .filter(n => n.type === 'inquiry')
-      .sort((a, b) => b.centrality - a.centrality);
-
-    $threadGrid.innerHTML = '';
-
-    inquiries.forEach(inq => {
-      const color = CLUSTER_COLORS[inq.cluster] || '#4C566A';
-      const clusterLabel = meta.clusterLabels[inq.cluster] || `Cluster ${inq.cluster}`;
-
-      const card = document.createElement('div');
-      card.className = 'thread-card';
-      card.dataset.cluster = inq.cluster;
-      card.dataset.id = inq.id;
-
-      card.innerHTML = `
-        <div class="card-accent" style="background: ${color}"></div>
-        <div class="card-header">
-          <h3>${clusterLabel}</h3>
-          <div class="card-question">${inq.researchQuestion || ''}</div>
-          <div class="card-stats">
-            <div class="card-stat"><span class="num">${inq.noteCount || 0}</span><span class="lbl">notes</span></div>
-            <div class="card-stat"><span class="num">${inq.degree}</span><span class="lbl">links</span></div>
-            <div class="card-stat"><span class="num">${inq.gapCount || 0}</span><span class="lbl">gaps</span></div>
-            <span class="card-expand-icon">&#9660;</span>
-          </div>
-        </div>
-        <div class="card-body">
-          <div class="card-body-inner">
-            <div class="card-finding">
-              <div class="finding-label">Key Finding</div>
-              ${inq.keyFinding || 'Analysis in progress.'}
-            </div>
-            <div class="mini-graph-container" id="mini-graph-${inq.cluster}">
-              <div class="mini-graph-loading">Loading cluster graph...</div>
-            </div>
-            <div class="card-bridges" id="bridges-${inq.cluster}"></div>
-            <div class="card-notes" id="notes-${inq.cluster}"></div>
-          </div>
-        </div>
-      `;
-
-      // Hover → highlight cluster in main graph
-      card.addEventListener('mouseenter', () => {
-        highlightCluster(inq.cluster);
-      });
-      card.addEventListener('mouseleave', () => {
-        if (!card.classList.contains('expanded')) {
-          clearHighlights();
-        }
-      });
-
-      // Click → expand/collapse
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('.note-item') || e.target.closest('.sidebar')) return;
-        toggleCard(card, inq.cluster);
-      });
-
-      $threadGrid.appendChild(card);
-    });
-  }
-
-  async function toggleCard(card, clusterId) {
-    const wasExpanded = card.classList.contains('expanded');
-
-    // Collapse any currently expanded card
-    if (expandedCard && expandedCard !== card) {
-      expandedCard.classList.remove('expanded');
-      clearHighlights();
-      const oldMiniId = expandedCard.dataset.cluster;
-      if (miniCyInstances[oldMiniId]) {
-        miniCyInstances[oldMiniId].destroy();
-        delete miniCyInstances[oldMiniId];
-      }
-    }
-
-    if (wasExpanded) {
-      card.classList.remove('expanded');
-      expandedCard = null;
-      clearHighlights();
-      if (miniCyInstances[clusterId]) {
-        miniCyInstances[clusterId].destroy();
-        delete miniCyInstances[clusterId];
-      }
-    } else {
-      card.classList.add('expanded');
-      expandedCard = card;
-      highlightCluster(clusterId);
-
-      // Smooth scroll to card
-      setTimeout(() => {
-        card.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
-      }, 100);
-
-      // Load cluster data and render mini graph
-      await loadAndRenderCluster(clusterId);
-    }
-  }
-
-  async function loadAndRenderCluster(clusterId) {
-    const containerId = `mini-graph-${clusterId}`;
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    // Load cluster data
-    if (!clusterCache[clusterId]) {
-      try {
-        clusterCache[clusterId] = await fetchJSON(`data/cluster-${clusterId}.json`);
-      } catch (err) {
-        container.innerHTML = '<p style="padding:20px;color:#BF616A;font-size:12px;">Failed to load cluster data.</p>';
-        return;
-      }
-    }
-
-    const cluster = clusterCache[clusterId];
-    container.innerHTML = '';
-
-    // Render bridges
-    renderBridges(clusterId, cluster);
-
-    // Render notes list
-    renderNotesList(clusterId, cluster);
-
-    // Build mini Cytoscape graph
-    const elements = [];
-    const color = CLUSTER_COLORS[clusterId] || '#4C566A';
-
-    cluster.nodes.forEach(n => {
-      const isInquiry = n.type === 'inquiry';
-      const isBridge = n.isBridge;
-      const nodeColor = isBridge ? '#EBCB8B' : (isInquiry ? color : hexAlpha(color, 0.7));
-      const size = isInquiry
-        ? 22 + Math.min(n.degree * 1.5, 20)
-        : 8 + Math.min(n.degree * 0.6, 14);
-
-      elements.push({
-        group: 'nodes',
-        data: {
-          id: n.id,
-          label: (isInquiry || isBridge || n.degree > 5) ? formatLabel(n.id) : '',
-          fullLabel: n.label || n.id,
-          type: n.type,
-          cluster: clusterId,
-          centrality: n.centrality,
-          degree: n.degree,
-          color: nodeColor,
-          size: size,
-          connections: n.connections || [],
-          isBridge: n.isBridge,
-          bridgesTo: n.bridgesTo || [],
-        },
-        position: { x: n.position.x, y: n.position.y },
-      });
-    });
-
-    cluster.edges.forEach(e => {
-      elements.push({
-        group: 'edges',
-        data: { source: e.source, target: e.target, weight: e.weight },
-      });
-    });
-
-    const miniCy = cytoscape({
-      container: container,
-      elements: elements,
-      style: [
-        {
-          selector: 'node',
-          style: {
-            'background-color': 'data(color)',
-            'width': 'data(size)',
-            'height': 'data(size)',
-            'label': 'data(label)',
-            'font-size': 8,
-            'font-family': "'JetBrains Mono', monospace",
-            'color': '#D8DEE9',
-            'text-valign': 'bottom',
-            'text-margin-y': 5,
-            'text-outline-color': '#1e2430',
-            'text-outline-width': 2,
-          },
-        },
-        {
-          selector: 'edge',
-          style: {
-            'width': 1,
-            'line-color': hexAlpha(color, 0.25),
-            'curve-style': 'bezier',
-            'opacity': 0.6,
-          },
-        },
-      ],
-      layout: { name: 'preset' },
-      minZoom: 0.5,
-      maxZoom: 2.5,
-      wheelSensitivity: 0.3,
-      boxSelectionEnabled: false,
-    });
-
-    miniCy.on('tap', 'node', (evt) => {
-      evt.originalEvent.stopPropagation();
-      openSidebar(evt.target.data());
-    });
-
-    miniCyInstances[clusterId] = miniCy;
-
-    // Fit after a tick (container may still be animating)
-    setTimeout(() => miniCy.fit(undefined, 30), 50);
-  }
-
-  function renderBridges(clusterId, cluster) {
-    const container = document.getElementById(`bridges-${clusterId}`);
-    if (!container) return;
-
-    const bridges = cluster.nodes.filter(n => n.isBridge);
-    if (bridges.length === 0) {
-      container.innerHTML = '';
-      return;
-    }
-
-    const chips = bridges.map(b => {
-      const targets = (b.bridgesTo || []).join(', ');
-      return `<div class="bridge-chip">
-        <span class="note-type-badge ${b.type}"></span>
-        ${formatLabel(b.id)}
-        <span class="arrow">&rarr;</span>
-        <span style="font-size:10px;color:var(--nord3)">${targets}</span>
-      </div>`;
-    }).join('');
-
-    container.innerHTML = `
-      <h4>Bridge Nodes</h4>
-      <div class="bridge-list">${chips}</div>
-    `;
-  }
-
-  function renderNotesList(clusterId, cluster) {
-    const container = document.getElementById(`notes-${clusterId}`);
-    if (!container) return;
-
-    // Sort by centrality, show top 20
-    const sorted = [...cluster.nodes].sort((a, b) => b.centrality - a.centrality).slice(0, 20);
-
-    const items = sorted.map(n => `
-      <div class="note-item" data-node-id="${n.id}" onclick="event.stopPropagation()">
-        <span class="note-type-badge ${n.type}"></span>
-        <span>${formatLabel(n.id)}</span>
-        <span class="note-centrality">${n.centrality.toFixed(3)}</span>
-      </div>
-    `).join('');
-
-    container.innerHTML = `
-      <h4>Top Notes (by centrality)</h4>
-      <div class="note-list">${items}</div>
-    `;
-
-    // Click note → open sidebar
-    container.querySelectorAll('.note-item').forEach(item => {
-      item.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const nodeId = item.dataset.nodeId;
-        const nodeData = cluster.nodes.find(n => n.id === nodeId);
-        if (nodeData) openSidebar(nodeData);
-      });
-    });
-  }
-
-  /* ── Structural Gaps ────────────────────────────────────────────── */
-  function renderGaps() {
-    // Show only meaningful gaps (low density)
-    const gaps = (meta.structuralGaps || []).filter(g => g.density < 0.015);
-    const maxDensity = Math.max(...gaps.map(g => g.density), 0.015);
-
-    $gapsGrid.innerHTML = gaps.map((g, i) => {
-      const colorA = CLUSTER_COLORS[g.communityA] || '#4C566A';
-      const colorB = CLUSTER_COLORS[g.communityB] || '#4C566A';
-      const pct = Math.max(2, (g.density / maxDensity) * 100);
-
-      return `
-        <div class="gap-card" data-gap-idx="${i}" data-ca="${g.communityA}" data-cb="${g.communityB}">
-          <div class="gap-communities">
-            <span class="gap-comm-name" style="color:${colorA}">${g.labelA}</span>
-            <span class="gap-arrow">&harr;</span>
-            <span class="gap-comm-name" style="color:${colorB}">${g.labelB}</span>
-          </div>
-          <div class="gap-detail">${g.crossEdges} cross-edge${g.crossEdges !== 1 ? 's' : ''} &middot; density ${(g.density * 100).toFixed(2)}%</div>
-          <div class="gap-density-bar">
-            <div class="gap-density-fill" style="width: ${pct}%"></div>
-          </div>
-        </div>
-      `;
-    }).join('');
-
-    // Click gap → highlight both clusters
-    $gapsGrid.querySelectorAll('.gap-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const ca = parseInt(card.dataset.ca);
-        const cb = parseInt(card.dataset.cb);
-
-        // Toggle active state
-        const wasActive = card.classList.contains('active');
-        $gapsGrid.querySelectorAll('.gap-card').forEach(c => c.classList.remove('active'));
-
-        if (wasActive) {
-          clearHighlights();
-        } else {
-          card.classList.add('active');
-          highlightGap(ca, cb);
-          // Scroll to graph
-          document.getElementById('graph-section').scrollIntoView({
-            behavior: reducedMotion ? 'auto' : 'smooth',
-            block: 'start',
-          });
-        }
-      });
-    });
-  }
-
-  /* ── Sidebar ────────────────────────────────────────────────────── */
-  function openSidebar(data) {
-    const clusterLabel = meta.clusterLabels[data.cluster] || `Cluster ${data.cluster}`;
-    const clusterColor = CLUSTER_COLORS[data.cluster] || '#4C566A';
-
-    $sidebarTitle.textContent = data.fullLabel || formatLabel(data.id);
-
-    let badges = `<span class="sidebar-badge type-${data.type}">${data.type}</span>`;
-    if (data.isBridge) {
-      badges += `<span class="sidebar-badge bridge">bridge node</span>`;
-    }
-
-    let connections = '';
-    if (data.connections && data.connections.length > 0) {
-      const items = data.connections.map(c =>
-        `<div class="sidebar-conn-item">${formatLabel(c)}</div>`
-      ).join('');
-      connections = `
-        <div class="sidebar-connections">
-          <h4>Top Connections</h4>
-          ${items}
-        </div>
-      `;
-    }
-
-    let bridgesTo = '';
-    if (data.bridgesTo && data.bridgesTo.length > 0) {
-      bridgesTo = `
-        <div class="sidebar-connections" style="margin-top:12px">
-          <h4>Bridges To</h4>
-          ${data.bridgesTo.map(b => `<div class="sidebar-conn-item" style="color:var(--aurora-yellow)">${b}</div>`).join('')}
-        </div>
-      `;
-    }
-
-    let researchQ = '';
-    if (data.researchQuestion) {
-      researchQ = `
-        <div style="margin-top:16px; background:var(--nord0-deep); padding:12px 14px; border-radius:6px; border-left:3px solid var(--frost-warm);">
-          <div style="font-size:10px; text-transform:uppercase; letter-spacing:0.08em; color:var(--frost-warm); margin-bottom:4px;">Research Question</div>
-          <div style="font-size:12px; font-style:italic; color:var(--nord5);">${data.researchQuestion}</div>
-        </div>
-      `;
-    }
-
-    $sidebarBody.innerHTML = `
-      <div class="sidebar-meta">${badges}</div>
-      <div style="font-size:12px;color:${clusterColor};margin-bottom:16px;">${clusterLabel}</div>
-      <div class="sidebar-stat-grid">
-        <div class="sidebar-stat">
-          <div class="val">${data.degree || 0}</div>
-          <div class="label">connections</div>
-        </div>
-        <div class="sidebar-stat">
-          <div class="val">${(data.centrality || 0).toFixed(3)}</div>
-          <div class="label">centrality</div>
-        </div>
-      </div>
-      ${researchQ}
-      ${connections}
-      ${bridgesTo}
-    `;
-
-    $sidebar.classList.add('open');
-    $sidebarOverlay.classList.add('open');
-  }
-
-  function closeSidebar() {
-    $sidebar.classList.remove('open');
-    $sidebarOverlay.classList.remove('open');
-  }
-
-  $sidebarClose.addEventListener('click', closeSidebar);
-  $sidebarOverlay.addEventListener('click', closeSidebar);
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeSidebar();
+(function(){
+'use strict';
+let cy=null,meta=null,overviewData=null,clusterCache={},expandedCard=null,miniCyInstances={},selectedNodeId=null;
+const rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+const COLORS=['#88C0D0','#A3BE8C','#BF616A','#EBCB8B','#B48EAD','#D08770','#8FBCBB','#81A1C1'];
+const $graph=document.getElementById('main-graph');
+const $detail=document.getElementById('detail-panel');
+const $detailTitle=document.getElementById('detail-title');
+const $detailBody=document.getElementById('detail-body');
+const $detailClose=document.getElementById('detail-close');
+const $threadGrid=document.getElementById('thread-grid');
+const $gapsGrid=document.getElementById('gaps-grid');
+
+async function init(){
+  try{
+    meta=await fetchJSON('data/meta.json');
+    overviewData=await fetchJSON('data/overview.json');
+    animateStats();renderGraph();renderThreads();renderGaps();renderFooter();setupScroll();
+  }catch(e){console.error(e);$graph.innerHTML='<p style="padding:40px;color:#BF616A;">Failed to load.</p>'}
+}
+
+async function fetchJSON(u){const r=await fetch(u);if(!r.ok)throw new Error(r.status);return r.json()}
+
+function animateStats(){
+  const gaps=(meta.structuralGaps||[]).filter(g=>g.density<0.015).length;
+  const t={'stat-notes':meta.totalNotes,'stat-links':meta.totalLinks,'stat-threads':meta.communities,'stat-gaps':gaps};
+  Object.entries(t).forEach(([id,target])=>{
+    const el=document.getElementById(id);
+    if(rm){el.textContent=target;return}
+    let c=0;const s=Math.max(1,Math.ceil(target/40));
+    const iv=setInterval(()=>{c=Math.min(c+s,target);el.textContent=c;if(c>=target)clearInterval(iv)},30);
+  });
+}
+
+function fmtLabel(s){return s.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}
+function hexA(h,a){const r=parseInt(h.slice(1,3),16),g=parseInt(h.slice(3,5),16),b=parseInt(h.slice(5,7),16);return`rgba(${r},${g},${b},${a})`}
+
+/* ── Graph ─────────────────────────────────────────────────────── */
+function renderGraph(){
+  const els=[];
+  overviewData.nodes.forEach(n=>{
+    const color=COLORS[n.cluster]||'#4C566A';
+    const isInq=n.type==='inquiry';
+    const sz=isInq?20+Math.min(n.degree*1.5,30):8+Math.min(n.degree*0.8,16);
+    els.push({group:'nodes',data:{id:n.id,label:isInq?fmtLabel(n.id):'',fullLabel:n.label||n.id,type:n.type,cluster:n.cluster,centrality:n.centrality,degree:n.degree,color,size:sz,researchQuestion:n.researchQuestion||'',keyFinding:n.keyFinding||'',noteCount:n.noteCount||0},position:{x:n.position.x,y:n.position.y}});
+  });
+  overviewData.edges.forEach(e=>{els.push({group:'edges',data:{source:e.source,target:e.target,weight:e.weight}})});
+
+  cy=cytoscape({container:$graph,elements:els,
+    style:[
+      {selector:'node',style:{'background-color':'data(color)',width:'data(size)',height:'data(size)',label:'data(label)','font-size':9,'font-family':"'JetBrains Mono',monospace",color:'#D8DEE9','text-valign':'bottom','text-margin-y':6,'text-outline-color':'#2E3440','text-outline-width':2,'border-width':0,'border-color':'#ECEFF4','transition-property':'background-color,border-width,width,height,opacity','transition-duration':rm?'1ms':'200ms'}},
+      {selector:'edge',style:{width:1,'line-color':'rgba(76,86,106,0.4)','curve-style':'bezier',opacity:0.5,'transition-property':'line-color,width,opacity','transition-duration':rm?'1ms':'200ms'}},
+      {selector:'node.highlighted',style:{'border-width':2,'border-color':'#ECEFF4','z-index':10}},
+      {selector:'node.selected-node',style:{'border-width':3,'border-color':'#EBCB8B','z-index':20}},
+      {selector:'node.dimmed',style:{opacity:0.15}},
+      {selector:'edge.dimmed',style:{opacity:0.05}},
+      {selector:'edge.highlighted',style:{'line-color':'rgba(136,192,208,0.6)',width:2,opacity:0.8}},
+    ],
+    layout:{name:'preset'},minZoom:0.3,maxZoom:3,wheelSensitivity:0.3,boxSelectionEnabled:false
   });
 
-  /* ── Footer ─────────────────────────────────────────────────────── */
-  function renderFooter() {
-    const dateStr = meta.generated
-      ? new Date(meta.generated).toLocaleDateString('en-US', {
-          year: 'numeric', month: 'long', day: 'numeric',
-        })
-      : 'unknown';
-    document.getElementById('generated-date').textContent = dateStr;
+  cy.on('tap','node',evt=>{
+    const d=evt.target.data();
+    showDetail(d);
+    // highlight selected node and neighbors
+    clearHighlights();
+    cy.nodes().forEach(n=>{if(n.id()!==d.id&&!n.neighborhood().includes(evt.target))n.addClass('dimmed')});
+    cy.edges().forEach(e=>{if(!e.source().same(evt.target)&&!e.target().same(evt.target))e.addClass('dimmed');else e.addClass('highlighted')});
+    evt.target.addClass('selected-node');
+    selectedNodeId=d.id;
+  });
+  cy.on('tap',evt=>{if(evt.target===cy){clearHighlights();closeDetail()}});
+}
+
+function highlightCluster(cid){
+  clearHighlights();
+  cy.nodes().forEach(n=>{if(n.data('cluster')===cid)n.addClass('highlighted');else n.addClass('dimmed')});
+  cy.edges().forEach(e=>{const s=cy.getElementById(e.data('source')),t=cy.getElementById(e.data('target'));if(s.data('cluster')===cid&&t.data('cluster')===cid)e.addClass('highlighted');else e.addClass('dimmed')});
+}
+function highlightGap(a,b){
+  clearHighlights();
+  cy.nodes().forEach(n=>{const c=n.data('cluster');if(c===a||c===b)n.addClass('highlighted');else n.addClass('dimmed')});
+  cy.edges().forEach(e=>{const sc=cy.getElementById(e.data('source')).data('cluster'),tc=cy.getElementById(e.data('target')).data('cluster');if((sc===a||sc===b)&&(tc===a||tc===b))e.addClass('highlighted');else e.addClass('dimmed')});
+}
+function clearHighlights(){cy.elements().removeClass('highlighted dimmed selected-node');selectedNodeId=null}
+
+/* ── Detail Panel (below graph) ─────────────────────────────────── */
+function showDetail(d){
+  const clusterLabel=meta.clusterLabels[d.cluster]||`Cluster ${d.cluster}`;
+  const clusterColor=COLORS[d.cluster]||'#4C566A';
+  $detailTitle.textContent=d.fullLabel||fmtLabel(d.id);
+
+  let badges=`<span class="badge ${d.type}">${d.type}</span>`;
+
+  let html=`<div class="detail-meta">${badges}</div>`;
+  html+=`<div class="detail-stat"><div class="val">${d.degree||0}</div><div class="lbl">connections</div></div>`;
+  html+=`<div class="detail-stat"><div class="val">${(d.centrality||0).toFixed(3)}</div><div class="lbl">centrality</div></div>`;
+  html+=`<div style="grid-column:1/-1;font-size:12px;color:${clusterColor};margin:-4px 0">${clusterLabel}</div>`;
+
+  if(d.researchQuestion){
+    html+=`<div class="detail-rq"><div class="rq-label">Research Question</div><p>${d.researchQuestion}</p></div>`;
+  }
+  if(d.keyFinding){
+    html+=`<div class="detail-finding"><div class="f-label">Key Finding</div><p>${d.keyFinding}</p></div>`;
   }
 
-  /* ── Scroll Animations ──────────────────────────────────────────── */
-  function setupScrollAnimations() {
-    if (reducedMotion) {
-      document.querySelectorAll('.section').forEach(s => s.classList.add('visible'));
-      return;
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-
-    document.querySelectorAll('.section:not(.visible)').forEach(s => observer.observe(s));
+  // Find connections from overview data
+  const nodeEdges=overviewData.edges.filter(e=>e.source===d.id||e.target===d.id);
+  if(nodeEdges.length>0){
+    const connIds=new Set();
+    nodeEdges.forEach(e=>{connIds.add(e.source===d.id?e.target:e.source)});
+    const connNodes=[...connIds].slice(0,15).map(id=>{
+      const n=overviewData.nodes.find(n=>n.id===id);
+      const label=n?(n.label||fmtLabel(n.id)):fmtLabel(id);
+      return`<span class="conn-chip" data-id="${id}">${label}</span>`;
+    });
+    html+=`<div class="detail-connections"><h4>Connected To</h4><div class="conn-grid">${connNodes.join('')}</div></div>`;
   }
 
-  /* ── Helpers ────────────────────────────────────────────────────── */
-  function hexAlpha(hex, alpha) {
-    const r = parseInt(hex.slice(1, 3), 16);
-    const g = parseInt(hex.slice(3, 5), 16);
-    const b = parseInt(hex.slice(5, 7), 16);
-    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-  }
+  $detailBody.innerHTML=html;
+  $detail.classList.add('open');
 
-  /* ── Boot ───────────────────────────────────────────────────────── */
-  init();
+  // Clicking a connection chip navigates to that node
+  $detailBody.querySelectorAll('.conn-chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      const nid=chip.dataset.id;
+      const node=cy.getElementById(nid);
+      if(node.length){
+        cy.animate({center:{eles:node},zoom:cy.zoom()},{duration:rm?0:300});
+        showDetail(node.data());
+        clearHighlights();
+        cy.nodes().forEach(n=>{if(n.id()!==nid&&!n.neighborhood().includes(node))n.addClass('dimmed')});
+        cy.edges().forEach(e=>{if(!e.source().same(node)&&!e.target().same(node))e.addClass('dimmed');else e.addClass('highlighted')});
+        node.addClass('selected-node');
+      }
+    });
+  });
+}
 
+function closeDetail(){$detail.classList.remove('open')}
+$detailClose.addEventListener('click',()=>{closeDetail();clearHighlights()});
+
+/* ── Thread Cards ──────────────────────────────────────────────── */
+function renderThreads(){
+  const inquiries=overviewData.nodes.filter(n=>n.type==='inquiry').sort((a,b)=>b.centrality-a.centrality);
+  $threadGrid.innerHTML='';
+  inquiries.forEach(inq=>{
+    const color=COLORS[inq.cluster]||'#4C566A';
+    const clusterLabel=meta.clusterLabels[inq.cluster]||`Cluster ${inq.cluster}`;
+    const card=document.createElement('div');
+    card.className='thread-card';card.dataset.cluster=inq.cluster;card.dataset.id=inq.id;
+    card.innerHTML=`
+      <div class="card-accent" style="background:${color}"></div>
+      <div class="card-header">
+        <h3>${clusterLabel}</h3>
+        <div class="card-question">${inq.researchQuestion||''}</div>
+        <div class="card-stats">
+          <div class="card-stat"><span class="num">${inq.noteCount||0}</span><span class="lbl">notes</span></div>
+          <div class="card-stat"><span class="num">${inq.degree}</span><span class="lbl">links</span></div>
+          <span class="card-expand-icon">&#9660;</span>
+        </div>
+      </div>
+      <div class="card-body"><div class="card-body-inner">
+        <div class="card-finding"><div class="finding-label">Key Finding</div>${inq.keyFinding||'Analysis in progress.'}</div>
+        <div class="mini-graph-container" id="mini-graph-${inq.cluster}"><div class="mini-graph-loading">Loading cluster graph...</div></div>
+        <div class="card-bridges" id="bridges-${inq.cluster}"></div>
+        <div class="card-notes" id="notes-${inq.cluster}"></div>
+      </div></div>`;
+
+    card.addEventListener('mouseenter',()=>highlightCluster(inq.cluster));
+    card.addEventListener('mouseleave',()=>{if(!card.classList.contains('expanded'))clearHighlights()});
+    card.addEventListener('click',e=>{if(e.target.closest('.note-item'))return;toggleCard(card,inq.cluster)});
+    $threadGrid.appendChild(card);
+  });
+}
+
+async function toggleCard(card,cid){
+  const was=card.classList.contains('expanded');
+  if(expandedCard&&expandedCard!==card){expandedCard.classList.remove('expanded');clearHighlights();const old=expandedCard.dataset.cluster;if(miniCyInstances[old]){miniCyInstances[old].destroy();delete miniCyInstances[old]}}
+  if(was){card.classList.remove('expanded');expandedCard=null;clearHighlights();if(miniCyInstances[cid]){miniCyInstances[cid].destroy();delete miniCyInstances[cid]}}
+  else{card.classList.add('expanded');expandedCard=card;highlightCluster(cid);setTimeout(()=>card.scrollIntoView({behavior:rm?'auto':'smooth',block:'start'}),100);await loadCluster(cid)}
+}
+
+async function loadCluster(cid){
+  const container=document.getElementById(`mini-graph-${cid}`);if(!container)return;
+  if(!clusterCache[cid]){try{clusterCache[cid]=await fetchJSON(`data/cluster-${cid}.json`)}catch(e){container.innerHTML='<p style="padding:20px;color:#BF616A;font-size:12px;">Failed.</p>';return}}
+  const cluster=clusterCache[cid];container.innerHTML='';
+  // Bridges
+  const bContainer=document.getElementById(`bridges-${cid}`);
+  if(bContainer){const bridges=cluster.nodes.filter(n=>n.isBridge);if(bridges.length){bContainer.innerHTML=`<h4>Bridge Nodes</h4><div class="bridge-list">${bridges.map(b=>`<div class="bridge-chip"><span class="note-type-badge ${b.type}"></span>${fmtLabel(b.id)} &rarr; ${(b.bridgesTo||[]).join(', ')}</div>`).join('')}</div>`}}
+  // Notes
+  const nContainer=document.getElementById(`notes-${cid}`);
+  if(nContainer){const sorted=[...cluster.nodes].sort((a,b)=>b.centrality-a.centrality).slice(0,20);nContainer.innerHTML=`<h4>Top Notes (by centrality)</h4><div class="note-list">${sorted.map(n=>`<div class="note-item" data-nid="${n.id}"><span class="note-type-badge ${n.type}"></span><span>${fmtLabel(n.id)}</span><span class="note-centrality">${n.centrality.toFixed(3)}</span></div>`).join('')}</div>`;
+    nContainer.querySelectorAll('.note-item').forEach(item=>{item.addEventListener('click',e=>{e.stopPropagation();const nd=cluster.nodes.find(n=>n.id===item.dataset.nid);if(nd)showDetail(nd);document.getElementById('graph-section').scrollIntoView({behavior:rm?'auto':'smooth',block:'start'})})})}
+  // Mini graph
+  const color=COLORS[cid]||'#4C566A';const els=[];
+  cluster.nodes.forEach(n=>{const isInq=n.type==='inquiry';const nc=n.isBridge?'#EBCB8B':(isInq?color:hexA(color,0.7));const sz=isInq?22+Math.min(n.degree*1.5,20):8+Math.min(n.degree*0.6,14);els.push({group:'nodes',data:{id:n.id,label:(isInq||n.isBridge||n.degree>5)?fmtLabel(n.id):'',fullLabel:n.label||n.id,type:n.type,cluster:cid,centrality:n.centrality,degree:n.degree,color:nc,size:sz,connections:n.connections||[],isBridge:n.isBridge,bridgesTo:n.bridgesTo||[]},position:{x:n.position.x,y:n.position.y}})});
+  cluster.edges.forEach(e=>{els.push({group:'edges',data:{source:e.source,target:e.target,weight:e.weight}})});
+  const mcy=cytoscape({container,elements:els,style:[{selector:'node',style:{'background-color':'data(color)',width:'data(size)',height:'data(size)',label:'data(label)','font-size':8,'font-family':"'JetBrains Mono',monospace",color:'#D8DEE9','text-valign':'bottom','text-margin-y':5,'text-outline-color':'#1e2430','text-outline-width':2}},{selector:'edge',style:{width:1,'line-color':hexA(color,0.25),'curve-style':'bezier',opacity:0.6}}],layout:{name:'preset'},minZoom:0.5,maxZoom:2.5,wheelSensitivity:0.3,boxSelectionEnabled:false});
+  mcy.on('tap','node',evt=>{evt.originalEvent.stopPropagation();showDetail(evt.target.data());document.getElementById('graph-section').scrollIntoView({behavior:rm?'auto':'smooth',block:'start'})});
+  miniCyInstances[cid]=mcy;setTimeout(()=>mcy.fit(undefined,30),50);
+}
+
+/* ── Gaps ──────────────────────────────────────────────────────── */
+function renderGaps(){
+  const gaps=(meta.structuralGaps||[]).filter(g=>g.density<0.015);
+  const maxD=Math.max(...gaps.map(g=>g.density),0.015);
+  $gapsGrid.innerHTML=gaps.map((g,i)=>{
+    const cA=COLORS[g.communityA]||'#4C566A',cB=COLORS[g.communityB]||'#4C566A';
+    const pct=Math.max(2,(g.density/maxD)*100);
+    return`<div class="gap-card" data-ca="${g.communityA}" data-cb="${g.communityB}">
+      <div class="gap-communities"><span class="gap-comm-name" style="color:${cA}">${g.labelA}</span><span class="gap-arrow">&harr;</span><span class="gap-comm-name" style="color:${cB}">${g.labelB}</span></div>
+      <div class="gap-detail">${g.crossEdges} cross-edge${g.crossEdges!==1?'s':''} &middot; density ${(g.density*100).toFixed(2)}%</div>
+      <div class="gap-density-bar"><div class="gap-density-fill" style="width:${pct}%"></div></div>
+    </div>`}).join('');
+  $gapsGrid.querySelectorAll('.gap-card').forEach(card=>{
+    card.addEventListener('click',()=>{
+      const ca=parseInt(card.dataset.ca),cb=parseInt(card.dataset.cb),was=card.classList.contains('active');
+      $gapsGrid.querySelectorAll('.gap-card').forEach(c=>c.classList.remove('active'));
+      if(was){clearHighlights()}else{card.classList.add('active');highlightGap(ca,cb);document.getElementById('graph-section').scrollIntoView({behavior:rm?'auto':'smooth',block:'start'})}
+    });
+  });
+}
+
+function renderFooter(){const d=meta.generated?new Date(meta.generated).toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'}):'unknown';document.getElementById('generated-date').textContent=d}
+function setupScroll(){if(rm){document.querySelectorAll('.section').forEach(s=>s.classList.add('visible'));return}const o=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});document.querySelectorAll('.section:not(.visible)').forEach(s=>o.observe(s))}
+
+init();
 })();
 </script>
-
 </body>
 </html>

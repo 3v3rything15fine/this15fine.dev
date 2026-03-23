@@ -235,10 +235,68 @@ tr:hover td { background: rgba(136, 192, 208, 0.05); }
   color: var(--nord5);
 }
 
+/* Stats ribbon */
+.learning-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+  border-top: 2px solid var(--burgundy);
+  border-bottom: 1px solid var(--nord3);
+  margin-bottom: 48px;
+}
+.learning-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.learning-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--frost);
+  font-variant-numeric: tabular-nums;
+}
+.learning-stat .lbl {
+  font-size: 12px;
+  color: var(--nord3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Timeline with vertical connector */
 .session-timeline {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
+  padding-left: 32px;
+}
+
+.session-timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--nord3);
+}
+
+.timeline-node {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -32px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: var(--nord0-deep);
+  z-index: 1;
 }
 
 .timeline-card {
@@ -246,14 +304,14 @@ tr:hover td { background: rgba(136, 192, 208, 0.05); }
   border: 1px solid var(--nord3);
   border-radius: 8px;
   overflow: hidden;
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   display: block;
 }
 
 .timeline-card:hover {
   border-color: var(--frost);
-  box-shadow: var(--shadow-elevated);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  transform: translateX(4px);
   text-decoration: none;
 }
 
@@ -284,6 +342,12 @@ tr:hover td { background: rgba(136, 192, 208, 0.05); }
   color: var(--nord4);
   margin-bottom: 12px;
   line-height: 1.5;
+}
+
+.timeline-artifacts {
+  font-size: 11px;
+  color: var(--nord3);
+  margin-bottom: 8px;
 }
 
 .timeline-tags {
@@ -324,23 +388,33 @@ tr:hover td { background: rgba(136, 192, 208, 0.05); }
       graduate-level work. The benchmark: understanding the concepts well enough to know
       what needs to be done, explain why, guide how, and catch when something looks wrong.</p>
       <p style="margin-bottom: 0;">Every session is documented with full transparency — experiment logs, code notebooks,
-      reading reflections, and version histories. All source materials are available on
-      <a href="https://github.com/3v3rything15fine/this15fine.dev/tree/main/public/learning" target="_blank" rel="noopener">GitHub</a>.</p>
+      reading reflections, and version histories. All source materials are
+      <a href="https://github.com/3v3rything15fine/this15fine.dev/tree/main/public/learning" target="_blank" rel="noopener">on GitHub</a>.</p>
+    </div>
+
+    <div class="learning-stats">
+      <div class="learning-stat"><span class="num">1</span><span class="lbl">sessions</span></div>
+      <div class="learning-stat"><span class="num">1</span><span class="lbl">courses</span></div>
+      <div class="learning-stat"><span class="num">1</span><span class="lbl">notebooks</span></div>
+      <div class="learning-stat"><span class="num">9</span><span class="lbl">topics</span></div>
     </div>
 
     <h2 style="margin-top: 0;">Sessions</h2>
     <div class="session-timeline">
       
-        <a class="timeline-card" href="/learning/2026-03-22/">
-          <div class="timeline-accent" style="background: #88C0D0"></div>
-          <div class="timeline-body">
-            <div class="timeline-date">March 22, 2026 &middot; CI 7303</div>
-            <div class="timeline-title">AI-Assisted Coursework Experiment Log</div>
-            <div class="timeline-desc">Jason is demonstrating that a doctoral student who understands broad concepts can guide an AI through completing graduate-level work. The benchmark: he understands the concepts well enough to know what needs to be done, explain why, guide how, and catch when something looks wrong.</div>
-            <div style="font-size: 11px; color: var(--nord3); margin-bottom: 8px;">notebook + experiment log</div>
-            <div class="timeline-tags"><span class="timeline-tag">jupyter</span><span class="timeline-tag">missing-data</span><span class="timeline-tag">python</span><span class="timeline-tag">reading-reflection</span><span class="timeline-tag">regression</span><span class="timeline-tag">reliability</span><span class="timeline-tag">scale-construction</span><span class="timeline-tag">spss-alternative</span><span class="timeline-tag">zotero</span></div>
-          </div>
-        </a>
+        <div class="timeline-node">
+          <div class="timeline-dot" style="border-color: #88C0D0"></div>
+          <a class="timeline-card" href="/learning/2026-03-22/">
+            <div class="timeline-accent" style="background: #88C0D0"></div>
+            <div class="timeline-body">
+              <div class="timeline-date">March 22, 2026 &middot; CI 7303</div>
+              <div class="timeline-title">AI-Assisted Coursework Experiment Log</div>
+              <div class="timeline-desc">Jason is demonstrating that a doctoral student who understands broad concepts can guide an AI through completing graduate-level work. The benchmark: he understands the concepts well enough to know what needs to be done, explain why, guide how, and catch when something looks wrong.</div>
+              <div class="timeline-artifacts">notebook + experiment log</div>
+              <div class="timeline-tags"><span class="timeline-tag">jupyter</span><span class="timeline-tag">missing-data</span><span class="timeline-tag">python</span><span class="timeline-tag">reading-reflection</span><span class="timeline-tag">regression</span><span class="timeline-tag">reliability</span><span class="timeline-tag">scale-construction</span><span class="timeline-tag">spss-alternative</span><span class="timeline-tag">zotero</span></div>
+            </div>
+          </a>
+        </div>
         
     </div>
 

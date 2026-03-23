@@ -303,10 +303,68 @@ tr:hover td { background: rgba(136, 192, 208, 0.05); }
   color: var(--nord5);
 }
 
+/* Stats ribbon */
+.learning-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 16px 0;
+  border-top: 2px solid var(--burgundy);
+  border-bottom: 1px solid var(--nord3);
+  margin-bottom: 48px;
+}
+.learning-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.learning-stat .num {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--frost);
+  font-variant-numeric: tabular-nums;
+}
+.learning-stat .lbl {
+  font-size: 12px;
+  color: var(--nord3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Timeline with vertical connector */
 .session-timeline {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 0;
+  padding-left: 32px;
+}
+
+.session-timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: var(--nord3);
+}
+
+.timeline-node {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -32px;
+  top: 20px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: var(--nord0-deep);
+  z-index: 1;
 }
 
 .timeline-card {
@@ -314,14 +372,14 @@ tr:hover td { background: rgba(136, 192, 208, 0.05); }
   border: 1px solid var(--nord3);
   border-radius: 8px;
   overflow: hidden;
-  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   display: block;
 }
 
 .timeline-card:hover {
   border-color: var(--frost);
-  box-shadow: var(--shadow-elevated);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  transform: translateX(4px);
   text-decoration: none;
 }
 
@@ -352,6 +410,12 @@ tr:hover td { background: rgba(136, 192, 208, 0.05); }
   color: var(--nord4);
   margin-bottom: 12px;
   line-height: 1.5;
+}
+
+.timeline-artifacts {
+  font-size: 11px;
+  color: var(--nord3);
+  margin-bottom: 8px;
 }
 
 .timeline-tags {
@@ -633,6 +697,13 @@ def build_index(sessions: list[dict]):
     # Sort sessions newest-first
     sessions.sort(key=lambda s: s["date"], reverse=True)
 
+    # Count unique courses and total tags
+    unique_courses = set(s["course_key"] for s in sessions)
+    all_tags = set()
+    for s in sessions:
+        all_tags.update(s["tags"])
+    nb_count = sum(1 for s in sessions if s["has_notebook"])
+
     timeline_html = ""
     for s in sessions:
         color = s["course"]["color"]
@@ -645,16 +716,19 @@ def build_index(sessions: list[dict]):
         artifact_str = " + ".join(artifacts)
 
         timeline_html += f"""
-        <a class="timeline-card" href="/learning/{s['date']}/">
-          <div class="timeline-accent" style="background: {color}"></div>
-          <div class="timeline-body">
-            <div class="timeline-date">{format_date(s['date'])} &middot; {s['course']['code']}</div>
-            <div class="timeline-title">{s['title']}</div>
-            <div class="timeline-desc">{s['summary']}</div>
-            <div style="font-size: 11px; color: var(--nord3); margin-bottom: 8px;">{artifact_str}</div>
-            <div class="timeline-tags">{tags}</div>
-          </div>
-        </a>
+        <div class="timeline-node">
+          <div class="timeline-dot" style="border-color: {color}"></div>
+          <a class="timeline-card" href="/learning/{s['date']}/">
+            <div class="timeline-accent" style="background: {color}"></div>
+            <div class="timeline-body">
+              <div class="timeline-date">{format_date(s['date'])} &middot; {s['course']['code']}</div>
+              <div class="timeline-title">{s['title']}</div>
+              <div class="timeline-desc">{s['summary']}</div>
+              <div class="timeline-artifacts">{artifact_str}</div>
+              <div class="timeline-tags">{tags}</div>
+            </div>
+          </a>
+        </div>
         """
 
     body = f"""
@@ -670,8 +744,15 @@ def build_index(sessions: list[dict]):
       graduate-level work. The benchmark: understanding the concepts well enough to know
       what needs to be done, explain why, guide how, and catch when something looks wrong.</p>
       <p style="margin-bottom: 0;">Every session is documented with full transparency — experiment logs, code notebooks,
-      reading reflections, and version histories. All source materials are available on
-      <a href="https://github.com/3v3rything15fine/this15fine.dev/tree/main/public/learning" target="_blank" rel="noopener">GitHub</a>.</p>
+      reading reflections, and version histories. All source materials are
+      <a href="https://github.com/3v3rything15fine/this15fine.dev/tree/main/public/learning" target="_blank" rel="noopener">on GitHub</a>.</p>
+    </div>
+
+    <div class="learning-stats">
+      <div class="learning-stat"><span class="num">{len(sessions)}</span><span class="lbl">sessions</span></div>
+      <div class="learning-stat"><span class="num">{len(unique_courses)}</span><span class="lbl">courses</span></div>
+      <div class="learning-stat"><span class="num">{nb_count}</span><span class="lbl">notebooks</span></div>
+      <div class="learning-stat"><span class="num">{len(all_tags)}</span><span class="lbl">topics</span></div>
     </div>
 
     <h2 style="margin-top: 0;">Sessions</h2>

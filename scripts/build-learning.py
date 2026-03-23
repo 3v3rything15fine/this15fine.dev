@@ -113,8 +113,11 @@ body {
   min-height: 100vh;
 }
 
+@media (max-width: 768px) { body { font-size: 13px; } }
+
 a { color: var(--frost); text-decoration: none; transition: color var(--transition-fast); }
 a:hover { text-decoration: underline; }
+a:active { color: var(--frost-warm); }
 a:visited { color: var(--frost-deep); }
 a:focus-visible { outline: 2px solid #B048A8; outline-offset: 2px; }
 
@@ -319,11 +322,12 @@ tr:hover td { background: rgba(136, 192, 208, 0.05); }
   gap: 8px;
 }
 .learning-stat .num {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--frost);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--nord5);
   font-variant-numeric: tabular-nums;
 }
+@media (max-width: 768px) { .learning-stat .num { font-size: 18px; } }
 .learning-stat .lbl {
   font-size: 12px;
   color: var(--nord3);
@@ -425,14 +429,29 @@ tr:hover td { background: rgba(136, 192, 208, 0.05); }
 }
 
 .timeline-tag {
-  display: inline-block;
-  background: var(--nord2);
-  border: 1px solid var(--nord3);
-  border-radius: 3px;
-  padding: 2px 8px;
+  display: inline;
   font-size: 10px;
-  color: var(--nord4);
+  color: var(--nord3);
 }
+.timeline-tag + .timeline-tag::before {
+  content: '\\00b7';
+  margin: 0 5px;
+  color: var(--nord2);
+}
+
+@media (max-width: 480px) {
+  .session-timeline { padding-left: 0; }
+  .session-timeline::before { display: none; }
+  .timeline-dot { display: none; }
+  .timeline-card { border-left: 3px solid; }
+}
+
+@media (hover: none) {
+  .timeline-card:hover { transform: none; border-color: var(--nord3); }
+}
+
+.timeline-card:active { background: var(--nord2); }
+.artifact-card:active { background: var(--nord2); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; }
@@ -585,37 +604,6 @@ def build_session_page(session_dir: Path, session_date: str) -> dict | None:
       Content has been reviewed for accuracy and FERPA compliance.</p>
     </footer>
 
-    <canvas id="bg-particles" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;opacity:0.3" aria-hidden="true"></canvas>
-    <script>
-    (function(){{
-      const rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-      if(rm)return;
-      const c=document.getElementById('bg-particles');if(!c)return;
-      const ctx=c.getContext('2d');
-      let W,H;
-      const particles=[];
-      const COLORS=['#88C0D0','#A3BE8C','#EBCB8B','#B48EAD','#5E81AC'];
-      function resize(){{W=c.width=window.innerWidth;H=c.height=window.innerHeight}}
-      function init(){{for(let i=0;i<16;i++)particles.push({{x:Math.random()*W,y:Math.random()*H,r:1+Math.random()*2,vx:(Math.random()-0.5)*0.2,vy:(Math.random()-0.5)*0.2,color:COLORS[Math.floor(Math.random()*COLORS.length)]}})}}
-      function draw(){{
-        ctx.clearRect(0,0,W,H);
-        for(let i=0;i<particles.length;i++){{
-          const p=particles[i];
-          for(let j=i+1;j<particles.length;j++){{
-            const q=particles[j];
-            const d=Math.hypot(p.x-q.x,p.y-q.y);
-            if(d<200){{ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(76,86,106,${{(1-d/200)*0.12}})`;ctx.lineWidth=1;ctx.stroke()}}
-          }}
-          ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.color;ctx.fill();
-          p.x+=p.vx;p.y+=p.vy;
-          if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
-        }}
-        requestAnimationFrame(draw);
-      }}
-      resize();init();draw();
-      window.addEventListener('resize',()=>{{resize()}});
-    }})();
-    </script>
     """
 
     # Write session page
@@ -690,15 +678,21 @@ def convert_notebook(nb_path: Path, output_path: Path):
 
 
 def extract_summary(log_text: str) -> str:
-    """Pull a one-line summary from the experiment log."""
-    # Look for the experiment description
+    """Pull a one-line summary from the experiment log. Skip boilerplate."""
     for line in log_text.split("\n"):
         line = line.strip()
+        # Skip boilerplate that's already in the experiment frame
         if line.startswith("Jason is demonstrating"):
-            return line
+            continue
         if line.startswith("This log documents"):
-            return line
-    return "AI-assisted coursework session documented with full transparency."
+            continue
+        # Look for session-specific headings
+        if line.startswith("### ") and "Session" not in line and "Setup" not in line:
+            return line.lstrip("# ").strip()
+        # Look for the first substantive bullet about what was done
+        if line.startswith("- **Assignments in scope:**"):
+            return line.lstrip("- ").replace("**", "").strip()
+    return ""
 
 
 def extract_tags(log_text: str) -> list[str]:
@@ -747,15 +741,17 @@ def build_index(sessions: list[dict]):
         artifacts.append("experiment log")
         artifact_str = " + ".join(artifacts)
 
+        desc_html = f'<div class="timeline-desc">{s["summary"]}</div>' if s["summary"] else ""
+
         timeline_html += f"""
         <div class="timeline-node">
           <div class="timeline-dot" style="border-color: {color}"></div>
-          <a class="timeline-card" href="/learning/{s['date']}/">
+          <a class="timeline-card" href="/learning/{s['date']}/" style="border-left-color: {color}">
             <div class="timeline-accent" style="background: {color}"></div>
             <div class="timeline-body">
               <div class="timeline-date">{format_date(s['date'])} &middot; {s['course']['code']}</div>
               <div class="timeline-title">{s['title']}</div>
-              <div class="timeline-desc">{s['summary']}</div>
+              {desc_html}
               <div class="timeline-artifacts">{artifact_str}</div>
               <div class="timeline-tags">{tags}</div>
             </div>
@@ -798,37 +794,6 @@ def build_index(sessions: list[dict]):
       Content has been reviewed for accuracy and FERPA compliance.</p>
     </footer>
 
-    <canvas id="bg-particles" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;opacity:0.25" aria-hidden="true"></canvas>
-    <script>
-    (function(){{
-      const rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-      if(rm)return;
-      const c=document.getElementById('bg-particles');if(!c)return;
-      const ctx=c.getContext('2d');
-      let W,H;
-      const particles=[];
-      const COLORS=['#88C0D0','#A3BE8C','#EBCB8B','#B48EAD','#5E81AC'];
-      function resize(){{W=c.width=window.innerWidth;H=c.height=window.innerHeight}}
-      function init(){{for(let i=0;i<20;i++)particles.push({{x:Math.random()*W,y:Math.random()*H,r:1+Math.random()*2,vx:(Math.random()-0.5)*0.15,vy:(Math.random()-0.5)*0.15,color:COLORS[Math.floor(Math.random()*COLORS.length)]}})}}
-      function draw(){{
-        ctx.clearRect(0,0,W,H);
-        for(let i=0;i<particles.length;i++){{
-          const p=particles[i];
-          for(let j=i+1;j<particles.length;j++){{
-            const q=particles[j];
-            const d=Math.hypot(p.x-q.x,p.y-q.y);
-            if(d<180){{ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(76,86,106,${{(1-d/180)*0.1}})`;ctx.lineWidth=1;ctx.stroke()}}
-          }}
-          ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.color;ctx.fill();
-          p.x+=p.vx;p.y+=p.vy;
-          if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
-        }}
-        requestAnimationFrame(draw);
-      }}
-      resize();init();draw();
-      window.addEventListener('resize',()=>{{resize()}});
-    }})();
-    </script>
     """
 
     page = PAGE_TEMPLATE.format(

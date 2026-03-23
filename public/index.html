@@ -4,23 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>this15fine.dev</title>
-<meta name="description" content="Jason O'Brien — researcher, practitioner, terminal enthusiast.">
+<meta name="description" content="Jason O'Brien — researcher, practitioner, terminal enthusiast. Studying what happens after things go sideways.">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#2E3440">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-/* ===== TOKENS ===== */
 :root {
-  /* Shifted darker/bluer than pure Nord — midpoint between Nord and v12 #1a2029 */
-  --nord0: #1e2430;
-  --nord1: #252d3a;
-  --nord2: #2e3848;
-  --nord3: #3d4f66;
-  --nord4: #cdd4df;
-  --nord5: #dde2ea;
-  --nord6: #edf0f4;
-  /* Frost stays Nord-true but deep frost shifts cooler */
+  --nord0: #2E3440;
+  --nord0-deep: #1e2430;
+  --nord1: #3B4252;
+  --nord2: #434C5E;
+  --nord3: #4C566A;
+  --nord4: #D8DEE9;
+  --nord5: #E5E9F0;
+  --nord6: #ECEFF4;
   --frost: #88C0D0;
   --frost-deep: #5E81AC;
   --frost-warm: #8FBCBB;
@@ -28,3710 +27,576 @@
   --aurora-yellow: #EBCB8B;
   --aurora-red: #BF616A;
   --aurora-magenta: #B48EAD;
+  --aurora-orange: #D08770;
   --burgundy: #6B3040;
   --magenta-bright: #B048A8;
-
-  /* section accents — used for borders/marks/underlines, NOT for small text */
-  --accent-home:       #5E81AC;
-  --accent-research:   #88C0D0;
-  --accent-tools:      #A3BE8C;
-  --accent-background: #EBCB8B;
-  --accent-approach:   #B48EAD;
-  --accent-work:       #BF616A;
-
-  --accent: var(--accent-home);
-
-  --sidebar-w: 220px;
-  --header-h: 64px;
-  --section-header-h: 48px;
-  --ticker-h: 36px;
-  --status-h: 32px;
-  --currently-h: auto;
-
-  --font: 'JetBrains Mono', 'Liberation Mono', 'Courier New', monospace;
-  --transition: 200ms ease;
-  --transition-slow: 400ms ease;
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ===== RESET ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { height: 100%; }
+
 body {
-  font-family: var(--font);
+  background: var(--nord0-deep);
+  color: var(--nord4);
+  font-family: 'JetBrains Mono', 'Liberation Mono', 'Courier New', monospace;
   font-size: 14px;
   line-height: 1.6;
-  color: var(--nord4);
-  background: var(--nord0);
-  height: 100%;
-  overflow: hidden;
+  min-height: 100vh;
 }
-a { color: var(--frost); text-decoration: none; }
+
+a { color: var(--frost); text-decoration: none; transition: color var(--transition-fast); }
 a:hover { text-decoration: underline; }
 a:visited { color: var(--frost-deep); }
 a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px; }
 ::selection { background: var(--frost-deep); color: var(--nord6); }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 48px;
 }
 
-/* ===== LAYOUT GRID ===== */
-#app {
-  display: grid;
-  grid-template-rows: var(--header-h) 1fr var(--status-h);
-  grid-template-columns: var(--sidebar-w) 1fr;
-  grid-template-areas:
-    "header  header"
-    "sidebar main"
-    "footer  footer";
-  height: 100vh;
-  width: 100vw;
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
 }
 
-/* ===== GLOBAL HEADER ===== */
-#global-header {
-  grid-area: header;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 0 20px;
-  background: var(--nord1);
-  border-bottom: 1px solid var(--nord3);
-  border-bottom-color: var(--burgundy);
-  cursor: pointer;
-  user-select: none;
-  position: relative;
-  z-index: 100;
-  transition: background var(--transition);
+/* ── Hero ──────────────────────────────────────────────────────── */
+.hero {
+  padding: 72px 0 48px;
 }
-#global-header:hover { background: var(--nord2); }
-#global-header:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: -2px; }
-#header-photo {
-  width: 48px; height: 48px;
-  border-radius: 50%;
-  border: 2px solid var(--burgundy);
-  object-fit: cover;
-  flex-shrink: 0;
-}
-#header-wordmark {
-  font-size: 15px;
-  font-weight: 600;
+
+.hero h1 {
+  font-size: 32px;
+  font-weight: 700;
   color: var(--nord6);
-  white-space: nowrap;
+  margin-bottom: 16px;
+  line-height: 1.2;
 }
-#header-wordmark .fire { font-size: 16px; }
-#header-wordmark .handle { color: var(--burgundy); }
-#header-sep { color: var(--nord4); opacity: 0.35; margin: 0 2px; }
-#header-tagline {
+
+.hero .bio {
+  font-size: 15px;
+  color: var(--nord4);
+  max-width: 640px;
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+.hero .bio-dim {
   font-size: 12px;
-  color: var(--nord4);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  color: var(--nord3);
+  font-style: italic;
+  margin-top: 12px;
 }
 
-/* ===== SIDEBAR ===== */
-#sidebar {
-  grid-area: sidebar;
-  display: flex;
-  flex-direction: column;
-  background: var(--nord1);
-  border-right: 1px solid var(--nord3);
-  overflow: hidden;
-  position: relative;
+.hero-rule {
+  height: 2px;
+  background: var(--burgundy);
+  margin: 32px 0 0;
 }
 
-/* Currently block */
-#currently-block {
-  min-height: 72px;
-  max-height: 140px;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--nord3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-left: 3px solid var(--accent);
-  transition: border-color var(--transition-slow);
-  flex-shrink: 0;
-  cursor: pointer;
-  overflow: hidden;
-}
-#currently-block:hover { background: var(--nord2); }
-#currently-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: color var(--transition-slow);
-}
-#currently-label::before {
-  content: '';
-  display: inline-block;
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  transition: background var(--transition-slow);
-  flex-shrink: 0;
-}
-#currently-text {
-  font-size: 12px;
-  color: var(--nord4);
-  line-height: 1.45;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  transition: opacity 300ms ease;
+/* ── Sections ──────────────────────────────────────────────────── */
+.section {
+  padding: 64px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Nav */
-#sidebar-nav {
-  flex: 1;
-  padding: 8px 0;
-  overflow-y: auto;
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-.nav-item {
-  display: block;
-  width: 100%;
-  padding: 9px 16px;
-  background: none;
-  border: none;
-  border-left: 3px solid transparent;
-  color: var(--nord4);
-  font-family: var(--font);
-  font-size: 13px;
-  font-weight: 400;
-  text-align: left;
-  cursor: pointer;
-  transition: background var(--transition), border-color var(--transition), color var(--transition);
-  position: relative;
-}
-.nav-item:hover { background: var(--nord2); color: var(--nord6); }
-.nav-item.active {
-  border-left-color: var(--accent);
-  color: var(--accent);
-  background: rgba(255,255,255,0.04);
-  font-weight: 600;
-}
-.nav-item:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: -2px; }
-.nav-prefix { color: var(--nord3); margin-right: 4px; }
-.nav-item.active .nav-prefix { color: var(--accent); opacity: 0.5; }
 
-/* Sidebar links block */
-#sidebar-links {
-  padding: 12px 16px;
-  border-top: 1px solid var(--nord3);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex-shrink: 0;
-}
-.sidebar-link {
+.section-label {
   font-size: 11px;
-  color: var(--nord4);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.sidebar-link a { color: var(--nord4); font-size: 11px; }
-.sidebar-link a:hover { color: var(--frost); }
-
-/* ===== MAIN COLUMN ===== */
-#main {
-  grid-area: main;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  position: relative;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--nord2);
 }
 
-/* Section header (fixed, accent-colored) */
-#section-header {
-  height: var(--section-header-h);
-  display: flex;
-  align-items: center;
-  padding: 0 24px;
-  border-bottom: 1px solid var(--nord3);
-  background: var(--nord0);
-  flex-shrink: 0;
-  position: relative;
-  z-index: 10;
+/* ── Bento Grid ────────────────────────────────────────────────── */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
 }
-#section-title {
+
+.card {
+  background: var(--nord1);
+  border: 1px solid var(--nord3);
+  border-radius: 8px;
+  padding: 20px 24px;
+  transition: border-color var(--transition-normal),
+              box-shadow var(--transition-normal),
+              transform var(--transition-normal);
+}
+
+.card:hover {
+  border-color: var(--frost);
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+}
+
+.card.link-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card.link-card:hover { text-decoration: none; }
+.card.link-card:visited { color: inherit; }
+
+.card-accent {
+  height: 3px;
+  width: 100%;
+  margin: -20px -24px 16px;
+  width: calc(100% + 48px);
+  border-radius: 8px 8px 0 0;
+}
+
+.card-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.card h3 {
   font-size: 16px;
   font-weight: 600;
   color: var(--nord6);
-  letter-spacing: 0.02em;
-}
-#section-title .accent-word {
-  color: var(--accent);
-  transition: color var(--transition-slow);
-  position: relative;
-}
-#section-title .accent-word::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: background var(--transition-slow);
-}
-
-/* Ticker */
-#ticker {
-  min-height: var(--ticker-h);
-  display: flex;
-  align-items: flex-start;
-  padding: 8px 16px;
-  background: var(--nord1);
-  border-bottom: 1px solid var(--nord3);
-  flex-shrink: 0;
-}
-#ticker-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  white-space: nowrap;
-  margin-right: 12px;
-  margin-top: 2px;
-  transition: color var(--transition-slow);
-}
-#ticker-label::before {
-  content: '';
-  display: inline-block;
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
-  transition: background var(--transition-slow);
-  margin-right: 6px;
-  vertical-align: middle;
-}
-#ticker-text {
-  font-size: 12px;
-  color: var(--nord4);
-  line-height: 1.5;
-  transition: opacity 300ms ease;
-}
-#ticker-text.fading { opacity: 0; }
-
-/* Scrollable body */
-#content-body {
-  flex: 1;
-  overflow-y: auto;
-  padding: 28px 28px 48px;
-  scroll-behavior: smooth;
-}
-#content-body::-webkit-scrollbar { width: 6px; }
-#content-body::-webkit-scrollbar-track { background: var(--nord0); }
-#content-body::-webkit-scrollbar-thumb { background: var(--nord3); border-radius: 3px; }
-
-/* ===== STATUS BAR ===== */
-#status-bar {
-  grid-area: footer;
-  height: var(--status-h);
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
-  background: var(--nord1);
-  border-top: 1px solid var(--nord3);
-  gap: 16px;
-  font-size: 11px;
-  color: var(--nord4);
-  z-index: 100;
-}
-.status-item { display: flex; align-items: center; gap: 5px; }
-.status-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--aurora-green);
-}
-.status-dot.yellow { background: var(--aurora-yellow); }
-.status-sep { color: var(--nord4); opacity: 0.3; }
-#status-right { margin-left: auto; }
-
-/* ===== SECTION PANELS ===== */
-.section-panel { display: none; }
-.section-panel.active { display: block; }
-
-/* ===== HOME SECTION ===== */
-#home-float-container {
-  position: fixed;
-  top: var(--header-h);
-  left: var(--sidebar-w);
-  right: 0;
-  bottom: var(--status-h);
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-}
-.float-fragment {
-  position: absolute;
-  font-size: 11px;
-  color: var(--nord3);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  animation: floatDrift linear infinite;
-  font-style: italic;
-  user-select: none;
-}
-@keyframes floatDrift {
-  0%   { transform: translate(0, 0); opacity: 0; }
-  8%   { opacity: var(--frag-opacity); }
-  88%  { opacity: var(--frag-opacity); }
-  100% { transform: translate(var(--drift-x), var(--drift-y)); opacity: 0; }
-}
-
-.home-bio {
-  position: relative;
-  z-index: 2;
-  max-width: 640px;
-  margin-bottom: 32px;
-  padding: 20px 22px;
-  background: rgba(46, 52, 64, 0.85);
-  border: 1px solid var(--nord3);
-  border-left: 3px solid var(--accent-home);
-  backdrop-filter: blur(2px);
-}
-.home-bio p { margin-bottom: 12px; color: var(--nord4); line-height: 1.7; }
-.home-bio p:last-child { margin-bottom: 0; }
-.home-bio .hl { color: var(--accent-home); font-weight: 500; }
-.home-bio .dim { color: var(--nord4); opacity: 0.55; font-size: 12px; }
-
-/* Tile grid */
-.tile-grid {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
-  gap: 12px;
-}
-.tile {
-  background: var(--nord1);
-  border: 1px solid var(--nord3);
-  padding: 16px;
-  font-size: 13px;
-  position: relative;
-  transition: background var(--transition), border-color var(--transition);
-}
-.tile:hover { background: var(--nord2); }
-.tile.hero { grid-column: span 2; }
-.tile.full { grid-column: span 3; }
-.tile-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--nord4);
-  opacity: 0.65;
   margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.card p {
+  font-size: 13px;
+  color: var(--nord4);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.card p:last-child { margin-bottom: 0; }
+
+.card .status {
   display: flex;
   align-items: center;
   gap: 6px;
-}
-.tile-label .tl-accent {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  display: inline-block;
-  flex-shrink: 0;
-  opacity: 1;
-}
-.tile-title { font-size: 14px; font-weight: 600; color: var(--nord6); margin-bottom: 6px; }
-.tile-body { color: var(--nord4); line-height: 1.55; font-size: 12px; }
-.tile-body .hl { color: var(--frost); font-weight: 500; }
-.tile-body .num { color: var(--frost-deep); font-weight: 600; }
-.tile-quip { font-style: italic; color: var(--nord4); opacity: 0.6; font-size: 12px; line-height: 1.5; }
-.tile-quip::before { content: '// '; }
-
-/* tile status indicators */
-.tile-status-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 10px;
   font-size: 11px;
+  color: var(--nord3);
+  margin-top: 12px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot.green { background: var(--aurora-green); }
+.dot.yellow { background: var(--aurora-yellow); }
+.dot.red { background: var(--aurora-red); }
+.dot.dim { background: var(--nord3); }
+
+.hl { color: var(--frost-warm); }
+
+/* ── Hero card (spans 2 cols) ──────────────────────────────────── */
+.card.hero-card {
+  grid-column: span 2;
+}
+
+@media (max-width: 640px) {
+  .card.hero-card { grid-column: span 1; }
+}
+
+/* ── Quip card ─────────────────────────────────────────────────── */
+.card.quip {
+  border-left: 2px solid var(--nord3);
+  background: transparent;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 0;
+  padding: 16px 20px;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--nord3);
+  line-height: 1.7;
+}
+
+.card.quip:hover {
+  border-color: var(--nord3);
+  box-shadow: none;
+  transform: none;
   color: var(--nord4);
-  opacity: 0.6;
 }
-.tile-dot { width: 7px; height: 7px; border-radius: 50%; }
-.tile-dot.green { background: var(--aurora-green); box-shadow: 0 0 6px var(--aurora-green); }
-.tile-dot.yellow { background: var(--aurora-yellow); }
-.tile-dot.dim { background: var(--nord3); }
-.progress-bar {
-  height: 4px;
-  background: var(--nord3);
-  margin-top: 10px;
-  position: relative;
-  overflow: hidden;
-}
-.progress-fill {
-  height: 100%;
-  background: var(--accent-home);
-  transition: width 0.5s ease;
-}
-.progress-fill.green { background: var(--aurora-green); }
-.progress-fill.yellow { background: var(--aurora-yellow); }
-.progress-fill.red { background: var(--aurora-red); }
 
-/* locked tile */
-.tile-locked {
-  opacity: 0.5;
-  border-style: dashed;
+/* ── Navigate Section ──────────────────────────────────────────── */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
 }
-.tile-locked .tile-lock { font-size: 11px; color: var(--nord3); margin-top: 8px; }
 
-/* mini sparkline in tiles */
-.tile-spark {
+.nav-card {
+  background: var(--nord1);
+  border: 1px solid var(--nord3);
+  border-radius: 8px;
+  padding: 20px;
   display: block;
-  width: 100%;
-  height: 28px;
-  margin-top: 8px;
-  opacity: 0.7;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--transition-normal),
+              box-shadow var(--transition-normal),
+              transform var(--transition-normal);
 }
 
-/* ===== SECTION PROSE ===== */
-.section-prose {
-  max-width: min(680px, calc(100vw - var(--sidebar-w) - 56px));
-  width: 100%;
+.nav-card:hover {
+  border-color: var(--frost);
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+  text-decoration: none;
 }
-.section-prose p {
-  margin-bottom: 16px;
-  color: var(--nord4);
-  line-height: 1.72;
+
+.nav-card:visited { color: inherit; }
+
+.nav-card .nav-accent {
+  height: 3px;
+  width: 40px;
+  border-radius: 2px;
+  margin-bottom: 12px;
 }
-.section-prose p:last-child { margin-bottom: 0; }
-.section-prose .hl { color: var(--accent); font-weight: 500; }
-.section-prose .dim { color: var(--nord4); opacity: 0.55; font-size: 12px; }
-.section-prose h3 {
-  font-size: 14px;
+
+.nav-card h3 {
+  font-size: 15px;
   font-weight: 600;
   color: var(--nord6);
-  margin: 24px 0 10px;
+  margin-bottom: 6px;
 }
-.quip-aside {
-  border-left: 2px solid var(--nord3);
-  padding: 10px 16px;
-  margin: 20px 0;
-  font-style: italic;
-  color: var(--nord4);
-  opacity: 0.65;
+
+.nav-card p {
   font-size: 12px;
-}
-.quip-aside::before { content: '// '; }
-
-.method-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0; }
-.method-tag {
-  padding: 3px 8px;
-  border: 1px solid var(--nord3);
-  font-size: 11px;
   color: var(--nord3);
-  transition: border-color var(--transition), color var(--transition);
-}
-.method-tag:hover { border-color: var(--accent); color: var(--accent); }
-
-.stack-line {
-  font-size: 13px;
-  color: var(--nord3);
-  padding: 10px 14px;
-  border: 1px solid var(--nord3);
-  border-left: 3px solid var(--accent-tools);
-  margin-top: 16px;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
-/* viz placeholder */
-.viz-placeholder {
-  height: 60px;
-  border: 1px dashed var(--nord3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  color: var(--nord3);
-  margin: 20px 0;
-  font-style: italic;
+/* ── Prose Sections ────────────────────────────────────────────── */
+.prose {
+  max-width: 640px;
 }
-.section-viz {
-  margin: 24px 0;
-  border: 1px solid var(--nord3);
-  background: var(--nord1);
-  overflow: hidden;
-}
-.section-viz canvas {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: 480px;
-}
-.viz-label {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  padding: 8px 14px 6px;
-  border-bottom: 1px solid var(--nord3);
-  transition: color var(--transition-slow);
-}
-.viz-caption {
-  font-size: 13px;
-  color: var(--nord4);
-  opacity: 0.55;
-  padding: 6px 14px 8px;
-  border-top: 1px solid var(--nord3);
-  font-style: italic;
-}
-/* htop display */
-#htop-display {
-  font-size: 11px;
-  padding: 12px 14px;
+
+.prose p {
+  font-size: 14px;
+  margin-bottom: 16px;
   line-height: 1.7;
-  color: var(--nord4);
-  min-height: 180px;
-  font-family: var(--font);
-}
-.htop-row { display: flex; gap: 8px; align-items: baseline; }
-.htop-pid { color: var(--frost-deep); width: 32px; text-align: right; flex-shrink: 0; }
-.htop-cpu { color: var(--aurora-green); width: 42px; text-align: right; flex-shrink: 0; }
-.htop-mem { color: var(--aurora-yellow); width: 38px; text-align: right; flex-shrink: 0; }
-.htop-name { color: var(--nord6); font-weight: 600; width: 120px; flex-shrink: 0; }
-.htop-desc { color: var(--nord4); opacity: 0.7; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.htop-header { color: var(--nord3); border-bottom: 1px solid var(--nord3); padding-bottom: 4px; margin-bottom: 6px; }
-.htop-uptime { color: var(--nord3); font-size: 10px; margin-top: 10px; padding-top: 6px; border-top: 1px solid var(--nord3); }
-.htop-bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
-.htop-bar-label { color: var(--nord4); width: 42px; font-size: 11px; flex-shrink: 0; }
-.htop-bar-outer { flex: 1; height: 8px; background: var(--nord2); position: relative; }
-.htop-bar-inner { height: 100%; transition: width 2s ease; }
-.htop-bar-val { color: var(--nord4); font-size: 11px; width: 44px; text-align: right; flex-shrink: 0; }
-
-/* ===== FULL-WIDTH FOOTER ===== */
-#site-footer {
-  display: none; /* shown separately when needed — status-bar IS the bottom chrome */
 }
 
-/* ===== ACCENT LINE ===== */
-#accent-line {
-  position: fixed;
-  pointer-events: none;
-  z-index: 200;
-  top: var(--header-h);
-  left: 0;
-  width: var(--sidebar-w);
-  bottom: var(--status-h);
-  overflow: visible;
-}
-#accent-line svg {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  overflow: visible;
-}
-
-/* ===== APPROACH LAYOUT ===== */
-.approach-layout { max-width: min(720px, calc(100vw - var(--sidebar-w) - 56px)); width: 100%; }
-.approach-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 20px 0;
-}
-.approach-col h3 {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 10px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid var(--nord3);
-}
-.approach-col p { font-size: 13px; color: var(--nord4); line-height: 1.7; margin-bottom: 10px; }
-.approach-col p:last-child { margin-bottom: 0; }
-.approach-col .hl { color: var(--accent); font-weight: 500; }
-
-/* ===== RESEARCH CALLOUT & METHOD PAIR ===== */
-.research-callout {
-  border: 1px solid var(--nord3);
-  border-left: 3px solid var(--accent-research);
+.prose .callout {
   background: var(--nord1);
-  padding: 14px 18px;
-  margin: 18px 0;
+  border-left: 3px solid var(--frost);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 0 6px 6px 0;
+  font-size: 13px;
+  line-height: 1.7;
 }
-.rc-label {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--nord5);    /* bumped from nord3 */
+
+.prose .callout.yellow { border-left-color: var(--aurora-yellow); }
+.prose .callout.green { border-left-color: var(--aurora-green); }
+.prose .callout.red { border-left-color: var(--aurora-red); }
+
+/* ── Data Callout ──────────────────────────────────────────────── */
+.data-callout {
+  background: var(--nord1);
+  border: 1px solid var(--nord3);
+  border-radius: 8px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.data-callout .data-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--frost);
+  line-height: 1;
   margin-bottom: 8px;
 }
-.rc-body { font-size: 13px; color: var(--nord4); line-height: 1.65; }
 
-.research-method-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin: 18px 0;
-}
-.rmp-item {
-  background: var(--nord1);
-  border: 1px solid var(--nord3);
-  border-top: 2px solid var(--accent-research);
-  padding: 12px 14px;
-}
-.rmp-name {
+.data-callout .data-label {
   font-size: 13px;
-  font-weight: 600;
-  color: var(--nord6);
-  margin-bottom: 6px;
-}
-.rmp-desc {
-  font-size: 12px;
-  color: var(--nord5);    /* bumped for legibility */
-  line-height: 1.6;
-}
-
-/* ===== CONTRAST FIXES — callout subtext, captions ===== */
-.viz-caption { color: var(--nord5); opacity: 0.8; }  /* was nord4 at 0.55 */
-.tile-label { opacity: 0.8; }                        /* was 0.65 */
-.tile-status-row { opacity: 0.75; }                  /* was 0.6 */
-.tile-quip { opacity: 0.75; }                        /* was 0.6 */
-.htop-uptime { color: var(--nord4); }               /* was nord3 */
-.htop-header { color: var(--nord4); opacity: 0.7; } /* was nord3 */
-.htop-desc { opacity: 0.85; }                       /* was 0.7 */
-.tl-desc { color: var(--nord5); }                   /* timeline descriptions */
-.tl-year { color: var(--aurora-yellow); }
-.stack-line { color: var(--nord5); }                /* was nord3 */
-
-/* ===== MOTION ===== */
-.section-panel {
-  display: none;
-  animation: panelReveal 280ms ease forwards;
-}
-.section-panel.active { display: block; }
-@keyframes panelReveal {
-  from { opacity: 0; transform: translateY(6px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Tile grid stagger */
-.tile-grid .tile {
-  animation: tileIn 300ms ease both;
-}
-.tile-grid .tile:nth-child(1)  { animation-delay: 30ms; }
-.tile-grid .tile:nth-child(2)  { animation-delay: 60ms; }
-.tile-grid .tile:nth-child(3)  { animation-delay: 90ms; }
-.tile-grid .tile:nth-child(4)  { animation-delay: 120ms; }
-.tile-grid .tile:nth-child(5)  { animation-delay: 150ms; }
-.tile-grid .tile:nth-child(6)  { animation-delay: 180ms; }
-.tile-grid .tile:nth-child(7)  { animation-delay: 210ms; }
-.tile-grid .tile:nth-child(8)  { animation-delay: 240ms; }
-.tile-grid .tile:nth-child(9)  { animation-delay: 270ms; }
-.tile-grid .tile:nth-child(10) { animation-delay: 300ms; }
-.tile-grid .tile:nth-child(11) { animation-delay: 330ms; }
-.tile-grid .tile:nth-child(12) { animation-delay: 360ms; }
-@keyframes tileIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Approach col stagger */
-.approach-col {
-  animation: panelReveal 320ms ease both;
-}
-.approach-split:nth-child(2) .approach-col:first-child { animation-delay: 80ms; }
-.approach-split:nth-child(2) .approach-col:last-child  { animation-delay: 160ms; }
-.approach-split:nth-child(4) .approach-col:first-child { animation-delay: 120ms; }
-.approach-split:nth-child(4) .approach-col:last-child  { animation-delay: 200ms; }
-
-/* Method pair stagger */
-.research-method-pair .rmp-item {
-  animation: tileIn 320ms ease both;
-}
-.research-method-pair .rmp-item:nth-child(1) { animation-delay: 100ms; }
-.research-method-pair .rmp-item:nth-child(2) { animation-delay: 160ms; }
-.research-method-pair .rmp-item:nth-child(3) { animation-delay: 220ms; }
-.research-method-pair .rmp-item:nth-child(4) { animation-delay: 280ms; }
-
-/* Currently block accent pulse */
-#currently-block {
-  animation: accentPulse 4s ease-in-out infinite;
-}
-@keyframes accentPulse {
-  0%, 100% { border-left-color: var(--accent); }
-  50%       { border-left-color: var(--nord3); }
-}
-
-/* Scan-line overlay on viz canvases */
-.section-viz { position: relative; }
-.section-viz::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent,
-    transparent 3px,
-    rgba(0,0,0,0.06) 3px,
-    rgba(0,0,0,0.06) 4px
-  );
-  pointer-events: none;
-  z-index: 2;
-}
-
-/* Nav active indicator slide */
-.nav-item.active::after {
-  content: '';
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: dotPop 200ms ease both;
-}
-@keyframes dotPop {
-  from { transform: translateY(-50%) scale(0); }
-  to   { transform: translateY(-50%) scale(1); }
-}
-
-/* Header hostname accent shimmer on load */
-#global-header .handle {
-  position: relative;
-}
-
-/* Progress bar shimmer */
-.progress-fill::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -60%; width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-  animation: shimmer 3s ease-in-out infinite;
-}
-@keyframes shimmer {
-  0%   { left: -60%; }
-  100% { left: 140%; }
-}
-.progress-bar { overflow: hidden; }
-.progress-fill { position: relative; overflow: hidden; }
-
-/* ===== MISC =====*/
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-
-/* ===== WORK SECTION — data display ===== */
-.data-stat-row {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin: 20px 0;
-}
-.data-stat {
-  background: var(--nord1);
-  border: 1px solid var(--nord3);
-  border-top: 2px solid var(--accent-work);
-  padding: 14px 18px;
-  min-width: 140px;
-}
-.data-stat .ds-num {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--aurora-red);
-  line-height: 1;
+  color: var(--nord4);
   margin-bottom: 4px;
 }
-.data-stat .ds-label { font-size: 11px; color: var(--nord3); line-height: 1.4; }
-.data-stat .ds-caveat { font-size: 10px; color: var(--nord3); margin-top: 4px; font-style: italic; }
 
-/* ===== GEOCITIES SECTION ===== */
-#panel-geocities {
-  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
-  background: #1a0a2e;
-  color: #00ff00;
-  padding: 24px;
-  image-rendering: pixelated;
-}
-#panel-geocities.active {
-  background: #1a0a2e;
-}
-.geo-marquee {
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 12px 0;
-}
-.geo-marquee-inner {
-  display: inline-block;
-  animation: geo-scroll 18s linear infinite;
-  font-size: 14px;
-  color: #ff00ff;
-  text-shadow: 0 0 6px #ff00ff;
-  letter-spacing: 0.15em;
-}
-@keyframes geo-scroll {
-  0%   { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-.geo-welcome {
-  text-align: center;
-  margin: 16px 0 8px;
-}
-.geo-welcome h2 {
-  font-size: 24px;
-  color: #ffff00;
-  text-shadow: 2px 2px #ff6600, 0 0 10px #ffff00;
-  letter-spacing: 0.08em;
-  font-weight: 700;
-  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
-  margin: 0;
-}
-.geo-welcome .geo-subtitle {
+.data-callout .data-context {
   font-size: 11px;
-  color: #00ffff;
-  margin-top: 4px;
+  color: var(--nord3);
+}
+
+/* ── Footer ────────────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--nord3);
+  padding: 32px 0 64px;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 12px;
+  color: var(--nord3);
+  margin-bottom: 4px;
+}
+
+.footer a { color: var(--frost-deep); }
+
+.footer .tagline {
   font-style: italic;
-}
-.geo-fire { width: 100%; max-width: 600px; margin: 8px auto; display: block; }
-.geo-badges {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin: 16px 0;
-}
-.geo-badges img { height: 40px; }
-.geo-badge-ascii {
-  font-family: 'Courier New', monospace;
   font-size: 11px;
-  line-height: 1.15;
-  color: #88C0D0;
-  background: #2E3440;
-  padding: 8px 12px;
-  border-radius: 4px;
-  margin: 0;
-  white-space: pre;
-  min-width: 110px;
-  text-align: center;
-  transition: opacity 400ms ease;
-}
-.geo-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 14px;
-  margin: 16px 0;
-}
-.geo-card {
-  background: #0a0022;
-  border: 2px solid #00ff00;
-  padding: 14px;
-  box-shadow: 0 0 8px rgba(0, 255, 0, 0.15);
-}
-.geo-card h3 {
-  font-size: 14px;
-  color: #ff6600;
-  margin: 0 0 6px;
-  font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
-  text-transform: uppercase;
-}
-.geo-card p {
-  font-size: 12px;
-  color: #00ff00;
-  line-height: 1.55;
-  font-family: 'Courier New', monospace;
-  margin: 0;
-}
-.geo-card .geo-card-icon {
-  font-size: 22px;
-  margin-bottom: 6px;
-  display: block;
-}
-.geo-guestbook {
-  margin: 20px 0 8px;
-  border: 2px dashed #ff00ff;
-  padding: 14px;
-  text-align: center;
-}
-.geo-guestbook p {
-  font-size: 12px;
-  color: #00ffff;
-  line-height: 1.6;
-  font-family: 'Courier New', monospace;
-  margin: 0;
-}
-.geo-guestbook a {
-  color: #ffff00;
-  text-decoration: underline;
-}
-.geo-counter-wrap {
-  text-align: center;
-  margin: 16px 0 8px;
-}
-.geo-counter-wrap img { max-width: 300px; }
-.geo-terminal-wrap {
-  text-align: center;
-  margin: 12px 0;
-}
-.geo-terminal-wrap img { max-width: 400px; }
-.geo-construction {
-  text-align: center;
-  margin: 12px 0;
-}
-.geo-construction img { max-width: 160px; }
-.geo-disclaimer {
-  text-align: center;
-  font-size: 10px;
-  color: #888;
+  color: var(--nord2);
   margin-top: 16px;
-  font-family: var(--mono);
-  font-style: italic;
-}
-/* geocities mode: green bleeds into header + ticker */
-body.geo-mode #global-header {
-  background: #0a0022;
-  border-bottom-color: #00ff00;
-}
-body.geo-mode #global-header:hover { background: #12003a; }
-body.geo-mode #global-header .handle { color: #00ff00 !important; }
-body.geo-mode #global-header #header-sep { color: #00ff00; }
-body.geo-mode #global-header #header-tagline { color: #00ff00; opacity: 0.7; }
-body.geo-mode #ticker {
-  background: #0a0022;
-  border-bottom-color: #00ff00;
-}
-body.geo-mode #ticker-text { color: #00ff00; }
-body.geo-mode #section-header { color: #ffff00; }
-@keyframes geo-blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
-.geo-blink { animation: geo-blink 1s step-end infinite; }
-.geo-rainbow {
-  background: linear-gradient(90deg, #ff0000, #ff6600, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
-/* background section side-by-side layout */
-.bg-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  margin: 20px 0;
+/* ── Reduced Motion ────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  .section { opacity: 1; transform: none; }
+  .card:hover, .nav-card:hover { transform: none; }
 }
-.bg-split .section-prose {
-  max-width: none;
-}
-
-/* background timeline */
-.timeline {
-  position: relative;
-  padding-left: 20px;
-  margin: 20px 0;
-}
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px; bottom: 8px;
-  width: 2px;
-  background: var(--nord3);
-}
-.tl-node {
-  position: relative;
-  margin-bottom: 20px;
-  padding-left: 20px;
-}
-.tl-node::before {
-  content: '';
-  position: absolute;
-  left: -24px;
-  top: 6px;
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--nord3);
-  border: 2px solid var(--nord1);
-  transition: background var(--transition);
-}
-.tl-node:hover::before { background: var(--accent-background); }
-.tl-year { font-size: 12px; color: var(--aurora-yellow); font-weight: 600; letter-spacing: 0.06em; margin-bottom: 3px; }
-.tl-title { font-size: 15px; font-weight: 600; color: var(--nord6); margin-bottom: 4px; }
-.tl-desc { font-size: 14px; color: var(--nord4); line-height: 1.5; }
-.tl-node.current::before { background: var(--aurora-yellow); box-shadow: 0 0 6px var(--aurora-yellow); }
 </style>
 </head>
 <body>
-<div id="app" role="application">
 
-  <!-- ===== GLOBAL HEADER ===== -->
-  <header id="global-header" role="banner" tabindex="0"
-    onclick="navigateHome()" onkeydown="if(event.key==='Enter'||event.key===' ')navigateHome()"
-    aria-label="Go to home — this15fine.dev">
-    <img id="header-photo" src="/images/jho-nolan.png" alt="Jason and Nolan">
-    <div id="header-wordmark">
-      <span class="handle" style="color:var(--accent);transition:color var(--transition-slow);">3v3rything15fine</span><span id="header-sep"> | </span><span style="color:var(--nord5);font-weight:400;">this15fine.dev</span> <span class="fire">🔥</span>
+<!-- Hero -->
+<div class="container">
+  <section class="hero">
+    <h1>this15fine.dev</h1>
+    <p class="bio">
+      I study what happens to people when institutional systems don't fit them.
+      Sometimes I build better tools for noticing that. The PhD happened because
+      I kept asking questions that the tools I could find didn't quite answer.
+    </p>
+    <p class="bio-dim">Nolan (the gray one) contributes by sitting on whatever I'm currently looking at.</p>
+    <div class="hero-rule"></div>
+  </section>
+</div>
+
+<!-- Active Work -->
+<div class="container">
+  <section class="section" id="active">
+    <div class="section-label" style="color: var(--frost);">Active Work</div>
+    <div class="bento">
+
+      <div class="card hero-card">
+        <div class="card-accent" style="background: var(--frost);"></div>
+        <div class="card-label" style="color: var(--frost);">active &middot; research</div>
+        <h3>what happens after things go sideways</h3>
+        <p>Studying how people respond to academic setbacks — specifically why every measurement
+        tool for resilience is aimed at the <span class="hl">anticipation</span> of failure
+        rather than the aftermath. Mixed methods. A lot of student narratives.
+        Occasionally the data says something I wasn't expecting, which is the best outcome.</p>
+        <div class="status"><span class="dot green"></span> active &middot; doctoral program</div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent" style="background: var(--aurora-green);"></div>
+        <div class="card-label" style="color: var(--aurora-green);">active &middot; build</div>
+        <h3>local-first NLP pipeline</h3>
+        <p>Thousands of open-response narratives, multi-model NLP stack, metaphor detection,
+        modality shifts, temporal framing. All of it on-machine.
+        Ollama handles inference. DuckDB handles the data. <span class="hl">Nobody's cloud is involved.</span></p>
+        <div class="status"><span class="dot green"></span> running &middot; FA25 analysis complete</div>
+      </div>
+
+      <div class="card quip">
+        ollama ate all the RAM.<br>
+        this is, technically, what I asked for.
+      </div>
+
+      <div class="card">
+        <div class="card-label" style="color: var(--aurora-yellow);">currently</div>
+        <h3>reading</h3>
+        <p>Nora Bateson on warm data. Complex responsive processes. A Luhmann essay that
+        has been open for two weeks.</p>
+        <div class="status"><span class="dot yellow"></span> three tabs. one is losing.</div>
+      </div>
+
+      <div class="card">
+        <div class="card-label" style="color: var(--aurora-magenta);">currently</div>
+        <h3>playing</h3>
+        <p>Dead Cells. Still. Two hundred hours in. The game remains unimpressed. This is,
+        somehow, not a deterrent.</p>
+        <div class="status"><span class="dot dim"></span> deaths: yes</div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent" style="background: var(--aurora-green);"></div>
+        <div class="card-label" style="color: var(--aurora-green);">shipped</div>
+        <h3>this website</h3>
+        <p>You're looking at it. No analytics, no tracking, no framework, no cookies.
+        It does have a cat, which is more than most websites can say.</p>
+        <div class="status"><span class="dot green"></span> deployed &middot; static hosting</div>
+      </div>
+
+      <div class="card quip">
+        the question is usually<br>more durable than the answer.
+      </div>
+
     </div>
-    <div id="header-tagline">researcher · practitioner · terminal enthusiast</div>
-  </header>
+  </section>
+</div>
 
-  <!-- ===== SIDEBAR ===== -->
-  <aside id="sidebar" role="complementary" aria-label="Navigation">
+<!-- The Research -->
+<div class="container">
+  <section class="section" id="research">
+    <div class="section-label" style="color: var(--frost);">Research</div>
+    <div class="prose">
+      <p>From what I've read, most frameworks for academic resilience measure whether someone
+      <span class="hl">expects</span> to struggle. I haven't found one that measures what happens after.</p>
 
-    <!-- Currently block -->
-    <div id="currently-block" tabindex="0" role="button"
-      onclick="navigateHome()" onkeydown="if(event.key==='Enter'||event.key===' ')navigateHome()"
-      aria-label="Currently — click to go home">
-      <div id="currently-label">// currently</div>
-      <div id="currently-text">Loading…</div>
+      <p>Grit looks forward. Growth mindset looks forward. Self-worth theory looks forward.
+      I couldn't find an instrument built for the aftermath. That's the gap that caught my attention.</p>
+
+      <div class="callout">
+        To understand what happens in that gap, I use a mix of approaches — longitudinal GPA
+        trajectories, student narratives about academic difficulty, and institutional data about
+        who gets contacted and who doesn't. The research site is Bobcats Bounce Back (B3) at
+        Texas State University — an outbound intervention that reframes GPA difficulty as one
+        navigable adversity among many, not a deficit.
+      </div>
+
+      <p>The theoretical thread that runs through all of it: systems thinking. Every person exists
+      inside layers of context — their classroom, their institution, their family, their culture.
+      Two frameworks can disagree about why a student fails and both be right, because the part
+      worth studying is the interaction.</p>
     </div>
 
-    <!-- Nav -->
-    <nav id="sidebar-nav" role="navigation" aria-label="Sections">
-      <button class="nav-item active" data-section="home" onclick="switchSection('home')" aria-current="page">
-        <span class="nav-prefix">//</span> home
-      </button>
-      <button class="nav-item" data-section="research" onclick="switchSection('research')">
-        <span class="nav-prefix">//</span> research
-      </button>
-      <button class="nav-item" data-section="tools" onclick="switchSection('tools')">
-        <span class="nav-prefix">//</span> tools
-      </button>
-      <button class="nav-item" data-section="background" onclick="switchSection('background')">
-        <span class="nav-prefix">//</span> background
-      </button>
-      <button class="nav-item" data-section="approach" onclick="switchSection('approach')">
-        <span class="nav-prefix">//</span> how i think
-      </button>
-      <button class="nav-item" data-section="work" onclick="switchSection('work')">
-        <span class="nav-prefix">//</span> the work
-      </button>
-      <button class="nav-item" data-section="geocities" onclick="switchSection('geocities')">
-        <span class="nav-prefix">~</span> my first website
-      </button>
-    </nav>
-
-  </aside>
-
-  <!-- ===== MAIN ===== -->
-  <main id="main" role="main">
-
-    <!-- Ticker -->
-    <div id="ticker" aria-live="polite" aria-atomic="true">
-      <span id="ticker-label">→</span>
-      <span id="ticker-text"></span>
+    <div class="data-callout" style="margin-top: 32px;">
+      <div class="data-number">1</div>
+      <div class="data-label">One conversation. That's what the data kept showing.</div>
+      <div class="data-context">A single structured contact was associated with roughly doubling the rate at which
+      students returned to good academic standing. Not a semester of intervention. Not ten touchpoints.
+      One conversation. The data was checked several times.</div>
     </div>
 
-    <!-- Scrollable body -->
-    <div id="content-body">
-
-      <!-- HOME -->
-      <section class="section-panel active" id="panel-home" aria-labelledby="home-heading">
-        <h1 id="home-heading" class="sr-only">Home</h1>
-
-        <div class="home-bio">
-          <p>
-            I study what happens to people when institutional systems don't fit them.
-            Sometimes I build better tools for noticing that. The PhD happened because I kept
-            asking questions that the tools I could find didn't quite answer.
-          </p>
-          <p class="dim">Nolan (the gray one) contributes by sitting on whatever I'm currently looking at.</p>
-        </div>
-
-        <!-- Tile grid -->
-        <div class="tile-grid" role="list">
-
-          <!-- Hero: active research -->
-          <div class="tile hero" role="listitem">
-            <div class="tile-label">
-              <span class="tl-accent" style="background:var(--frost)"></span>
-              active · research
-            </div>
-            <div class="tile-title">what happens after things go sideways</div>
-            <div class="tile-body">
-              Studying how people respond to academic setbacks — specifically why every measurement
-              tool for resilience is aimed at the <span class="hl">anticipation</span> of failure
-              rather than the aftermath. Mixed methods. A lot of student narratives.
-              Occasionally the data says something I wasn't expecting, which is the best outcome.
-            </div>
-            <div class="tile-status-row">
-              <span class="tile-dot green"></span>
-              <span>active · doctoral program</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill green" style="width:42%"></div>
-            </div>
-            <canvas id="sparkResearch" width="180" height="28" class="tile-spark" aria-hidden="true"></canvas>
-          </div>
-
-          <!-- Small: currently reading -->
-          <div class="tile" role="listitem">
-            <div class="tile-label">
-              <span class="tl-accent" style="background:var(--aurora-yellow)"></span>
-              currently
-            </div>
-            <div class="tile-title">reading</div>
-            <div class="tile-body">
-              Nora Bateson on warm data.<br>
-              Complex responsive processes.<br>
-              A Luhmann essay that has been open for two weeks.
-            </div>
-            <div class="tile-status-row">
-              <span class="tile-dot yellow"></span>
-              <span>three tabs. one is losing.</span>
-            </div>
-          </div>
-
-          <!-- Small: playing -->
-          <div class="tile" role="listitem">
-            <div class="tile-label">
-              <span class="tl-accent" style="background:var(--aurora-magenta)"></span>
-              currently
-            </div>
-            <div class="tile-title">playing</div>
-            <div class="tile-body">
-              Dead Cells. Still.<br>
-              Two hundred hours in. The game remains unimpressed.
-              This is, somehow, not a deterrent.
-            </div>
-            <div class="tile-status-row">
-              <span class="tile-dot dim"></span>
-              <span>deaths: yes</span>
-            </div>
-          </div>
-
-          <!-- Hero: local tools build -->
-          <div class="tile hero" role="listitem">
-            <div class="tile-label">
-              <span class="tl-accent" style="background:var(--aurora-green)"></span>
-              active · build
-            </div>
-            <div class="tile-title">local-first NLP pipeline</div>
-            <div class="tile-body">
-              Thousands of open-response narratives, multi-model NLP stack, metaphor detection,
-              modality shifts, temporal framing, self-positioning in language. All of it on-machine.
-              Ollama handles inference. DuckDB handles the data. Nobody's cloud is involved.
-              <span class="hl">This is a feature.</span>
-            </div>
-            <div class="tile-status-row">
-              <span class="tile-dot green"></span>
-              <span>running · FA25 analysis complete</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill" style="width:78%;background:var(--aurora-green)"></div>
-            </div>
-            <canvas id="miniField" width="180" height="28" class="tile-spark" aria-hidden="true"></canvas>
-          </div>
-
-          <!-- Quip tile -->
-          <div class="tile" role="listitem" style="border-left:2px solid var(--nord3);">
-            <div class="tile-quip">ollama ate all the RAM.<br>this is, technically, what I asked for.</div>
-            <div class="tile-status-row" style="margin-top:14px;">
-              <span class="tile-dot dim"></span>
-              <span>still running. probably.</span>
-            </div>
-          </div>
-
-          <!-- Done tile -->
-          <div class="tile" role="listitem">
-            <div class="tile-label">
-              <span class="tl-accent" style="background:var(--aurora-green)"></span>
-              shipped
-            </div>
-            <div class="tile-title">this website</div>
-            <div class="tile-body">
-              You're looking at it. No analytics, no tracking, no framework, no cookies.
-              It does have a cat, which is more than most websites can say.
-            </div>
-            <div class="tile-status-row">
-              <span class="tile-dot green"></span>
-              <span>deployed · static hosting</span>
-            </div>
-          </div>
-
-          <!-- To-do tile -->
-          <div class="tile tile-locked" role="listitem">
-            <div class="tile-label">
-              <span class="tl-accent" style="background:var(--nord3)"></span>
-              coming soon
-            </div>
-            <div class="tile-title">instrument development</div>
-            <div class="tile-body">
-              A psychometric instrument for post-failure response. Currently in
-              the phase where existing measurement is examined and found wanting.
-              This phase has lasted a while.
-            </div>
-            <div class="tile-lock">[ in progress · timeline: optimistic ]</div>
-          </div>
-
-          <!-- Quip: methodology -->
-          <div class="tile" role="listitem" style="border-left:2px solid var(--nord3);">
-            <div class="tile-quip">returning to good standing turns out to be more stable than the crisis that preceded it.<br>that one surprised me too.</div>
-          </div>
-
-          <!-- Teaser: sections -->
-          <div class="tile" role="listitem" style="border-top:2px solid var(--aurora-magenta);">
-            <div class="tile-label">
-              <span class="tl-accent" style="background:var(--aurora-magenta)"></span>
-              explore
-            </div>
-            <div class="tile-title">the rest of this site</div>
-            <div class="tile-body">
-              Research · Tools · Background · How I Think · The Work.
-              All navigable from the sidebar. Everything still being built.
-            </div>
-          </div>
-
-          <!-- Quip: data -->
-          <div class="tile" role="listitem" style="border-left:2px solid var(--nord3);">
-            <div class="tile-quip">the question is usually<br>more durable than the answer.</div>
-          </div>
-
-          <!-- Stack tile -->
-          <div class="tile hero" role="listitem">
-            <div class="tile-label">
-              <span class="tl-accent" style="background:var(--aurora-green)"></span>
-              environment
-            </div>
-            <div class="tile-title">current stack</div>
-            <div class="tile-body">
-              Python · R · DuckDB · SQLite · Ollama · Fedora Linux · Podman · Raspberry Pi ·
-              shell scripts held together with comments that say "this should not be necessary."
-              <span class="hl">Everything is local. Everything is fine.</span>
-            </div>
-            <div class="tile-status-row">
-              <span class="tile-dot green"></span>
-              <span>uptime: unconfirmed · last checked: when it stopped</span>
-            </div>
-          </div>
-
-          <!-- Quip: instruments -->
-          <div class="tile" role="listitem" style="border-left:2px solid var(--nord3);">
-            <div class="tile-quip">the instrument shapes what you can see.<br>this is not a metaphor. it is also a metaphor.</div>
-          </div>
-
-        </div><!-- /tile-grid -->
-      </section><!-- /home -->
-
-      <!-- RESEARCH -->
-      <section class="section-panel" id="panel-research" aria-labelledby="research-heading">
-        <h2 id="research-heading" class="sr-only">Research</h2>
-        <div class="section-prose">
-
-          <div class="section-viz" id="research-viz-wrap">
-            <div class="viz-label">ecological systems · agents navigating nested contexts</div>
-            <canvas id="researchCanvas" width="900" height="360" aria-label="Bronfenbrenner ecological systems visualization — agents moving through microsystems, mesosystems, and exosystem forces, modeling students navigating intersecting institutional contexts"></canvas>
-          </div>
-
-          <p>
-            From what I've read, most frameworks for academic resilience measure whether someone
-            <span class="hl">expects</span> to struggle. I haven't found one that measures what happens after.
-            Grit looks forward. Growth mindset looks forward. Self-worth theory looks forward.
-            I couldn't find an instrument built for the aftermath. That's the gap that caught my attention.
-          </p>
-
-          <p>
-            To understand what happens in that gap, I use a mix of approaches.
-            On the quantitative side: statistical techniques that try to map
-            <span class="hl">who follows which path and why</span>.
-            Grouping students by the trajectories they actually follow
-            rather than averaging everyone together.
-            On the qualitative side: thousands of open-response narratives, processed
-            through computational analysis for patterns in how people describe what happened to them.
-          </p>
-
-          <div class="research-method-pair">
-            <div class="rmp-item">
-              <div class="rmp-name">trajectory analysis</div>
-              <div class="rmp-desc">What are the distinct paths people actually follow, and what does each one look like?</div>
-            </div>
-            <div class="rmp-item">
-              <div class="rmp-name">propensity weighting</div>
-              <div class="rmp-desc">Honest comparisons when you can't randomly assign people to groups.</div>
-            </div>
-            <div class="rmp-item">
-              <div class="rmp-name">discourse analysis</div>
-              <div class="rmp-desc">Patterns in language. How framing shifts over time. What metaphors people reach for.</div>
-            </div>
-            <div class="rmp-item">
-              <div class="rmp-name">instrument development</div>
-              <div class="rmp-desc">Building measurement tools that can detect what's happening without flattening it.</div>
-            </div>
-          </div>
-
-          <div class="quip-aside">every time someone says "grit" in a meeting, a psychometrician adds another item to their measurement critique.</div>
-
-          <p>
-            The thing that keeps this grounded: every measurement decision eventually lands
-            in someone's real situation. Build a tool that measures the wrong thing,
-            and you design an intervention around the wrong thing.
-            <span class="hl">The instrument shapes what you can see.</span>
-          </p>
-        </div>
-      </section>
-
-      <!-- TOOLS -->
-      <section class="section-panel" id="panel-tools" aria-labelledby="tools-heading">
-        <h2 id="tools-heading" class="sr-only">Tools</h2>
-        <div class="section-prose">
-
-          <div class="section-viz" id="tools-viz-wrap">
-            <div class="viz-label">process monitor · stack status</div>
-            <div id="htop-display" aria-label="Stylized system monitor showing current tools and stack items as running processes"></div>
-          </div>
-
-          <p>
-            I needed something and didn't have $12 a month for it.
-            <span class="hl">A SQLite database and a Saturday</span> got me close enough.
-            This is a recurring pattern. Research pipelines. Local LLMs for personal finance.
-            Voice memos that become searchable notes.
-            A horror-themed terminal learning environment, because bash documentation
-            should not be the scariest thing you encounter.
-          </p>
-          <div class="quip-aside">the cloud is someone else's computer. I prefer my problems to be local.</div>
-          <div class="stack-line">
-            stack: Python · R · DuckDB · SQLite · Ollama · Fedora Linux ·
-            Podman · Raspberry Pi · shell scripts held together with good intentions
-          </div>
-        </div>
-      </section>
-
-      <!-- BACKGROUND -->
-      <section class="section-panel" id="panel-background" aria-labelledby="background-heading">
-        <h2 id="background-heading" class="sr-only">Background</h2>
-
-          <div class="section-viz" id="bg-viz-wrap" style="max-width:min(680px, calc(100vw - var(--sidebar-w) - 56px));">
-            <div class="viz-label">arc of practice · practitioner → researcher → both</div>
-            <canvas id="bgArcCanvas" width="640" height="140" style="width:100%;height:auto;" aria-label="Animated arc showing path from practitioner through doctoral research to both simultaneously"></canvas>
-          </div>
-
-          <div class="bg-split">
-            <div class="section-prose">
-          <p>
-            I argued against creating the program I now run.
-            On the committee that proposed it, I was the dissenting voice.
-            I didn't think it was doable. When it got approved, I took the job anyway.
-            <span class="hl">The failure would be spectacular. The success would prove me wrong.</span>
-            Both seemed worth showing up for.
-          </p>
-          <p>
-            My undergraduate transcript has 45 credit hours of F's on it, which is honestly an impressive amount of not-getting-it-right. I left, did some other things, eventually came back and found my way into student affairs — building support systems for people navigating the same kind of rough patches I'd been through. The path wasn't planned, but it turns out lived experience is pretty good training material.
-          </p>
-          <p>
-            Don't change the student. Change the system's understanding of the student.
-            That's the design principle underneath everything else on this site.
-          </p>
-          <div class="quip-aside">the PhD is what happens when "does this actually work" turns out to require four years and a statistics course to answer.</div>
-          <p>
-            The doctoral program happened because "does this actually work?"
-            turned out to be a question that required better tools to answer than I had.
-            Psychometrics. Qualitative methods. Learning theory. Literacy studies.
-            The academic side gives me frameworks and rigor.
-            The practitioner side keeps asking whether any of that
-            <span class="hl">actually helps the person in the room.</span>
-          </p>
-            </div>
-
-          <!-- Timeline -->
-          <div class="timeline" role="list" aria-label="Career timeline">
-            <div class="tl-node" role="listitem">
-              <div class="tl-year">before</div>
-              <div class="tl-title">nonlinear path into higher education</div>
-              <div class="tl-desc">Dropout. Military. Re-entry. The kind of path that turns out to be source material.</div>
-            </div>
-            <div class="tl-node" role="listitem">
-              <div class="tl-year">practitioner era</div>
-              <div class="tl-title">student affairs, advising, program design</div>
-              <div class="tl-desc">Years in direct student support. Learned what frameworks don't capture. Started building anyway.</div>
-            </div>
-            <div class="tl-node" role="listitem">
-              <div class="tl-year">the question</div>
-              <div class="tl-title">does this actually work?</div>
-              <div class="tl-desc">The answer required better tools. That led here.</div>
-            </div>
-            <div class="tl-node current" role="listitem">
-              <div class="tl-year">now</div>
-              <div class="tl-title">doctoral student + practitioner simultaneously</div>
-              <div class="tl-desc">Both roles active. The tension is productive. Most days.</div>
-            </div>
-            <div class="tl-node tile-locked" role="listitem" style="opacity:0.45;">
-              <div class="tl-year">forthcoming</div>
-              <div class="tl-title">instrument development · dissertation</div>
-              <div class="tl-desc">[ timeline: optimistic ]</div>
-            </div>
-          </div>
-          </div>
-      </section>
-
-      <!-- HOW I THINK -->
-      <section class="section-panel" id="panel-approach" aria-labelledby="approach-heading">
-        <h2 id="approach-heading" class="sr-only">How I Think</h2>
-        <div class="section-prose approach-layout">
-
-          <div class="section-viz" id="approach-viz-wrap">
-            <div class="viz-label">systems map · click nodes to explore · drag to reposition</div>
-            <canvas id="conceptCanvas" width="960" height="540" style="width:100%;height:auto;" aria-label="Interactive systems map of theoretical frameworks — click nodes to expand details"></canvas>
-          </div>
-
-          <p>
-            Two frameworks disagree about why a student fails.
-            One says the student's beliefs are the mechanism.
-            The other says the student's environment is.
-            My read is that they're both onto something.
-            <span class="hl">The part worth studying is the interaction.</span>
-            That's where I keep ending up.
-          </p>
-
-          <div class="approach-split">
-            <div class="approach-col">
-              <h3>where people sit</h3>
-              <p>
-                Every person exists inside layers of context. Their classroom,
-                their institution, their family, their culture. Bronfenbrenner mapped
-                these layers out. The insight is that you can't fully understand
-                what someone does without understanding what surrounds them.
-                This sounds obvious until you actually try to measure it.
-              </p>
-              <p>
-                Luhmann went further: systems don't just contain people.
-                They have their own logic, their own way of observing,
-                their own blind spots. A university has goals that aren't the same
-                as any individual student's goals. Those misalignments
-                are where things get worth studying.
-              </p>
-            </div>
-            <div class="approach-col">
-              <h3>how change happens</h3>
-              <p>
-                Complex adaptive systems research says: small things can have
-                large effects, and large interventions can disappear without a trace.
-                There's no straight line from input to output when the system
-                has many parts that interact. This is frustrating if you want
-                clean findings. It's accurate if you work in higher education.
-              </p>
-              <p>
-                Complex responsive processes research goes further.
-                It says meaning itself emerges from interaction.
-                You can't design for it in advance. You can only
-                <span class="hl">create conditions where it's more likely to happen</span>,
-                and then pay attention to what comes out.
-              </p>
-            </div>
-          </div>
-
-          <div class="quip-aside">systems thinking is what happens when you realize every simple explanation has a dependency it's not disclosing.</div>
-
-          <div class="approach-split">
-            <div class="approach-col">
-              <h3>assets, not deficits</h3>
-              <p>
-                Asset-based frameworks start with the question: what's already working?
-                This isn't optimism. It's a design principle.
-                If you build interventions around deficits, you tend to get more deficit-mapping.
-                If you start from existing strengths, you get something more durable.
-                The evidence for which approach produces better outcomes is genuinely mixed,
-                which is itself a finding worth sitting with.
-              </p>
-            </div>
-            <div class="approach-col">
-              <h3>the story someone tells about what happened</h3>
-              <p>
-                Attribution theory asks: when something happens, how do people
-                explain it to themselves? The explanation shapes what they do next.
-                Someone who attributes a setback to something permanent and personal
-                behaves differently than someone who sees it as situational and specific.
-                This matters enormously for how you design support.
-                <span class="hl">The story someone tells about what happened</span>
-                is part of what happened.
-              </p>
-            </div>
-          </div>
-
-          <p>
-            The map above is interactive. Hover or click nodes to see how these ideas
-            connect to each other and to the work. Some of these connections are
-            well-established in the literature. Some are my own wiring.
-          </p>
-        </div>
-      </section>
-
-      <!-- THE WORK -->
-      <section class="section-panel" id="panel-work" aria-labelledby="work-heading">
-        <h2 id="work-heading" class="sr-only">The Work</h2>
-        <div class="section-prose">
-
-          <div class="section-viz" id="work-viz-wrap">
-            <div class="viz-label">contacts → return-to-standing rate · five terms, all GPA bands</div>
-            <canvas id="doseCanvas" width="640" height="220" aria-label="Dose-response chart showing return-to-standing rates at 0, 1, 2, and 3+ contacts across five terms"></canvas>
-            <div class="viz-caption">return-to-standing rate by contact count, five terms. observational data. selection effects not controlled.</div>
-          </div>
-
-          <p>
-            One conversation. That's what the data kept showing.
-            <span class="hl">A single structured contact was associated with roughly doubling
-            the rate at which students returned to good academic standing.</span>
-            Not a semester of intervention. Not ten touchpoints. One conversation.
-            The data was checked several times.
-          </p>
-
-          <!-- Headline stats -->
-          <div class="data-stat-row" role="list" aria-label="Program statistics">
-            <div class="data-stat" role="listitem">
-              <div class="ds-num">6,797</div>
-              <div class="ds-label">unique students<br>served, FA23–FA25</div>
-            </div>
-            <div class="data-stat" role="listitem">
-              <div class="ds-num">3,291</div>
-              <div class="ds-label">students who returned<br>to good standing</div>
-            </div>
-            <div class="data-stat" role="listitem">
-              <div class="ds-num">+21.7pp</div>
-              <div class="ds-label">return-to-standing rate increase:<br>zero → one contact</div>
-            </div>
-            <div class="data-stat" role="listitem">
-              <div class="ds-num">88.1%</div>
-              <div class="ds-label">who returned to standing<br>stayed there the next term</div>
-            </div>
-          </div>
-
-          <p>
-            What makes this worth studying is the trajectory, not the snapshot.
-            Over five terms, <span class="hl">engagement rates declined while effectiveness increased.</span>
-            Fewer contacts. Each one doing more. That is not the direction the math suggests.
-            Something about the quality or timing of the contact changed.
-            Or the population changed. Or both. The data is not equipped
-            to fully separate these. The honest version of this finding includes that sentence.
-          </p>
-          <p>
-            The students who engage are telling you something about where they are.
-            The students who don't engage are an entirely different question.
-          </p>
-          <div class="quip-aside">the students who stopped appearing in the data were not available to explain why. this is, in some sense, the entire research question.</div>
-          <p>
-            For students appearing in multiple terms, high-engagement terms are associated
-            with roughly a quarter of a grade point difference compared to their own
-            low-engagement terms (p&lt;0.0001, Wilcoxon signed-rank).
-            Same person. Different conditions. This is as close to a controlled comparison
-            as observational data gets, which is to say: <span class="hl">closer than most,
-            not as close as an experiment</span>, and that distinction should be in every sentence
-            that cites this number.
-          </p>
-          <p class="dim">
-            All estimates are observational. Selection effects are not fully controlled.
-            Students who engage may differ from those who don't in ways not captured in these data.
-            "Associated with" is doing real work in these sentences.
-          </p>
-        </div>
-      </section>
-
-      <!-- MY FIRST WEBSITE (geocities) -->
-      <section class="section-panel" id="panel-geocities" aria-labelledby="geocities-heading">
-        <h2 id="geocities-heading" class="sr-only">My First Website</h2>
-
-        <div class="geo-construction">
-          <img src="/images/element-under-construction.svg" alt="Under construction sign">
-        </div>
-
-        <div class="geo-welcome">
-          <h2 class="geo-rainbow">~* Welcome to Jason's Homepage *~</h2>
-          <div class="geo-subtitle">est. 1997 (spiritually) &middot; best viewed at 800x600 &middot; Netscape Navigator recommended</div>
-        </div>
-
-        <img src="/images/element-fire-divider.svg" alt="" class="geo-fire" role="presentation">
-
-        <div class="geo-marquee" aria-hidden="true">
-          <span class="geo-marquee-inner">*** WELCOME TO MY PAGE *** YOU ARE VISITOR #00006797 *** SIGN MY GUESTBOOK *** LAST UPDATED: YESTERDAY PROBABLY *** THIS PAGE IS BEST VIEWED WITH YOUR EYES ***</span>
-        </div>
-
-        <div class="geo-badges">
-          <img src="/images/element-email-badge.svg" alt="Email me badge">
-          <pre id="geo-ascii-art" class="geo-badge-ascii" aria-label="Rotating ASCII art"></pre>
-          <img src="/images/element-terminal-prompt.svg" alt="Terminal prompt">
-        </div>
-
-        <img src="/images/element-fire-divider.svg" alt="" class="geo-fire" role="presentation">
-
-        <div class="geo-cards">
-          <div class="geo-card">
-            <span class="geo-card-icon">&#127918;</span>
-            <h3>Dead Cells</h3>
-            <p>Still playing. Still dying. The game is very patient with me and I am very patient with it. Current streak: 0. Personal best streak: also 0, but with more conviction.</p>
-          </div>
-          <div class="geo-card">
-            <span class="geo-card-icon">&#128008;</span>
-            <h3>Nolan (The Cat)</h3>
-            <p>Gray. Supervisory. Sits on whatever I'm currently looking at. His methodology is unclear but his commitment is total. Chief Research Obstruction Officer.</p>
-          </div>
-          <div class="geo-card">
-            <span class="geo-card-icon">&#128187;</span>
-            <h3>Self-Hosting Everything</h3>
-            <p>Fedora Linux. Local LLMs eating all the RAM. DNS sinkhole blocking the ads. Everything self-hosted. Everything is fine. <span class="geo-blink">Everything is fine.</span></p>
-          </div>
-          <div class="geo-card">
-            <span class="geo-card-icon">&#128218;</span>
-            <h3>Currently Reading</h3>
-            <p>Nora Bateson on warm data. Luhmann on self-referential systems (tab open for two weeks). Whatever paper Dr. Osman assigned that I should have read by now.</p>
-          </div>
-          <div class="geo-card">
-            <span class="geo-card-icon">&#127925;</span>
-            <h3>Music Situation</h3>
-            <p>Anything that works with headphones and a terminal. Ambient when writing. Something louder when debugging. Silence when the code is winning.</p>
-          </div>
-          <div class="geo-card">
-            <span class="geo-card-icon">&#9749;</span>
-            <h3>Coffee Protocol</h3>
-            <p>Black. Large. Before the first commit. The second cup is aspirational. The third is a dependency. Decaf is a thought experiment I've never run.</p>
-          </div>
-          <div class="geo-card">
-            <span class="geo-card-icon">&#128083;</span>
-            <h3>Fashion</h3>
-            <p>LL Bean flannel in Texas. This is a personality trait. The PhD dress code is "whatever doesn't have cat hair on it" which means nothing qualifies.</p>
-          </div>
-          <div class="geo-card">
-            <span class="geo-card-icon">&#128375;</span>
-            <h3>Terminal Survival School</h3>
-            <p>Building a horror-themed learn-bash environment. Because learning the command line shouldn't feel like reading a manual. It should feel like surviving one.</p>
-          </div>
-        </div>
-
-        <img src="/images/element-fire-divider.svg" alt="" class="geo-fire" role="presentation">
-
-        <div class="geo-guestbook">
-          <p>&#128214; <strong>SIGN MY GUESTBOOK</strong> &#128214;</p>
-          <p>just kidding. but you can <a href="mailto:jasonhobrien@proton.me">email me</a> if you want.</p>
-          <p>or don't. I'm a geocities page, not a cop.</p>
-        </div>
-
-        <div class="geo-counter-wrap">
-          <img src="/images/element-visitor-counter.svg" alt="Visitor counter showing 00006797">
-        </div>
-
-        <div class="geo-terminal-wrap">
-          <img src="/images/element-terminal-prompt.svg" alt="Terminal prompt">
-        </div>
-
-        <div class="geo-construction">
-          <img src="/images/element-under-construction.svg" alt="Under construction sign">
-        </div>
-
-        <div class="geo-disclaimer">
-          [ this section is a love letter to the internet that taught me to view source. ]<br>
-          [ the rest of the site is the version that grew up. this is the version that didn't have to. ]
-        </div>
-      </section>
-
-    </div><!-- /content-body -->
-  </main>
-
-  <!-- ===== STATUS BAR ===== -->
-  <footer id="status-bar" role="contentinfo">
-    <a href="https://github.com/3v3rything15fine" style="color:var(--frost);text-decoration:none;">github</a>
-    <span class="status-sep">·</span>
-    <a href="mailto:jho.research@pm.me" style="color:var(--frost);text-decoration:none;">email</a>
-    <span class="status-sep">·</span>
-    <div class="status-item">
-      <span class="status-dot"></span>
-      <span id="status-section">home</span>
+    <div class="card quip" style="margin-top: 24px;">
+      returning to good standing turns out to be more stable than the crisis that preceded it.<br>
+      that one surprised me too.
     </div>
-    <div id="status-right" class="status-item">
-      <details style="display:inline;cursor:pointer;">
-        <summary style="color:var(--nord4);opacity:0.55;font-style:italic;list-style:none;display:inline;">AI assisted · reviewed by Jason, probably</summary>
-        <div style="position:absolute;bottom:var(--status-h);right:0;background:var(--nord1);border:1px solid var(--nord3);border-bottom:none;padding:14px 18px;font-size:11px;line-height:1.7;max-width:420px;z-index:200;">
-          <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--nord5);margin-bottom:8px;">AI Co-Authorship Statement</div>
-          <div style="color:var(--nord4);">
-            <span style="color:var(--nord5);">Lead author:</span> Jason O'Brien, M.A.<br>
-            <span style="color:var(--nord5);">AI assistant:</span> Claude (Anthropic), code development &amp; methodological review<br>
-            <span style="color:var(--nord5);">Responsibility:</span> All research questions, analytical decisions, interpretation, and claims are the sole intellectual work of the lead author.<br>
-            <span style="color:var(--nord5);">AI role:</span> Code generation, statistical method review, assumption checking, visualization production, and documentation drafting. All outputs reviewed and validated by the lead author.<br>
-            <span style="color:var(--nord5);">Ethics:</span> No student PII was shared with AI systems. Analysis uses de-identified or aggregated data only. CITI certified (exp. 2027-11).<br>
-            <span style="color:var(--nord5);">Disclosure standard:</span> APA 7 §10.10
-          </div>
-        </div>
-      </details>
+  </section>
+</div>
+
+<!-- Background -->
+<div class="container">
+  <section class="section" id="background">
+    <div class="section-label" style="color: var(--aurora-yellow);">Background</div>
+    <div class="prose">
+      <p>I argued against creating the program I now run. On the committee that proposed it,
+      I was the dissenting voice. I didn't think it was doable. When it got approved, I took the
+      job anyway. The failure would be spectacular. The success would prove me wrong.
+      Both seemed worth showing up for.</p>
+
+      <div class="callout yellow">
+        My undergraduate transcript has 45 credit hours of F's on it. This is relevant
+        context for someone who now studies post-failure academic recovery.
+      </div>
+
+      <p>The trajectory: practitioner first, researcher second. 15 years in student affairs —
+      academic advising, retention programs, financial aid, enrollment management. The doctoral
+      program came later, because the questions I was asking needed better tools than professional
+      experience alone could provide.</p>
     </div>
-  </footer>
+  </section>
+</div>
 
-</div><!-- /app -->
+<!-- Stack -->
+<div class="container">
+  <section class="section" id="stack">
+    <div class="section-label" style="color: var(--aurora-green);">Environment</div>
+    <div class="card hero-card" style="max-width: 640px;">
+      <div class="card-accent" style="background: var(--aurora-green);"></div>
+      <div class="card-label" style="color: var(--aurora-green);">current stack</div>
+      <h3>everything is local. everything is fine.</h3>
+      <p>Python &middot; R &middot; DuckDB &middot; SQLite &middot; Ollama &middot; Fedora Linux &middot;
+      Podman &middot; Raspberry Pi &middot; shell scripts held together with comments that say
+      "this should not be necessary."</p>
+      <div class="status"><span class="dot green"></span> uptime: unconfirmed &middot; last checked: when it stopped</div>
+    </div>
 
-<!-- Floating text layer (home section) -->
-<div id="home-float-container" aria-hidden="true"></div>
+    <div class="card quip" style="margin-top: 16px;">
+      the instrument shapes what you can see.<br>
+      this is not a metaphor. it is also a metaphor.
+    </div>
+  </section>
+</div>
+
+<!-- Explore -->
+<div class="container">
+  <section class="section" id="explore">
+    <div class="section-label" style="color: var(--aurora-magenta);">Explore</div>
+    <div class="nav-grid">
+
+      <a class="nav-card" href="/graph/">
+        <div class="nav-accent" style="background: var(--frost);"></div>
+        <h3>Vault Graph</h3>
+        <p>Interactive map of 300 connected research notes — how inquiry threads link across a knowledge vault.</p>
+      </a>
+
+      <a class="nav-card" href="/learning/">
+        <div class="nav-accent" style="background: var(--aurora-green);"></div>
+        <h3>Learning</h3>
+        <p>AI-assisted PhD coursework sessions documented with full transparency. The process is the deliverable.</p>
+      </a>
+
+      <a class="nav-card" href="/workshop/">
+        <div class="nav-accent" style="background: var(--aurora-yellow);"></div>
+        <h3>Workshop</h3>
+        <p>NASPA 2026 conference session materials — enrollment patterns, credit momentum, and student success.</p>
+      </a>
+
+      <a class="nav-card" href="https://github.com/3v3rything15fine" target="_blank" rel="noopener">
+        <div class="nav-accent" style="background: var(--nord3);"></div>
+        <h3>GitHub</h3>
+        <p>Source code for this site, research tools, and public datasets.</p>
+      </a>
+
+    </div>
+  </section>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>this15fine.dev &middot; no analytics &middot; no tracking &middot; no cookies</p>
+    <p><a href="https://github.com/3v3rything15fine/this15fine.dev">source</a></p>
+    <p class="tagline">everything is fine.</p>
+  </div>
+</footer>
 
 <script>
-'use strict';
-
-// ===== REDUCED MOTION CHECK =====
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-// ===== SECTION DATA =====
-const SECTIONS = {
-  home:       { label: 'home',        accent: '#5E81AC', word: 'home' },
-  research:   { label: 'research',    accent: '#88C0D0', word: 'research' },
-  tools:      { label: 'tools',       accent: '#A3BE8C', word: 'tools' },
-  background: { label: 'background',  accent: '#EBCB8B', word: 'background' },
-  approach:   { label: 'how i think', accent: '#B48EAD', word: 'how i think' },
-  work:       { label: 'the work',    accent: '#BF616A', word: 'the work' },
-  geocities:  { label: 'my first website', accent: '#d4943a', word: 'my first website' },
-};
-
-let currentSection = 'home';
-
-// ===== TICKER =====
-const tickerItems = [
-  "studying psychometrics and intermediate qualitative methods. learning to measure things properly and question whether they should be measured at all.",
-  "reading about why instruments for grit and resilience might be measuring the same construct with different fonts.",
-  "playing Dead Cells. still. the game is very patient with me and I am very patient with it.",
-  "running Fedora. self-hosting everything. the DNS sinkhole is blocking 23% of queries. everything is fine.",
-  "thinking about Bronfenbrenner's ecological model and what it means when you try to measure an individual outcome that's actually a systems product.",
-  "building NLP pipelines for computational discourse analysis. metaphor detection. modality shifts. all local. nobody's cloud.",
-  "wondering if attribution theory and growth mindset research are really measuring different constructs or the same one from different angles.",
-  "debugging a shell script that was working fine yesterday. it was not fine yesterday.",
-  "writing about the gap between anticipating failure and responding to it. they are not the same construct.",
-  "reading Luhmann on self-referential systems. the tab has been open for two weeks.",
-  "Nolan is supervising. his methodology is unclear but his commitment is total.",
-  "reviewing complex adaptive systems literature. higher ed research should engage with this more.",
-  "building a horror-themed terminal learning environment. because learning bash shouldn't feel like reading a manual.",
-  "analyzing metaphor co-occurrence networks in student narratives. the way people talk about failure tells you more than whether they passed.",
-  "half the stuff worth studying happens at the edges of categories.",
-  "most tools work better when they stay on your machine.",
-];
-let tickerIdx = Math.floor(Math.random() * tickerItems.length);
-const tickerEl = document.getElementById('ticker-text');
-function showTicker() { tickerEl.textContent = tickerItems[tickerIdx]; }
-function rotateTicker() {
-  tickerEl.classList.add('fading');
-  setTimeout(() => {
-    tickerIdx = (tickerIdx + 1) % tickerItems.length;
-    tickerEl.textContent = tickerItems[tickerIdx];
-    tickerEl.classList.remove('fading');
-  }, 300);
-}
-showTicker();
-setInterval(rotateTicker, 9000);
-
-// ===== CURRENTLY BLOCK =====
-const currentlyItems = [
-  "studying psychometrics. learning to measure things properly and question whether they should be measured at all.",
-  "reading Nora Bateson on warm data. one of those books that keeps interrupting other books.",
-  "playing Dead Cells. still. the game is very patient with me.",
-  "running Fedora. self-hosting everything. everything is fine.",
-  "thinking about why every resilience instrument measures the anticipation of failure and not the response to it.",
-  "building NLP pipelines for student narratives. metaphor detection. modality shifts. all local. nobody's cloud.",
-  "wondering what grit and growth mindset are actually measuring and whether it's the same thing.",
-  "debugging a shell script that was working fine yesterday. it was not fine yesterday.",
-  "Nolan is supervising. his methodology is unclear but his commitment is total.",
-  "reading Luhmann on self-referential systems. the tab has been open for two weeks.",
-  "wearing an LL Bean flannel in Texas. this is a personality trait.",
-  "writing about the gap between anticipating failure and responding to it. they are not the same construct.",
-  "reviewing complex adaptive systems literature. higher ed research should engage with this more.",
-  "building a horror-themed terminal learning environment. bash documentation should not be the scariest thing you encounter.",
-  "the PhD coursework is fine. the work that matters is happening in the terminal.",
-];
-let cIdx = Math.floor(Math.random() * currentlyItems.length);
-const currentlyEl = document.getElementById('currently-text');
-currentlyEl.textContent = currentlyItems[cIdx];
-function rotateCurrently() {
-  cIdx = (cIdx + 1) % currentlyItems.length;
-  currentlyEl.style.opacity = '0';
-  setTimeout(() => {
-    currentlyEl.textContent = currentlyItems[cIdx];
-    currentlyEl.style.opacity = '1';
-  }, 300);
-}
-setInterval(rotateCurrently, 12000);
-
-// ===== SECTION SWITCHING =====
-function switchSection(name) {
-  if (name === currentSection) return;
-  currentSection = name;
-
-  const s = SECTIONS[name];
-
-  // Update accent CSS var
-  document.documentElement.style.setProperty('--accent', s.accent);
-
-  // Toggle geocities mode
-  document.body.classList.toggle('geo-mode', name === 'geocities');
-
-  // Update nav
-  document.querySelectorAll('.nav-item').forEach(btn => {
-    const active = btn.dataset.section === name;
-    btn.classList.toggle('active', active);
-    btn.setAttribute('aria-current', active ? 'page' : 'false');
-  });
-
-  // Update ticker label
-  document.getElementById('ticker-label').textContent = name === 'home' ? '→' : `// ${s.label} →`;
-
-  // Update status bar section
-  document.getElementById('status-section').textContent = s.label;
-
-  // Show/hide float container
-  document.getElementById('home-float-container').style.display = name === 'home' ? 'block' : 'none';
-
-  // Switch panels
-  document.querySelectorAll('.section-panel').forEach(p => p.classList.remove('active'));
-  const panel = document.getElementById('panel-' + name);
-  if (panel) {
-    panel.classList.add('active');
-    // Scroll to top
-    document.getElementById('content-body').scrollTop = 0;
+(function () {
+  'use strict';
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) {
+    document.querySelectorAll('.section').forEach(s => s.classList.add('visible'));
+    return;
   }
-}
-
-function navigateHome() {
-  switchSection('home');
-}
-
-// ===== GEOCITIES ASCII ART ROTATION =====
-const geoAsciiArt = [
-  " /\\_/\\\n( o.o )\n > ^ <\n/|   |\\\n(_|   |_)",
-  "  /\\_/\\\n ( -.- )\n  > ^ <\n  zzzZZ",
-  " ,_,\n(O,O)\n(   )\n-\"-\"-",
-  "  __\n<(o )___\n ( ._> /\n  `---'",
-  " .--.\n |o_o |\n |:_/ |\n//   \\ \\\n(|     | )\n/'\\_   _/`\\\n\\___)=(___/",
-  "   |\\_/|\n   |q p|   /}\n   ( 0 )\"\"\"\\\n   |\"^\"`    |\n   ||_/=\\\\__|",
-  "    .  .\n   / \\/ \\\n  (  ..  )\n   \\    /\n    \\  /\n     \\/",
-  " ><(((o>\n\n ><(((o>\n\n ><(((o>",
-  "  ___\n |[_]|\n |+ ;|\n `---'\n _|_|_",
-  " (\\(\\\n ( -.-)o\n o_(\")(\")",
-  "  |\\ /|\n  | . |\n  =\\_/=\n   |\n  /|\\\n / | \\",
-  "  _____\n /     \\\n| () () |\n \\  ^  /\n  |||||\n  |||||",
-  "    *\n   /|\\\n  / | \\\n /  |  \\\n/   *   \\\n    |\n    |",
-  "  ^   ^\n (o _ o)\n /  0  \\\n(_     _)\n  |   |\n  |___|",
-];
-let geoAsciiIdx = Math.floor(Math.random() * geoAsciiArt.length);
-const geoAsciiEl = document.getElementById('geo-ascii-art');
-if (geoAsciiEl) {
-  geoAsciiEl.textContent = geoAsciiArt[geoAsciiIdx];
-  setInterval(() => {
-    geoAsciiEl.style.opacity = '0';
-    setTimeout(() => {
-      geoAsciiIdx = (geoAsciiIdx + 1) % geoAsciiArt.length;
-      geoAsciiEl.textContent = geoAsciiArt[geoAsciiIdx];
-      geoAsciiEl.style.opacity = '1';
-    }, 400);
-  }, 4000);
-}
-
-// ===== FLOATING TEXT =====
-const floatFragments = [
-  { text: "the instrument shapes what you can see", layer: 1 },
-  { text: "half the interesting stuff happens at the edges of categories", layer: 2 },
-  { text: "most tools work better when they stay on your machine", layer: 1 },
-  { text: "the question is usually more durable than the answer", layer: 2 },
-  { text: "ollama ate all the RAM. this is fine.", layer: 3 },
-  { text: "returning to good standing is more stable than crisis. that surprised me.", layer: 1 },
-  { text: "does this actually help anyone?", layer: 2 },
-  { text: "how would we know?", layer: 3 },
-  { text: "the way people talk about failure tells you something", layer: 1 },
-  { text: "'mattering' is harder to measure than it sounds", layer: 2 },
-  { text: "complex adaptive systems are not well-behaved", layer: 1 },
-  { text: "the brochure left some things out", layer: 3 },
-  { text: "epistemologically flexible", layer: 2 },
-  { text: "not a bug. a nested ecological context.", layer: 3 },
-  { text: "grit and resilience might be the same thing with different fonts", layer: 1 },
-  { text: "Nolan has opinions about the methodology", layer: 3 },
-  { text: "holding frameworks lightly", layer: 2 },
-  { text: "the students who disappeared were not available for comment", layer: 1 },
-];
-
-const floatContainer = document.getElementById('home-float-container');
-const layerOpacity = [0, 0.18, 0.11, 0.07];
-const layerSpeed = [0, 90, 130, 170]; // seconds per cycle
-
-function spawnFragment(frag) {
-  const el = document.createElement('div');
-  el.className = 'float-fragment';
-  el.textContent = frag.text;
-
-  const w = floatContainer.offsetWidth || 800;
-  const h = floatContainer.offsetHeight || 500;
-
-  const startX = Math.random() * (w - 300);
-  const startY = Math.random() * (h - 20);
-  const driftX = (Math.random() - 0.5) * 120;
-  const driftY = (Math.random() - 0.5) * 60;
-  const duration = layerSpeed[frag.layer] + Math.random() * 30;
-  const delay = Math.random() * duration;
-  const opacity = layerOpacity[frag.layer];
-
-  el.style.cssText = `
-    left: ${startX}px;
-    top: ${startY}px;
-    --drift-x: ${driftX}px;
-    --drift-y: ${driftY}px;
-    --frag-opacity: ${opacity};
-    animation-duration: ${duration}s;
-    animation-delay: ${-delay}s;
-  `;
-
-  floatContainer.appendChild(el);
-}
-
-function initFloating() {
-  floatFragments.forEach(frag => spawnFragment(frag));
-}
-
-if (!prefersReducedMotion) {
-  initFloating();
-}
-
-// ===== VIZ: BACKGROUND — ANIMATED ARC =====
-(function() {
-  const canvas = document.getElementById('bgArcCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const W = 640, H = 140;
-  canvas.width = W; canvas.height = H;
-
-  const NODES = [
-    { label: 'student · military · dropout',  sub: 'before the field',          x: 0.08, col: '#4C566A' },
-    { label: 'student affairs',               sub: 'direct practice',           x: 0.25, col: '#5E81AC' },
-    { label: 'program design',                sub: 'building structure',         x: 0.42, col: '#88C0D0' },
-    { label: 'doctoral student',              sub: 'frameworks + methods',       x: 0.60, col: '#A3BE8C' },
-    { label: 'researcher + practitioner',     sub: 'simultaneously, most days', x: 0.78, col: '#EBCB8B', current: true },
-    { label: 'dissertation · instrument',     sub: 'forthcoming',               x: 0.94, col: '#3d4f66', future: true },
-  ];
-
-  // Animate progress
-  let progress = 0;
-  let raf, running = false;
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = '#1e2430';
-    ctx.fillRect(0, 0, W, H);
-
-    const baseY = 72;
-    const nodeXs = NODES.map(n => n.x * W);
-
-    // Draw track line
-    ctx.beginPath();
-    ctx.moveTo(nodeXs[0], baseY);
-    for (let i = 1; i < NODES.length; i++) {
-      ctx.lineTo(nodeXs[i], baseY);
-    }
-    ctx.strokeStyle = 'rgba(61,79,102,0.5)';
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
-
-    // Animated progress line
-    const progressX = nodeXs[0] + (nodeXs[nodeXs.length-2] - nodeXs[0]) * Math.min(1, progress * 1.2);
-    const grad = ctx.createLinearGradient(nodeXs[0], 0, progressX, 0);
-    grad.addColorStop(0, 'rgba(94,129,172,0.3)');
-    grad.addColorStop(0.6, 'rgba(136,192,208,0.7)');
-    grad.addColorStop(1, 'rgba(163,190,140,0.9)');
-    ctx.beginPath();
-    ctx.moveTo(nodeXs[0], baseY);
-    ctx.lineTo(Math.min(progressX, nodeXs[nodeXs.length-2]), baseY);
-    ctx.strokeStyle = grad;
-    ctx.lineWidth = 2.5;
-    ctx.stroke();
-
-    // Nodes
-    NODES.forEach((n, i) => {
-      const x = nodeXs[i];
-      const revealed = (x / W) < (progress * 1.1);
-      const alpha = revealed ? 1 : 0.15;
-      const r = n.current ? 7 : (n.future ? 4 : 5);
-
-      // Dot
-      ctx.beginPath();
-      ctx.arc(x, baseY, r, 0, Math.PI * 2);
-      ctx.fillStyle = n.future
-        ? `rgba(61,79,102,${alpha})`
-        : n.col + Math.round(alpha * 255).toString(16).padStart(2, '0');
-      ctx.fill();
-
-      if (n.current && revealed) {
-        // Pulse ring
-        const pulse = (Math.sin(Date.now() * 0.003) + 1) / 2;
-        ctx.beginPath();
-        ctx.arc(x, baseY, r + 3 + pulse * 4, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(235,203,139,${0.3 + pulse * 0.3})`;
-        ctx.lineWidth = 1;
-        ctx.stroke();
-      }
-
-      if (!revealed) return;
-
-      // Labels — alternate above/below
-      const above = i % 2 === 0;
-      const labelY = above ? baseY - 18 : baseY + 18;
-      const subY   = above ? baseY - 8  : baseY + 28;
-
-      ctx.font = `${n.current ? 600 : 500} 10px JetBrains Mono, monospace`;
-      ctx.fillStyle = n.future ? 'rgba(61,79,102,0.6)' : '#dde2ea';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(n.label, x, labelY);
-
-      ctx.font = '8px JetBrains Mono, monospace';
-      ctx.fillStyle = n.future ? 'rgba(61,79,102,0.4)' : 'rgba(205,212,223,0.55)';
-      ctx.fillText(n.sub, x, subY);
-
-      // Connector tick
-      ctx.beginPath();
-      ctx.moveTo(x, baseY + (above ? -r : r));
-      ctx.lineTo(x, above ? labelY + 6 : labelY - 6);
-      ctx.strokeStyle = `${n.col}55`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
-
-    if (progress < 1) {
-      progress = Math.min(1, progress + 0.008);
-      raf = requestAnimationFrame(draw);
-    } else {
-      // Keep pulsing for current node only if motion is OK
-      if (!prefersReducedMotion) {
-        raf = requestAnimationFrame(draw);
-      }
-    }
-  }
-
-  function startBg() {
-    if (!running) { running = true; progress = 0; draw(); }
-  }
-  function stopBg() { running = false; cancelAnimationFrame(raf); }
-
-  const _orig = window.switchSection;
-  window.switchSection = function(name) {
-    _orig(name);
-    if (name === 'background') startBg();
-    else stopBg();
-  };
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.section').forEach(s => observer.observe(s));
 })();
-
-// ===== HOME MINI-VIZ: RESEARCH SPARKLINE =====
-(function() {
-  const canvas = document.getElementById('sparkResearch');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const W = canvas.offsetWidth || 180, H = 28;
-  canvas.width = W; canvas.height = H;
-
-  // Term-by-term effectiveness delta (from b3_engagement_effectiveness.json)
-  const data = [17.0, 11.3, 25.8, 35.2, 33.8];
-  const max = Math.max(...data) + 5;
-  const pts = data.map((v, i) => ({
-    x: 8 + (i / (data.length - 1)) * (W - 16),
-    y: H - 4 - (v / max) * (H - 8)
-  }));
-
-  let phase = 0;
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-
-    // Gradient fill under line
-    const grad = ctx.createLinearGradient(0, 0, 0, H);
-    grad.addColorStop(0, 'rgba(163,190,140,0.3)');
-    grad.addColorStop(1, 'rgba(163,190,140,0)');
-    ctx.beginPath();
-    ctx.moveTo(pts[0].x, H);
-    pts.forEach(p => ctx.lineTo(p.x, p.y));
-    ctx.lineTo(pts[pts.length-1].x, H);
-    ctx.closePath();
-    ctx.fillStyle = grad;
-    ctx.fill();
-
-    // Line
-    ctx.beginPath();
-    pts.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
-    ctx.strokeStyle = '#A3BE8C';
-    ctx.lineWidth = 1.5;
-    ctx.stroke();
-
-    // Animated dot traveling along the line
-    const t = (phase % pts.length);
-    const fi = Math.floor(t), fn = Math.min(fi + 1, pts.length - 1);
-    const frac = t - fi;
-    const dotX = pts[fi].x + (pts[fn].x - pts[fi].x) * frac;
-    const dotY = pts[fi].y + (pts[fn].y - pts[fi].y) * frac;
-    ctx.beginPath();
-    ctx.arc(dotX, dotY, 2.5, 0, Math.PI * 2);
-    ctx.fillStyle = '#A3BE8C';
-    ctx.fill();
-
-    phase = (phase + 0.025) % pts.length;
-    if (!prefersReducedMotion) requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-// ===== HOME MINI-VIZ: MINI FIELD (NLP PIPELINE TILE) =====
-(function() {
-  const canvas = document.getElementById('miniField');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const W = canvas.offsetWidth || 180, H = 28;
-  canvas.width = W; canvas.height = H;
-
-  const N = 22;
-  const agents = Array.from({ length: N }, (_, i) => ({
-    x: Math.random() * W, y: Math.random() * H,
-    col: ['#88C0D0','#A3BE8C','#B48EAD'][i % 3],
-    phase: Math.random() * Math.PI * 2,
-    speed: 0.3 + Math.random() * 0.3,
-  }));
-  let t = 0;
-
-  function draw() {
-    ctx.fillStyle = 'rgba(30,36,48,0.18)';
-    ctx.fillRect(0, 0, W, H);
-    t += 0.006;
-    agents.forEach(a => {
-      const angle = Math.atan2(
-        Math.sin(a.x * 0.04 + t * 0.4 + a.phase) * Math.cos(a.y * 0.06),
-        Math.cos(a.x * 0.05 - t * 0.3 + a.phase * 1.3)
-      );
-      a.x += Math.cos(angle) * a.speed;
-      a.y += Math.sin(angle) * a.speed;
-      if (a.x < 0) a.x += W; if (a.x > W) a.x -= W;
-      if (a.y < 0) a.y += H; if (a.y > H) a.y -= H;
-      ctx.beginPath();
-      ctx.arc(a.x, a.y, 1.2, 0, Math.PI * 2);
-      ctx.fillStyle = a.col;
-      ctx.globalAlpha = 0.7;
-      ctx.fill();
-      ctx.globalAlpha = 1;
-    });
-    if (!prefersReducedMotion) requestAnimationFrame(draw);
-  }
-  draw();
-})();
-
-// ===== VIZ: RESEARCH — BRONFENBRENNER ECOLOGICAL SYSTEMS =====
-(function() {
-  const canvas = document.getElementById('researchCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-
-  const W = 900, H = 360;
-  canvas.width = W; canvas.height = H;
-
-  const FROST   = '#88C0D0';
-  const GREEN   = '#A3BE8C';
-  const YELLOW  = '#EBCB8B';
-  const MAGENTA = '#B48EAD';
-
-  // --- FIXED MESOSYSTEMS (institutions) — scaled for larger canvas ---
-  const fixedMeso = [
-    { x: W * 0.18, y: H * 0.42, r: 72, label: 'university',  color: FROST  },
-    { x: W * 0.52, y: H * 0.36, r: 62, label: 'workplace',   color: YELLOW },
-    { x: W * 0.80, y: H * 0.58, r: 56, label: 'community',   color: GREEN  },
-  ];
-
-  // --- CORRIDORS between mesosystems ---
-  // Each corridor is a path agents can follow between two institutions
-  const corridors = [];
-  for (let i = 0; i < fixedMeso.length; i++) {
-    for (let j = i + 1; j < fixedMeso.length; j++) {
-      const a = fixedMeso[i], b = fixedMeso[j];
-      const mx = (a.x + b.x) / 2;
-      const my = (a.y + b.y) / 2;
-      // Slight curve offset perpendicular to the line
-      const dx = b.x - a.x, dy = b.y - a.y;
-      const len = Math.sqrt(dx * dx + dy * dy);
-      const nx = -dy / len, ny = dx / len;
-      const curveAmt = 20 + Math.random() * 15;
-      corridors.push({
-        from: i, to: j,
-        cx: mx + nx * curveAmt,
-        cy: my + ny * curveAmt,
-        ax: a.x, ay: a.y,
-        bx: b.x, by: b.y,
-      });
-    }
-  }
-
-  // --- AGENT PERSONALITY TYPES ---
-  // academic (frost), community (green), workplace (yellow), wanderer (magenta)
-  const PERSONALITY = {
-    academic:   { baseColor: [136, 192, 208], hex: FROST,   homeIdx: 0, speedMul: 0.8  },
-    workplace:  { baseColor: [235, 203, 139], hex: YELLOW,  homeIdx: 1, speedMul: 1.0  },
-    community:  { baseColor: [163, 190, 140], hex: GREEN,   homeIdx: 2, speedMul: 0.9  },
-    wanderer:   { baseColor: [180, 142, 173], hex: MAGENTA, homeIdx: -1, speedMul: 1.3 },
-  };
-  const PERSONALITY_KEYS = Object.keys(PERSONALITY);
-
-  // --- AGENTS ---
-  const N_AGENTS = 55;
-  const AGENT_R = 2.8;
-
-  function makeAgent(offCanvas) {
-    const pKey = PERSONALITY_KEYS[Math.floor(Math.random() * PERSONALITY_KEYS.length)];
-    const p = PERSONALITY[pKey];
-    let x, y;
-    if (offCanvas) {
-      // Spawn from an edge
-      const edge = Math.floor(Math.random() * 4);
-      if (edge === 0)      { x = -10; y = Math.random() * H; }
-      else if (edge === 1) { x = W + 10; y = Math.random() * H; }
-      else if (edge === 2) { x = Math.random() * W; y = -10; }
-      else                 { x = Math.random() * W; y = H + 10; }
-    } else {
-      x = Math.random() * W;
-      y = Math.random() * H;
-    }
-    return {
-      x, y,
-      vx: (Math.random() - 0.5) * 0.5 * p.speedMul,
-      vy: (Math.random() - 0.5) * 0.5 * p.speedMul,
-      personality: pKey,
-      baseColor: [...p.baseColor],
-      currentColor: [...p.baseColor],
-      homeIdx: p.homeIdx,
-      speedMul: p.speedMul,
-      phase: Math.random() * Math.PI * 2,
-      // Travel behavior
-      state: 'roam',          // 'roam', 'traveling', 'dwelling', 'leaving'
-      targetMeso: -1,
-      dwellTimer: 0,
-      travelProgress: 0,      // 0..1 along corridor
-      corridorIdx: -1,
-      corridorDir: 1,          // 1 = from->to, -1 = to->from
-      leaveAngle: 0,
-      stateTimer: 80 + Math.random() * 200,
-      // For off-canvas spawning
-      lifespan: offCanvas ? 300 + Math.random() * 500 : Infinity,
-      age: 0,
-    };
-  }
-
-  const agents = [];
-  for (let i = 0; i < N_AGENTS; i++) {
-    agents.push(makeAgent(false));
-  }
-
-  // Occasionally spawn agents from edges
-  let nextSpawnTime = 2;
-
-  // --- EMERGENT MESOSYSTEMS ---
-  let emergentMeso = [];
-  // --- MICROSYSTEMS ---
-  let microsystems = [];
-  // --- EXOSYSTEM RIPPLES ---
-  let ripples = [];
-  let nextRippleTime = 0;
-  // --- POLICY WAVES (macrosystem) ---
-  let policyWaves = [];
-  let nextPolicyWaveTime = 3;
-  // --- MACROSYSTEM STATE ---
-  let macroPhase = 0;
-  // --- TIME ---
-  let t = 0;
-  let running = false;
-  let raf;
-
-  function dist(a, b) {
-    return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
-  }
-
-  function fieldAngle(x, y, time) {
-    const s = 0.004;
-    return (
-      Math.sin(x * s * 1.1 + time * 0.2) * Math.cos(y * s * 0.9 + time * 0.15) +
-      Math.sin(x * s * 2.0 + y * s * 1.4 + time * 0.1) * 0.35
-    );
-  }
-
-  // Quadratic bezier point
-  function bezierPt(ax, ay, cx, cy, bx, by, t) {
-    const u = 1 - t;
-    return {
-      x: u * u * ax + 2 * u * t * cx + t * t * bx,
-      y: u * u * ay + 2 * u * t * cy + t * t * by,
-    };
-  }
-
-  // --- COLOR BLENDING for environmental influence ---
-  function lerpColor(c1, c2, amt) {
-    return [
-      c1[0] + (c2[0] - c1[0]) * amt,
-      c1[1] + (c2[1] - c1[1]) * amt,
-      c1[2] + (c2[2] - c1[2]) * amt,
-    ];
-  }
-
-  function colorToRgb(c) {
-    return `rgb(${Math.round(c[0])},${Math.round(c[1])},${Math.round(c[2])})`;
-  }
-
-  const MESO_COLORS = [
-    [136, 192, 208],  // university — frost
-    [235, 203, 139],  // workplace — yellow
-    [163, 190, 140],  // community — green
-  ];
-
-  function updateAgents() {
-    const ATTRACT_MESO = 0.004;
-    const REPEL_AGENT = 0.12;
-    const REPEL_DIST = 14;
-    const FIELD_STR = 0.015;
-    const DAMP = 0.982;
-    const MAX_V_BASE = 0.9;
-
-    // Check for policy wave effects
-    let policySpeedMul = 1;
-    let policyCluster = false;
-
-    policyWaves.forEach(pw => {
-      if (pw.alpha > 0.05) {
-        if (pw.type === 'accelerate') policySpeedMul = 1.4;
-        else if (pw.type === 'decelerate') policySpeedMul = 0.5;
-        else if (pw.type === 'cluster') policyCluster = true;
-      }
-    });
-
-    agents.forEach((a, idx) => {
-      a.age++;
-      a.stateTimer--;
-
-      const MAX_V = MAX_V_BASE * a.speedMul * policySpeedMul;
-
-      // State machine for agent travel behavior
-      if (a.state === 'roam') {
-        // Random field movement
-        const angle = fieldAngle(a.x, a.y, t + a.phase);
-        a.vx += Math.cos(angle) * FIELD_STR;
-        a.vy += Math.sin(angle) * FIELD_STR;
-
-        // Gentle attraction to home mesosystem (if not a wanderer)
-        if (a.homeIdx >= 0) {
-          const home = fixedMeso[a.homeIdx];
-          const d = dist(a, home);
-          if (d > home.r * 3) {
-            const pull = 0.001;
-            a.vx += (home.x - a.x) / d * pull;
-            a.vy += (home.y - a.y) / d * pull;
-          }
-        }
-
-        // Attraction to nearby mesosystems
-        fixedMeso.forEach(m => {
-          const d = dist(a, m);
-          if (d < m.r * 2.2 && d > 0) {
-            const targetDist = m.r * 0.6;
-            const pull = (d - targetDist) * ATTRACT_MESO;
-            a.vx += (m.x - a.x) / d * pull;
-            a.vy += (m.y - a.y) / d * pull;
-          }
-        });
-
-        // Policy clustering
-        if (policyCluster) {
-          const nearest = fixedMeso.reduce((best, m) => {
-            const d = dist(a, m);
-            return d < best.d ? { m, d } : best;
-          }, { m: null, d: Infinity });
-          if (nearest.m && nearest.d > nearest.m.r * 0.5) {
-            a.vx += (nearest.m.x - a.x) / nearest.d * 0.02;
-            a.vy += (nearest.m.y - a.y) / nearest.d * 0.02;
-          }
-        }
-
-        // Decide to travel
-        if (a.stateTimer <= 0) {
-          const roll = Math.random();
-          if (roll < 0.35 && a.personality !== 'wanderer') {
-            // Pick a corridor to travel along
-            const possibleCorridors = corridors.filter(c => {
-              const nearFrom = dist(a, fixedMeso[c.from]) < fixedMeso[c.from].r * 2.5;
-              const nearTo = dist(a, fixedMeso[c.to]) < fixedMeso[c.to].r * 2.5;
-              return nearFrom || nearTo;
-            });
-            if (possibleCorridors.length > 0) {
-              const chosen = possibleCorridors[Math.floor(Math.random() * possibleCorridors.length)];
-              a.state = 'traveling';
-              a.corridorIdx = corridors.indexOf(chosen);
-              // Determine direction
-              const dFrom = dist(a, fixedMeso[chosen.from]);
-              const dTo = dist(a, fixedMeso[chosen.to]);
-              a.corridorDir = dFrom < dTo ? 1 : -1;
-              a.travelProgress = a.corridorDir === 1 ? 0 : 1;
-            } else {
-              a.stateTimer = 60 + Math.random() * 120;
-            }
-          } else if (roll < 0.55 && a.personality === 'wanderer') {
-            // Wanderers sometimes head to a random mesosystem
-            a.targetMeso = Math.floor(Math.random() * fixedMeso.length);
-            a.state = 'dwelling';
-            a.dwellTimer = 80 + Math.random() * 150;
-            a.stateTimer = a.dwellTimer;
-          } else if (a.lifespan !== Infinity && a.age > a.lifespan * 0.7) {
-            // Time to leave
-            a.state = 'leaving';
-            a.leaveAngle = Math.atan2(a.y - H / 2, a.x - W / 2) + (Math.random() - 0.5) * 0.5;
-            a.stateTimer = 200;
-          } else {
-            a.stateTimer = 60 + Math.random() * 200;
-          }
-        }
-      } else if (a.state === 'traveling') {
-        // Move along corridor bezier
-        const corr = corridors[a.corridorIdx];
-        const speed = 0.006 * a.speedMul * policySpeedMul;
-        a.travelProgress += speed * a.corridorDir;
-
-        if (a.travelProgress >= 1 || a.travelProgress <= 0) {
-          // Arrived — dwell at destination
-          a.state = 'dwelling';
-          const destIdx = a.corridorDir === 1 ? corr.to : corr.from;
-          a.targetMeso = destIdx;
-          a.dwellTimer = 100 + Math.random() * 200;
-          a.stateTimer = a.dwellTimer;
-        } else {
-          const pt = bezierPt(corr.ax, corr.ay, corr.cx, corr.cy, corr.bx, corr.by, a.travelProgress);
-          // Steer toward bezier point
-          const dx = pt.x - a.x, dy = pt.y - a.y;
-          const d = Math.sqrt(dx * dx + dy * dy) || 1;
-          a.vx += (dx / d) * 0.12 * a.speedMul;
-          a.vy += (dy / d) * 0.12 * a.speedMul;
-        }
-      } else if (a.state === 'dwelling') {
-        // Stay near target mesosystem
-        if (a.targetMeso >= 0 && a.targetMeso < fixedMeso.length) {
-          const m = fixedMeso[a.targetMeso];
-          const d = dist(a, m);
-          if (d > m.r * 0.8) {
-            a.vx += (m.x - a.x) / d * 0.03;
-            a.vy += (m.y - a.y) / d * 0.03;
-          }
-          // Gentle orbit
-          const angle = fieldAngle(a.x, a.y, t + a.phase);
-          a.vx += Math.cos(angle) * FIELD_STR * 0.3;
-          a.vy += Math.sin(angle) * FIELD_STR * 0.3;
-        }
-        a.dwellTimer--;
-        if (a.stateTimer <= 0 || a.dwellTimer <= 0) {
-          a.state = 'roam';
-          a.stateTimer = 80 + Math.random() * 200;
-          a.targetMeso = -1;
-        }
-      } else if (a.state === 'leaving') {
-        // Head toward canvas edge
-        a.vx += Math.cos(a.leaveAngle) * 0.04;
-        a.vy += Math.sin(a.leaveAngle) * 0.04;
-        if (a.stateTimer <= 0 || a.x < -30 || a.x > W + 30 || a.y < -30 || a.y > H + 30) {
-          // Remove and possibly replace
-          Object.assign(a, makeAgent(true));
-        }
-      }
-
-      // Agent-agent repulsion
-      agents.forEach(b => {
-        if (a === b) return;
-        const dx = a.x - b.x, dy = a.y - b.y;
-        const d = Math.sqrt(dx * dx + dy * dy) || 1;
-        if (d < REPEL_DIST) {
-          const f = REPEL_AGENT * (1 - d / REPEL_DIST);
-          a.vx += (dx / d) * f;
-          a.vy += (dy / d) * f;
-        }
-      });
-
-      // Ripple effects
-      ripples.forEach(rip => {
-        const dx = a.x - rip.x, dy = a.y - rip.y;
-        const d = Math.sqrt(dx * dx + dy * dy) || 1;
-        const ripDist = Math.abs(d - rip.r);
-        if (ripDist < 25) {
-          const push = 0.06 * rip.alpha * (1 - ripDist / 25);
-          a.vx += (dx / d) * push;
-          a.vy += (dy / d) * push;
-        }
-      });
-
-      // Emergent meso attraction
-      emergentMeso.forEach(em => {
-        const d = dist(a, em);
-        if (d < em.r * 2 && d > em.r * 0.3) {
-          const pull = 0.008 * (em.life / em.maxLife);
-          a.vx += (em.x - a.x) / d * pull;
-          a.vy += (em.y - a.y) / d * pull;
-        }
-      });
-
-      // Damping and speed cap
-      a.vx *= DAMP;
-      a.vy *= DAMP;
-      const speed = Math.sqrt(a.vx * a.vx + a.vy * a.vy);
-      if (speed > MAX_V) {
-        a.vx = (a.vx / speed) * MAX_V;
-        a.vy = (a.vy / speed) * MAX_V;
-      }
-
-      a.x += a.vx;
-      a.y += a.vy;
-
-      // Wrap or bounce at edges (only for non-leaving agents)
-      if (a.state !== 'leaving') {
-        const margin = 15;
-        if (a.x < -margin) a.x += W + margin * 2;
-        if (a.x > W + margin) a.x -= W + margin * 2;
-        if (a.y < -margin) a.y += H + margin * 2;
-        if (a.y > H + margin) a.y -= H + margin * 2;
-      }
-
-      // --- Environmental color influence ---
-      // Slowly shift agent color toward the mesosystem they're in
-      let inMesoIdx = -1;
-      fixedMeso.forEach((m, mi) => {
-        if (dist(a, m) < m.r) inMesoIdx = mi;
-      });
-      if (inMesoIdx >= 0) {
-        a.currentColor = lerpColor(a.currentColor, MESO_COLORS[inMesoIdx], 0.008);
-      } else {
-        // Drift back toward base color
-        a.currentColor = lerpColor(a.currentColor, a.baseColor, 0.003);
-      }
-    });
-
-    // Spawn new agents from edges occasionally
-    t += 0.016;
-    if (t > nextSpawnTime && agents.length < 65) {
-      agents.push(makeAgent(true));
-      nextSpawnTime = t + 3 + Math.random() * 8;
-    }
-
-    // Remove agents that have been alive too long and are off-canvas
-    for (let i = agents.length - 1; i >= 0; i--) {
-      const a = agents[i];
-      if (a.lifespan !== Infinity && a.age > a.lifespan && (a.x < -20 || a.x > W + 20 || a.y < -20 || a.y > H + 20)) {
-        agents.splice(i, 1);
-      }
-    }
-  }
-
-  function detectMicrosystems() {
-    const MICRO_DIST = 22;
-    const used = new Set();
-    const newMicro = [];
-
-    agents.forEach((a, i) => {
-      if (used.has(i)) return;
-      const group = [i];
-      agents.forEach((b, j) => {
-        if (i === j || used.has(j)) return;
-        if (dist(a, b) < MICRO_DIST) group.push(j);
-      });
-      if (group.length >= 2 && group.length <= 3) {
-        const cx = group.reduce((s, idx) => s + agents[idx].x, 0) / group.length;
-        const cy = group.reduce((s, idx) => s + agents[idx].y, 0) / group.length;
-        let inFixed = false;
-        fixedMeso.forEach(m => { if (dist({ x: cx, y: cy }, m) < m.r * 0.7) inFixed = true; });
-        if (!inFixed) {
-          let found = microsystems.find(m => dist(m, { x: cx, y: cy }) < 30 && m.life > 0);
-          if (found) {
-            found.x = cx; found.y = cy; found.agents = group;
-            found.life = Math.min(found.maxLife, found.life + 2);
-            newMicro.push(found);
-          } else {
-            newMicro.push({ x: cx, y: cy, r: 22, agents: group, life: 50, maxLife: 100 });
-          }
-          group.forEach(idx => used.add(idx));
-        }
-      }
-    });
-    microsystems.forEach(m => {
-      if (!newMicro.includes(m)) { m.life -= 1; if (m.life > 0) newMicro.push(m); }
-    });
-    microsystems = newMicro;
-  }
-
-  function detectEmergentMeso() {
-    const CLUSTER_DIST = 32;
-    const visited = new Set();
-    const clusters = [];
-
-    agents.forEach((a, i) => {
-      if (visited.has(i)) return;
-      const group = [i];
-      const stack = [i];
-      visited.add(i);
-      while (stack.length) {
-        const ci = stack.pop();
-        agents.forEach((b, j) => {
-          if (visited.has(j)) return;
-          if (dist(agents[ci], b) < CLUSTER_DIST) { visited.add(j); group.push(j); stack.push(j); }
-        });
-      }
-      if (group.length >= 4) {
-        const cx = group.reduce((s, idx) => s + agents[idx].x, 0) / group.length;
-        const cy = group.reduce((s, idx) => s + agents[idx].y, 0) / group.length;
-        let inFixed = false;
-        fixedMeso.forEach(m => { if (dist({ x: cx, y: cy }, m) < m.r * 0.9) inFixed = true; });
-        if (!inFixed) clusters.push({ agents: group, x: cx, y: cy });
-      }
-    });
-
-    const newEmergent = [];
-    clusters.forEach(c => {
-      let found = emergentMeso.find(m => dist(m, c) < 40 && m.life > 0);
-      if (found) {
-        found.x = found.x * 0.85 + c.x * 0.15;
-        found.y = found.y * 0.85 + c.y * 0.15;
-        found.agents = c.agents;
-        found.life = Math.min(found.maxLife, found.life + 3);
-        found.r = 28 + c.agents.length * 3;
-        newEmergent.push(found);
-      } else {
-        newEmergent.push({
-          x: c.x, y: c.y, r: 28 + c.agents.length * 3,
-          agents: c.agents, life: 80, maxLife: 160,
-          pulsePhase: Math.random() * Math.PI * 2,
-          label: ['third space', 'study group', 'social gathering', 'informal network'][Math.floor(Math.random() * 4)],
-        });
-      }
-    });
-    emergentMeso.forEach(m => {
-      if (!newEmergent.includes(m)) { m.life -= 1; if (m.life > 0) newEmergent.push(m); }
-    });
-    emergentMeso = newEmergent;
-  }
-
-  function updateRipples() {
-    if (t > nextRippleTime) {
-      const edge = Math.floor(Math.random() * 4);
-      let rx, ry;
-      if (edge === 0)      { rx = -30; ry = Math.random() * H; }
-      else if (edge === 1) { rx = W + 30; ry = Math.random() * H; }
-      else if (edge === 2) { rx = Math.random() * W; ry = -30; }
-      else                 { rx = Math.random() * W; ry = H + 30; }
-      ripples.push({ x: rx, y: ry, r: 0, maxR: Math.max(W, H) * 0.85, alpha: 0.28, speed: 1.4 });
-      nextRippleTime = t + 3 + Math.random() * 5;
-    }
-    ripples.forEach(rip => { rip.r += rip.speed; rip.alpha = 0.28 * (1 - rip.r / rip.maxR); });
-    ripples = ripples.filter(rip => rip.alpha > 0.01);
-  }
-
-  function updatePolicyWaves() {
-    if (t > nextPolicyWaveTime) {
-      const types = ['accelerate', 'decelerate', 'cluster'];
-      const type = types[Math.floor(Math.random() * types.length)];
-      const colors = {
-        accelerate: 'rgba(163, 190, 140, ',  // green
-        decelerate: 'rgba(191, 97, 106, ',    // red
-        cluster:    'rgba(136, 192, 208, ',    // frost
-      };
-      policyWaves.push({
-        y: -40,
-        speed: 0.6 + Math.random() * 0.4,
-        alpha: 0.08 + Math.random() * 0.06,
-        maxAlpha: 0.08 + Math.random() * 0.06,
-        height: 30 + Math.random() * 20,
-        type: type,
-        colorBase: colors[type],
-      });
-      nextPolicyWaveTime = t + 8 + Math.random() * 14;
-    }
-    policyWaves.forEach(pw => {
-      pw.y += pw.speed;
-      // Fade in and out
-      if (pw.y < 40) pw.alpha = pw.maxAlpha * (pw.y + 40) / 80;
-      else if (pw.y > H - 40) pw.alpha = pw.maxAlpha * (H + 40 - pw.y) / 80;
-      else pw.alpha = pw.maxAlpha;
-    });
-    policyWaves = policyWaves.filter(pw => pw.y < H + 60);
-  }
-
-  let frameCount = 0;
-
-  function draw() {
-    frameCount++;
-    macroPhase += 0.0025;
-
-    // --- MACROSYSTEM BACKGROUND — more visible gradient shift ---
-    const macroHue1 = 210 + Math.sin(macroPhase) * 25;
-    const macroHue2 = 225 + Math.cos(macroPhase * 0.6) * 18;
-    const macroSat = 14 + Math.sin(macroPhase * 0.4) * 6;
-    const macroLight = 12 + Math.sin(macroPhase * 0.25) * 4;
-
-    ctx.fillStyle = `hsl(${macroHue1}, ${macroSat}%, ${macroLight}%)`;
-    ctx.fillRect(0, 0, W, H);
-
-    const macroGrad = ctx.createLinearGradient(
-      W * (0.2 + Math.sin(macroPhase * 0.3) * 0.3), 0,
-      W * (0.8 + Math.cos(macroPhase * 0.25) * 0.2), H
-    );
-    macroGrad.addColorStop(0, `hsla(${macroHue2}, 18%, 16%, 0.35)`);
-    macroGrad.addColorStop(0.5, `hsla(${macroHue1 + 30}, 12%, 14%, 0.2)`);
-    macroGrad.addColorStop(1, `hsla(${macroHue2 - 15}, 15%, 15%, 0.3)`);
-    ctx.fillStyle = macroGrad;
-    ctx.fillRect(0, 0, W, H);
-
-    // Second gradient layer for more depth
-    const macroGrad2 = ctx.createRadialGradient(
-      W * (0.5 + Math.sin(macroPhase * 0.2) * 0.3),
-      H * (0.5 + Math.cos(macroPhase * 0.15) * 0.3),
-      0,
-      W * 0.5, H * 0.5, W * 0.6
-    );
-    macroGrad2.addColorStop(0, `hsla(${macroHue1 + 40}, 20%, 18%, 0.12)`);
-    macroGrad2.addColorStop(1, 'transparent');
-    ctx.fillStyle = macroGrad2;
-    ctx.fillRect(0, 0, W, H);
-
-    updateAgents();
-    updateRipples();
-    updatePolicyWaves();
-    if (frameCount % 5 === 0) { detectMicrosystems(); detectEmergentMeso(); }
-
-    // --- POLICY WAVES ---
-    policyWaves.forEach(pw => {
-      const grad = ctx.createLinearGradient(0, pw.y - pw.height / 2, 0, pw.y + pw.height / 2);
-      grad.addColorStop(0, pw.colorBase + '0)');
-      grad.addColorStop(0.3, pw.colorBase + pw.alpha + ')');
-      grad.addColorStop(0.5, pw.colorBase + (pw.alpha * 1.2) + ')');
-      grad.addColorStop(0.7, pw.colorBase + pw.alpha + ')');
-      grad.addColorStop(1, pw.colorBase + '0)');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, pw.y - pw.height / 2, W, pw.height);
-    });
-
-    // --- EXOSYSTEM RIPPLES ---
-    ripples.forEach(rip => {
-      ctx.beginPath();
-      ctx.arc(rip.x, rip.y, rip.r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(94, 129, 172, ${rip.alpha})`;
-      ctx.lineWidth = 1.8;
-      ctx.stroke();
-      if (rip.r > 12) {
-        ctx.beginPath();
-        ctx.arc(rip.x, rip.y, rip.r - 8, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(94, 129, 172, ${rip.alpha * 0.35})`;
-        ctx.lineWidth = 0.6;
-        ctx.stroke();
-      }
-    });
-
-    // --- CORRIDORS (faint paths between mesosystems) ---
-    corridors.forEach(c => {
-      ctx.beginPath();
-      ctx.moveTo(c.ax, c.ay);
-      ctx.quadraticCurveTo(c.cx, c.cy, c.bx, c.by);
-      ctx.strokeStyle = 'rgba(94, 129, 172, 0.06)';
-      ctx.lineWidth = 12;
-      ctx.stroke();
-      ctx.strokeStyle = 'rgba(94, 129, 172, 0.04)';
-      ctx.lineWidth = 24;
-      ctx.stroke();
-    });
-
-    // --- FIXED MESOSYSTEMS ---
-    fixedMeso.forEach(m => {
-      // Outer glow
-      ctx.beginPath();
-      ctx.arc(m.x, m.y, m.r + 8, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(163, 190, 140, 0.02)';
-      ctx.fill();
-      // Fill
-      ctx.beginPath();
-      ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(163, 190, 140, 0.07)';
-      ctx.fill();
-      // Border
-      ctx.beginPath();
-      ctx.arc(m.x, m.y, m.r, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(163, 190, 140, 0.3)';
-      ctx.lineWidth = 1.2;
-      ctx.stroke();
-      // Label — larger, clearer
-      ctx.font = '600 14px JetBrains Mono, monospace';
-      ctx.fillStyle = 'rgba(163, 190, 140, 0.5)';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(m.label, m.x, m.y + m.r + 16);
-    });
-
-    // --- EMERGENT MESOSYSTEMS ---
-    emergentMeso.forEach(em => {
-      const alpha = Math.min(1, em.life / 40) * 0.18;
-      const pulse = 1 + Math.sin(t * 2.5 + em.pulsePhase) * 0.08;
-      const r = em.r * pulse;
-      ctx.beginPath();
-      ctx.arc(em.x, em.y, r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(235, 203, 139, ${alpha * 0.6})`;
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(em.x, em.y, r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(235, 203, 139, ${alpha * 1.8})`;
-      ctx.lineWidth = 1;
-      ctx.setLineDash([4, 4]);
-      ctx.stroke();
-      ctx.setLineDash([]);
-      // Label for emergent mesosystem
-      if (em.life > 30 && em.label) {
-        ctx.font = '10px JetBrains Mono, monospace';
-        ctx.fillStyle = `rgba(235, 203, 139, ${alpha * 2})`;
-        ctx.textAlign = 'center';
-        ctx.fillText(em.label, em.x, em.y + r + 10);
-      }
-    });
-
-    // --- MICROSYSTEMS (bonds between 2-3 agents) ---
-    microsystems.forEach(ms => {
-      const alpha = Math.min(1, ms.life / 25) * 0.3;
-      // Draw a connecting circle
-      ctx.beginPath();
-      ctx.arc(ms.x, ms.y, ms.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(136, 192, 208, ${alpha * 0.3})`;
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(ms.x, ms.y, ms.r, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(136, 192, 208, ${alpha * 0.8})`;
-      ctx.lineWidth = 0.7;
-      ctx.stroke();
-      // Draw connecting lines between agents in the microsystem
-      if (ms.agents && ms.agents.length >= 2) {
-        ctx.lineWidth = 0.5;
-        for (let i = 0; i < ms.agents.length; i++) {
-          for (let j = i + 1; j < ms.agents.length; j++) {
-            const ai = agents[ms.agents[i]], aj = agents[ms.agents[j]];
-            if (ai && aj) {
-              ctx.beginPath();
-              ctx.moveTo(ai.x, ai.y);
-              ctx.lineTo(aj.x, aj.y);
-              ctx.strokeStyle = `rgba(136, 192, 208, ${alpha * 0.6})`;
-              ctx.stroke();
-            }
-          }
-        }
-      }
-    });
-
-    // --- AGENTS ---
-    agents.forEach(a => {
-      let inMeso = false;
-      fixedMeso.forEach(m => { if (dist(a, m) < m.r) inMeso = true; });
-
-      // Glow for traveling agents
-      if (a.state === 'traveling') {
-        ctx.beginPath();
-        ctx.arc(a.x, a.y, AGENT_R * 2.5, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${Math.round(a.currentColor[0])},${Math.round(a.currentColor[1])},${Math.round(a.currentColor[2])},0.12)`;
-        ctx.fill();
-      }
-
-      ctx.beginPath();
-      ctx.arc(a.x, a.y, AGENT_R, 0, Math.PI * 2);
-      ctx.fillStyle = colorToRgb(a.currentColor);
-      ctx.globalAlpha = inMeso ? 0.92 : (a.state === 'leaving' ? 0.4 : 0.72);
-      ctx.fill();
-      ctx.globalAlpha = 1;
-    });
-
-    // Proximity connections
-    ctx.lineWidth = 0.4;
-    for (let i = 0; i < agents.length; i++) {
-      for (let j = i + 1; j < agents.length; j++) {
-        const d = dist(agents[i], agents[j]);
-        if (d < 18) {
-          ctx.beginPath();
-          ctx.moveTo(agents[i].x, agents[i].y);
-          ctx.lineTo(agents[j].x, agents[j].y);
-          ctx.strokeStyle = `rgba(136, 192, 208, ${0.1 * (1 - d / 18)})`;
-          ctx.stroke();
-        }
-      }
-    }
-
-    // --- LEGEND — larger, clearer ---
-    const legendX = W - 220, legendY = H - 82;
-    ctx.font = '11px JetBrains Mono, monospace';
-    ctx.textAlign = 'left';
-    const legendItems = [
-      [FROST,   'microsystem (transient bond)'],
-      [GREEN,   'mesosystem (institution)'],
-      [YELLOW,  'emergent mesosystem (third space)'],
-      ['rgba(94,129,172,0.8)', 'exosystem (ripple)'],
-      [MAGENTA, 'macrosystem (policy wave)'],
-    ];
-    // Legend background
-    ctx.fillStyle = 'rgba(30, 36, 48, 0.65)';
-    ctx.fillRect(legendX - 6, legendY - 6, 226, legendItems.length * 15 + 10);
-    legendItems.forEach(([col, lbl], i) => {
-      const ly = legendY + i * 15;
-      ctx.fillStyle = col;
-      ctx.globalAlpha = 0.7;
-      ctx.fillRect(legendX, ly, 8, 8);
-      ctx.globalAlpha = 1;
-      ctx.fillStyle = 'rgba(205, 212, 223, 0.55)';
-      ctx.fillText(lbl, legendX + 14, ly + 7);
-    });
-
-    raf = requestAnimationFrame(draw);
-  }
-
-  function startViz() {
-    if (!running) { running = true; draw(); }
-  }
-  function stopViz() {
-    running = false;
-    cancelAnimationFrame(raf);
-  }
-
-  ctx.fillStyle = 'rgb(30,36,48)';
-  ctx.fillRect(0, 0, W, H);
-
-  const researchObserver = new IntersectionObserver(entries => {
-    entries.forEach(e => e.isIntersecting ? startViz() : stopViz());
-  }, { threshold: 0.1 });
-  researchObserver.observe(canvas);
-
-  const _origSwitch = window.switchSection;
-  window.switchSection = function(name) {
-    _origSwitch(name);
-    if (name === 'research') startViz();
-    else stopViz();
-  };
-})();
-
-// ===== VIZ: TOOLS — HTOP-STYLE MONITOR =====
-(function() {
-  const el = document.getElementById('htop-display');
-  if (!el) return;
-
-  const processes = [
-    { name: 'ollama',        desc: 'local inference daemon · mistral-nemo · listening on :11434', baseCpu: 42, baseMem: 38 },
-    { name: 'duckdb',        desc: 'analytical queries · student_narratives.ddb · 847K rows',     baseCpu: 12, baseMem: 14 },
-    { name: 'python3',       desc: 'nlp_pipeline.py · metaphor detection pass · batch 7/12',       baseCpu: 31, baseMem: 22 },
-    { name: 'r-session',     desc: 'propensity_model.R · trajectory cluster analysis',              baseCpu:  8, baseMem: 11 },
-    { name: 'pihole-FTL',    desc: 'dns sinkhole · blocking 23.4% of queries',                      baseCpu:  2, baseMem:  3 },
-    { name: 'podman',        desc: 'container runtime · 3 active · 0 distressed',                  baseCpu:  1, baseMem:  6 },
-    { name: 'ntfy',          desc: 'push notifications · self-hosted · this15fine.dev',              baseCpu:  0, baseMem:  2 },
-    { name: 'bash',          desc: 'process_narratives.sh · still running. has been for a while.', baseCpu:  4, baseMem:  1 },
-  ];
-
-  const startDate = new Date('2024-09-01');
-
-  function formatUptime() {
-    const now = new Date();
-    const diff = now - startDate;
-    const days = Math.floor(diff / 86400000);
-    const hrs  = Math.floor((diff % 86400000) / 3600000);
-    const mins = Math.floor((diff % 3600000) / 60000);
-    return `${days}d ${hrs}h ${mins}m`;
-  }
-
-  function fuzz(base, range) {
-    return Math.max(0, Math.min(99, base + (Math.random() - 0.5) * range)).toFixed(1);
-  }
-
-  function cpuBarColor(val) {
-    if (val > 60) return 'var(--aurora-red)';
-    if (val > 30) return 'var(--aurora-yellow)';
-    return 'var(--aurora-green)';
-  }
-
-  function render() {
-    const totalCpu = processes.reduce((s, p) => s + p.baseCpu, 0);
-    const totalMem = processes.reduce((s, p) => s + p.baseMem, 0);
-    const cpuVal = Math.min(99, totalCpu + (Math.random() - 0.5) * 8);
-    const memVal = Math.min(99, totalMem + (Math.random() - 0.5) * 4);
-    const now = new Date();
-
-    let html = '';
-    // System bars
-    html += `<div class="htop-bar-row"><span class="htop-bar-label">cpu</span><div class="htop-bar-outer"><div class="htop-bar-inner" style="width:${cpuVal.toFixed(0)}%;background:${cpuBarColor(cpuVal)}"></div></div><span class="htop-bar-val">${cpuVal.toFixed(1)}%</span></div>`;
-    html += `<div class="htop-bar-row"><span class="htop-bar-label">mem</span><div class="htop-bar-outer"><div class="htop-bar-inner" style="width:${memVal.toFixed(0)}%;background:var(--frost)"></div></div><span class="htop-bar-val">${memVal.toFixed(1)}%</span></div>`;
-    html += `<br>`;
-
-    // Process table header
-    html += `<div class="htop-row htop-header"><span class="htop-pid">PID</span><span class="htop-cpu">%CPU</span><span class="htop-mem">%MEM</span><span class="htop-name">COMMAND</span><span class="htop-desc">STATUS</span></div>`;
-
-    processes.forEach((p, i) => {
-      const cpu = fuzz(p.baseCpu, 6);
-      const mem = fuzz(p.baseMem, 3);
-      const pid = 1000 + i * 137 + Math.floor(Math.random() * 3);
-      html += `<div class="htop-row"><span class="htop-pid">${pid}</span><span class="htop-cpu">${cpu}</span><span class="htop-mem">${mem}</span><span class="htop-name">${p.name}</span><span class="htop-desc">${p.desc}</span></div>`;
-    });
-
-    html += `<div class="htop-uptime">uptime: ${formatUptime()} · load avg: ${(cpuVal/40).toFixed(2)} ${(cpuVal/50).toFixed(2)} ${(cpuVal/60).toFixed(2)} · ${now.toLocaleTimeString('en-US', {hour12:false})} · everything is fine</div>`;
-
-    el.innerHTML = html;
-  }
-
-  render();
-  let htopInterval;
-
-  const _origSwitch2 = window.switchSection;
-  window.switchSection = function(name) {
-    _origSwitch2(name);
-    clearInterval(htopInterval);
-    if (name === 'tools') htopInterval = setInterval(render, 2200);
-  };
-})();
-
-// ===== VIZ: APPROACH — OBSIDIAN-STYLE SYSTEMS MAP =====
-(function() {
-  const canvas = document.getElementById('conceptCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const W = 960, H = 540;
-  canvas.width = W; canvas.height = H;
-
-  // Node types
-  const TYPES = {
-    theory:   { color: '#88C0D0', bg: '#1a2d38' },
-    method:   { color: '#A3BE8C', bg: '#1e2a1e' },
-    concept:  { color: '#B48EAD', bg: '#271f2e' },
-    practice: { color: '#EBCB8B', bg: '#2a2616' },
-    anchor:   { color: '#BF616A', bg: '#2a1a1c' },
-  };
-
-  // Nodes — organic, scattered positions with more spacing
-  const nodes = [
-    // Anchor (center)
-    { id:0,  type:'anchor',   label:'student in context',   sub:'the unit of analysis',           x:480, y:270, w:170, h:44, pinned:true },
-    // Theories — spread around the periphery
-    { id:1,  type:'theory',   label:'Bronfenbrenner',       sub:'nested ecological systems',       x:110, y:95,  w:155, h:44 },
-    { id:2,  type:'theory',   label:'Luhmann',              sub:'self-referential systems',        x:800, y:80,  w:150, h:44 },
-    { id:3,  type:'theory',   label:'complex adaptive',     sub:'emergence & nonlinearity',        x:830, y:260, w:155, h:44 },
-    { id:4,  type:'theory',   label:'complex responsive',   sub:'meaning in interaction',          x:760, y:440, w:165, h:44 },
-    // Concepts
-    { id:5,  type:'concept',  label:'attribution',          sub:'explanation shapes next action',  x:130, y:280, w:145, h:44 },
-    { id:6,  type:'concept',  label:'asset-based',          sub:'start from strength',             x:120, y:430, w:140, h:44 },
-    { id:7,  type:'concept',  label:'self-worth theory',    sub:'performance as identity signal',  x:420, y:460, w:160, h:44 },
-    // Methods
-    { id:8,  type:'method',   label:'mixed methods',        sub:'numbers + narrative together',    x:380, y:70,  w:150, h:44 },
-    { id:9,  type:'method',   label:'discourse analysis',   sub:'language as data',                x:260, y:420, w:155, h:44 },
-    { id:10, type:'method',   label:'trajectory typology',  sub:'map the actual paths taken',      x:700, y:170, w:160, h:44 },
-    // Practice
-    { id:11, type:'practice', label:'instrument design',    sub:'build what can see the question', x:400, y:170, w:165, h:44 },
-  ];
-
-  // Edges
-  const edges = [
-    [1,0,'shapes context','shapes'],
-    [2,0,'defines system','shapes'],
-    [3,0,'emergence','feeds'],
-    [4,0,'emerges from','feeds'],
-    [5,0,'explains response','shapes'],
-    [6,0,'design principle','informs'],
-    [7,5,'self-protection','feeds'],
-    [8,11,'enables','uses'],
-    [8,9,'uses','uses'],
-    [9,5,'surfaces','informs'],
-    [10,0,'maps paths','informs'],
-    [11,0,'operationalizes','constrains'],
-    [1,5,'contextualizes','informs'],
-    [2,3,'parallel','feeds'],
-    [6,7,'reframes','shapes'],
-  ];
-
-  const EDGE_COLORS = {
-    feeds:      'rgba(163,190,140,0.5)',
-    shapes:     'rgba(136,192,208,0.5)',
-    informs:    'rgba(180,142,173,0.45)',
-    constrains: 'rgba(191,97,106,0.45)',
-    uses:       'rgba(235,203,139,0.4)',
-  };
-
-  let vx = nodes.map(() => 0), vy = nodes.map(() => 0);
-  let selected = -1, hovered = -1;
-  let dragNode = -1, dragOffX = 0, dragOffY = 0;
-  let raf2, running2 = false;
-
-  function nb(n) { return { x:n.x-n.w/2, y:n.y-n.h/2, w:n.w, h:n.h }; }
-
-  function hitTest(mx, my) {
-    for (let i = nodes.length-1; i >= 0; i--) {
-      const b = nb(nodes[i]);
-      if (mx >= b.x && mx <= b.x+b.w && my >= b.y && my <= b.y+b.h) return i;
-    }
-    return -1;
-  }
-
-  function edgePoint(n, tx, ty) {
-    const cx = n.x, cy = n.y;
-    const dx = tx - cx, dy = ty - cy;
-    const hw = n.w/2 + 3, hh = n.h/2 + 3;
-    const absDx = Math.abs(dx), absDy = Math.abs(dy);
-    if (absDx === 0 && absDy === 0) return {x:cx, y:cy};
-    if (absDx/hw > absDy/hh) {
-      const s = dx > 0 ? 1 : -1;
-      return {x: cx + s*hw, y: cy + dy * (hw/absDx)};
-    } else {
-      const s = dy > 0 ? 1 : -1;
-      return {x: cx + dx * (hh/absDy), y: cy + s*hh};
-    }
-  }
-
-  function drawArrow(x1,y1,x2,y2,col) {
-    const angle = Math.atan2(y2-y1, x2-x1);
-    const len = 8;
-    ctx.beginPath();
-    ctx.moveTo(x2, y2);
-    ctx.lineTo(x2 - len*Math.cos(angle-0.4), y2 - len*Math.sin(angle-0.4));
-    ctx.moveTo(x2, y2);
-    ctx.lineTo(x2 - len*Math.cos(angle+0.4), y2 - len*Math.sin(angle+0.4));
-    ctx.strokeStyle = col;
-    ctx.lineWidth = 1.6;
-    ctx.stroke();
-  }
-
-  // Gentler physics — lower repulsion, softer springs, more damping
-  function physics() {
-    const REPEL = 6000;
-    const SPRING_K = 0.008;   // much softer springs
-    const DAMP = 0.75;        // more damping = gentler float
-    const CENTER = 0.002;
-    const REST = 220;          // longer rest length = more spacing
-
-    nodes.forEach((a,i) => {
-      if (a.pinned || i === dragNode) return;
-      let fx=0, fy=0;
-
-      // Node-node repulsion
-      nodes.forEach((b,j) => {
-        if (i===j) return;
-        const dx=a.x-b.x, dy=a.y-b.y, d2=dx*dx+dy*dy+1;
-        const f = REPEL/d2;
-        fx+=dx*f; fy+=dy*f;
-      });
-
-      // Edge springs
-      edges.forEach(([ia,ib]) => {
-        if (ia!==i && ib!==i) return;
-        const other=nodes[ia===i?ib:ia];
-        const dx=other.x-a.x, dy=other.y-a.y;
-        const d=Math.sqrt(dx*dx+dy*dy)||1;
-        const stretch=(d-REST)*SPRING_K;
-        fx+=dx/d*stretch; fy+=dy/d*stretch;
-      });
-
-      // Gentle centering
-      fx+=(W/2-a.x)*CENTER; fy+=(H/2-a.y)*CENTER;
-
-      // Gentle organic drift (subtle floating)
-      const driftAngle = Math.sin(Date.now() * 0.0003 + i * 1.7) * 0.15;
-      fx += Math.cos(driftAngle) * 0.03;
-      fy += Math.sin(driftAngle) * 0.03;
-
-      vx[i]=(vx[i]+fx)*DAMP;
-      vy[i]=(vy[i]+fy)*DAMP;
-
-      // Clamp velocity to prevent snapping
-      const speed = Math.sqrt(vx[i]*vx[i] + vy[i]*vy[i]);
-      const MAX_SPEED = 1.2;
-      if (speed > MAX_SPEED) {
-        vx[i] = (vx[i]/speed) * MAX_SPEED;
-        vy[i] = (vy[i]/speed) * MAX_SPEED;
-      }
-
-      a.x=Math.max(a.w/2+8, Math.min(W-a.w/2-8, a.x+vx[i]));
-      a.y=Math.max(a.h/2+8, Math.min(H-a.h/2-8, a.y+vy[i]));
-    });
-  }
-
-  function drawFrame() {
-    ctx.clearRect(0,0,W,H);
-    ctx.fillStyle='#1e2430';
-    ctx.fillRect(0,0,W,H);
-
-    // Draw edges
-    edges.forEach(([ia,ib,label,style]) => {
-      const a=nodes[ia], b=nodes[ib];
-      const p1=edgePoint(a,b.x,b.y), p2=edgePoint(b,a.x,a.y);
-      const isActive=(hovered===ia||hovered===ib||selected===ia||selected===ib);
-      const col=isActive ? EDGE_COLORS[style].replace(/[\d.]+\)$/, '0.9)') : EDGE_COLORS[style];
-
-      // Curved edges for more organic look
-      const mx = (p1.x+p2.x)/2, my = (p1.y+p2.y)/2;
-      const dx = p2.x-p1.x, dy = p2.y-p1.y;
-      const len = Math.sqrt(dx*dx+dy*dy);
-      const nx = -dy/len, ny = dx/len;
-      const curveAmt = len * 0.06;
-      const cpx = mx + nx * curveAmt, cpy = my + ny * curveAmt;
-
-      ctx.beginPath();
-      ctx.moveTo(p1.x,p1.y);
-      ctx.quadraticCurveTo(cpx, cpy, p2.x,p2.y);
-      ctx.strokeStyle=col;
-      ctx.lineWidth=isActive?1.8:1;
-      ctx.stroke();
-      drawArrow(cpx,cpy,p2.x,p2.y,col);
-
-      if (isActive) {
-        ctx.font='11px JetBrains Mono,monospace';
-        ctx.fillStyle='rgba(221,226,234,0.8)';
-        ctx.textAlign='center';
-        ctx.fillText(label, cpx, cpy-7);
-      }
-    });
-
-    // Draw nodes
-    nodes.forEach((n,i) => {
-      const isHov=hovered===i, isSel=selected===i;
-      const t=TYPES[n.type];
-      const b=nb(n);
-      const cornerR = 5;
-
-      // Shadow on active
-      if (isHov||isSel) {
-        ctx.shadowColor=t.color; ctx.shadowBlur=16;
-      }
-
-      // Rounded rectangle
-      ctx.fillStyle=isHov||isSel ? t.bg : '#1e2430';
-      ctx.strokeStyle=t.color;
-      ctx.lineWidth=isHov||isSel?2.2:1;
-      ctx.beginPath();
-      ctx.roundRect(b.x, b.y, b.w, b.h, cornerR);
-      ctx.fill(); ctx.stroke();
-      ctx.shadowBlur=0;
-
-      // Type pip
-      ctx.fillStyle=t.color;
-      ctx.beginPath();
-      ctx.roundRect(b.x+5, b.y+7, 4, b.h-14, 2);
-      ctx.fill();
-
-      // Label — larger text
-      ctx.font=`${isSel?600:500} 14px JetBrains Mono,monospace`;
-      ctx.fillStyle=isHov||isSel?'#edf0f4':t.color;
-      ctx.textAlign='left';
-      ctx.textBaseline='middle';
-      ctx.fillText(n.label, b.x+16, b.y+(isSel&&n.sub?14:b.h/2));
-
-      // Sub label — larger, always visible on hover/select
-      if (n.sub && (isHov||isSel)) {
-        ctx.font='12px JetBrains Mono,monospace';
-        ctx.fillStyle='rgba(205,212,223,0.75)';
-        ctx.fillText(n.sub, b.x+16, b.y+b.h-11);
-      }
-    });
-
-    // Legend — larger, top-right
-    const types = [['theory','framework'],['method','how I look'],['concept','key idea'],['practice','in the work'],['anchor','unit of analysis']];
-    ctx.font='12px JetBrains Mono,monospace';
-    // Legend background
-    const lx0 = W - 170, ly0 = 6;
-    ctx.fillStyle = 'rgba(30, 36, 48, 0.7)';
-    ctx.fillRect(lx0 - 6, ly0 - 2, 174, types.length * 18 + 8);
-    types.forEach(([k,lbl],i) => {
-      const lx=lx0, ly=ly0+4+i*18;
-      ctx.fillStyle=TYPES[k].color;
-      ctx.fillRect(lx,ly+1,10,10);
-      ctx.fillStyle='rgba(205,212,223,0.6)';
-      ctx.textAlign='left';
-      ctx.textBaseline='middle';
-      ctx.fillText(lbl, lx+16, ly+6);
-    });
-
-    physics();
-    raf2=requestAnimationFrame(drawFrame);
-  }
-
-  function getMousePos(e) {
-    const rect=canvas.getBoundingClientRect();
-    return {
-      x:(e.clientX-rect.left)*(W/rect.width),
-      y:(e.clientY-rect.top)*(H/rect.height)
-    };
-  }
-
-  canvas.addEventListener('mousemove', e => {
-    const {x,y}=getMousePos(e);
-    hovered=hitTest(x,y);
-    canvas.style.cursor=hovered>=0?'pointer':'default';
-    if (dragNode>=0) {
-      nodes[dragNode].x=x-dragOffX;
-      nodes[dragNode].y=y-dragOffY;
-      nodes[dragNode].x=Math.max(nodes[dragNode].w/2+8, Math.min(W-nodes[dragNode].w/2-8, nodes[dragNode].x));
-      nodes[dragNode].y=Math.max(nodes[dragNode].h/2+8, Math.min(H-nodes[dragNode].h/2-8, nodes[dragNode].y));
-    }
-  });
-  canvas.addEventListener('mousedown', e => {
-    const {x,y}=getMousePos(e);
-    const hit=hitTest(x,y);
-    if (hit>=0) { dragNode=hit; dragOffX=x-nodes[hit].x; dragOffY=y-nodes[hit].y; }
-  });
-  canvas.addEventListener('mouseup', e => {
-    if (dragNode>=0 && Math.abs(dragOffX)<3 && Math.abs(dragOffY)<3) {
-      selected = selected===dragNode ? -1 : dragNode;
-    }
-    dragNode=-1;
-  });
-  canvas.addEventListener('mouseleave', () => { hovered=-1; dragNode=-1; canvas.style.cursor='default'; });
-
-  function startApproach() { if (!running2) { running2=true; drawFrame(); } }
-  function stopApproach()  { running2=false; cancelAnimationFrame(raf2); }
-
-  const _origSwitch3=window.switchSection;
-  window.switchSection=function(name) {
-    _origSwitch3(name);
-    if (name==='approach') startApproach();
-    else stopApproach();
-  };
-})();
-
-// ===== VIZ: WORK — DOSE-RESPONSE CHART =====
-(function() {
-  const canvas = document.getElementById('doseCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const W = 640, H = 220;
-  canvas.width = W; canvas.height = H;
-
-  // Data: return-to-standing rates by contact level by term
-  const terms = ['FA23 (pre)', 'SP24 (pre)', 'FA24', 'SP25', 'FA25'];
-  const data = {
-    '0':  [20.7, 21.1, 17.0, 17.0, 15.6],
-    '1':  [34.9, 30.6, 41.4, 53.6, 48.6],
-    '2':  [43.6, 30.6, 42.5, 51.5, 47.8],
-    '3+': [36.2, 38.0, 47.7, 51.1, 51.7],
-  };
-  const levels = ['0', '1', '2', '3+'];
-  const levelColors = {
-    '0':  '#3d4f66',
-    '1':  '#88C0D0',
-    '2':  '#A3BE8C',
-    '3+': '#EBCB8B',
-  };
-  const levelLabels = {
-    '0':  '0 contacts',
-    '1':  '1 contact',
-    '2':  '2 contacts',
-    '3+': '3+ contacts',
-  };
-
-  const PAD = { top: 24, right: 20, bottom: 48, left: 50 };
-  const chartW = W - PAD.left - PAD.right;
-  const chartH = H - PAD.top - PAD.bottom;
-  const nTerms = terms.length;
-  const groupW = chartW / nTerms;
-  const barW = groupW / (levels.length + 1);
-
-  // Animate bars in
-  let progress = 0;
-  let raf3; let running3 = false;
-
-  function drawChart() {
-    ctx.clearRect(0, 0, W, H);
-    ctx.fillStyle = '#1e2430';
-    ctx.fillRect(0, 0, W, H);
-
-    const maxVal = 60;
-
-    // Grid lines
-    [20, 40, 60].forEach(v => {
-      const y = PAD.top + chartH - (v / maxVal) * chartH;
-      ctx.beginPath();
-      ctx.moveTo(PAD.left, y);
-      ctx.lineTo(PAD.left + chartW, y);
-      ctx.strokeStyle = 'rgba(61,79,102,0.4)';
-      ctx.lineWidth = 1;
-      ctx.stroke();
-      ctx.font = '9px JetBrains Mono, monospace';
-      ctx.fillStyle = '#3d4f66';
-      ctx.textAlign = 'right';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(v + '%', PAD.left - 6, y);
-    });
-
-    // Baseline marker (pre-era avg ~21%)
-    const baseY = PAD.top + chartH - (20.9 / maxVal) * chartH;
-    ctx.beginPath();
-    ctx.setLineDash([4, 4]);
-    ctx.moveTo(PAD.left, baseY);
-    ctx.lineTo(PAD.left + chartW, baseY);
-    ctx.strokeStyle = 'rgba(191,97,106,0.5)';
-    ctx.lineWidth = 1;
-    ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.font = '9px JetBrains Mono, monospace';
-    ctx.fillStyle = 'rgba(191,97,106,0.7)';
-    ctx.textAlign = 'left';
-    ctx.fillText('pre-era zero-contact baseline', PAD.left + 4, baseY - 5);
-
-    // Bars
-    terms.forEach((term, ti) => {
-      const groupX = PAD.left + ti * groupW + barW * 0.5;
-
-      levels.forEach((lvl, li) => {
-        const val = data[lvl][ti] * Math.min(1, progress);
-        const barH = (val / maxVal) * chartH;
-        const x = groupX + li * barW;
-        const y = PAD.top + chartH - barH;
-        const col = levelColors[lvl];
-
-        ctx.fillStyle = col;
-        ctx.globalAlpha = lvl === '0' ? 0.4 : 0.85;
-        ctx.fillRect(x, y, barW - 2, barH);
-        ctx.globalAlpha = 1;
-
-        // Value label on bars (only when mostly drawn)
-        if (progress > 0.85 && barH > 14) {
-          ctx.font = '8px JetBrains Mono, monospace';
-          ctx.fillStyle = col;
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'bottom';
-          ctx.fillText(data[lvl][ti] + '%', x + (barW-2)/2, y - 2);
-        }
-      });
-
-      // Term label
-      ctx.font = '9px JetBrains Mono, monospace';
-      ctx.fillStyle = ti < 2 ? '#3d4f66' : '#88C0D0';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillText(term, PAD.left + ti * groupW + groupW/2, PAD.top + chartH + 6);
-      // pre label
-      if (ti === 1) {
-        ctx.fillStyle = 'rgba(61,79,102,0.7)';
-        ctx.font = '8px JetBrains Mono, monospace';
-        ctx.fillText('← pre-program', PAD.left + groupW, PAD.top + chartH + 18);
-      }
-    });
-
-    // Legend
-    levels.forEach((lvl, li) => {
-      const lx = PAD.left + li * 142;
-      const ly = 8;
-      ctx.fillStyle = levelColors[lvl];
-      ctx.globalAlpha = lvl === '0' ? 0.4 : 0.85;
-      ctx.fillRect(lx, ly, 10, 9);
-      ctx.globalAlpha = 1;
-      ctx.font = '9px JetBrains Mono, monospace';
-      ctx.fillStyle = '#cdd4df';
-      ctx.textAlign = 'left';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(levelLabels[lvl], lx + 14, ly + 4);
-    });
-
-    if (progress < 1) {
-      progress = Math.min(1, progress + 0.035);
-      raf3 = requestAnimationFrame(drawChart);
-    }
-  }
-
-  function startWork() {
-    if (!running3) {
-      running3 = true;
-      progress = 0;
-      drawChart();
-    }
-  }
-  function stopWork() { running3 = false; cancelAnimationFrame(raf3); }
-
-  const _origSwitch4 = window.switchSection;
-  window.switchSection = function(name) {
-    _origSwitch4(name);
-    if (name === 'work') startWork();
-    else stopWork();
-  };
-})();
-
-// ===== ROTATING TILE CONTENT (HOME SECTION) =====
-(function() {
-  if (prefersReducedMotion) return;
-
-  // Content arrays for rotating tiles
-  const readingContent = [
-    { body: 'Nora Bateson on warm data.<br>Complex responsive processes.<br>A Luhmann essay that has been open for two weeks.',
-      status: 'three tabs. one is losing.' },
-    { body: 'Sara Ahmed on complaint.<br>The institutional machinery that absorbs dissent.<br>Uncomfortably relevant.',
-      status: 'highlighting more than reading.' },
-    { body: 'Barad on intra-action.<br>Measurement as entanglement.<br>This changes how you think about instruments.',
-      status: 'slow going. worth it.' },
-    { body: 'Meadows on leverage points.<br>Systems thinking applied to everything.<br>The kind of book that rearranges your shelves.',
-      status: 'second read. still finding things.' },
-  ];
-
-  const playingContent = [
-    { body: 'Dead Cells. Still.<br>Two hundred hours in. The game remains unimpressed.<br>This is, somehow, not a deterrent.',
-      status: 'deaths: yes' },
-    { body: 'Hades II. Early access.<br>The narrative design is doing something the writing courses should study.<br>Also the combat is good.',
-      status: 'runs: many. escapes: fewer.' },
-    { body: 'Balatro. Poker roguelike.<br>The probability intuitions are wrong in useful ways.<br>A game about what you think you know about math.',
-      status: 'jokers: problematic' },
-  ];
-
-  const quipContent = [
-    ['ollama ate all the RAM.<br>this is, technically, what I asked for.', 'still running. probably.'],
-    ['the model converged.<br>nobody is more surprised than the model.', 'p < 0.05. barely.'],
-    ['wrote a shell script to automate the thing.<br>debugging the script now takes longer than the thing.', 'efficiency: theoretical.'],
-    ['the dissertation proposal is a living document.<br>it lives in fear.', 'drafts: several. confidence: variable.'],
-    ['asked the LLM a question. it gave me an answer.<br>the answer was wrong but well-formatted.', 'fonts: excellent. facts: pending.'],
-    ['the pi-hole blocked something important again.<br>the definition of important is under review.', 'dns: opinionated.'],
-  ];
-
-  const quipAltContent = [
-    'returning to good standing turns out to be more stable than the crisis that preceded it.<br>that one surprised me too.',
-    'the instrument shapes what you can see.<br>this is not a metaphor. it is also a metaphor.',
-    'half the interesting stuff happens at the edges of categories.<br>the categories were not consulted about this.',
-    'the question is usually more durable than the answer.<br>this is frustrating and also correct.',
-    'you cannot control for everything.<br>the things you did not control for are writing the paper you did not expect.',
-  ];
-
-  // Track indices
-  let readingIdx = 0, playingIdx = 0, quipIdx = 0, quipAltIdx = 0;
-
-  // Find the target tiles by their content structure
-  function findTileByLabel(labelText, titleText) {
-    const tiles = document.querySelectorAll('#panel-home .tile');
-    for (const tile of tiles) {
-      const label = tile.querySelector('.tile-label');
-      const title = tile.querySelector('.tile-title');
-      if (label && title && label.textContent.includes(labelText) && title.textContent.includes(titleText)) {
-        return tile;
-      }
-    }
-    return null;
-  }
-
-  function findQuipTiles() {
-    const tiles = document.querySelectorAll('#panel-home .tile');
-    const quips = [];
-    tiles.forEach(tile => {
-      if (tile.querySelector('.tile-quip') && !tile.querySelector('.tile-label')) {
-        quips.push(tile);
-      }
-    });
-    return quips;
-  }
-
-  function fadeSwap(el, newHTML, duration) {
-    if (!el) return;
-    el.style.transition = `opacity ${duration}ms ease`;
-    el.style.opacity = '0';
-    setTimeout(() => {
-      el.innerHTML = newHTML;
-      el.style.opacity = '1';
-    }, duration);
-  }
-
-  function rotateReading() {
-    const tile = findTileByLabel('currently', 'reading');
-    if (!tile) return;
-    readingIdx = (readingIdx + 1) % readingContent.length;
-    const c = readingContent[readingIdx];
-    const body = tile.querySelector('.tile-body');
-    const statusText = tile.querySelector('.tile-status-row span:last-child');
-    fadeSwap(body, c.body, 400);
-    if (statusText) fadeSwap(statusText, c.status, 400);
-  }
-
-  function rotatePlaying() {
-    const tile = findTileByLabel('currently', 'playing');
-    if (!tile) return;
-    playingIdx = (playingIdx + 1) % playingContent.length;
-    const c = playingContent[playingIdx];
-    const body = tile.querySelector('.tile-body');
-    const statusText = tile.querySelector('.tile-status-row span:last-child');
-    fadeSwap(body, c.body, 400);
-    if (statusText) fadeSwap(statusText, c.status, 400);
-  }
-
-  function rotateQuips() {
-    const quipTiles = findQuipTiles();
-    if (quipTiles.length >= 1) {
-      quipIdx = (quipIdx + 1) % quipContent.length;
-      const q = quipContent[quipIdx];
-      const quipEl = quipTiles[0].querySelector('.tile-quip');
-      const statusText = quipTiles[0].querySelector('.tile-status-row span:last-child');
-      fadeSwap(quipEl, q[0], 400);
-      if (statusText) fadeSwap(statusText, q[1], 400);
-    }
-    if (quipTiles.length >= 2) {
-      quipAltIdx = (quipAltIdx + 1) % quipAltContent.length;
-      const quipEl2 = quipTiles[1].querySelector('.tile-quip');
-      fadeSwap(quipEl2, quipAltContent[quipAltIdx], 400);
-    }
-  }
-
-  // Stagger the rotations so they don't all fire at once
-  let readingTimer, playingTimer, quipTimer;
-
-  function startRotations() {
-    readingTimer = setInterval(rotateReading, 9000);
-    playingTimer = setInterval(rotatePlaying, 10000);
-    quipTimer = setInterval(rotateQuips, 8000);
-  }
-
-  function stopRotations() {
-    clearInterval(readingTimer);
-    clearInterval(playingTimer);
-    clearInterval(quipTimer);
-  }
-
-  // Only run when home section is active
-  startRotations();
-
-  const _origSwitchTiles = window.switchSection;
-  window.switchSection = function(name) {
-    _origSwitchTiles(name);
-    stopRotations();
-    if (name === 'home') startRotations();
-  };
-})();
-
-// ===== SECTION ACCENT COLORS ON TEASER/CROSS-REFERENCE CARDS =====
-(function() {
-  const SECTION_ACCENTS = {
-    home:       'var(--accent-home)',
-    research:   'var(--accent-research)',
-    tools:      'var(--accent-tools)',
-    background: 'var(--accent-background)',
-    approach:   'var(--accent-approach)',
-    work:       'var(--accent-work)',
-  };
-
-  function applyAccentToCards(sectionName) {
-    const accent = SECTION_ACCENTS[sectionName];
-    if (!accent) return;
-
-    const panel = document.getElementById('panel-' + sectionName);
-    if (!panel) return;
-
-    // Apply accent to any teaser tiles, cross-reference tiles, and callout borders
-    const teaserTiles = panel.querySelectorAll('.tile[style*="border-top"]');
-    teaserTiles.forEach(tile => {
-      tile.style.borderTopColor = accent;
-    });
-
-    // Apply accent color to tile-label accent dots within this section
-    const dots = panel.querySelectorAll('.tl-accent');
-    dots.forEach(dot => {
-      // Only override dots that don't have a specific color purpose
-      if (!dot.closest('.tile-grid')) return; // only within tile grids
-    });
-
-    // Apply to research callouts, method pairs, etc.
-    const callouts = panel.querySelectorAll('.research-callout');
-    callouts.forEach(c => { c.style.borderLeftColor = accent; });
-
-    const methodItems = panel.querySelectorAll('.rmp-item');
-    methodItems.forEach(item => { item.style.borderTopColor = accent; });
-  }
-
-  const _origSwitchAccent = window.switchSection;
-  window.switchSection = function(name) {
-    _origSwitchAccent(name);
-    applyAccentToCards(name);
-  };
-
-  // Apply to initial section
-  applyAccentToCards('home');
-})();
-
-// ===== KEYBOARD NAV =====
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') navigateHome();
-});
 </script>
+
 </body>
 </html>

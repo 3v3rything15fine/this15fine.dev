@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Session 2026-03-22 — this15fine.dev</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="theme-color" content="#2E3440">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --nord0: #2E3440;
+  --nord0-deep: #1e2430;
+  --nord1: #3B4252;
+  --nord2: #434C5E;
+  --nord3: #4C566A;
+  --nord4: #D8DEE9;
+  --nord5: #E5E9F0;
+  --nord6: #ECEFF4;
+  --frost: #88C0D0;
+  --frost-deep: #5E81AC;
+  --frost-warm: #8FBCBB;
+  --aurora-green: #A3BE8C;
+  --aurora-yellow: #EBCB8B;
+  --aurora-red: #BF616A;
+  --aurora-magenta: #B48EAD;
+  --aurora-orange: #D08770;
+  --burgundy: #6B3040;
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--nord0-deep);
+  color: var(--nord4);
+  font-family: 'JetBrains Mono', 'Liberation Mono', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a { color: var(--frost); text-decoration: none; transition: color var(--transition-fast); }
+a:hover { text-decoration: underline; }
+a:visited { color: var(--frost-deep); }
+a:focus-visible { outline: 2px solid #B048A8; outline-offset: 2px; }
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 24px 20px; }
+}
+
+/* ── Typography ────────────────────────────────────────────────── */
+h1 { font-size: 28px; font-weight: 700; color: var(--nord6); line-height: 1.2; margin-bottom: 8px; }
+h2 { font-size: 20px; font-weight: 600; color: var(--nord6); margin-top: 48px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--nord2); }
+h3 { font-size: 16px; font-weight: 600; color: var(--frost); margin-top: 32px; margin-bottom: 12px; }
+h4 { font-size: 14px; font-weight: 600; color: var(--frost-warm); margin-top: 20px; margin-bottom: 8px; }
+
+p { margin-bottom: 12px; }
+ul, ol { margin-left: 20px; margin-bottom: 12px; }
+li { margin-bottom: 4px; }
+
+strong { color: var(--nord5); }
+em { color: var(--frost-warm); }
+code { background: var(--nord1); padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+pre { background: var(--nord1); border: 1px solid var(--nord3); border-radius: 6px; padding: 16px; overflow-x: auto; margin-bottom: 16px; }
+pre code { background: none; padding: 0; }
+
+hr { border: none; border-top: 1px solid var(--nord3); margin: 32px 0; }
+
+blockquote {
+  border-left: 3px solid var(--frost);
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  background: var(--nord1);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: var(--nord5);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 12px;
+}
+th { text-align: left; color: var(--nord6); font-weight: 600; padding: 8px 12px; border-bottom: 2px solid var(--nord3); background: var(--nord2); }
+td { padding: 6px 12px; border-bottom: 1px solid var(--nord2); }
+tr:hover td { background: rgba(136, 192, 208, 0.05); }
+
+/* ── Breadcrumb ────────────────────────────────────────────────── */
+.breadcrumb {
+  font-size: 12px;
+  color: var(--nord3);
+  margin-bottom: 16px;
+}
+.breadcrumb a { color: var(--frost-deep); }
+
+/* ── Session header ────────────────────────────────────────────── */
+.session-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 16px 0;
+  border-top: 2px solid var(--burgundy);
+  border-bottom: 1px solid var(--nord3);
+}
+.session-meta .meta-item {
+  font-size: 12px;
+}
+.session-meta .meta-label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--nord3);
+  margin-right: 6px;
+}
+.session-meta .meta-value { color: var(--nord5); }
+
+/* ── Entry blocks ──────────────────────────────────────────────── */
+.entry-block {
+  background: var(--nord1);
+  border: 1px solid var(--nord3);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+}
+
+.entry-header {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--nord3);
+  margin-bottom: 12px;
+}
+
+/* ── Learning moments ──────────────────────────────────────────── */
+.learning-moment {
+  background: var(--nord0-deep);
+  border-left: 3px solid var(--aurora-yellow);
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 0 6px 6px 0;
+}
+.learning-moment .lm-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--aurora-yellow);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* ── Artifact links ────────────────────────────────────────────── */
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.artifact-card {
+  background: var(--nord1);
+  border: 1px solid var(--nord3);
+  border-radius: 6px;
+  padding: 14px 18px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  display: block;
+}
+
+.artifact-card:hover {
+  border-color: var(--frost);
+  box-shadow: var(--shadow-elevated);
+  text-decoration: none;
+}
+
+.artifact-card .artifact-type {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--aurora-magenta);
+  margin-bottom: 4px;
+}
+
+.artifact-card .artifact-name {
+  font-size: 14px;
+  color: var(--frost);
+  font-weight: 500;
+}
+
+.artifact-card .artifact-desc {
+  font-size: 11px;
+  color: var(--nord3);
+  margin-top: 4px;
+}
+
+/* ── Footer ────────────────────────────────────────────────────── */
+.footer {
+  border-top: 1px solid var(--nord3);
+  padding-top: 24px;
+  margin-top: 64px;
+  font-size: 12px;
+  color: var(--nord3);
+  text-align: center;
+}
+.footer a { color: var(--frost-deep); }
+
+/* ── Index page specifics ──────────────────────────────────────── */
+.hero-subtitle {
+  font-size: 14px;
+  color: var(--nord4);
+  max-width: 640px;
+  margin-bottom: 8px;
+}
+
+.experiment-frame {
+  background: var(--nord1);
+  border: 1px solid var(--nord3);
+  border-left: 3px solid var(--frost);
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin: 24px 0 48px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--nord5);
+}
+
+.session-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timeline-card {
+  background: var(--nord1);
+  border: 1px solid var(--nord3);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
+  display: block;
+}
+
+.timeline-card:hover {
+  border-color: var(--frost);
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.timeline-accent {
+  height: 3px;
+  width: 100%;
+}
+
+.timeline-body {
+  padding: 16px 20px;
+}
+
+.timeline-date {
+  font-size: 12px;
+  color: var(--nord3);
+  margin-bottom: 4px;
+}
+
+.timeline-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--nord6);
+  margin-bottom: 8px;
+}
+
+.timeline-desc {
+  font-size: 13px;
+  color: var(--nord4);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.timeline-tag {
+  display: inline-block;
+  background: var(--nord2);
+  border: 1px solid var(--nord3);
+  border-radius: 3px;
+  padding: 2px 8px;
+  font-size: 10px;
+  color: var(--nord4);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; }
+  .timeline-card:hover { transform: none; }
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+
+    <nav class="breadcrumb">
+      <a href="/">this15fine.dev</a> /
+      <a href="/learning/">learning</a> /
+      2026-03-22
+    </nav>
+
+    <h1>AI-Assisted Coursework Experiment Log</h1>
+
+    <div class="session-meta">
+      <div class="meta-item">
+        <span class="meta-label">Date</span>
+        <span class="meta-value">2026-03-22</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Course</span>
+        <span class="meta-value" style="color: #88C0D0">CI 7303 — Psychometric Methods</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Source</span>
+        <span class="meta-value"><a href="https://github.com/3v3rything15fine/this15fine.dev/tree/main/public/learning/2026-03-22" target="_blank" rel="noopener">GitHub</a></span>
+      </div>
+    </div>
+
+    <article>
+      <h1>AI-Assisted Coursework Experiment Log</h1>
+<h2>The Experiment</h2>
+<p>Jason is demonstrating that a doctoral student who understands broad concepts can guide an AI through completing graduate-level work. The benchmark: he understands the concepts well enough to know what needs to be done, explain why, guide how, and catch when something looks wrong.</p>
+<p>This log documents every major interaction — what was discussed, Jason's understanding, what was produced, and what clicked. The process IS the deliverable.</p>
+<hr />
+<h2>Session 1 — 2026-03-22</h2>
+<h3>Session Setup</h3>
+<ul>
+<li><strong>Time:</strong> Evening, Mar 22</li>
+<li><strong>Assignments in scope:</strong> SPSS Assignment 1 (due Mon Mar 23), Reading Reflection 4 (due Mon Mar 23)</li>
+<li><strong>Decision:</strong> Start with SPSS Assignment 1 (all materials available; reflection waiting on Cohen chapter)</li>
+<li><strong>Tools:</strong> Python/Jupyter (professor approved R and Python as alternatives to SPSS), pyreadstat for .sav data, Obsidian for documentation</li>
+<li><strong>Format:</strong> Notebook serves as the submission — narrative + code + output in one place</li>
+</ul>
+<h3>Preliminary Work</h3>
+<ul>
+<li><strong>Reading list cataloged:</strong> Subagent searched Zotero and academic databases for all CI 7303 readings. 6 articles found with DOIs for batch import. Cohen (2021) textbook chapter flagged as high priority — needs manual sourcing from library/Canvas.</li>
+<li><strong>Previous reflections converted:</strong> Pandoc extracted text from .docx/.odt files to establish Jason's writing voice for the reflection.</li>
+<li><strong>SPSS handout converted:</strong> Binary .docx converted to readable markdown. Assignment covers: descriptives, frequencies, missing data, outliers, reliability (Cronbach's alpha), alpha-if-item-deleted, scale score creation.</li>
+</ul>
+<h3>Entry 1: SPSS Assignment 1 — Getting Started</h3>
+<ul>
+<li><strong>Timestamp:</strong> 2026-03-22</li>
+<li><strong>Topic:</strong> Setting up the analysis environment and loading practice data</li>
+<li><strong>Status:</strong> Beginning</li>
+</ul>
+<hr />
+<p><em>Log continues as session progresses...</em></p>
+<h3>Entry: Reading List Update</h3>
+<ul>
+<li><strong>Timestamp:</strong> 2026-03-22</li>
+<li><strong>Action:</strong> Jason added sources to CI 7303 Zotero collection</li>
+<li><strong>Items added:</strong> 3 PDFs added as standalone attachments:
+<ol>
+<li>Cohen, Schneider, &amp; Tobin (2021) &quot;Test Development&quot; chapter (key: J5KRJ2RS)</li>
+<li>Swing &amp; Upcraft (2005) &quot;Choosing and Using Assessment Instruments&quot; (key: 7SCL2PC3)</li>
+<li>Weinstein &amp; Palmer, LASSI Manual (key: CTLUBDJ3)</li>
+</ol>
+</li>
+<li><strong>Still missing from Zotero (7 journal articles):</strong>
+<ol>
+<li>Mansfield et al. (2005) -- Barriers to Help Seeking Scale</li>
+<li>Nicolaidis et al. (2020) -- Accessible Survey Instruments</li>
+<li>Yilmaz/Giovanna -- Mindset Theory Scale</li>
+<li>Chen, Ding, &amp; Liu (2021) -- Growth Mindset Scale</li>
+<li>Protogerou &amp; Hagger (2020) -- Survey Quality Checklist</li>
+<li>Lee et al. (2017) -- SCASIM-St</li>
+<li>Osman &amp; Warner (2020) -- Teacher Motivation</li>
+</ol>
+</li>
+<li><strong>Also not in Zotero (on disk):</strong> MSLQ manual, AEQ manual, TSIA 2.0 docs</li>
+<li><strong>Cohen (2021) status:</strong> AVAILABLE. PDF is in Zotero as standalone attachment (key: J5KRJ2RS). Filename: <code>Psychological_Testing_and_Assessment_----_(8_Test_Development).pdf</code>. Ready for Reading Reflection 4 due 2026-03-23.</li>
+<li><strong>Note:</strong> All 3 new items are standalone attachments without parent bibliographic records. Low-priority cleanup: create parent items in Zotero and add metadata.</li>
+</ul>
+<h3>Entry 2: Cronbach's Alpha Discussion</h3>
+<ul>
+<li><strong>Timestamp:</strong> 2026-03-22</li>
+<li><strong>Concept discussed:</strong> Cronbach's alpha — what it measures and its role in the analysis pipeline</li>
+<li><strong>Jason's initial understanding:</strong> Alpha measures how related survey items are; useful for establishing reliability and for identifying problematic correlations before regression</li>
+<li><strong>Correction/reinforcement:</strong> Core understanding confirmed. Corrected terminology (autocorrelation → multicollinearity). Reinforced that alpha is a lower-bound estimate and is sensitive to number of items. Connected alpha to the broader pipeline: alpha → composite scores → VIF for multicollinearity in regression models.</li>
+<li><strong>Key learning moment:</strong> Jason correctly intuited that high inter-item correlation (signaled by alpha) would cause problems in regression if items were entered individually. The standard practice resolves this upstream by creating composite scores — which is exactly what the SPSS handout builds toward. The pipeline is one workflow, not disconnected steps.</li>
+<li><strong>Jason's question about alpha and regression:</strong> &quot;I was supposing that [alpha] would be a good signal of assumption-breaking correlations prior to running a logistic regression.&quot; — This shows strong conceptual reasoning across methods. The instinct is right; the standard tool mapping is alpha for scale building, VIF for regression diagnostics.</li>
+</ul>
+<h3>Entry 3: SPSS Assignment 1 — Complete Draft</h3>
+<ul>
+<li><strong>Timestamp:</strong> 2026-03-22</li>
+<li><strong>Work produced:</strong> Jupyter notebook at <code>~/Documents/CI 7303/SPSS_Assignment_1_OBrien_Jason.ipynb</code></li>
+<li><strong>Analysis steps completed:</strong>
+<ol>
+<li>Data import and overview (384 obs, 19 vars, two item sets + outcomes)</li>
+<li>Descriptive statistics (means, SDs, frequencies for all items)</li>
+<li>Missing data analysis (4 variables with missingness, 1.3%–7.8%, random pattern)</li>
+<li>Non-plausible value detection (sect18_2=9, sft71_2=0 — both impossible on 1–5 scale)</li>
+<li>Data cleaning (recoded impossible values to NaN with documentation)</li>
+<li>Reliability analysis — SECT: α=.856 (good), SFT: α=.663 (below .70 threshold)</li>
+<li>Alpha-if-item-deleted analysis (no weak items in either scale)</li>
+<li>Scale score creation (mean scores for both scales)</li>
+<li>Final verification (missing data and outlier check on composites)</li>
+</ol>
+</li>
+<li><strong>Key discussion — non-plausible values vs. outliers:</strong>
+<ul>
+<li>Jason asked about best practices for handling impossible values</li>
+<li>Distinction established: impossible values (9 on 1–5 scale) are data entry errors → recode to missing. Outliers (extreme but valid) are judgment calls.</li>
+<li>Jason noted his B3 context (N=10K+) usually just excludes outliers; psychometrics with smaller N requires documenting <em>why</em> each value is removed</li>
+<li>Professional consensus: do not impute impossible values — there is no &quot;true score&quot; to recover</li>
+</ul>
+</li>
+<li><strong>Key discussion — alpha and regression (Entry 2):</strong>
+<ul>
+<li>Jason connected alpha to multicollinearity detection — correct intuition, different standard tools</li>
+<li>Pipeline: alpha → composite → VIF at the regression stage</li>
+</ul>
+</li>
+<li><strong>Status:</strong> Draft complete, awaiting Jason's review</li>
+</ul>
+<h3>Entry 4: SPSS 1 Interpretive Review — Confirm/Reinforce Cycle</h3>
+<ul>
+<li><strong>Timestamp:</strong> 2026-03-22</li>
+<li><strong>What happened:</strong> Walked through 5 interpretive decisions from the SPSS assignment, checking Jason's understanding before finalizing</li>
+<li><strong>Format:</strong> Output + question posted to Obsidian (<code>for_jason/spss1-review-on-phone.md</code>) so Jason could review on mobile</li>
+</ul>
+<p><strong>Decision-by-decision results:</strong></p>
+<ol>
+<li><strong>Non-plausible values:</strong> Jason would catch them; honestly noted he might not always check the codebook. Understanding confirmed.</li>
+<li><strong>Missing data:</strong> Strong practical instinct from data custodian experience — &quot;missing data signals a bigger problem.&quot; Didn't have MCAR/MAR/MNAR vocabulary but had the right heuristic. Vocabulary added; connected MNAR to B3 attrition risk.</li>
+<li><strong>Alpha-if-deleted:</strong> Correct — each item's contribution to the outcome. Confirmed.</li>
+<li><strong>SFT α = .663:</strong> &quot;Scale works, not super sensitive, other things at play&quot; — connected to earlier item count discussion. Confirmed.</li>
+<li><strong>Mean vs. sum:</strong> Partially correct (inflation point). Added: mean stays on the original metric (interpretable), handles missing data better. Understanding reinforced.</li>
+</ol>
+<ul>
+<li><strong>Overall assessment:</strong> Jason's statistical intuition is strong and practice-informed. Formal vocabulary is the main gap, not conceptual understanding. The confirm→reinforce cycle added real value — MCAR/MAR/MNAR distinction and the MNAR→B3 attrition connection were genuine learning moments.</li>
+<li><strong>Meta-note:</strong> I initially skipped this step and wrote all interpretations without checking. Jason caught it and correctly pushed back. The Socratic cycle works when actually followed.</li>
+</ul>
+<h3>Entry 5: SPSS 1 Review — Jason's Inline Comments</h3>
+<ul>
+<li><strong>Timestamp:</strong> 2026-03-22</li>
+<li><strong>What happened:</strong> Jason left %%comments%% on the SPSS interpretive review note, responding to each of the 5 decisions.</li>
+<li><strong>Results:</strong>
+<ul>
+<li>Decision 1 (non-plausible values): Confirmed. &quot;yep&quot;</li>
+<li>Decision 2 (missing data): <strong>Correction needed.</strong> Jason had MCAR/MAR/MNAR ordering backwards, thinking MAR was the bigger problem. Corrected: MCAR is harmless, MAR is manageable, MNAR is the dangerous one. Connected MNAR to B3 attrition risk.</li>
+<li>Decision 3 (SECT alpha-if-deleted): Confirmed. &quot;it shows the items work better together&quot;</li>
+<li>Decision 4 (SFT α=.663): Strong answer. Would ask for diagnostic data, check for problems, attribute to item count if none found.</li>
+<li>Decision 5 (mean vs. sum): Confirmed. &quot;mean is interpretable with the scale key&quot;</li>
+</ul>
+</li>
+<li><strong>Learning moment:</strong> MNAR is the key concept. Jason's B3 program has students who disengage and stop completing scales, which is textbook MNAR. This is a methodological concern for his dissertation.</li>
+</ul>
+<h3>Entry 6: Reading Reflection 4 — Style Feedback and v2</h3>
+<ul>
+<li><strong>Timestamp:</strong> 2026-03-22</li>
+<li><strong>What happened:</strong> Jason left extensive inline comments on the v1 draft identifying systemic style problems.</li>
+<li><strong>Key style corrections:</strong>
+<ul>
+<li>No em dashes, ever. Any sentence needing one should be rewritten.</li>
+<li>No blog voice. &quot;Sounds obvious until you realize&quot; is clickbait construction.</li>
+<li>Declarative statements about interpretive things are sales writing. Reframe as interpretation.</li>
+<li>McCarthy/Vonnegut punctuation style. Short declarative sentences. No ornament.</li>
+<li>Target: between NYT and Science. Not blog, not wire.</li>
+<li>&quot;We communicate, we don't sell, ever, and we don't gain anything from reaching for parasocial connections.&quot;</li>
+</ul>
+</li>
+<li><strong>Action taken:</strong> Complete rewrite (v2). All em dashes eliminated. Opening rewritten for reporting tone. Empty rhetoric replaced with substantive statements.</li>
+<li><strong>v2 status:</strong> No comments on v2. Approved.</li>
+</ul>
+<h3>Entry 7: Transparency Infrastructure</h3>
+<ul>
+<li><strong>Timestamp:</strong> 2026-03-22</li>
+<li><strong>Action:</strong> Created transparency archive at ~/Documents/CI 7303/ai-experiment-archive/</li>
+<li><strong>Contents:</strong> Export script, session snapshot (experiment log, both drafts, notebook, chapter summaries, file versions)</li>
+<li><strong>AI disclosure updated</strong> to reflect: Jason skimmed readings, iterative feedback cycle documented, full chat transcript and version history referenced</li>
+<li><strong>Jason's request:</strong> Full chat log and all document versions included with submission for complete transparency</li>
+<li><strong>Git:</strong> All materials committed with co-author attribution</li>
+</ul>
+<h3>Entry 8: /coursework Skill Created</h3>
+<ul>
+<li><strong>Timestamp:</strong> 2026-03-22 (late evening)</li>
+<li><strong>Action:</strong> Codified the entire session workflow into an invocable <code>/coursework</code> skill</li>
+<li><strong>Design decisions:</strong>
+<ul>
+<li>Approach C selected: single directory skill + existing memory-based wrap-up protocol</li>
+<li>Course configs inside skill directory (self-contained, no hunting across filesystem)</li>
+<li>Experiment log stays in Obsidian (mobile access for review-on-phone workflow)</li>
+<li>Skill absorbs reusable workflow; course configs hold specifics</li>
+</ul>
+</li>
+<li><strong>Files created:</strong>
+<ul>
+<li><code>~/.claude/skills/coursework/SKILL.md</code> — main workflow (Socratic cycle, session flow)</li>
+<li><code>~/.claude/skills/coursework/courses/ci-7303.md</code> — psychometrics course config</li>
+<li><code>~/.claude/skills/coursework/courses/ci-7354.md</code> — qualitative course config</li>
+<li><code>~/.claude/skills/coursework/templates/experiment-log-entry.md</code> — structured log template</li>
+<li><code>~/.claude/skills/coursework/templates/ai-disclosure.md</code> — reusable disclosure block</li>
+</ul>
+</li>
+<li><strong>Key insight:</strong> Claude Code hooks are event-driven (Stop, PreToolCall), not keyword-driven. The existing memory-based &quot;wrap up&quot; protocol is the right mechanism for session close. No settings.json hook needed.</li>
+<li><strong>Learning moment:</strong> The session prompt was a prototype. The skill is the production version. Adding a new course means dropping one config file.</li>
+</ul>
+<h3>Session 1 Close</h3>
+<ul>
+<li><strong>Submissions delivered:</strong> SPSS Assignment 1 (.ipynb) and Reading Reflection 4 (.odt) to <code>~/google-drive/for_jason/ci7303-session-2026-03-22/</code></li>
+<li><strong>Pending:</strong> Jason eyeball review of SPSS notebook in the morning</li>
+<li><strong>Follow-up:</strong> 7 journal article DOIs in <code>~/Documents/CI 7303/readings-inbox.md</code> for Zotero batch import</li>
+<li><strong>Memories saved this session:</strong> <code>feedback_ai_coursework_stance.md</code>, <code>feedback_dont_assume_stats_competence.md</code>, <code>feedback_writing_style.md</code> (major update)</li>
+</ul>
+
+    </article>
+
+    <h2>Session Artifacts</h2>
+<div class="artifact-grid">
+            <a class="artifact-card" href="SPSS_Assignment_1_OBrien_Jason.html">
+              <div class="artifact-type">Jupyter Notebook</div>
+              <div class="artifact-name">SPSS Assignment 1</div>
+              <div class="artifact-desc">Full analysis notebook with code and output</div>
+            </a>
+            <a class="artifact-card" href="https://github.com/3v3rything15fine/this15fine.dev/blob/main/public/learning/2026-03-22/reading-reflection-4-draft.md" target="_blank" rel="noopener">
+              <div class="artifact-type">document</div>
+              <div class="artifact-name">Reading Reflection 4 Draft</div>
+              <div class="artifact-desc">View on GitHub</div>
+            </a>
+            <a class="artifact-card" href="https://github.com/3v3rything15fine/this15fine.dev/blob/main/public/learning/2026-03-22/spss1-review-on-phone.md" target="_blank" rel="noopener">
+              <div class="artifact-type">document</div>
+              <div class="artifact-name">Spss1 Review On Phone</div>
+              <div class="artifact-desc">View on GitHub</div>
+            </a>
+            <a class="artifact-card" href="https://github.com/3v3rything15fine/this15fine.dev/blob/main/public/learning/2026-03-22/reading-reflection-4-chapter-summaries.md" target="_blank" rel="noopener">
+              <div class="artifact-type">document</div>
+              <div class="artifact-name">Reading Reflection 4 Chapter Summaries</div>
+              <div class="artifact-desc">View on GitHub</div>
+            </a></div>
+
+    <footer class="footer">
+      <p><a href="/">this15fine.dev</a> &middot; <a href="/learning/">learning</a></p>
+      <p style="margin-top: 8px; font-size: 11px;">AI Disclosure: This content was composed with AI assistance.
+      Content has been reviewed for accuracy and FERPA compliance.</p>
+    </footer>
+    
+</div>
+</body>
+</html>

@@ -1,0 +1,2051 @@
+{
+  "clusterId": 0,
+  "label": "Student Success & Resilience",
+  "color": "#88C0D0",
+  "nodes": [
+    {
+      "id": "260313-1on1-tina",
+      "label": "1:1 with Tina -- First Two Weeks Check-In",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 2,
+      "position": {
+        "x": 396.0,
+        "y": 282.3
+      },
+      "connections": [
+        "bobcats-bounce-back-notes",
+        "retention-theory"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "advising-as-education",
+      "label": "advising-as-education",
+      "type": "inquiry",
+      "cluster": 0,
+      "centrality": 0.104104,
+      "degree": 19,
+      "position": {
+        "x": 420.3,
+        "y": 211.4
+      },
+      "connections": [
+        "vault-graph-analysis",
+        "lowenstein2020",
+        "gillespie2003",
+        "museus2010",
+        "dewey1916",
+        "freire2017",
+        "hooks1994",
+        "hooks2010",
+        "montessori2017",
+        "sayers1947"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing",
+        "Systems Thinking & Epistemic Justice"
+      ]
+    },
+    {
+      "id": "appreciative-inquiry",
+      "label": "Appreciative Inquiry",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.007497,
+      "degree": 7,
+      "position": {
+        "x": 381.0,
+        "y": 450.7
+      },
+      "connections": [
+        "deficit-models",
+        "systems-thinking",
+        "oced-5360e-overview",
+        "deficit-labeling-and-institutional-framing",
+        "home",
+        "systems-thinking-and-epistemic-justice",
+        "theoretical-framework-map"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "barouch-gilbert2015",
+      "label": "Academic deficiency: Student experiences of institutional labeling",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.001258,
+      "degree": 2,
+      "position": {
+        "x": 77.3,
+        "y": 389.0
+      },
+      "connections": [
+        "deficit-labeling-and-institutional-framing",
+        "post-failure-academic-recovery"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "beebe2021",
+      "label": "Systems thinking in socially engaged design settings",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 162.2,
+        "y": 638.2
+      },
+      "connections": [
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "bobcats-bounce-back-notes",
+      "label": "Bobcats Bounce Back -- Program Overview & DOS Presentation Notes",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.071381,
+      "degree": 25,
+      "position": {
+        "x": 406.9,
+        "y": 355.5
+      },
+      "connections": [
+        "260313-1on1-tina",
+        "retention-theory",
+        "sxsw-edu-2026",
+        "irb-application-guide",
+        "260313-1on1-jeanette",
+        "advising-as-education",
+        "b3-cds-cma-study",
+        "b3-research-hub",
+        "basic-needs-insecurity",
+        "scarcity-theory"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing",
+        "Systems Thinking & Epistemic Justice",
+        "Coursework"
+      ]
+    },
+    {
+      "id": "bronfenbrenner1979",
+      "label": "The ecology of human development: Experiments by nature and design",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 139.2,
+        "y": 606.1
+      },
+      "connections": [
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "ci-7302-overview",
+      "label": "CI 7302 - Introduction to Research",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 2,
+      "position": {
+        "x": 664.9,
+        "y": 495.6
+      },
+      "connections": [
+        "home",
+        "theoretical-framework-map"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "ci-7351-overview",
+      "label": "CI 7351 - Introduction to Quantitative Methods",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 676.7,
+        "y": 439.0
+      },
+      "connections": [
+        "home"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "ci-7352-overview",
+      "label": "CI 7352 - Introduction to Qualitative Methods",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 686.4,
+        "y": 364.5
+      },
+      "connections": [
+        "home"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "ci-7353-overview",
+      "label": "CI 7353 - Intermediate Quantitative Methods",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 2,
+      "position": {
+        "x": 700.1,
+        "y": 402.2
+      },
+      "connections": [
+        "home",
+        "theoretical-framework-map"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "conflict-management-training-260108",
+      "label": "Conflict Management Course Review",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 625.4,
+        "y": 192.7
+      },
+      "connections": [
+        "drama-triangle"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "cte-5303-overview",
+      "label": "CTE 5303: Career and Technical Education",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.010101,
+      "degree": 3,
+      "position": {
+        "x": 762.4,
+        "y": 347.9
+      },
+      "connections": [
+        "cte-5303-retention-community-effort",
+        "deficit-models",
+        "home"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "cte-5303-retention-community-effort",
+      "label": "Retention Should Be a Community Effort",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 893.8,
+        "y": 288.8
+      },
+      "connections": [
+        "cte-5303-overview"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "deficit-labeling-and-institutional-framing",
+      "label": "deficit-labeling-and-institutional-framing",
+      "type": "inquiry",
+      "cluster": 0,
+      "centrality": 0.0854,
+      "degree": 21,
+      "position": {
+        "x": 228.6,
+        "y": 356.0
+      },
+      "connections": [
+        "barouch-gilbert2015",
+        "smit2012",
+        "howard2024",
+        "garcia2025",
+        "yosso2005",
+        "hallett2023",
+        "leon2019",
+        "rendón1998",
+        "higbee2005",
+        "hernandez2024"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Systems Thinking & Epistemic Justice"
+      ]
+    },
+    {
+      "id": "dewey1916",
+      "label": "Democracy and education: An introduction to the philosophy of education",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 416.4,
+        "y": 112.2
+      },
+      "connections": [
+        "advising-as-education"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "drama-triangle",
+      "label": "Karpman Drama Triangle",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.012941,
+      "degree": 5,
+      "position": {
+        "x": 526.7,
+        "y": 288.2
+      },
+      "connections": [
+        "advising-as-education",
+        "conflict-management-training-260108",
+        "retention-theory",
+        "bobcats-bounce-back-notes",
+        "home"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "elevate-student-success-260223",
+      "label": "Elevate Student Success Event Notes",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.000484,
+      "degree": 5,
+      "position": {
+        "x": 337.3,
+        "y": 305.9
+      },
+      "connections": [
+        "bobcats-bounce-back-notes",
+        "retention-theory",
+        "peer-mentoring",
+        "sxsw-edu-2026",
+        "individual-vs-aggregate-measurement"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "epistemic-injustice",
+      "label": "Epistemic Injustice",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.02612,
+      "degree": 12,
+      "position": {
+        "x": 414.1,
+        "y": 485.1
+      },
+      "connections": [
+        "deficit-labeling-and-institutional-framing",
+        "discourse-analysis",
+        "financial-literacy",
+        "deficit-models",
+        "systems-thinking",
+        "phil-5301-overview",
+        "phil-5360c-overview",
+        "home",
+        "mais-degree-synthesis",
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing",
+        "Systems Thinking & Epistemic Justice",
+        "Coursework"
+      ]
+    },
+    {
+      "id": "esposito2024",
+      "label": "Discourse, intersectionality, critique",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 195.3,
+        "y": 603.0
+      },
+      "connections": [
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "filesystem-log",
+      "label": "filesystem-log",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.003333,
+      "degree": 3,
+      "position": {
+        "x": 740.8,
+        "y": 503.0
+      },
+      "connections": [
+        "workflow-registry-plan",
+        "home",
+        "system-registry"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "freire2017",
+      "label": "Pedagogy of the oppressed",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 321.5,
+        "y": 131.4
+      },
+      "connections": [
+        "advising-as-education"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "fricker2007",
+      "label": "Epistemic injustice: Power and the ethics of knowing",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 234.6,
+        "y": 674.8
+      },
+      "connections": [
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "garcia2020",
+      "label": "Connecting research, practice, and policy to define 'servingness' at Hispanic Serving Institutions",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 280.5,
+        "y": 677.2
+      },
+      "connections": [
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "garcia2025",
+      "label": "Historical deficit racial framing of LatinX student academic achievement and success",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 118.3,
+        "y": 346.0
+      },
+      "connections": [
+        "deficit-labeling-and-institutional-framing"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "gillespie2003",
+      "label": "History of academic advising",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 369.4,
+        "y": 105.3
+      },
+      "connections": [
+        "advising-as-education"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "goldman2011",
+      "label": "Social epistemology: Essential readings",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 174.5,
+        "y": 563.8
+      },
+      "connections": [
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "hallett2023",
+      "label": "A culture of ecological validation that supports at-promise student success",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 139.6,
+        "y": 240.2
+      },
+      "connections": [
+        "deficit-labeling-and-institutional-framing"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "helfgott2018",
+      "label": "Operationalising systemic resilience",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 194.8,
+        "y": 661.0
+      },
+      "connections": [
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "hernandez2024",
+      "label": "An anti-deficit investigation of resilience among university students with adverse experiences",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.001258,
+      "degree": 2,
+      "position": {
+        "x": 81.1,
+        "y": 289.4
+      },
+      "connections": [
+        "deficit-labeling-and-institutional-framing",
+        "post-failure-academic-recovery"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "higbee2005",
+      "label": "The General College Model",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.00089,
+      "degree": 2,
+      "position": {
+        "x": 115.6,
+        "y": 403.1
+      },
+      "connections": [
+        "deficit-labeling-and-institutional-framing",
+        "emergency-aid-and-holistic-support"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "home",
+      "label": "Knowledge Base Home",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.27451,
+      "degree": 59,
+      "position": {
+        "x": 575.0,
+        "y": 441.6
+      },
+      "connections": [
+        "vault-graph-analysis",
+        "theoretical-framework-map",
+        "lit-review-matrix",
+        "reading-dashboard",
+        "search-log",
+        "citations-to-import",
+        "academic-resilience",
+        "appreciative-inquiry",
+        "basic-needs-insecurity",
+        "deficit-models"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing",
+        "Systems Thinking & Epistemic Justice",
+        "Coursework"
+      ]
+    },
+    {
+      "id": "hooks1994",
+      "label": "Teaching to transgress: Education as the practice of freedom",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 453.8,
+        "y": 91.3
+      },
+      "connections": [
+        "advising-as-education"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "hooks2010",
+      "label": "Teaching critical thinking: Practical wisdom",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 378.1,
+        "y": 64.7
+      },
+      "connections": [
+        "advising-as-education"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "howard2024",
+      "label": "Deficit to asset thinking: An exploration of incorporating community cultural wealth on preservice teachers' mindsets",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 102.1,
+        "y": 258.7
+      },
+      "connections": [
+        "deficit-labeling-and-institutional-framing"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "irb-application-guide",
+      "label": "IRB Application Guide -- B3 Field Note CDA Study",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 1.5e-05,
+      "degree": 4,
+      "position": {
+        "x": 492.4,
+        "y": 361.0
+      },
+      "connections": [
+        "bobcats-bounce-back-notes",
+        "home",
+        "retention-theory",
+        "financial-self-efficacy"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "leon2019",
+      "label": "Claiming their education",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 74.3,
+        "y": 322.0
+      },
+      "connections": [
+        "deficit-labeling-and-institutional-framing"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "lowenstein2020",
+      "label": "If advising is teaching, what do advisors teach?",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 485.3,
+        "y": 72.5
+      },
+      "connections": [
+        "advising-as-education"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "mais-degree-synthesis",
+      "label": "MAIS Degree Synthesis",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.010708,
+      "degree": 5,
+      "position": {
+        "x": 377.9,
+        "y": 396.3
+      },
+      "connections": [
+        "advising-as-education",
+        "deficit-labeling-and-institutional-framing",
+        "home",
+        "epistemic-injustice",
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "meadows2008",
+      "label": "Thinking in systems: A primer",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 234.7,
+        "y": 628.7
+      },
+      "connections": [
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "montessori2017",
+      "label": "The discovery of the child",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 424.4,
+        "y": 60.0
+      },
+      "connections": [
+        "advising-as-education"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "museus2010",
+      "label": "Characteristics of academic advising that contribute to racial and ethnic minority student success at predominantly White institutions",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 499.1,
+        "y": 132.2
+      },
+      "connections": [
+        "advising-as-education"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "nguyen2020",
+      "label": "Echo chambers and epistemic bubbles",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 151.5,
+        "y": 526.6
+      },
+      "connections": [
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "noble2018",
+      "label": "Algorithms of oppression: How search engines reinforce racism",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 125.7,
+        "y": 566.9
+      },
+      "connections": [
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "noddings2013",
+      "label": "Caring: A relational approach to ethics and moral education",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 521.6,
+        "y": 102.7
+      },
+      "connections": [
+        "advising-as-education"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "oced-5300-5302-overview",
+      "label": "OCED 5300/5301/5302: Applied Interdisciplinary Research Sequence",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 668.0,
+        "y": 541.5
+      },
+      "connections": [
+        "home"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "oced-5360d-overview",
+      "label": "OCED 5360D: Leadership",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 2,
+      "position": {
+        "x": 649.6,
+        "y": 346.7
+      },
+      "connections": [
+        "home",
+        "systems-thinking"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "oced-5360e-overview",
+      "label": "OCED 5360E: Organizational Development",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 3,
+      "position": {
+        "x": 490.4,
+        "y": 482.7
+      },
+      "connections": [
+        "appreciative-inquiry",
+        "deficit-models",
+        "home"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "oced-5361-dialogue-intergenerational",
+      "label": "Out of the Shadows: Dialogue for Improving Intergenerational Conversations",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 940.0,
+        "y": 403.0
+      },
+      "connections": [
+        "oced-5361-overview"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "oced-5361-overview",
+      "label": "OCED 5361: Human Systems in the Workplace",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.010101,
+      "degree": 2,
+      "position": {
+        "x": 791.2,
+        "y": 413.6
+      },
+      "connections": [
+        "home",
+        "oced-5361-dialogue-intergenerational"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "phil-5301-algorithmic-epistemic-injustice",
+      "label": "Algorithmic Influences on Epistemic Injustice",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 600.4,
+        "y": 740.0
+      },
+      "connections": [
+        "phil-5301-overview"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "phil-5301-overview",
+      "label": "PHIL 5301: Applied Philosophy",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.020151,
+      "degree": 4,
+      "position": {
+        "x": 560.6,
+        "y": 605.8
+      },
+      "connections": [
+        "epistemic-injustice",
+        "home",
+        "phil-5301-algorithmic-epistemic-injustice",
+        "phil-5301-systems-multiple-signals"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "phil-5301-systems-multiple-signals",
+      "label": "A Systems-Informed Lens on Multiple Signals",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 645.8,
+        "y": 718.3
+      },
+      "connections": [
+        "phil-5301-overview"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "phil-5322-advising-ethics",
+      "label": "Professional Ethics in Academic Advising",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 443.7,
+        "y": 630.6
+      },
+      "connections": [
+        "phil-5322-overview"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "phil-5322-overview",
+      "label": "PHIL 5322: Professional Ethics",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.031586,
+      "degree": 7,
+      "position": {
+        "x": 424.8,
+        "y": 505.4
+      },
+      "connections": [
+        "vault-graph-analysis",
+        "home",
+        "phil-5322-professional-adversary",
+        "phil-5322-advising-ethics",
+        "theoretical-framework-map",
+        "post-failure-academic-recovery",
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "phil-5322-professional-adversary",
+      "label": "Sometimes the Professional Must Be the Adversary",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 400.0,
+        "y": 622.6
+      },
+      "connections": [
+        "phil-5322-overview"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "phil-5351-final-paper",
+      "label": "A Philosophy of Academic Advising as Education",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 864.6,
+        "y": 642.7
+      },
+      "connections": [
+        "phil-5351-overview"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "phil-5351-overview",
+      "label": "PHIL 5351: Philosophy of Education",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.010101,
+      "degree": 3,
+      "position": {
+        "x": 743.7,
+        "y": 565.2
+      },
+      "connections": [
+        "home",
+        "phil-5351-final-paper",
+        "systems-thinking"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "phil-5360c-counter-recruitment",
+      "label": "Counter-recruitment in the 2020s: E-sports and Instagram Clout",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 544.4,
+        "y": 697.0
+      },
+      "connections": [
+        "phil-5360c-overview"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "phil-5360c-overview",
+      "label": "PHIL 5360C: Nonviolence",
+      "type": "course",
+      "cluster": 0,
+      "centrality": 0.010101,
+      "degree": 3,
+      "position": {
+        "x": 520.7,
+        "y": 568.2
+      },
+      "connections": [
+        "epistemic-injustice",
+        "home",
+        "phil-5360c-counter-recruitment"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "r_cheatsheet",
+      "label": "R Reference Cheatsheet",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 624.3,
+        "y": 543.1
+      },
+      "connections": [
+        "home"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "reading-dashboard",
+      "label": "Reading Dashboard",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.00023,
+      "degree": 2,
+      "position": {
+        "x": 531.7,
+        "y": 382.6
+      },
+      "connections": [
+        "home",
+        "vault-graph-analysis"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "rendón1998",
+      "label": "Helping nontraditional students be successful in college",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 179.7,
+        "y": 250.9
+      },
+      "connections": [
+        "deficit-labeling-and-institutional-framing"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "sayers1947",
+      "label": "The lost tools of learning",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 329.1,
+        "y": 90.4
+      },
+      "connections": [
+        "advising-as-education"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "search-log",
+      "label": "Search Log",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.00023,
+      "degree": 2,
+      "position": {
+        "x": 508.7,
+        "y": 422.7
+      },
+      "connections": [
+        "home",
+        "vault-graph-analysis"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "smit2012",
+      "label": "Towards a clearer understanding of student disadvantage in higher education: Problematising deficit thinking",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 60.0,
+        "y": 354.5
+      },
+      "connections": [
+        "deficit-labeling-and-institutional-framing"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "stroh2015",
+      "label": "Systems thinking for social change",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 288.1,
+        "y": 640.5
+      },
+      "connections": [
+        "systems-thinking-and-epistemic-justice"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "sxsw-edu-2026",
+      "label": "SXSW EDU 2026 Conference Notes",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.015259,
+      "degree": 12,
+      "position": {
+        "x": 384.9,
+        "y": 368.2
+      },
+      "connections": [
+        "financial-self-efficacy",
+        "retention-theory",
+        "bobcats-bounce-back-notes",
+        "basic-needs-insecurity",
+        "deficit-labeling-and-institutional-framing",
+        "elevate-student-success-260223",
+        "enrollment-patterns-as-adaptation",
+        "home",
+        "individual-vs-aggregate-measurement",
+        "naspa-2026-enrollment-intensity"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing",
+        "Advising as Education & Critical Pedagogy"
+      ]
+    },
+    {
+      "id": "system-registry",
+      "label": "system-registry",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.00335,
+      "degree": 6,
+      "position": {
+        "x": 752.8,
+        "y": 462.7
+      },
+      "connections": [
+        "workflow-registry-plan",
+        "home",
+        "filesystem-log",
+        "task-board",
+        "system-registry"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "systems-thinking-and-epistemic-justice",
+      "label": "systems-thinking-and-epistemic-justice",
+      "type": "inquiry",
+      "cluster": 0,
+      "centrality": 0.115484,
+      "degree": 21,
+      "position": {
+        "x": 284.6,
+        "y": 533.4
+      },
+      "connections": [
+        "vault-graph-analysis",
+        "phil-5322-overview",
+        "meadows2008",
+        "stroh2015",
+        "beebe2021",
+        "bronfenbrenner1979",
+        "helfgott2018",
+        "fricker2007",
+        "noble2018",
+        "nguyen2020"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Coursework"
+      ]
+    },
+    {
+      "id": "task-board",
+      "label": "task-board",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.003333,
+      "degree": 3,
+      "position": {
+        "x": 731.9,
+        "y": 477.5
+      },
+      "connections": [
+        "workflow-registry-plan",
+        "home",
+        "system-registry"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "vault-graph-analysis",
+      "label": "Vault Graph Analysis",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 0.014062,
+      "degree": 14,
+      "position": {
+        "x": 414.1,
+        "y": 392.7
+      },
+      "connections": [
+        "post-failure-academic-recovery",
+        "advising-as-education",
+        "theoretical-framework-map",
+        "phil-5322-overview",
+        "home",
+        "systems-thinking-and-epistemic-justice",
+        "deficit-models",
+        "enrollment-patterns-as-adaptation",
+        "engagement-causality-and-timing",
+        "deficit-labeling-and-institutional-framing"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing",
+        "Advising as Education & Critical Pedagogy"
+      ]
+    },
+    {
+      "id": "workflow-registry-plan",
+      "label": "workflow-registry-plan",
+      "type": "general",
+      "cluster": 0,
+      "centrality": 1.7e-05,
+      "degree": 3,
+      "position": {
+        "x": 831.7,
+        "y": 502.8
+      },
+      "connections": [
+        "system-registry",
+        "filesystem-log",
+        "task-board"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "yosso2005",
+      "label": "Whose culture has capital? A critical race theory discussion of community cultural wealth",
+      "type": "literature",
+      "cluster": 0,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 137.5,
+        "y": 294.5
+      },
+      "connections": [
+        "deficit-labeling-and-institutional-framing"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "ci-7302-overview",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "ci-7351-overview",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "barouch-gilbert2015",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "smit2012",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "howard2024",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "garcia2025",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "yosso2005",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "hallett2023",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "leon2019",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "rendón1998",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "higbee2005",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "hernandez2024",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "appreciative-inquiry",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "epistemic-injustice",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "bobcats-bounce-back-notes",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "mais-degree-synthesis",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "sxsw-edu-2026",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "vault-graph-analysis",
+      "weight": 1
+    },
+    {
+      "source": "esposito2024",
+      "target": "systems-thinking-and-epistemic-justice",
+      "weight": 1
+    },
+    {
+      "source": "phil-5322-overview",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "phil-5322-overview",
+      "target": "phil-5322-professional-adversary",
+      "weight": 1
+    },
+    {
+      "source": "phil-5322-overview",
+      "target": "phil-5322-advising-ethics",
+      "weight": 1
+    },
+    {
+      "source": "phil-5322-overview",
+      "target": "systems-thinking-and-epistemic-justice",
+      "weight": 1
+    },
+    {
+      "source": "phil-5322-overview",
+      "target": "vault-graph-analysis",
+      "weight": 3
+    },
+    {
+      "source": "meadows2008",
+      "target": "systems-thinking-and-epistemic-justice",
+      "weight": 1
+    },
+    {
+      "source": "oced-5361-overview",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "oced-5361-overview",
+      "target": "oced-5361-dialogue-intergenerational",
+      "weight": 1
+    },
+    {
+      "source": "cte-5303-overview",
+      "target": "cte-5303-retention-community-effort",
+      "weight": 1
+    },
+    {
+      "source": "cte-5303-overview",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "ci-7353-overview",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "oced-5300-5302-overview",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "260313-1on1-tina",
+      "target": "bobcats-bounce-back-notes",
+      "weight": 2
+    },
+    {
+      "source": "r_cheatsheet",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "filesystem-log",
+      "target": "workflow-registry-plan",
+      "weight": 1
+    },
+    {
+      "source": "filesystem-log",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "filesystem-log",
+      "target": "system-registry",
+      "weight": 1
+    },
+    {
+      "source": "search-log",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "search-log",
+      "target": "vault-graph-analysis",
+      "weight": 1
+    },
+    {
+      "source": "workflow-registry-plan",
+      "target": "system-registry",
+      "weight": 1
+    },
+    {
+      "source": "workflow-registry-plan",
+      "target": "task-board",
+      "weight": 1
+    },
+    {
+      "source": "epistemic-injustice",
+      "target": "phil-5301-overview",
+      "weight": 1
+    },
+    {
+      "source": "epistemic-injustice",
+      "target": "phil-5360c-overview",
+      "weight": 1
+    },
+    {
+      "source": "epistemic-injustice",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "epistemic-injustice",
+      "target": "mais-degree-synthesis",
+      "weight": 1
+    },
+    {
+      "source": "epistemic-injustice",
+      "target": "systems-thinking-and-epistemic-justice",
+      "weight": 1
+    },
+    {
+      "source": "irb-application-guide",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "irb-application-guide",
+      "target": "bobcats-bounce-back-notes",
+      "weight": 2
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "stroh2015",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "beebe2021",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "bronfenbrenner1979",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "helfgott2018",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "fricker2007",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "noble2018",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "nguyen2020",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "goldman2011",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "garcia2020",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "appreciative-inquiry",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "mais-degree-synthesis",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "bobcats-bounce-back-notes",
+      "weight": 1
+    },
+    {
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "vault-graph-analysis",
+      "weight": 2
+    },
+    {
+      "source": "freire2017",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "hooks2010",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "phil-5351-final-paper",
+      "target": "phil-5351-overview",
+      "weight": 1
+    },
+    {
+      "source": "phil-5360c-overview",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "phil-5360c-overview",
+      "target": "phil-5360c-counter-recruitment",
+      "weight": 1
+    },
+    {
+      "source": "elevate-student-success-260223",
+      "target": "bobcats-bounce-back-notes",
+      "weight": 1
+    },
+    {
+      "source": "elevate-student-success-260223",
+      "target": "sxsw-edu-2026",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "reading-dashboard",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "appreciative-inquiry",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "drama-triangle",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "mais-degree-synthesis",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "bobcats-bounce-back-notes",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "sxsw-edu-2026",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "system-registry",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "task-board",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "ci-7352-overview",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "phil-5301-overview",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "phil-5351-overview",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "oced-5360d-overview",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "oced-5360e-overview",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "vault-graph-analysis",
+      "weight": 2
+    },
+    {
+      "source": "drama-triangle",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "drama-triangle",
+      "target": "conflict-management-training-260108",
+      "weight": 1
+    },
+    {
+      "source": "drama-triangle",
+      "target": "bobcats-bounce-back-notes",
+      "weight": 1
+    },
+    {
+      "source": "montessori2017",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "phil-5301-systems-multiple-signals",
+      "target": "phil-5301-overview",
+      "weight": 1
+    },
+    {
+      "source": "sayers1947",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "noddings2013",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "system-registry",
+      "target": "task-board",
+      "weight": 1
+    },
+    {
+      "source": "system-registry",
+      "target": "system-registry",
+      "weight": 1
+    },
+    {
+      "source": "appreciative-inquiry",
+      "target": "oced-5360e-overview",
+      "weight": 1
+    },
+    {
+      "source": "lowenstein2020",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "phil-5301-algorithmic-epistemic-injustice",
+      "target": "phil-5301-overview",
+      "weight": 1
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
+      "target": "sxsw-edu-2026",
+      "weight": 2
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
+      "target": "vault-graph-analysis",
+      "weight": 1
+    },
+    {
+      "source": "gillespie2003",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "reading-dashboard",
+      "target": "vault-graph-analysis",
+      "weight": 1
+    },
+    {
+      "source": "vault-graph-analysis",
+      "target": "advising-as-education",
+      "weight": 3
+    },
+    {
+      "source": "museus2010",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "mais-degree-synthesis",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "dewey1916",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "hooks1994",
+      "target": "advising-as-education",
+      "weight": 1
+    }
+  ],
+  "stats": {
+    "nodeCount": 74,
+    "edgeCount": 103,
+    "density": 0.0381,
+    "bridgeNodes": [
+      "260313-1on1-tina",
+      "advising-as-education",
+      "appreciative-inquiry",
+      "barouch-gilbert2015",
+      "bobcats-bounce-back-notes",
+      "ci-7302-overview",
+      "ci-7353-overview",
+      "cte-5303-overview",
+      "deficit-labeling-and-institutional-framing",
+      "drama-triangle",
+      "elevate-student-success-260223",
+      "epistemic-injustice",
+      "hernandez2024",
+      "higbee2005",
+      "home",
+      "irb-application-guide",
+      "oced-5360d-overview",
+      "oced-5360e-overview",
+      "phil-5322-overview",
+      "phil-5351-overview",
+      "sxsw-edu-2026",
+      "systems-thinking-and-epistemic-justice",
+      "vault-graph-analysis"
+    ],
+    "gaps": [
+      {
+        "communityA": 0,
+        "communityB": 4,
+        "labelA": "Student Success & Resilience",
+        "labelB": "Advising as Education & Critical Pedagogy",
+        "crossEdges": 2,
+        "density": 0.001931
+      },
+      {
+        "communityA": 0,
+        "communityB": 3,
+        "labelA": "Student Success & Resilience",
+        "labelB": "Systems Thinking & Epistemic Justice",
+        "crossEdges": 9,
+        "density": 0.008108
+      },
+      {
+        "communityA": 0,
+        "communityB": 2,
+        "labelA": "Student Success & Resilience",
+        "labelB": "Post-Failure Recovery & Deficit Framing",
+        "crossEdges": 32,
+        "density": 0.010547
+      },
+      {
+        "communityA": 0,
+        "communityB": 5,
+        "labelA": "Student Success & Resilience",
+        "labelB": "Coursework",
+        "crossEdges": 5,
+        "density": 0.011261
+      },
+      {
+        "communityA": 0,
+        "communityB": 1,
+        "labelA": "Student Success & Resilience",
+        "labelB": "Financial Literacy & Scarcity",
+        "crossEdges": 54,
+        "density": 0.014892
+      }
+    ]
+  }
+}

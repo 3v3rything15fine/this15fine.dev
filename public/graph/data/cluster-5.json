@@ -1,0 +1,220 @@
+{
+  "clusterId": 5,
+  "label": "Coursework",
+  "color": "#D08770",
+  "nodes": [
+    {
+      "id": "bronfenbrenner-ecological-systems",
+      "label": "bronfenbrenner-ecological-systems",
+      "type": "general",
+      "cluster": 5,
+      "centrality": 0.015127,
+      "degree": 6,
+      "position": {
+        "x": 456.0,
+        "y": 278.0
+      },
+      "connections": [
+        "ci-7355-overview",
+        "de-7303-overview",
+        "final-paper",
+        "literature-review",
+        "systems-thinking-and-epistemic-justice",
+        "vault-audit-report"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Student Success & Resilience",
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "ci-7355-overview",
+      "label": "CI 7355 - Mixed Methods Research",
+      "type": "course",
+      "cluster": 5,
+      "centrality": 0.002915,
+      "degree": 3,
+      "position": {
+        "x": 228.7,
+        "y": 60.0
+      },
+      "connections": [
+        "bronfenbrenner-ecological-systems",
+        "home",
+        "theoretical-framework-map"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Student Success & Resilience",
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "citations-to-import",
+      "label": "Citations to Import to Zotero",
+      "type": "general",
+      "cluster": 5,
+      "centrality": 0.006385,
+      "degree": 2,
+      "position": {
+        "x": 940.0,
+        "y": 740.0
+      },
+      "connections": [
+        "home",
+        "literature-review"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Student Success & Resilience"
+      ]
+    },
+    {
+      "id": "final-paper",
+      "label": "Student Experiences of Institutional Labeling: A Sequential Explanatory Mixed-methods Study",
+      "type": "course",
+      "cluster": 5,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 60.0,
+        "y": 363.8
+      },
+      "connections": [
+        "bronfenbrenner-ecological-systems"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "literature-review",
+      "label": "An Ecological Framing for Academic Resilience Research",
+      "type": "course",
+      "cluster": 5,
+      "centrality": 0.000177,
+      "degree": 2,
+      "position": {
+        "x": 721.5,
+        "y": 531.9
+      },
+      "connections": [
+        "bronfenbrenner-ecological-systems",
+        "citations-to-import"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "vault-audit-report",
+      "label": "Vault Quality Audit",
+      "type": "general",
+      "cluster": 5,
+      "centrality": 0.012435,
+      "degree": 11,
+      "position": {
+        "x": 759.8,
+        "y": 104.2
+      },
+      "connections": [
+        "mullainathan2014",
+        "academic-resilience",
+        "bobcats-bounce-back-notes",
+        "bronfenbrenner-ecological-systems",
+        "adams2014",
+        "deficit-models",
+        "epistemic-injustice",
+        "price2017",
+        "self-authorship",
+        "self-determination-theory"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Student Success & Resilience",
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing",
+        "Systems Thinking & Epistemic Justice"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "literature-review",
+      "target": "bronfenbrenner-ecological-systems",
+      "weight": 1
+    },
+    {
+      "source": "literature-review",
+      "target": "citations-to-import",
+      "weight": 1
+    },
+    {
+      "source": "vault-audit-report",
+      "target": "bronfenbrenner-ecological-systems",
+      "weight": 1
+    },
+    {
+      "source": "ci-7355-overview",
+      "target": "bronfenbrenner-ecological-systems",
+      "weight": 1
+    },
+    {
+      "source": "final-paper",
+      "target": "bronfenbrenner-ecological-systems",
+      "weight": 1
+    }
+  ],
+  "stats": {
+    "nodeCount": 6,
+    "edgeCount": 5,
+    "density": 0.3333,
+    "bridgeNodes": [
+      "bronfenbrenner-ecological-systems",
+      "ci-7355-overview",
+      "citations-to-import",
+      "vault-audit-report"
+    ],
+    "gaps": [
+      {
+        "communityA": 4,
+        "communityB": 5,
+        "labelA": "Advising as Education & Critical Pedagogy",
+        "labelB": "Coursework",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
+        "communityA": 3,
+        "communityB": 5,
+        "labelA": "Systems Thinking & Epistemic Justice",
+        "labelB": "Coursework",
+        "crossEdges": 1,
+        "density": 0.011111
+      },
+      {
+        "communityA": 0,
+        "communityB": 5,
+        "labelA": "Student Success & Resilience",
+        "labelB": "Coursework",
+        "crossEdges": 5,
+        "density": 0.011261
+      },
+      {
+        "communityA": 2,
+        "communityB": 5,
+        "labelA": "Post-Failure Recovery & Deficit Framing",
+        "labelB": "Coursework",
+        "crossEdges": 4,
+        "density": 0.01626
+      },
+      {
+        "communityA": 1,
+        "communityB": 5,
+        "labelA": "Financial Literacy & Scarcity",
+        "labelB": "Coursework",
+        "crossEdges": 5,
+        "density": 0.017007
+      }
+    ]
+  }
+}

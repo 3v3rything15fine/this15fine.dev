@@ -4,15 +4,15 @@
   "color": "#88C0D0",
   "nodes": [
     {
-      "id": "260313-1on1-tina",
-      "label": "1:1 with Tina -- First Two Weeks Check-In",
+      "id": "field-note-2",
+      "label": "Field Note: First Two Weeks Check-In",
       "type": "general",
       "cluster": 0,
       "centrality": 0.0,
       "degree": 2,
       "position": {
-        "x": 396.0,
-        "y": 282.3
+        "x": 396.8,
+        "y": 535.1
       },
       "connections": [
         "bobcats-bounce-back-notes",
@@ -31,8 +31,8 @@
       "centrality": 0.104104,
       "degree": 19,
       "position": {
-        "x": 420.3,
-        "y": 211.4
+        "x": 311.8,
+        "y": 562.9
       },
       "connections": [
         "vault-graph-analysis",
@@ -61,8 +61,8 @@
       "centrality": 0.007497,
       "degree": 7,
       "position": {
-        "x": 381.0,
-        "y": 450.7
+        "x": 587.9,
+        "y": 456.0
       },
       "connections": [
         "deficit-models",
@@ -87,8 +87,8 @@
       "centrality": 0.001258,
       "degree": 2,
       "position": {
-        "x": 77.3,
-        "y": 389.0
+        "x": 579.4,
+        "y": 696.3
       },
       "connections": [
         "deficit-labeling-and-institutional-framing",
@@ -107,8 +107,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 162.2,
-        "y": 638.2
+        "x": 927.7,
+        "y": 432.0
       },
       "connections": [
         "systems-thinking-and-epistemic-justice"
@@ -124,15 +124,15 @@
       "centrality": 0.071381,
       "degree": 25,
       "position": {
-        "x": 406.9,
-        "y": 355.5
+        "x": 469.4,
+        "y": 491.5
       },
       "connections": [
-        "260313-1on1-tina",
+        "field-note-2",
         "retention-theory",
         "sxsw-edu-2026",
         "irb-application-guide",
-        "260313-1on1-jeanette",
+        "field-note-1",
         "advising-as-education",
         "b3-cds-cma-study",
         "b3-research-hub",
@@ -155,8 +155,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 139.2,
-        "y": 606.1
+        "x": 880.0,
+        "y": 489.6
       },
       "connections": [
         "systems-thinking-and-epistemic-justice"
@@ -172,8 +172,8 @@
       "centrality": 0.0,
       "degree": 2,
       "position": {
-        "x": 664.9,
-        "y": 495.6
+        "x": 373.7,
+        "y": 240.6
       },
       "connections": [
         "home",
@@ -192,8 +192,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 676.7,
-        "y": 439.0
+        "x": 335.4,
+        "y": 260.1
       },
       "connections": [
         "home"
@@ -209,8 +209,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 686.4,
-        "y": 364.5
+        "x": 284.2,
+        "y": 342.3
       },
       "connections": [
         "home"
@@ -226,8 +226,8 @@
       "centrality": 0.0,
       "degree": 2,
       "position": {
-        "x": 700.1,
-        "y": 402.2
+        "x": 287.7,
+        "y": 310.7
       },
       "connections": [
         "home",
@@ -246,8 +246,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 625.4,
-        "y": 192.7
+        "x": 145.9,
+        "y": 440.7
       },
       "connections": [
         "drama-triangle"
@@ -263,8 +263,8 @@
       "centrality": 0.010101,
       "degree": 3,
       "position": {
-        "x": 762.4,
-        "y": 347.9
+        "x": 213.0,
+        "y": 262.8
       },
       "connections": [
         "cte-5303-retention-community-effort",
@@ -284,8 +284,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 893.8,
-        "y": 288.8
+        "x": 60.0,
+        "y": 209.0
       },
       "connections": [
         "cte-5303-overview"
@@ -301,8 +301,8 @@
       "centrality": 0.0854,
       "degree": 21,
       "position": {
-        "x": 228.6,
-        "y": 356.0
+        "x": 597.5,
+        "y": 605.1
       },
       "connections": [
         "barouch-gilbert2015",
@@ -330,8 +330,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 416.4,
-        "y": 112.2
+        "x": 204.8,
+        "y": 676.8
       },
       "connections": [
         "advising-as-education"
@@ -347,8 +347,8 @@
       "centrality": 0.012941,
       "degree": 5,
       "position": {
-        "x": 526.7,
-        "y": 288.2
+        "x": 314.9,
+        "y": 451.8
       },
       "connections": [
         "advising-as-education",
@@ -370,8 +370,8 @@
       "centrality": 0.000484,
       "degree": 5,
       "position": {
-        "x": 337.3,
-        "y": 305.9
+        "x": 464.4,
+        "y": 562.2
       },
       "connections": [
         "bobcats-bounce-back-notes",
@@ -394,8 +394,8 @@
       "centrality": 0.02612,
       "degree": 12,
       "position": {
-        "x": 414.1,
-        "y": 485.1
+        "x": 599.8,
+        "y": 416.1
       },
       "connections": [
         "deficit-labeling-and-institutional-framing",
@@ -425,8 +425,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 195.3,
-        "y": 603.0
+        "x": 897.4,
+        "y": 400.4
       },
       "connections": [
         "systems-thinking-and-epistemic-justice"
@@ -442,8 +442,8 @@
       "centrality": 0.003333,
       "degree": 3,
       "position": {
-        "x": 740.8,
-        "y": 503.0
+        "x": 450.9,
+        "y": 204.4
       },
       "connections": [
         "workflow-registry-plan",
@@ -461,8 +461,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 321.5,
-        "y": 131.4
+        "x": 191.2,
+        "y": 601.6
       },
       "connections": [
         "advising-as-education"
@@ -478,8 +478,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 234.6,
-        "y": 674.8
+        "x": 940.0,
+        "y": 466.8
       },
       "connections": [
         "systems-thinking-and-epistemic-justice"
@@ -495,8 +495,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 280.5,
-        "y": 677.2
+        "x": 878.7,
+        "y": 451.2
       },
       "connections": [
         "systems-thinking-and-epistemic-justice"
@@ -512,8 +512,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 118.3,
-        "y": 346.0
+        "x": 680.0,
+        "y": 677.3
       },
       "connections": [
         "deficit-labeling-and-institutional-framing"
@@ -529,8 +529,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 369.4,
-        "y": 105.3
+        "x": 237.2,
+        "y": 641.1
       },
       "connections": [
         "advising-as-education"
@@ -546,8 +546,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 174.5,
-        "y": 563.8
+        "x": 884.0,
+        "y": 561.0
       },
       "connections": [
         "systems-thinking-and-epistemic-justice"
@@ -563,8 +563,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 139.6,
-        "y": 240.2
+        "x": 602.0,
+        "y": 740.0
       },
       "connections": [
         "deficit-labeling-and-institutional-framing"
@@ -580,8 +580,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 194.8,
-        "y": 661.0
+        "x": 853.6,
+        "y": 524.6
       },
       "connections": [
         "systems-thinking-and-epistemic-justice"
@@ -597,8 +597,8 @@
       "centrality": 0.001258,
       "degree": 2,
       "position": {
-        "x": 81.1,
-        "y": 289.4
+        "x": 636.3,
+        "y": 703.9
       },
       "connections": [
         "deficit-labeling-and-institutional-framing",
@@ -617,8 +617,8 @@
       "centrality": 0.00089,
       "degree": 2,
       "position": {
-        "x": 115.6,
-        "y": 403.1
+        "x": 517.2,
+        "y": 698.9
       },
       "connections": [
         "deficit-labeling-and-institutional-framing",
@@ -637,8 +637,8 @@
       "centrality": 0.27451,
       "degree": 59,
       "position": {
-        "x": 575.0,
-        "y": 441.6
+        "x": 440.7,
+        "y": 336.3
       },
       "connections": [
         "vault-graph-analysis",
@@ -668,8 +668,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 453.8,
-        "y": 91.3
+        "x": 131.8,
+        "y": 598.5
       },
       "connections": [
         "advising-as-education"
@@ -685,8 +685,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 378.1,
-        "y": 64.7
+        "x": 164.8,
+        "y": 547.4
       },
       "connections": [
         "advising-as-education"
@@ -702,8 +702,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 102.1,
-        "y": 258.7
+        "x": 740.1,
+        "y": 690.5
       },
       "connections": [
         "deficit-labeling-and-institutional-framing"
@@ -719,8 +719,8 @@
       "centrality": 1.5e-05,
       "degree": 4,
       "position": {
-        "x": 492.4,
-        "y": 361.0
+        "x": 413.9,
+        "y": 433.2
       },
       "connections": [
         "bobcats-bounce-back-notes",
@@ -742,8 +742,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 74.3,
-        "y": 322.0
+        "x": 732.8,
+        "y": 653.8
       },
       "connections": [
         "deficit-labeling-and-institutional-framing"
@@ -759,8 +759,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 485.3,
-        "y": 72.5
+        "x": 175.7,
+        "y": 651.0
       },
       "connections": [
         "advising-as-education"
@@ -776,8 +776,8 @@
       "centrality": 0.010708,
       "degree": 5,
       "position": {
-        "x": 377.9,
-        "y": 396.3
+        "x": 533.6,
+        "y": 488.3
       },
       "connections": [
         "advising-as-education",
@@ -797,8 +797,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 234.7,
-        "y": 628.7
+        "x": 937.6,
+        "y": 501.3
       },
       "connections": [
         "systems-thinking-and-epistemic-justice"
@@ -814,8 +814,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 424.4,
-        "y": 60.0
+        "x": 124.8,
+        "y": 565.4
       },
       "connections": [
         "advising-as-education"
@@ -831,8 +831,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 499.1,
-        "y": 132.2
+        "x": 255.2,
+        "y": 685.6
       },
       "connections": [
         "advising-as-education"
@@ -848,8 +848,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 151.5,
-        "y": 526.6
+        "x": 851.2,
+        "y": 411.2
       },
       "connections": [
         "systems-thinking-and-epistemic-justice"
@@ -865,8 +865,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 125.7,
-        "y": 566.9
+        "x": 916.1,
+        "y": 531.9
       },
       "connections": [
         "systems-thinking-and-epistemic-justice"
@@ -882,8 +882,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 521.6,
-        "y": 102.7
+        "x": 299.3,
+        "y": 670.0
       },
       "connections": [
         "advising-as-education"
@@ -899,8 +899,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 668.0,
-        "y": 541.5
+        "x": 302.1,
+        "y": 281.3
       },
       "connections": [
         "home"
@@ -916,8 +916,8 @@
       "centrality": 0.0,
       "degree": 2,
       "position": {
-        "x": 649.6,
-        "y": 346.7
+        "x": 427.8,
+        "y": 258.0
       },
       "connections": [
         "home",
@@ -936,8 +936,8 @@
       "centrality": 0.0,
       "degree": 3,
       "position": {
-        "x": 490.4,
-        "y": 482.7
+        "x": 543.4,
+        "y": 367.4
       },
       "connections": [
         "appreciative-inquiry",
@@ -957,8 +957,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 940.0,
-        "y": 403.0
+        "x": 279.7,
+        "y": 60.0
       },
       "connections": [
         "oced-5361-overview"
@@ -974,8 +974,8 @@
       "centrality": 0.010101,
       "degree": 2,
       "position": {
-        "x": 791.2,
-        "y": 413.6
+        "x": 340.9,
+        "y": 173.5
       },
       "connections": [
         "home",
@@ -992,8 +992,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 600.4,
-        "y": 740.0
+        "x": 680.0,
+        "y": 140.8
       },
       "connections": [
         "phil-5301-overview"
@@ -1009,8 +1009,8 @@
       "centrality": 0.020151,
       "degree": 4,
       "position": {
-        "x": 560.6,
-        "y": 605.8
+        "x": 621.9,
+        "y": 256.7
       },
       "connections": [
         "epistemic-injustice",
@@ -1029,8 +1029,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 645.8,
-        "y": 718.3
+        "x": 734.0,
+        "y": 158.7
       },
       "connections": [
         "phil-5301-overview"
@@ -1046,8 +1046,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 443.7,
-        "y": 630.6
+        "x": 753.5,
+        "y": 351.4
       },
       "connections": [
         "phil-5322-overview"
@@ -1063,8 +1063,8 @@
       "centrality": 0.031586,
       "degree": 7,
       "position": {
-        "x": 424.8,
-        "y": 505.4
+        "x": 613.5,
+        "y": 398.7
       },
       "connections": [
         "vault-graph-analysis",
@@ -1089,8 +1089,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 400.0,
-        "y": 622.6
+        "x": 730.9,
+        "y": 318.6
       },
       "connections": [
         "phil-5322-overview"
@@ -1106,8 +1106,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 864.6,
-        "y": 642.7
+        "x": 150.5,
+        "y": 119.8
       },
       "connections": [
         "phil-5351-overview"
@@ -1123,8 +1123,8 @@
       "centrality": 0.010101,
       "degree": 3,
       "position": {
-        "x": 743.7,
-        "y": 565.2
+        "x": 267.1,
+        "y": 209.2
       },
       "connections": [
         "home",
@@ -1144,8 +1144,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 544.4,
-        "y": 697.0
+        "x": 729.6,
+        "y": 218.7
       },
       "connections": [
         "phil-5360c-overview"
@@ -1161,8 +1161,8 @@
       "centrality": 0.010101,
       "degree": 3,
       "position": {
-        "x": 520.7,
-        "y": 568.2
+        "x": 611.1,
+        "y": 302.6
       },
       "connections": [
         "epistemic-injustice",
@@ -1180,8 +1180,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 624.3,
-        "y": 543.1
+        "x": 504.9,
+        "y": 248.1
       },
       "connections": [
         "home"
@@ -1197,8 +1197,8 @@
       "centrality": 0.00023,
       "degree": 2,
       "position": {
-        "x": 531.7,
-        "y": 382.6
+        "x": 468.8,
+        "y": 389.5
       },
       "connections": [
         "home",
@@ -1215,8 +1215,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 179.7,
-        "y": 250.9
+        "x": 703.7,
+        "y": 717.6
       },
       "connections": [
         "deficit-labeling-and-institutional-framing"
@@ -1232,8 +1232,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 329.1,
-        "y": 90.4
+        "x": 141.3,
+        "y": 630.8
       },
       "connections": [
         "advising-as-education"
@@ -1249,8 +1249,8 @@
       "centrality": 0.00023,
       "degree": 2,
       "position": {
-        "x": 508.7,
-        "y": 422.7
+        "x": 411.2,
+        "y": 395.9
       },
       "connections": [
         "home",
@@ -1267,8 +1267,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 60.0,
-        "y": 354.5
+        "x": 657.9,
+        "y": 736.9
       },
       "connections": [
         "deficit-labeling-and-institutional-framing"
@@ -1284,8 +1284,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 288.1,
-        "y": 640.5
+        "x": 826.6,
+        "y": 560.9
       },
       "connections": [
         "systems-thinking-and-epistemic-justice"
@@ -1301,8 +1301,8 @@
       "centrality": 0.015259,
       "degree": 12,
       "position": {
-        "x": 384.9,
-        "y": 368.2
+        "x": 498.1,
+        "y": 497.7
       },
       "connections": [
         "financial-self-efficacy",
@@ -1331,8 +1331,8 @@
       "centrality": 0.00335,
       "degree": 6,
       "position": {
-        "x": 752.8,
-        "y": 462.7
+        "x": 476.2,
+        "y": 192.5
       },
       "connections": [
         "workflow-registry-plan",
@@ -1352,8 +1352,8 @@
       "centrality": 0.115484,
       "degree": 21,
       "position": {
-        "x": 284.6,
-        "y": 533.4
+        "x": 741.7,
+        "y": 474.2
       },
       "connections": [
         "vault-graph-analysis",
@@ -1381,8 +1381,8 @@
       "centrality": 0.003333,
       "degree": 3,
       "position": {
-        "x": 731.9,
-        "y": 477.5
+        "x": 420.9,
+        "y": 192.3
       },
       "connections": [
         "workflow-registry-plan",
@@ -1400,8 +1400,8 @@
       "centrality": 0.014062,
       "degree": 14,
       "position": {
-        "x": 414.1,
-        "y": 392.7
+        "x": 504.4,
+        "y": 466.7
       },
       "connections": [
         "post-failure-academic-recovery",
@@ -1430,8 +1430,8 @@
       "centrality": 1.7e-05,
       "degree": 3,
       "position": {
-        "x": 831.7,
-        "y": 502.8
+        "x": 451.2,
+        "y": 121.6
       },
       "connections": [
         "system-registry",
@@ -1449,8 +1449,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 137.5,
-        "y": 294.5
+        "x": 548.5,
+        "y": 730.9
       },
       "connections": [
         "deficit-labeling-and-institutional-framing"
@@ -1461,128 +1461,218 @@
   ],
   "edges": [
     {
-      "source": "ci-7302-overview",
-      "target": "home",
+      "source": "gillespie2003",
+      "target": "advising-as-education",
       "weight": 1
     },
     {
-      "source": "ci-7351-overview",
-      "target": "home",
+      "source": "rendón1998",
+      "target": "deficit-labeling-and-institutional-framing",
       "weight": 1
     },
     {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "barouch-gilbert2015",
+      "source": "phil-5322-professional-adversary",
+      "target": "phil-5322-overview",
       "weight": 1
     },
     {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "smit2012",
+      "source": "yosso2005",
+      "target": "deficit-labeling-and-institutional-framing",
       "weight": 1
     },
     {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "howard2024",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "garcia2025",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "yosso2005",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "hallett2023",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "leon2019",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "rendón1998",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "higbee2005",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "hernandez2024",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
+      "source": "oced-5360e-overview",
       "target": "appreciative-inquiry",
       "weight": 1
     },
     {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "epistemic-injustice",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "bobcats-bounce-back-notes",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "mais-degree-synthesis",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "sxsw-edu-2026",
-      "weight": 1
-    },
-    {
-      "source": "deficit-labeling-and-institutional-framing",
-      "target": "vault-graph-analysis",
-      "weight": 1
-    },
-    {
-      "source": "esposito2024",
-      "target": "systems-thinking-and-epistemic-justice",
-      "weight": 1
-    },
-    {
-      "source": "phil-5322-overview",
+      "source": "oced-5360e-overview",
       "target": "home",
       "weight": 1
     },
     {
-      "source": "phil-5322-overview",
-      "target": "phil-5322-professional-adversary",
+      "source": "ci-7353-overview",
+      "target": "home",
       "weight": 1
     },
     {
-      "source": "phil-5322-overview",
-      "target": "phil-5322-advising-ethics",
+      "source": "vault-graph-analysis",
+      "target": "home",
+      "weight": 2
+    },
+    {
+      "source": "vault-graph-analysis",
+      "target": "systems-thinking-and-epistemic-justice",
+      "weight": 2
+    },
+    {
+      "source": "vault-graph-analysis",
+      "target": "advising-as-education",
+      "weight": 3
+    },
+    {
+      "source": "vault-graph-analysis",
+      "target": "deficit-labeling-and-institutional-framing",
       "weight": 1
     },
     {
-      "source": "phil-5322-overview",
+      "source": "vault-graph-analysis",
+      "target": "bobcats-bounce-back-notes",
+      "weight": 1
+    },
+    {
+      "source": "vault-graph-analysis",
+      "target": "phil-5322-overview",
+      "weight": 3
+    },
+    {
+      "source": "vault-graph-analysis",
+      "target": "reading-dashboard",
+      "weight": 1
+    },
+    {
+      "source": "vault-graph-analysis",
+      "target": "search-log",
+      "weight": 1
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
+      "target": "field-note-2",
+      "weight": 2
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
+      "target": "sxsw-edu-2026",
+      "weight": 2
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
+      "target": "elevate-student-success-260223",
+      "weight": 1
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
+      "target": "deficit-labeling-and-institutional-framing",
+      "weight": 1
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
+      "target": "drama-triangle",
+      "weight": 1
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
+      "target": "irb-application-guide",
+      "weight": 2
+    },
+    {
+      "source": "bobcats-bounce-back-notes",
       "target": "systems-thinking-and-epistemic-justice",
       "weight": 1
     },
     {
-      "source": "phil-5322-overview",
-      "target": "vault-graph-analysis",
-      "weight": 3
+      "source": "goldman2011",
+      "target": "systems-thinking-and-epistemic-justice",
+      "weight": 1
+    },
+    {
+      "source": "hooks1994",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "garcia2025",
+      "target": "deficit-labeling-and-institutional-framing",
+      "weight": 1
     },
     {
       "source": "meadows2008",
       "target": "systems-thinking-and-epistemic-justice",
+      "weight": 1
+    },
+    {
+      "source": "reading-dashboard",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "phil-5360c-counter-recruitment",
+      "target": "phil-5360c-overview",
+      "weight": 1
+    },
+    {
+      "source": "task-board",
+      "target": "workflow-registry-plan",
+      "weight": 1
+    },
+    {
+      "source": "task-board",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "task-board",
+      "target": "system-registry",
+      "weight": 1
+    },
+    {
+      "source": "freire2017",
+      "target": "advising-as-education",
+      "weight": 1
+    },
+    {
+      "source": "advising-as-education",
+      "target": "lowenstein2020",
+      "weight": 1
+    },
+    {
+      "source": "advising-as-education",
+      "target": "museus2010",
+      "weight": 1
+    },
+    {
+      "source": "advising-as-education",
+      "target": "dewey1916",
+      "weight": 1
+    },
+    {
+      "source": "advising-as-education",
+      "target": "hooks2010",
+      "weight": 1
+    },
+    {
+      "source": "advising-as-education",
+      "target": "montessori2017",
+      "weight": 1
+    },
+    {
+      "source": "advising-as-education",
+      "target": "sayers1947",
+      "weight": 1
+    },
+    {
+      "source": "advising-as-education",
+      "target": "noddings2013",
+      "weight": 1
+    },
+    {
+      "source": "advising-as-education",
+      "target": "drama-triangle",
+      "weight": 1
+    },
+    {
+      "source": "advising-as-education",
+      "target": "mais-degree-synthesis",
       "weight": 1
     },
     {
@@ -1596,6 +1686,16 @@
       "weight": 1
     },
     {
+      "source": "bronfenbrenner1979",
+      "target": "systems-thinking-and-epistemic-justice",
+      "weight": 1
+    },
+    {
+      "source": "higbee2005",
+      "target": "deficit-labeling-and-institutional-framing",
+      "weight": 1
+    },
+    {
       "source": "cte-5303-overview",
       "target": "cte-5303-retention-community-effort",
       "weight": 1
@@ -1606,48 +1706,13 @@
       "weight": 1
     },
     {
-      "source": "ci-7353-overview",
+      "source": "noble2018",
+      "target": "systems-thinking-and-epistemic-justice",
+      "weight": 1
+    },
+    {
+      "source": "oced-5360d-overview",
       "target": "home",
-      "weight": 1
-    },
-    {
-      "source": "oced-5300-5302-overview",
-      "target": "home",
-      "weight": 1
-    },
-    {
-      "source": "260313-1on1-tina",
-      "target": "bobcats-bounce-back-notes",
-      "weight": 2
-    },
-    {
-      "source": "r_cheatsheet",
-      "target": "home",
-      "weight": 1
-    },
-    {
-      "source": "filesystem-log",
-      "target": "workflow-registry-plan",
-      "weight": 1
-    },
-    {
-      "source": "filesystem-log",
-      "target": "home",
-      "weight": 1
-    },
-    {
-      "source": "filesystem-log",
-      "target": "system-registry",
-      "weight": 1
-    },
-    {
-      "source": "search-log",
-      "target": "home",
-      "weight": 1
-    },
-    {
-      "source": "search-log",
-      "target": "vault-graph-analysis",
       "weight": 1
     },
     {
@@ -1657,7 +1722,12 @@
     },
     {
       "source": "workflow-registry-plan",
-      "target": "task-board",
+      "target": "filesystem-log",
+      "weight": 1
+    },
+    {
+      "source": "epistemic-injustice",
+      "target": "deficit-labeling-and-institutional-framing",
       "weight": 1
     },
     {
@@ -1686,128 +1756,128 @@
       "weight": 1
     },
     {
-      "source": "irb-application-guide",
+      "source": "appreciative-inquiry",
+      "target": "deficit-labeling-and-institutional-framing",
+      "weight": 1
+    },
+    {
+      "source": "appreciative-inquiry",
       "target": "home",
       "weight": 1
     },
     {
-      "source": "irb-application-guide",
-      "target": "bobcats-bounce-back-notes",
-      "weight": 2
-    },
-    {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "stroh2015",
+      "source": "appreciative-inquiry",
+      "target": "systems-thinking-and-epistemic-justice",
       "weight": 1
     },
     {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "beebe2021",
+      "source": "oced-5300-5302-overview",
+      "target": "home",
       "weight": 1
     },
     {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "bronfenbrenner1979",
+      "source": "phil-5351-overview",
+      "target": "home",
       "weight": 1
     },
     {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "helfgott2018",
+      "source": "phil-5351-overview",
+      "target": "phil-5351-final-paper",
       "weight": 1
     },
     {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "fricker2007",
+      "source": "drama-triangle",
+      "target": "conflict-management-training-260108",
       "weight": 1
     },
     {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "noble2018",
+      "source": "drama-triangle",
+      "target": "home",
       "weight": 1
     },
     {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "nguyen2020",
+      "source": "smit2012",
+      "target": "deficit-labeling-and-institutional-framing",
       "weight": 1
     },
     {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "goldman2011",
+      "source": "barouch-gilbert2015",
+      "target": "deficit-labeling-and-institutional-framing",
       "weight": 1
     },
     {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "garcia2020",
+      "source": "hallett2023",
+      "target": "deficit-labeling-and-institutional-framing",
       "weight": 1
     },
     {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "appreciative-inquiry",
+      "source": "esposito2024",
+      "target": "systems-thinking-and-epistemic-justice",
       "weight": 1
     },
     {
-      "source": "systems-thinking-and-epistemic-justice",
+      "source": "phil-5322-overview",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "phil-5322-overview",
+      "target": "phil-5322-advising-ethics",
+      "weight": 1
+    },
+    {
+      "source": "phil-5322-overview",
+      "target": "systems-thinking-and-epistemic-justice",
+      "weight": 1
+    },
+    {
+      "source": "fricker2007",
+      "target": "systems-thinking-and-epistemic-justice",
+      "weight": 1
+    },
+    {
+      "source": "ci-7351-overview",
+      "target": "home",
+      "weight": 1
+    },
+    {
+      "source": "stroh2015",
+      "target": "systems-thinking-and-epistemic-justice",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "howard2024",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "leon2019",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "hernandez2024",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
       "target": "mais-degree-synthesis",
       "weight": 1
     },
     {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "bobcats-bounce-back-notes",
-      "weight": 1
-    },
-    {
-      "source": "systems-thinking-and-epistemic-justice",
-      "target": "vault-graph-analysis",
-      "weight": 2
-    },
-    {
-      "source": "freire2017",
-      "target": "advising-as-education",
-      "weight": 1
-    },
-    {
-      "source": "hooks2010",
-      "target": "advising-as-education",
-      "weight": 1
-    },
-    {
-      "source": "phil-5351-final-paper",
-      "target": "phil-5351-overview",
-      "weight": 1
-    },
-    {
-      "source": "phil-5360c-overview",
-      "target": "home",
-      "weight": 1
-    },
-    {
-      "source": "phil-5360c-overview",
-      "target": "phil-5360c-counter-recruitment",
-      "weight": 1
-    },
-    {
-      "source": "elevate-student-success-260223",
-      "target": "bobcats-bounce-back-notes",
-      "weight": 1
-    },
-    {
-      "source": "elevate-student-success-260223",
+      "source": "deficit-labeling-and-institutional-framing",
       "target": "sxsw-edu-2026",
       "weight": 1
     },
     {
       "source": "home",
-      "target": "reading-dashboard",
+      "target": "search-log",
       "weight": 1
     },
     {
       "source": "home",
-      "target": "appreciative-inquiry",
-      "weight": 1
-    },
-    {
-      "source": "home",
-      "target": "drama-triangle",
+      "target": "r_cheatsheet",
       "weight": 1
     },
     {
@@ -1817,12 +1887,12 @@
     },
     {
       "source": "home",
-      "target": "bobcats-bounce-back-notes",
+      "target": "sxsw-edu-2026",
       "weight": 1
     },
     {
       "source": "home",
-      "target": "sxsw-edu-2026",
+      "target": "irb-application-guide",
       "weight": 1
     },
     {
@@ -1832,7 +1902,12 @@
     },
     {
       "source": "home",
-      "target": "task-board",
+      "target": "filesystem-log",
+      "weight": 1
+    },
+    {
+      "source": "home",
+      "target": "ci-7302-overview",
       "weight": 1
     },
     {
@@ -1847,62 +1922,27 @@
     },
     {
       "source": "home",
-      "target": "phil-5351-overview",
+      "target": "phil-5360c-overview",
       "weight": 1
     },
     {
-      "source": "home",
-      "target": "oced-5360d-overview",
+      "source": "nguyen2020",
+      "target": "systems-thinking-and-epistemic-justice",
       "weight": 1
     },
     {
-      "source": "home",
-      "target": "oced-5360e-overview",
+      "source": "elevate-student-success-260223",
+      "target": "sxsw-edu-2026",
       "weight": 1
     },
     {
-      "source": "home",
-      "target": "vault-graph-analysis",
-      "weight": 2
-    },
-    {
-      "source": "drama-triangle",
-      "target": "advising-as-education",
-      "weight": 1
-    },
-    {
-      "source": "drama-triangle",
-      "target": "conflict-management-training-260108",
-      "weight": 1
-    },
-    {
-      "source": "drama-triangle",
-      "target": "bobcats-bounce-back-notes",
-      "weight": 1
-    },
-    {
-      "source": "montessori2017",
-      "target": "advising-as-education",
-      "weight": 1
-    },
-    {
-      "source": "phil-5301-systems-multiple-signals",
-      "target": "phil-5301-overview",
-      "weight": 1
-    },
-    {
-      "source": "sayers1947",
-      "target": "advising-as-education",
-      "weight": 1
-    },
-    {
-      "source": "noddings2013",
-      "target": "advising-as-education",
+      "source": "helfgott2018",
+      "target": "systems-thinking-and-epistemic-justice",
       "weight": 1
     },
     {
       "source": "system-registry",
-      "target": "task-board",
+      "target": "filesystem-log",
       "weight": 1
     },
     {
@@ -1911,68 +1951,28 @@
       "weight": 1
     },
     {
-      "source": "appreciative-inquiry",
-      "target": "oced-5360e-overview",
-      "weight": 1
-    },
-    {
-      "source": "lowenstein2020",
-      "target": "advising-as-education",
-      "weight": 1
-    },
-    {
       "source": "phil-5301-algorithmic-epistemic-injustice",
       "target": "phil-5301-overview",
       "weight": 1
     },
     {
-      "source": "bobcats-bounce-back-notes",
-      "target": "advising-as-education",
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "beebe2021",
       "weight": 1
     },
     {
-      "source": "bobcats-bounce-back-notes",
-      "target": "sxsw-edu-2026",
-      "weight": 2
-    },
-    {
-      "source": "bobcats-bounce-back-notes",
-      "target": "vault-graph-analysis",
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "garcia2020",
       "weight": 1
     },
     {
-      "source": "gillespie2003",
-      "target": "advising-as-education",
+      "source": "systems-thinking-and-epistemic-justice",
+      "target": "mais-degree-synthesis",
       "weight": 1
     },
     {
-      "source": "reading-dashboard",
-      "target": "vault-graph-analysis",
-      "weight": 1
-    },
-    {
-      "source": "vault-graph-analysis",
-      "target": "advising-as-education",
-      "weight": 3
-    },
-    {
-      "source": "museus2010",
-      "target": "advising-as-education",
-      "weight": 1
-    },
-    {
-      "source": "mais-degree-synthesis",
-      "target": "advising-as-education",
-      "weight": 1
-    },
-    {
-      "source": "dewey1916",
-      "target": "advising-as-education",
-      "weight": 1
-    },
-    {
-      "source": "hooks1994",
-      "target": "advising-as-education",
+      "source": "phil-5301-systems-multiple-signals",
+      "target": "phil-5301-overview",
       "weight": 1
     }
   ],
@@ -1981,7 +1981,7 @@
     "edgeCount": 103,
     "density": 0.0381,
     "bridgeNodes": [
-      "260313-1on1-tina",
+      "field-note-2",
       "advising-as-education",
       "appreciative-inquiry",
       "barouch-gilbert2015",

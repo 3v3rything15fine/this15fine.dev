@@ -11,8 +11,8 @@
       "centrality": 0.035758,
       "degree": 20,
       "position": {
-        "x": 495.3,
-        "y": 477.9
+        "x": 578.8,
+        "y": 405.7
       },
       "connections": [
         "b3-research-questions",
@@ -42,8 +42,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 180.7,
-        "y": 60.0
+        "x": 918.7,
+        "y": 740.0
       },
       "connections": [
         "aded-5314-overview"
@@ -59,8 +59,8 @@
       "centrality": 0.010108,
       "degree": 4,
       "position": {
-        "x": 311.9,
-        "y": 204.8
+        "x": 739.7,
+        "y": 605.2
       },
       "connections": [
         "aded-5314-inclusive-systems-thinking",
@@ -81,8 +81,8 @@
       "centrality": 0.029708,
       "degree": 18,
       "position": {
-        "x": 508.8,
-        "y": 431.1
+        "x": 456.3,
+        "y": 383.7
       },
       "connections": [
         "self-authorship",
@@ -110,8 +110,8 @@
       "centrality": 4e-05,
       "degree": 15,
       "position": {
-        "x": 470.4,
-        "y": 449.0
+        "x": 506.1,
+        "y": 381.8
       },
       "connections": [
         "engagement-causality-and-timing",
@@ -138,8 +138,8 @@
       "centrality": 0.030988,
       "degree": 21,
       "position": {
-        "x": 414.0,
-        "y": 433.8
+        "x": 501.6,
+        "y": 356.3
       },
       "connections": [
         "chi-square",
@@ -167,8 +167,8 @@
       "centrality": 0.038617,
       "degree": 22,
       "position": {
-        "x": 443.5,
-        "y": 435.5
+        "x": 531.0,
+        "y": 363.1
       },
       "connections": [
         "academic-resilience",
@@ -198,8 +198,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 453.2,
-        "y": 128.9
+        "x": 110.1,
+        "y": 243.5
       },
       "connections": [
         "individual-vs-aggregate-measurement"
@@ -215,8 +215,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 855.1,
-        "y": 432.9
+        "x": 104.2,
+        "y": 642.7
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -232,8 +232,8 @@
       "centrality": 0.001328,
       "degree": 2,
       "position": {
-        "x": 777.2,
-        "y": 614.8
+        "x": 179.8,
+        "y": 598.7
       },
       "connections": [
         "emergency-aid-and-holistic-support",
@@ -252,8 +252,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 102.4,
-        "y": 669.2
+        "x": 932.5,
+        "y": 260.3
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -269,8 +269,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 301.7,
-        "y": 740.0
+        "x": 861.4,
+        "y": 187.6
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -286,8 +286,8 @@
       "centrality": 0.000913,
       "degree": 2,
       "position": {
-        "x": 683.1,
-        "y": 315.3
+        "x": 196.5,
+        "y": 424.7
       },
       "connections": [
         "individual-vs-aggregate-measurement",
@@ -304,8 +304,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 616.6,
-        "y": 149.5
+        "x": 81.8,
+        "y": 306.0
       },
       "connections": [
         "individual-vs-aggregate-measurement"
@@ -321,8 +321,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 875.3,
-        "y": 591.6
+        "x": 94.5,
+        "y": 582.8
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -338,8 +338,8 @@
       "centrality": 0.006856,
       "degree": 6,
       "position": {
-        "x": 407.7,
-        "y": 488.9
+        "x": 438.1,
+        "y": 310.9
       },
       "connections": [
         "b3-research-hub",
@@ -362,8 +362,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 838.8,
-        "y": 638.5
+        "x": 348.2,
+        "y": 670.8
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -379,8 +379,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 182.4,
-        "y": 660.0
+        "x": 706.3,
+        "y": 79.0
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -396,8 +396,8 @@
       "centrality": 0.005801,
       "degree": 6,
       "position": {
-        "x": 570.8,
-        "y": 528.1
+        "x": 726.0,
+        "y": 468.3
       },
       "connections": [
         "academic-resilience",
@@ -422,8 +422,8 @@
       "centrality": 0.119595,
       "degree": 26,
       "position": {
-        "x": 492.8,
-        "y": 385.3
+        "x": 542.0,
+        "y": 449.9
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -454,8 +454,8 @@
       "centrality": 0.000405,
       "degree": 4,
       "position": {
-        "x": 228.4,
-        "y": 366.4
+        "x": 529.9,
+        "y": 174.5
       },
       "connections": [
         "propensity-score-matching",
@@ -477,8 +477,8 @@
       "centrality": 0.000513,
       "degree": 3,
       "position": {
-        "x": 214.1,
-        "y": 516.3
+        "x": 742.8,
+        "y": 309.4
       },
       "connections": [
         "b3-research-hub",
@@ -498,8 +498,8 @@
       "centrality": 0.019656,
       "degree": 13,
       "position": {
-        "x": 432.7,
-        "y": 375.0
+        "x": 458.5,
+        "y": 416.2
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -528,8 +528,8 @@
       "centrality": 0.091681,
       "degree": 21,
       "position": {
-        "x": 325.7,
-        "y": 546.4
+        "x": 654.3,
+        "y": 271.7
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -556,8 +556,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 844.0,
-        "y": 530.3
+        "x": 424.1,
+        "y": 717.9
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -573,8 +573,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 537.8,
-        "y": 127.9
+        "x": 165.9,
+        "y": 189.0
       },
       "connections": [
         "individual-vs-aggregate-measurement"
@@ -590,8 +590,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 825.3,
-        "y": 333.2
+        "x": 164.6,
+        "y": 690.4
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -607,8 +607,8 @@
       "centrality": 0.001328,
       "degree": 2,
       "position": {
-        "x": 928.7,
-        "y": 504.5
+        "x": 252.0,
+        "y": 723.3
       },
       "connections": [
         "emergency-aid-and-holistic-support",
@@ -627,8 +627,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 66.3,
-        "y": 515.1
+        "x": 631.2,
+        "y": 60.0
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -644,8 +644,8 @@
       "centrality": 0.036925,
       "degree": 14,
       "position": {
-        "x": 499.4,
-        "y": 313.6
+        "x": 354.4,
+        "y": 352.4
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -672,8 +672,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 94.3,
-        "y": 616.6
+        "x": 940.0,
+        "y": 198.6
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -689,8 +689,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 60.0,
-        "y": 572.9
+        "x": 887.8,
+        "y": 125.0
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -706,8 +706,8 @@
       "centrality": 0.014152,
       "degree": 7,
       "position": {
-        "x": 400.3,
-        "y": 523.6
+        "x": 433.6,
+        "y": 277.0
       },
       "connections": [
         "b3-research-questions",
@@ -732,8 +732,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 883.9,
-        "y": 361.4
+        "x": 60.0,
+        "y": 536.6
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -749,8 +749,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 242.8,
-        "y": 716.9
+        "x": 783.2,
+        "y": 66.2
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -766,8 +766,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 930.8,
-        "y": 403.5
+        "x": 240.7,
+        "y": 659.5
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -783,8 +783,8 @@
       "centrality": 0.000867,
       "degree": 4,
       "position": {
-        "x": 381.2,
-        "y": 262.1
+        "x": 300.7,
+        "y": 254.9
       },
       "connections": [
         "enrollment-patterns-as-adaptation",
@@ -806,8 +806,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 931.3,
-        "y": 556.5
+        "x": 338.8,
+        "y": 734.5
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -823,8 +823,8 @@
       "centrality": 0.150535,
       "degree": 32,
       "position": {
-        "x": 672.3,
-        "y": 474.7
+        "x": 354.6,
+        "y": 510.4
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -853,8 +853,8 @@
       "centrality": 0.003638,
       "degree": 8,
       "position": {
-        "x": 323.5,
-        "y": 448.0
+        "x": 540.8,
+        "y": 266.1
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -880,8 +880,8 @@
       "centrality": 1e-05,
       "degree": 3,
       "position": {
-        "x": 231.9,
-        "y": 479.2
+        "x": 353.7,
+        "y": 152.7
       },
       "connections": [
         "chi-square",
@@ -901,8 +901,8 @@
       "centrality": 0.079706,
       "degree": 37,
       "position": {
-        "x": 440.0,
-        "y": 406.1
+        "x": 534.0,
+        "y": 399.9
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -912,8 +912,8 @@
         "b3-cds-cma-study",
         "b3-research-hub",
         "bobcats-bounce-back-notes",
-        "260313-1on1-jeanette",
-        "260313-1on1-tina",
+        "field-note-1",
+        "field-note-2",
         "academic-resilience"
       ],
       "isBridge": true,
@@ -931,8 +931,8 @@
       "centrality": 0.015919,
       "degree": 12,
       "position": {
-        "x": 461.4,
-        "y": 512.0
+        "x": 627.0,
+        "y": 370.2
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -962,8 +962,8 @@
       "centrality": 0.009794,
       "degree": 7,
       "position": {
-        "x": 572.2,
-        "y": 412.3
+        "x": 457.1,
+        "y": 472.5
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -988,8 +988,8 @@
       "centrality": 0.039678,
       "degree": 18,
       "position": {
-        "x": 386.1,
-        "y": 327.6
+        "x": 565.9,
+        "y": 475.7
       },
       "connections": [
         "appreciative-inquiry",
@@ -1019,8 +1019,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 726.4,
-        "y": 655.6
+        "x": 488.1,
+        "y": 681.3
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -1036,8 +1036,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 169.5,
-        "y": 717.0
+        "x": 926.1,
+        "y": 321.7
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -1053,8 +1053,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 371.1,
-        "y": 722.1
+        "x": 803.6,
+        "y": 122.0
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -1070,8 +1070,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 940.0,
-        "y": 457.2
+        "x": 87.3,
+        "y": 483.8
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -1082,138 +1082,13 @@
   ],
   "edges": [
     {
-      "source": "b3-cds-cma-study",
-      "target": "academic-resilience",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "deficit-models",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "retention-theory",
-      "weight": 2
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "ecological-systems-theory",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "b3-ideas-and-questions",
-      "weight": 2
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "b3-research-hub",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "b3-research-questions",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "individual-vs-aggregate-measurement",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "post-failure-academic-recovery",
-      "weight": 1
-    },
-    {
-      "source": "valentine2011",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "beri2018",
-      "target": "post-failure-academic-recovery",
-      "weight": 1
-    },
-    {
-      "source": "logistic-regression",
-      "target": "b3-research-questions",
-      "weight": 1
-    },
-    {
-      "source": "logistic-regression",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "logistic-regression",
-      "target": "regression-assumptions",
-      "weight": 1
-    },
-    {
-      "source": "logistic-regression",
-      "target": "propensity-score-matching",
-      "weight": 1
-    },
-    {
-      "source": "logistic-regression",
-      "target": "post-failure-academic-recovery",
-      "weight": 1
-    },
-    {
       "source": "boretz2012",
       "target": "engagement-causality-and-timing",
       "weight": 1
     },
     {
-      "source": "jagielo-manion2025",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "campbell2012",
-      "target": "individual-vs-aggregate-measurement",
-      "weight": 1
-    },
-    {
-      "source": "haktanir2021",
-      "target": "post-failure-academic-recovery",
-      "weight": 1
-    },
-    {
-      "source": "bowman2022",
-      "target": "individual-vs-aggregate-measurement",
-      "weight": 1
-    },
-    {
-      "source": "bowman2022",
-      "target": "post-failure-academic-recovery",
-      "weight": 1
-    },
-    {
-      "source": "hattie2007",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "wong2022",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "dss-innovation-award",
-      "target": "b3-research-hub",
-      "weight": 1
-    },
-    {
-      "source": "dss-innovation-award",
-      "target": "engagement-causality-and-timing",
+      "source": "ecological-systems-theory",
+      "target": "b3-cds-cma-study",
       "weight": 1
     },
     {
@@ -1247,43 +1122,133 @@
       "weight": 1
     },
     {
-      "source": "individual-vs-aggregate-measurement",
+      "source": "survival-analysis",
       "target": "b3-ideas-and-questions",
-      "weight": 5
-    },
-    {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "barbera2020",
       "weight": 1
     },
     {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "gilstrap2020",
+      "source": "survival-analysis",
+      "target": "b3-research-hub",
       "weight": 1
     },
     {
-      "source": "individual-vs-aggregate-measurement",
+      "source": "survival-analysis",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "survival-analysis",
+      "target": "post-failure-academic-recovery",
+      "weight": 1
+    },
+    {
+      "source": "survival-analysis",
       "target": "retention-theory",
       "weight": 1
     },
     {
-      "source": "individual-vs-aggregate-measurement",
+      "source": "post-failure-academic-recovery",
+      "target": "b3-ideas-and-questions",
+      "weight": 6
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "bledsoe2018",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "friedman2022",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "hanger2011",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "tovar2006",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "martin2009",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "beri2018",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "wu2024",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "haktanir2021",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "newcomb-anjo2022",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "caporale-berkowitz2022",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "cooper2025",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "morales2014",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "bowman2022",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "academic-resilience",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
       "target": "deficit-models",
       "weight": 1
     },
     {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "systems-thinking",
+      "source": "post-failure-academic-recovery",
+      "target": "b3-research-hub",
       "weight": 1
     },
     {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "naspa-2026-enrollment-intensity",
-      "weight": 1
-    },
-    {
-      "source": "individual-vs-aggregate-measurement",
+      "source": "post-failure-academic-recovery",
       "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "b3-cds-cma-study",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "chi-square",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "logistic-regression",
       "weight": 1
     },
     {
@@ -1323,7 +1288,7 @@
     },
     {
       "source": "b3-research-questions",
-      "target": "survival-analysis",
+      "target": "logistic-regression",
       "weight": 1
     },
     {
@@ -1338,6 +1303,11 @@
     },
     {
       "source": "b3-research-questions",
+      "target": "b3-cds-cma-study",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-questions",
       "target": "difference-in-differences",
       "weight": 1
     },
@@ -1348,82 +1318,97 @@
     },
     {
       "source": "b3-research-questions",
-      "target": "post-failure-academic-recovery",
+      "target": "individual-vs-aggregate-measurement",
       "weight": 1
     },
     {
-      "source": "martin2009",
-      "target": "post-failure-academic-recovery",
-      "weight": 1
-    },
-    {
-      "source": "self-determination-theory",
+      "source": "engagement-causality-and-timing",
       "target": "b3-ideas-and-questions",
-      "weight": 4
+      "weight": 8
     },
     {
-      "source": "self-determination-theory",
-      "target": "b3-research-hub",
+      "source": "engagement-causality-and-timing",
+      "target": "bowman2019",
       "weight": 1
     },
     {
-      "source": "self-determination-theory",
-      "target": "de-7303-overview",
+      "source": "engagement-causality-and-timing",
+      "target": "hattie2007",
       "weight": 1
     },
     {
-      "source": "self-determination-theory",
-      "target": "engagement-causality-and-timing",
+      "source": "engagement-causality-and-timing",
+      "target": "kay2023",
       "weight": 1
     },
     {
-      "source": "self-determination-theory",
+      "source": "engagement-causality-and-timing",
+      "target": "matz2024",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "damgaard2018",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "valentine2011",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "wong2022",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "jagielo-manion2025",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "self-determination-theory",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
       "target": "academic-resilience",
       "weight": 1
     },
     {
-      "source": "friedman2022",
-      "target": "post-failure-academic-recovery",
-      "weight": 1
-    },
-    {
-      "source": "survival-analysis",
-      "target": "b3-ideas-and-questions",
-      "weight": 1
-    },
-    {
-      "source": "survival-analysis",
-      "target": "b3-research-hub",
-      "weight": 1
-    },
-    {
-      "source": "survival-analysis",
-      "target": "post-failure-academic-recovery",
-      "weight": 1
-    },
-    {
-      "source": "survival-analysis",
+      "source": "engagement-causality-and-timing",
       "target": "retention-theory",
       "weight": 1
     },
     {
-      "source": "propensity-score-matching",
-      "target": "b3-ideas-and-questions",
-      "weight": 2
-    },
-    {
-      "source": "propensity-score-matching",
+      "source": "engagement-causality-and-timing",
       "target": "b3-research-hub",
       "weight": 1
     },
     {
-      "source": "propensity-score-matching",
-      "target": "difference-in-differences",
+      "source": "engagement-causality-and-timing",
+      "target": "b3-cds-cma-study",
       "weight": 1
     },
     {
-      "source": "propensity-score-matching",
-      "target": "engagement-causality-and-timing",
+      "source": "engagement-causality-and-timing",
+      "target": "dss-innovation-award",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "chi-square",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "propensity-score-matching",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "logistic-regression",
       "weight": 1
     },
     {
@@ -1434,6 +1419,11 @@
     {
       "source": "academic-resilience",
       "target": "de-7303-overview",
+      "weight": 1
+    },
+    {
+      "source": "academic-resilience",
+      "target": "b3-cds-cma-study",
       "weight": 1
     },
     {
@@ -1453,17 +1443,77 @@
     },
     {
       "source": "academic-resilience",
-      "target": "engagement-causality-and-timing",
+      "target": "self-determination-theory",
       "weight": 1
     },
     {
-      "source": "academic-resilience",
-      "target": "post-failure-academic-recovery",
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "individual-vs-aggregate-measurement",
       "weight": 1
     },
     {
-      "source": "aded-5314-inclusive-systems-thinking",
-      "target": "aded-5314-overview",
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "bowman2022",
+      "target": "individual-vs-aggregate-measurement",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "b3-ideas-and-questions",
+      "weight": 2
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "chi-square",
+      "weight": 4
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "propensity-score-matching",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "deficit-models",
+      "weight": 2
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "self-determination-theory",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "retention-theory",
+      "weight": 2
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "systems-thinking",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "b3-cds-cma-study",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "dss-innovation-award",
+      "weight": 1
+    },
+    {
+      "source": "difference-in-differences",
+      "target": "propensity-score-matching",
+      "weight": 1
+    },
+    {
+      "source": "aded-5314-overview",
+      "target": "aded-5314-inclusive-systems-thinking",
       "weight": 1
     },
     {
@@ -1477,159 +1527,69 @@
       "weight": 1
     },
     {
-      "source": "damgaard2018",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "kay2023",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
+      "source": "individual-vs-aggregate-measurement",
       "target": "b3-ideas-and-questions",
-      "weight": 6
+      "weight": 5
     },
     {
-      "source": "post-failure-academic-recovery",
-      "target": "bledsoe2018",
+      "source": "individual-vs-aggregate-measurement",
+      "target": "barbera2020",
       "weight": 1
     },
     {
-      "source": "post-failure-academic-recovery",
-      "target": "hanger2011",
+      "source": "individual-vs-aggregate-measurement",
+      "target": "campbell2012",
       "weight": 1
     },
     {
-      "source": "post-failure-academic-recovery",
-      "target": "tovar2006",
+      "source": "individual-vs-aggregate-measurement",
+      "target": "gilstrap2020",
       "weight": 1
     },
     {
-      "source": "post-failure-academic-recovery",
-      "target": "wu2024",
+      "source": "individual-vs-aggregate-measurement",
+      "target": "retention-theory",
       "weight": 1
     },
     {
-      "source": "post-failure-academic-recovery",
-      "target": "newcomb-anjo2022",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "caporale-berkowitz2022",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "cooper2025",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "morales2014",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
+      "source": "individual-vs-aggregate-measurement",
       "target": "deficit-models",
       "weight": 1
     },
     {
-      "source": "post-failure-academic-recovery",
-      "target": "b3-research-hub",
+      "source": "individual-vs-aggregate-measurement",
+      "target": "systems-thinking",
       "weight": 1
     },
     {
-      "source": "post-failure-academic-recovery",
-      "target": "chi-square",
+      "source": "individual-vs-aggregate-measurement",
+      "target": "b3-cds-cma-study",
       "weight": 1
     },
     {
-      "source": "systems-thinking",
-      "target": "b3-ideas-and-questions",
+      "source": "logistic-regression",
+      "target": "regression-assumptions",
       "weight": 1
     },
     {
-      "source": "systems-thinking",
-      "target": "b3-research-hub",
+      "source": "logistic-regression",
+      "target": "propensity-score-matching",
       "weight": 1
     },
     {
-      "source": "systems-thinking",
-      "target": "retention-theory",
+      "source": "chi-square",
+      "target": "regression-assumptions",
       "weight": 1
     },
     {
-      "source": "bowman2019",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "b3-ideas-and-questions",
+      "source": "retention-theory",
+      "target": "b3-cds-cma-study",
       "weight": 2
     },
     {
-      "source": "b3-research-hub",
-      "target": "chi-square",
-      "weight": 4
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "deficit-models",
-      "weight": 2
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "retention-theory",
-      "weight": 2
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "naspa-2026-enrollment-intensity",
-      "weight": 1
-    },
-    {
-      "source": "engagement-causality-and-timing",
+      "source": "retention-theory",
       "target": "b3-ideas-and-questions",
-      "weight": 8
-    },
-    {
-      "source": "engagement-causality-and-timing",
-      "target": "matz2024",
-      "weight": 1
-    },
-    {
-      "source": "engagement-causality-and-timing",
-      "target": "retention-theory",
-      "weight": 1
-    },
-    {
-      "source": "engagement-causality-and-timing",
-      "target": "chi-square",
-      "weight": 1
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "retention-theory",
       "weight": 4
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "deficit-models",
-      "weight": 4
-    },
-    {
-      "source": "regression-assumptions",
-      "target": "chi-square",
-      "weight": 1
     },
     {
       "source": "retention-theory",
@@ -1637,9 +1597,49 @@
       "weight": 1
     },
     {
+      "source": "retention-theory",
+      "target": "systems-thinking",
+      "weight": 1
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "deficit-models",
+      "weight": 1
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "b3-ideas-and-questions",
+      "weight": 2
+    },
+    {
+      "source": "self-determination-theory",
+      "target": "b3-ideas-and-questions",
+      "weight": 4
+    },
+    {
+      "source": "self-determination-theory",
+      "target": "de-7303-overview",
+      "weight": 1
+    },
+    {
       "source": "de-7303-overview",
       "target": "deficit-models",
       "weight": 1
+    },
+    {
+      "source": "deficit-models",
+      "target": "b3-ideas-and-questions",
+      "weight": 4
+    },
+    {
+      "source": "systems-thinking",
+      "target": "b3-ideas-and-questions",
+      "weight": 1
+    },
+    {
+      "source": "propensity-score-matching",
+      "target": "b3-ideas-and-questions",
+      "weight": 2
     }
   ],
   "stats": {

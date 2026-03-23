@@ -350,6 +350,18 @@
       }
     },
     {
+      "id": "henager2025",
+      "label": "Financial Wellness, Curricular, and Co-Curricular Approaches",
+      "type": "literature",
+      "cluster": 2,
+      "centrality": 0.000348,
+      "degree": 13,
+      "position": {
+        "x": 774.4,
+        "y": 391.9
+      }
+    },
+    {
       "id": "human-capital-theory",
       "label": "Human Capital Theory",
       "type": "general",
@@ -511,18 +523,6 @@
       "position": {
         "x": 642.1,
         "y": 394.5
-      }
-    },
-    {
-      "id": "schuman-nd",
-      "label": "Best Practices in Peer Financial Education",
-      "type": "literature",
-      "cluster": 2,
-      "centrality": 0.001137,
-      "degree": 13,
-      "position": {
-        "x": 726.9,
-        "y": 424.3
       }
     },
     {
@@ -1271,6 +1271,11 @@
     },
     {
       "source": "financial-education-under-scarcity",
+      "target": "henager2025",
+      "weight": 1
+    },
+    {
+      "source": "financial-education-under-scarcity",
       "target": "mullainathan2014",
       "weight": 1
     },
@@ -1396,12 +1401,12 @@
     },
     {
       "source": "financial-literacy",
-      "target": "mullainathan2014",
+      "target": "henager2025",
       "weight": 1
     },
     {
       "source": "financial-literacy",
-      "target": "schuman-nd",
+      "target": "mullainathan2014",
       "weight": 1
     },
     {
@@ -1426,11 +1431,6 @@
     },
     {
       "source": "financial-self-efficacy",
-      "target": "schuman-nd",
-      "weight": 1
-    },
-    {
-      "source": "financial-self-efficacy",
       "target": "peer-mentoring",
       "weight": 1
     },
@@ -1447,6 +1447,11 @@
     {
       "source": "financial-self-efficacy",
       "target": "gatti2024",
+      "weight": 1
+    },
+    {
+      "source": "financial-self-efficacy",
+      "target": "henager2025",
       "weight": 1
     },
     {
@@ -1566,11 +1571,6 @@
     },
     {
       "source": "lit-review-matrix",
-      "target": "schuman-nd",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
       "target": "goldrick-rab-cadynd",
       "weight": 1
     },
@@ -1591,6 +1591,11 @@
     },
     {
       "source": "lit-review-matrix",
+      "target": "henager2025",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
       "target": "durband2012",
       "weight": 1
     },
@@ -1631,11 +1636,6 @@
     },
     {
       "source": "adams2014",
-      "target": "schuman-nd",
-      "weight": 1
-    },
-    {
-      "source": "adams2014",
       "target": "peer-mentoring",
       "weight": 1
     },
@@ -1652,6 +1652,11 @@
     {
       "source": "coggin2025",
       "target": "durband2012",
+      "weight": 1
+    },
+    {
+      "source": "coggin2025",
+      "target": "henager2025",
       "weight": 1
     },
     {
@@ -1701,7 +1706,7 @@
     },
     {
       "source": "durband2012",
-      "target": "schuman-nd",
+      "target": "henager2025",
       "weight": 1
     },
     {
@@ -1785,6 +1790,21 @@
       "weight": 3
     },
     {
+      "source": "henager2025",
+      "target": "peer-mentoring",
+      "weight": 1
+    },
+    {
+      "source": "henager2025",
+      "target": "taylor2025",
+      "weight": 1
+    },
+    {
+      "source": "henager2025",
+      "target": "peer-mentoring-effectiveness",
+      "weight": 1
+    },
+    {
       "source": "moorend",
       "target": "mullainathan2014",
       "weight": 1
@@ -1816,26 +1836,6 @@
     },
     {
       "source": "mullainathan2014",
-      "target": "theoretical-framework-map",
-      "weight": 3
-    },
-    {
-      "source": "schuman-nd",
-      "target": "peer-mentoring",
-      "weight": 1
-    },
-    {
-      "source": "schuman-nd",
-      "target": "taylor2025",
-      "weight": 1
-    },
-    {
-      "source": "schuman-nd",
-      "target": "peer-mentoring-effectiveness",
-      "weight": 1
-    },
-    {
-      "source": "schuman-nd",
       "target": "theoretical-framework-map",
       "weight": 3
     },

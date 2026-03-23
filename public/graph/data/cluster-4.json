@@ -11,8 +11,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 459.3,
-        "y": 650.2
+        "x": 555.8,
+        "y": 740.0
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -28,8 +28,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 60.0,
-        "y": 397.7
+        "x": 194.1,
+        "y": 655.1
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -45,8 +45,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 933.9,
-        "y": 330.8
+        "x": 90.4,
+        "y": 491.2
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -62,8 +62,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 664.8,
-        "y": 114.2
+        "x": 158.9,
+        "y": 181.2
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -79,8 +79,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 860.0,
-        "y": 178.1
+        "x": 731.8,
+        "y": 83.0
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -96,8 +96,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 821.6,
-        "y": 627.1
+        "x": 60.0,
+        "y": 326.2
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -113,8 +113,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 266.7,
-        "y": 129.0
+        "x": 905.5,
+        "y": 522.2
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -130,8 +130,8 @@
       "centrality": 0.125302,
       "degree": 24,
       "position": {
-        "x": 507.7,
-        "y": 399.2
+        "x": 502.3,
+        "y": 378.8
       },
       "connections": [
         "attewell2016",
@@ -160,8 +160,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 253.6,
-        "y": 699.5
+        "x": 940.0,
+        "y": 360.2
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -177,8 +177,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 117.7,
-        "y": 242.8
+        "x": 310.0,
+        "y": 63.5
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -194,8 +194,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 464.7,
-        "y": 60.0
+        "x": 877.2,
+        "y": 205.1
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -211,8 +211,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 638.9,
-        "y": 740.0
+        "x": 406.4,
+        "y": 620.9
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -228,8 +228,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 940.0,
-        "y": 490.6
+        "x": 522.6,
+        "y": 60.0
       },
       "connections": [
         "enrollment-patterns-as-adaptation"
@@ -245,8 +245,8 @@
       "centrality": 0.002274,
       "degree": 2,
       "position": {
-        "x": 120.9,
-        "y": 553.1
+        "x": 761.4,
+        "y": 646.7
       },
       "connections": [
         "post-failure-academic-recovery",
@@ -260,27 +260,7 @@
   ],
   "edges": [
     {
-      "source": "monaghan2015",
-      "target": "enrollment-patterns-as-adaptation",
-      "weight": 1
-    },
-    {
-      "source": "tompkins2015",
-      "target": "enrollment-patterns-as-adaptation",
-      "weight": 1
-    },
-    {
-      "source": "engel2025",
-      "target": "enrollment-patterns-as-adaptation",
-      "weight": 1
-    },
-    {
-      "source": "workflow-improvements",
-      "target": "enrollment-patterns-as-adaptation",
-      "weight": 1
-    },
-    {
-      "source": "crosta2014",
+      "source": "adelman2006",
       "target": "enrollment-patterns-as-adaptation",
       "weight": 1
     },
@@ -290,7 +270,22 @@
       "weight": 1
     },
     {
+      "source": "jenkins2022",
+      "target": "enrollment-patterns-as-adaptation",
+      "weight": 1
+    },
+    {
       "source": "blekic2020",
+      "target": "enrollment-patterns-as-adaptation",
+      "weight": 1
+    },
+    {
+      "source": "engel2025",
+      "target": "enrollment-patterns-as-adaptation",
+      "weight": 1
+    },
+    {
+      "source": "attewell2016",
       "target": "enrollment-patterns-as-adaptation",
       "weight": 1
     },
@@ -300,28 +295,33 @@
       "weight": 1
     },
     {
-      "source": "adelman2006",
+      "source": "tompkins2015",
       "target": "enrollment-patterns-as-adaptation",
       "weight": 1
     },
     {
-      "source": "boumi2021",
-      "target": "enrollment-patterns-as-adaptation",
-      "weight": 1
-    },
-    {
-      "source": "chan2022",
-      "target": "enrollment-patterns-as-adaptation",
-      "weight": 1
-    },
-    {
-      "source": "jenkins2022",
+      "source": "monaghan2015",
       "target": "enrollment-patterns-as-adaptation",
       "weight": 1
     },
     {
       "source": "enrollment-patterns-as-adaptation",
-      "target": "attewell2016",
+      "target": "chan2022",
+      "weight": 1
+    },
+    {
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "crosta2014",
+      "weight": 1
+    },
+    {
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "boumi2021",
+      "weight": 1
+    },
+    {
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "workflow-improvements",
       "weight": 1
     }
   ],

@@ -459,6 +459,28 @@ function renderFooter(){const d=meta.generated?new Date(meta.generated).toLocale
 function setupScroll(){if(rm){document.querySelectorAll('.section').forEach(s=>s.classList.add('visible'));return}const o=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1,rootMargin:'0px 0px -60px 0px'});document.querySelectorAll('.section:not(.visible)').forEach(s=>o.observe(s))}
 
 init();
+
+// Subtle idle animation — gentle node drift when not interacting
+if(!rm){
+  let idleTimer=null;
+  let drifting=false;
+  function startDrift(){
+    if(!cy||drifting)return;drifting=true;
+    function drift(){
+      if(!drifting||!cy)return;
+      cy.nodes().forEach(n=>{
+        const pos=n.position();
+        n.position({x:pos.x+Math.sin(Date.now()*0.001+pos.y*0.01)*0.15,y:pos.y+Math.cos(Date.now()*0.001+pos.x*0.01)*0.1});
+      });
+      requestAnimationFrame(drift);
+    }
+    drift();
+  }
+  function stopDrift(){drifting=false}
+  function resetIdle(){stopDrift();clearTimeout(idleTimer);idleTimer=setTimeout(startDrift,4000)}
+  if(cy){cy.on('tap pan zoom',resetIdle);resetIdle()}
+  else{setTimeout(()=>{if(cy){cy.on('tap pan zoom',resetIdle);resetIdle()}},2000)}
+}
 })();
 </script>
 </body>

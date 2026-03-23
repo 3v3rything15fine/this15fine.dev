@@ -11,8 +11,8 @@
       "centrality": 0.015127,
       "degree": 6,
       "position": {
-        "x": 456.0,
-        "y": 278.0
+        "x": 490.6,
+        "y": 522.3
       },
       "connections": [
         "ci-7355-overview",
@@ -36,8 +36,8 @@
       "centrality": 0.002915,
       "degree": 3,
       "position": {
-        "x": 228.7,
-        "y": 60.0
+        "x": 60.0,
+        "y": 586.7
       },
       "connections": [
         "bronfenbrenner-ecological-systems",
@@ -58,8 +58,8 @@
       "centrality": 0.006385,
       "degree": 2,
       "position": {
-        "x": 940.0,
-        "y": 740.0
+        "x": 391.5,
+        "y": 60.0
       },
       "connections": [
         "home",
@@ -78,8 +78,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 60.0,
-        "y": 363.8
+        "x": 536.1,
+        "y": 740.0
       },
       "connections": [
         "bronfenbrenner-ecological-systems"
@@ -95,8 +95,8 @@
       "centrality": 0.000177,
       "degree": 2,
       "position": {
-        "x": 721.5,
-        "y": 531.9
+        "x": 436.2,
+        "y": 268.2
       },
       "connections": [
         "bronfenbrenner-ecological-systems",
@@ -113,8 +113,8 @@
       "centrality": 0.012435,
       "degree": 11,
       "position": {
-        "x": 759.8,
-        "y": 104.2
+        "x": 940.0,
+        "y": 545.2
       },
       "connections": [
         "mullainathan2014",
@@ -139,6 +139,11 @@
   ],
   "edges": [
     {
+      "source": "final-paper",
+      "target": "bronfenbrenner-ecological-systems",
+      "weight": 1
+    },
+    {
       "source": "literature-review",
       "target": "bronfenbrenner-ecological-systems",
       "weight": 1
@@ -149,18 +154,13 @@
       "weight": 1
     },
     {
-      "source": "vault-audit-report",
-      "target": "bronfenbrenner-ecological-systems",
+      "source": "bronfenbrenner-ecological-systems",
+      "target": "ci-7355-overview",
       "weight": 1
     },
     {
-      "source": "ci-7355-overview",
-      "target": "bronfenbrenner-ecological-systems",
-      "weight": 1
-    },
-    {
-      "source": "final-paper",
-      "target": "bronfenbrenner-ecological-systems",
+      "source": "bronfenbrenner-ecological-systems",
+      "target": "vault-audit-report",
       "weight": 1
     }
   ],

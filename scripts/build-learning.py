@@ -584,6 +584,38 @@ def build_session_page(session_dir: Path, session_date: str) -> dict | None:
       <p style="margin-top: 8px; font-size: 11px;">AI Disclosure: This content was composed with AI assistance.
       Content has been reviewed for accuracy and FERPA compliance.</p>
     </footer>
+
+    <canvas id="bg-particles" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;opacity:0.3" aria-hidden="true"></canvas>
+    <script>
+    (function(){{
+      const rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      if(rm)return;
+      const c=document.getElementById('bg-particles');if(!c)return;
+      const ctx=c.getContext('2d');
+      let W,H;
+      const particles=[];
+      const COLORS=['#88C0D0','#A3BE8C','#EBCB8B','#B48EAD','#5E81AC'];
+      function resize(){{W=c.width=window.innerWidth;H=c.height=window.innerHeight}}
+      function init(){{for(let i=0;i<16;i++)particles.push({{x:Math.random()*W,y:Math.random()*H,r:1+Math.random()*2,vx:(Math.random()-0.5)*0.2,vy:(Math.random()-0.5)*0.2,color:COLORS[Math.floor(Math.random()*COLORS.length)]}})}}
+      function draw(){{
+        ctx.clearRect(0,0,W,H);
+        for(let i=0;i<particles.length;i++){{
+          const p=particles[i];
+          for(let j=i+1;j<particles.length;j++){{
+            const q=particles[j];
+            const d=Math.hypot(p.x-q.x,p.y-q.y);
+            if(d<200){{ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(76,86,106,${{(1-d/200)*0.12}})`;ctx.lineWidth=1;ctx.stroke()}}
+          }}
+          ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.color;ctx.fill();
+          p.x+=p.vx;p.y+=p.vy;
+          if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+        }}
+        requestAnimationFrame(draw);
+      }}
+      resize();init();draw();
+      window.addEventListener('resize',()=>{{resize()}});
+    }})();
+    </script>
     """
 
     # Write session page
@@ -765,6 +797,38 @@ def build_index(sessions: list[dict]):
       <p style="margin-top: 8px; font-size: 11px;">AI Disclosure: This content was composed with AI assistance.
       Content has been reviewed for accuracy and FERPA compliance.</p>
     </footer>
+
+    <canvas id="bg-particles" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:-1;opacity:0.25" aria-hidden="true"></canvas>
+    <script>
+    (function(){{
+      const rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      if(rm)return;
+      const c=document.getElementById('bg-particles');if(!c)return;
+      const ctx=c.getContext('2d');
+      let W,H;
+      const particles=[];
+      const COLORS=['#88C0D0','#A3BE8C','#EBCB8B','#B48EAD','#5E81AC'];
+      function resize(){{W=c.width=window.innerWidth;H=c.height=window.innerHeight}}
+      function init(){{for(let i=0;i<20;i++)particles.push({{x:Math.random()*W,y:Math.random()*H,r:1+Math.random()*2,vx:(Math.random()-0.5)*0.15,vy:(Math.random()-0.5)*0.15,color:COLORS[Math.floor(Math.random()*COLORS.length)]}})}}
+      function draw(){{
+        ctx.clearRect(0,0,W,H);
+        for(let i=0;i<particles.length;i++){{
+          const p=particles[i];
+          for(let j=i+1;j<particles.length;j++){{
+            const q=particles[j];
+            const d=Math.hypot(p.x-q.x,p.y-q.y);
+            if(d<180){{ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=`rgba(76,86,106,${{(1-d/180)*0.1}})`;ctx.lineWidth=1;ctx.stroke()}}
+          }}
+          ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.color;ctx.fill();
+          p.x+=p.vx;p.y+=p.vy;
+          if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+        }}
+        requestAnimationFrame(draw);
+      }}
+      resize();init();draw();
+      window.addEventListener('resize',()=>{{resize()}});
+    }})();
+    </script>
     """
 
     page = PAGE_TEMPLATE.format(

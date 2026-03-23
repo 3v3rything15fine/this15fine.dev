@@ -13,3 +13,7 @@
 /learning/*
   Cache-Control: no-cache
   X-Robots-Tag: noindex, nofollow, noarchive
+
+/docs/*
+  Cache-Control: no-cache
+  X-Robots-Tag: noindex, nofollow, noarchive

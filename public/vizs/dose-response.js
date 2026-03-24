@@ -142,4 +142,9 @@ window.initDoseResponse = function(canvas) {
   }
 
   drawChart();
+
+  // Expose stop function for cleanup
+  window.stopDoseResponse = function() {
+    cancelAnimationFrame(raf3);
+  };
 };

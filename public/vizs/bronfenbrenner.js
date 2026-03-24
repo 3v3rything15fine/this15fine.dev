@@ -726,7 +726,12 @@ window.initBronfenbrenner = function(canvas) {
   if (!prefersReducedMotion) {
     draw();
   } else {
-    // Draw a single frame for reduced-motion users
     draw();
   }
+
+  // Expose stop function for cleanup
+  window.stopBronfenbrenner = function() {
+    running = false;
+    cancelAnimationFrame(raf);
+  };
 };

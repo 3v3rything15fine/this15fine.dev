@@ -5,6 +5,7 @@
     "description": "Students don't exist in isolation. They move through nested systems — classrooms, institutions, families, cultures — and the interactions between those layers matter more than any single one.",
     "script": "/vizs/bronfenbrenner.js",
     "initFunction": "initBronfenbrenner",
+    "stopFunction": "stopBronfenbrenner",
     "canvasWidth": 900,
     "canvasHeight": 360
   },
@@ -14,6 +15,7 @@
     "description": "Click and drag to explore how the theories connect. Each node is a lens for understanding why students persist or depart — and why measuring resilience after failure requires all of them.",
     "script": "/vizs/systems-map.js",
     "initFunction": "initSystemsMap",
+    "stopFunction": "stopSystemsMap",
     "canvasWidth": 960,
     "canvasHeight": 540
   },
@@ -23,6 +25,7 @@
     "description": "A single structured contact was associated with roughly doubling the rate at which students returned to good standing. Not a semester of intervention. One conversation.",
     "script": "/vizs/dose-response.js",
     "initFunction": "initDoseResponse",
+    "stopFunction": "stopDoseResponse",
     "canvasWidth": 640,
     "canvasHeight": 220
   }

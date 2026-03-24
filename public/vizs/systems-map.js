@@ -256,6 +256,8 @@ window.initSystemsMap = function(canvas) {
     };
   }
 
+  let dragStartX = 0, dragStartY = 0;
+
   canvas.addEventListener('mousemove', e => {
     const {x,y} = getMousePos(e);
     hovered = hitTest(x,y);
@@ -266,20 +268,29 @@ window.initSystemsMap = function(canvas) {
       nodes[dragNode].x = Math.max(nodes[dragNode].w/2+8, Math.min(W-nodes[dragNode].w/2-8, nodes[dragNode].x));
       nodes[dragNode].y = Math.max(nodes[dragNode].h/2+8, Math.min(H-nodes[dragNode].h/2-8, nodes[dragNode].y));
     }
+    if (prefersReducedMotion) drawFrame();
   });
   canvas.addEventListener('mousedown', e => {
     const {x,y} = getMousePos(e);
+    dragStartX = x; dragStartY = y;
     const hit = hitTest(x,y);
     if (hit >= 0) { dragNode = hit; dragOffX = x - nodes[hit].x; dragOffY = y - nodes[hit].y; }
   });
   canvas.addEventListener('mouseup', e => {
-    if (dragNode >= 0 && Math.abs(dragOffX) < 3 && Math.abs(dragOffY) < 3) {
+    const {x,y} = getMousePos(e);
+    if (dragNode >= 0 && Math.abs(x - dragStartX) < 3 && Math.abs(y - dragStartY) < 3) {
       selected = selected === dragNode ? -1 : dragNode;
     }
     dragNode = -1;
+    if (prefersReducedMotion) drawFrame();
   });
   canvas.addEventListener('mouseleave', () => { hovered = -1; dragNode = -1; canvas.style.cursor = 'default'; });
 
   // Start
   drawFrame();
+
+  // Expose stop function for cleanup
+  window.stopSystemsMap = function() {
+    cancelAnimationFrame(raf2);
+  };
 };

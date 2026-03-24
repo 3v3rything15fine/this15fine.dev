@@ -1,0 +1,29 @@
+[
+  {
+    "id": "bronfenbrenner",
+    "title": "Ecological Systems",
+    "description": "Students don't exist in isolation. They move through nested systems — classrooms, institutions, families, cultures — and the interactions between those layers matter more than any single one.",
+    "script": "/vizs/bronfenbrenner.js",
+    "initFunction": "initBronfenbrenner",
+    "canvasWidth": 900,
+    "canvasHeight": 360
+  },
+  {
+    "id": "systems-map",
+    "title": "Theoretical Framework",
+    "description": "Click and drag to explore how the theories connect. Each node is a lens for understanding why students persist or depart — and why measuring resilience after failure requires all of them.",
+    "script": "/vizs/systems-map.js",
+    "initFunction": "initSystemsMap",
+    "canvasWidth": 960,
+    "canvasHeight": 540
+  },
+  {
+    "id": "dose-response",
+    "title": "One Conversation",
+    "description": "A single structured contact was associated with roughly doubling the rate at which students returned to good standing. Not a semester of intervention. One conversation.",
+    "script": "/vizs/dose-response.js",
+    "initFunction": "initDoseResponse",
+    "canvasWidth": 640,
+    "canvasHeight": 220
+  }
+]

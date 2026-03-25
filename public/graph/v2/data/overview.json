@@ -5,11 +5,11 @@
       "label": "Academic Resilience",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.035758,
-      "degree": 20,
+      "centrality": 0.0446,
+      "degree": 21,
       "position": {
-        "x": 497.2,
-        "y": 353.8
+        "x": 744.8,
+        "y": 422.7
       }
     },
     {
@@ -17,11 +17,11 @@
       "label": "Student Affairs Case Management: Merging Social Work Theory With Student Affairs Practice",
       "type": "literature",
       "cluster": 2,
-      "centrality": 0.012753,
+      "centrality": 0.011411,
       "degree": 13,
       "position": {
-        "x": 734.9,
-        "y": 371.0
+        "x": 833.3,
+        "y": 401.3
       }
     },
     {
@@ -29,32 +29,52 @@
       "label": "advising-as-education",
       "type": "inquiry",
       "cluster": 0,
-      "centrality": 0.104104,
+      "centrality": 0.102904,
       "degree": 19,
       "position": {
-        "x": 446.5,
-        "y": 509.2
+        "x": 850.7,
+        "y": 455.7
       },
-      "noteCount": 74,
-      "gapCount": 5,
+      "noteCount": 66,
+      "gapCount": 6,
       "bridgeNodes": [
         1,
         2,
-        3
+        3,
+        4
       ],
       "researchQuestion": "How does treating advising as teaching transform student engagement?",
       "keyFinding": "Teaching-oriented advising models show stronger developmental outcomes than prescriptive approaches."
+    },
+    {
+      "id": "ai-agents-as-co-teachers",
+      "label": "ai-agents-as-co-teachers",
+      "type": "inquiry",
+      "cluster": 5,
+      "centrality": 0.063595,
+      "degree": 8,
+      "position": {
+        "x": 625.8,
+        "y": 129.7
+      },
+      "noteCount": 8,
+      "gapCount": 6,
+      "bridgeNodes": [
+        1
+      ],
+      "researchQuestion": "",
+      "keyFinding": ""
     },
     {
       "id": "b3-cds-cma-study",
       "label": "B3 Critical Discourse / Conceptual Metaphor Analysis Study",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.029708,
+      "centrality": 0.032866,
       "degree": 18,
       "position": {
-        "x": 464.5,
-        "y": 341.1
+        "x": 743.6,
+        "y": 415.5
       }
     },
     {
@@ -62,11 +82,11 @@
       "label": "B3 Ideas and Questions",
       "type": "general",
       "cluster": 1,
-      "centrality": 4e-05,
+      "centrality": 0.006681,
       "degree": 15,
       "position": {
-        "x": 481.5,
-        "y": 302.0
+        "x": 738.1,
+        "y": 467.2
       }
     },
     {
@@ -74,11 +94,11 @@
       "label": "B3 Research Hub",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.030988,
-      "degree": 21,
+      "centrality": 0.107036,
+      "degree": 23,
       "position": {
-        "x": 507.9,
-        "y": 313.0
+        "x": 741.9,
+        "y": 453.0
       }
     },
     {
@@ -86,11 +106,11 @@
       "label": "B3 Research Questions Catalog",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.038617,
-      "degree": 22,
+      "centrality": 0.030453,
+      "degree": 21,
       "position": {
-        "x": 511.0,
-        "y": 324.3
+        "x": 745.4,
+        "y": 464.0
       }
     },
     {
@@ -98,35 +118,11 @@
       "label": "Basic Needs Insecurity",
       "type": "general",
       "cluster": 2,
-      "centrality": 0.039807,
-      "degree": 27,
+      "centrality": 0.054311,
+      "degree": 28,
       "position": {
-        "x": 628.3,
-        "y": 367.9
-      }
-    },
-    {
-      "id": "bobcats-bounce-back-notes",
-      "label": "Bobcats Bounce Back -- Program Overview & DOS Presentation Notes",
-      "type": "general",
-      "cluster": 0,
-      "centrality": 0.071381,
-      "degree": 25,
-      "position": {
-        "x": 534.5,
-        "y": 356.2
-      }
-    },
-    {
-      "id": "coggin2025",
-      "label": "An Efficacy Study of the Open Hands Financial Education Program",
-      "type": "literature",
-      "cluster": 2,
-      "centrality": 0.000253,
-      "degree": 13,
-      "position": {
-        "x": 747.0,
-        "y": 424.0
+        "x": 798.1,
+        "y": 449.2
       }
     },
     {
@@ -134,11 +130,11 @@
       "label": "The Role of Emergency Financial Relief Funding in Improving Low-Income Students' Academic and Financial Outcomes Across Demographic Characteristics",
       "type": "literature",
       "cluster": 2,
-      "centrality": 0.001493,
+      "centrality": 0.001529,
       "degree": 15,
       "position": {
-        "x": 676.0,
-        "y": 388.6
+        "x": 820.8,
+        "y": 423.6
       }
     },
     {
@@ -146,17 +142,17 @@
       "label": "deficit-labeling-and-institutional-framing",
       "type": "inquiry",
       "cluster": 0,
-      "centrality": 0.0854,
-      "degree": 21,
+      "centrality": 0.082023,
+      "degree": 20,
       "position": {
-        "x": 404.1,
-        "y": 256.7
+        "x": 797.0,
+        "y": 343.6
       },
-      "noteCount": 74,
-      "gapCount": 5,
+      "noteCount": 66,
+      "gapCount": 6,
       "bridgeNodes": [
         1,
-        3
+        4
       ],
       "researchQuestion": "How do institutional labels shape student identity and recovery?",
       "keyFinding": "Deficit language in institutional communications correlates with reduced help-seeking behavior."
@@ -166,11 +162,11 @@
       "label": "Deficit Models",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.119595,
-      "degree": 26,
+      "centrality": 0.152087,
+      "degree": 27,
       "position": {
-        "x": 477.2,
-        "y": 348.5
+        "x": 751.0,
+        "y": 426.1
       }
     },
     {
@@ -178,23 +174,11 @@
       "label": "Student Financial Literacy: Campus-Based Program Development",
       "type": "literature",
       "cluster": 2,
-      "centrality": 0.000855,
+      "centrality": 0.001197,
       "degree": 13,
       "position": {
-        "x": 769.6,
-        "y": 405.1
-      }
-    },
-    {
-      "id": "ecological-systems-theory",
-      "label": "Ecological Systems Theory",
-      "type": "general",
-      "cluster": 1,
-      "centrality": 0.019656,
-      "degree": 13,
-      "position": {
-        "x": 534.9,
-        "y": 312.6
+        "x": 819.4,
+        "y": 352.1
       }
     },
     {
@@ -202,14 +186,14 @@
       "label": "emergency-aid-and-holistic-support",
       "type": "inquiry",
       "cluster": 2,
-      "centrality": 0.037701,
-      "degree": 23,
+      "centrality": 0.04123,
+      "degree": 22,
       "position": {
-        "x": 617.9,
-        "y": 349.3
+        "x": 810.4,
+        "y": 459.7
       },
-      "noteCount": 41,
-      "gapCount": 5,
+      "noteCount": 44,
+      "gapCount": 6,
       "bridgeNodes": [
         0,
         1
@@ -222,14 +206,14 @@
       "label": "engagement-causality-and-timing",
       "type": "inquiry",
       "cluster": 1,
-      "centrality": 0.091681,
+      "centrality": 0.086762,
       "degree": 21,
       "position": {
-        "x": 492.0,
-        "y": 215.6
+        "x": 689.0,
+        "y": 484.3
       },
-      "noteCount": 49,
-      "gapCount": 5,
+      "noteCount": 55,
+      "gapCount": 6,
       "bridgeNodes": [
         0
       ],
@@ -240,15 +224,15 @@
       "id": "enrollment-patterns-as-adaptation",
       "label": "enrollment-patterns-as-adaptation",
       "type": "inquiry",
-      "cluster": 4,
-      "centrality": 0.125302,
-      "degree": 24,
+      "cluster": 3,
+      "centrality": 0.139645,
+      "degree": 28,
       "position": {
-        "x": 673.9,
-        "y": 223.4
+        "x": 760.8,
+        "y": 579.1
       },
-      "noteCount": 14,
-      "gapCount": 5,
+      "noteCount": 26,
+      "gapCount": 6,
       "bridgeNodes": [
         0,
         1,
@@ -262,14 +246,14 @@
       "label": "financial-education-under-scarcity",
       "type": "inquiry",
       "cluster": 2,
-      "centrality": 0.002598,
-      "degree": 16,
+      "centrality": 0.003103,
+      "degree": 15,
       "position": {
-        "x": 722.6,
-        "y": 395.4
+        "x": 832.3,
+        "y": 408.8
       },
-      "noteCount": 41,
-      "gapCount": 5,
+      "noteCount": 44,
+      "gapCount": 6,
       "researchQuestion": "How effective is financial education for students under scarcity?",
       "keyFinding": "Standard financial literacy curricula underperform when cognitive bandwidth is constrained."
     },
@@ -278,11 +262,11 @@
       "label": "Financial Literacy",
       "type": "general",
       "cluster": 2,
-      "centrality": 0.019828,
+      "centrality": 0.02381,
       "degree": 27,
       "position": {
-        "x": 681.1,
-        "y": 402.1
+        "x": 813.3,
+        "y": 396.5
       }
     },
     {
@@ -290,14 +274,14 @@
       "label": "financial-literacy-measurement",
       "type": "inquiry",
       "cluster": 2,
-      "centrality": 0.000789,
-      "degree": 13,
+      "centrality": 0.0005,
+      "degree": 12,
       "position": {
-        "x": 763.5,
-        "y": 415.2
+        "x": 834.0,
+        "y": 358.6
       },
-      "noteCount": 41,
-      "gapCount": 5,
+      "noteCount": 44,
+      "gapCount": 6,
       "researchQuestion": "How should financial literacy be measured in student populations?",
       "keyFinding": "Most financial literacy measures conflate knowledge with behavior, inflating apparent effectiveness."
     },
@@ -306,11 +290,11 @@
       "label": "Financial Self-Efficacy",
       "type": "general",
       "cluster": 2,
-      "centrality": 0.027987,
+      "centrality": 0.032633,
       "degree": 25,
       "position": {
-        "x": 642.1,
-        "y": 377.9
+        "x": 798.8,
+        "y": 415.3
       }
     },
     {
@@ -318,11 +302,11 @@
       "label": "Defining College Student Financial Literacy Utilizing the Delphi Method",
       "type": "literature",
       "cluster": 2,
-      "centrality": 0.000627,
+      "centrality": 0.000877,
       "degree": 14,
       "position": {
-        "x": 766.4,
-        "y": 428.4
+        "x": 839.2,
+        "y": 365.8
       }
     },
     {
@@ -330,23 +314,23 @@
       "label": "Supporting Community College Completion with a Culture of Caring: A Case Study of Amarillo College",
       "type": "literature",
       "cluster": 2,
-      "centrality": 0.002776,
+      "centrality": 0.003055,
       "degree": 14,
       "position": {
-        "x": 672.3,
-        "y": 426.2
+        "x": 811.9,
+        "y": 412.8
       }
     },
     {
-      "id": "goldrick-rab2023",
-      "label": "Affording Degree Completion: An Experimental Study of Completion Grants at Accessible Public Universities",
+      "id": "henager2025",
+      "label": "Financial Wellness, Curricular, and Co-Curricular Approaches",
       "type": "literature",
       "cluster": 2,
-      "centrality": 0.000416,
+      "centrality": 0.000386,
       "degree": 13,
       "position": {
-        "x": 658.0,
-        "y": 403.2
+        "x": 825.7,
+        "y": 363.2
       }
     },
     {
@@ -354,11 +338,11 @@
       "label": "Human Capital Theory",
       "type": "general",
       "cluster": 2,
-      "centrality": 0.010863,
+      "centrality": 0.008613,
       "degree": 20,
       "position": {
-        "x": 672.5,
-        "y": 409.9
+        "x": 806.8,
+        "y": 395.9
       }
     },
     {
@@ -366,16 +350,17 @@
       "label": "individual-vs-aggregate-measurement",
       "type": "inquiry",
       "cluster": 1,
-      "centrality": 0.036925,
+      "centrality": 0.038285,
       "degree": 14,
       "position": {
-        "x": 537.8,
-        "y": 254.6
+        "x": 735.7,
+        "y": 511.5
       },
-      "noteCount": 49,
-      "gapCount": 5,
+      "noteCount": 55,
+      "gapCount": 6,
       "bridgeNodes": [
-        0
+        0,
+        3
       ],
       "researchQuestion": "What do individual trajectories reveal that aggregates obscure?",
       "keyFinding": "Within-student trajectories reveal recovery patterns invisible in cohort-level analysis."
@@ -385,26 +370,26 @@
       "label": "Literature Review Matrix",
       "type": "general",
       "cluster": 2,
-      "centrality": 0.031937,
+      "centrality": 0.022657,
       "degree": 31,
       "position": {
-        "x": 705.8,
-        "y": 432.8
+        "x": 817.2,
+        "y": 388.4
       }
     },
     {
       "id": "llm-qualitative-coding-reliability",
       "label": "llm-qualitative-coding-reliability",
       "type": "inquiry",
-      "cluster": 3,
-      "centrality": 0.005663,
+      "cluster": 4,
+      "centrality": 0.005624,
       "degree": 6,
       "position": {
-        "x": 537.8,
-        "y": 455.1
+        "x": 754.9,
+        "y": 320.4
       },
       "noteCount": 15,
-      "gapCount": 5,
+      "gapCount": 6,
       "bridgeNodes": [
         1,
         2
@@ -417,11 +402,11 @@
       "label": "Applying a Human Capital Framework to College Students' Financial Well-Being",
       "type": "literature",
       "cluster": 2,
-      "centrality": 0.002746,
+      "centrality": 0.003193,
       "degree": 13,
       "position": {
-        "x": 724.7,
-        "y": 383.4
+        "x": 826.0,
+        "y": 398.7
       }
     },
     {
@@ -429,11 +414,23 @@
       "label": "Scarcity: The New Science of Having Less",
       "type": "literature",
       "cluster": 2,
-      "centrality": 0.00047,
+      "centrality": 0.000561,
       "degree": 14,
       "position": {
-        "x": 692.8,
-        "y": 387.4
+        "x": 818.5,
+        "y": 408.4
+      }
+    },
+    {
+      "id": "naspa-2026-enrollment-intensity",
+      "label": "naspa-2026-enrollment-intensity",
+      "type": "general",
+      "cluster": 3,
+      "centrality": 0.045966,
+      "degree": 17,
+      "position": {
+        "x": 771.1,
+        "y": 568.2
       }
     },
     {
@@ -441,11 +438,11 @@
       "label": "Peer Mentoring",
       "type": "general",
       "cluster": 2,
-      "centrality": 0.008402,
+      "centrality": 0.006171,
       "degree": 15,
       "position": {
-        "x": 667.3,
-        "y": 368.5
+        "x": 792.2,
+        "y": 407.3
       }
     },
     {
@@ -453,16 +450,15 @@
       "label": "peer-mentoring-effectiveness",
       "type": "inquiry",
       "cluster": 2,
-      "centrality": 0.003223,
-      "degree": 11,
+      "centrality": 0.001866,
+      "degree": 10,
       "position": {
-        "x": 699.5,
-        "y": 373.4
+        "x": 800.6,
+        "y": 371.1
       },
-      "noteCount": 41,
-      "gapCount": 5,
+      "noteCount": 44,
+      "gapCount": 6,
       "bridgeNodes": [
-        0,
         1
       ],
       "researchQuestion": "What makes peer mentoring effective for student success?",
@@ -473,14 +469,14 @@
       "label": "post-failure-academic-recovery",
       "type": "inquiry",
       "cluster": 1,
-      "centrality": 0.150535,
+      "centrality": 0.150396,
       "degree": 32,
       "position": {
-        "x": 344.0,
-        "y": 327.8
+        "x": 785.3,
+        "y": 502.9
       },
-      "noteCount": 49,
-      "gapCount": 5,
+      "noteCount": 55,
+      "gapCount": 6,
       "bridgeNodes": [
         0,
         3,
@@ -494,11 +490,11 @@
       "label": "Retention Theory",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.079706,
+      "centrality": 0.08357,
       "degree": 37,
       "position": {
-        "x": 585.2,
-        "y": 349.6
+        "x": 777.1,
+        "y": 442.8
       }
     },
     {
@@ -506,11 +502,11 @@
       "label": "Scarcity Theory",
       "type": "general",
       "cluster": 2,
-      "centrality": 0.009598,
-      "degree": 20,
+      "centrality": 0.019201,
+      "degree": 22,
       "position": {
-        "x": 642.1,
-        "y": 394.5
+        "x": 808.9,
+        "y": 452.8
       }
     },
     {
@@ -518,40 +514,51 @@
       "label": "Best Practices in Peer Financial Education",
       "type": "literature",
       "cluster": 2,
-      "centrality": 0.001137,
+      "centrality": 0.001253,
       "degree": 13,
       "position": {
-        "x": 726.9,
-        "y": 424.3
+        "x": 810.6,
+        "y": 362.5
       }
     },
     {
       "id": "self-authorship",
       "label": "Self-Authorship",
       "type": "general",
-      "cluster": 3,
-      "centrality": 0.030108,
+      "cluster": 4,
+      "centrality": 0.028107,
       "degree": 13,
       "position": {
-        "x": 491.2,
-        "y": 388.1
+        "x": 772.2,
+        "y": 407.8
+      }
+    },
+    {
+      "id": "self-determination-theory",
+      "label": "Self-Determination Theory",
+      "type": "general",
+      "cluster": 1,
+      "centrality": 0.017443,
+      "degree": 13,
+      "position": {
+        "x": 755.9,
+        "y": 434.6
       }
     },
     {
       "id": "student-meaning-making-about-difficulty",
       "label": "student-meaning-making-about-difficulty",
       "type": "inquiry",
-      "cluster": 3,
-      "centrality": 0.053107,
-      "degree": 16,
+      "cluster": 4,
+      "centrality": 0.045682,
+      "degree": 15,
       "position": {
-        "x": 334.9,
-        "y": 408.1
+        "x": 705.6,
+        "y": 368.9
       },
       "noteCount": 15,
-      "gapCount": 5,
+      "gapCount": 6,
       "bridgeNodes": [
-        0,
         1
       ],
       "researchQuestion": "How do students make meaning from academic difficulty?",
@@ -561,12 +568,12 @@
       "id": "systems-thinking",
       "label": "Systems Thinking",
       "type": "general",
-      "cluster": 1,
-      "centrality": 0.039678,
+      "cluster": 0,
+      "centrality": 0.073462,
       "degree": 18,
       "position": {
-        "x": 529.0,
-        "y": 364.1
+        "x": 749.2,
+        "y": 463.0
       }
     },
     {
@@ -574,17 +581,16 @@
       "label": "systems-thinking-and-epistemic-justice",
       "type": "inquiry",
       "cluster": 0,
-      "centrality": 0.115484,
-      "degree": 21,
+      "centrality": 0.102177,
+      "degree": 19,
       "position": {
-        "x": 323.4,
-        "y": 261.9
+        "x": 666.7,
+        "y": 394.3
       },
-      "noteCount": 74,
-      "gapCount": 5,
+      "noteCount": 66,
+      "gapCount": 6,
       "bridgeNodes": [
-        1,
-        5
+        1
       ],
       "researchQuestion": "How do systems thinking and epistemic justice intersect?",
       "keyFinding": "Institutional systems often reproduce epistemic injustice through ostensibly neutral processes."
@@ -594,11 +600,11 @@
       "label": "'Not a Lot I Could Do': Challenges Facing College Peer Financial Mentors",
       "type": "literature",
       "cluster": 2,
-      "centrality": 0.003533,
+      "centrality": 0.004244,
       "degree": 17,
       "position": {
-        "x": 702.3,
-        "y": 425.0
+        "x": 813.6,
+        "y": 382.5
       }
     },
     {
@@ -606,11 +612,11 @@
       "label": "Theoretical Framework Map",
       "type": "general",
       "cluster": 2,
-      "centrality": 0.073356,
+      "centrality": 0.100698,
       "degree": 49,
       "position": {
-        "x": 625.6,
-        "y": 403.0
+        "x": 802.4,
+        "y": 404.3
       }
     },
     {
@@ -618,11 +624,11 @@
       "label": "Vault Graph Analysis",
       "type": "general",
       "cluster": 0,
-      "centrality": 0.014062,
-      "degree": 14,
+      "centrality": 0.014377,
+      "degree": 13,
       "position": {
-        "x": 464.8,
-        "y": 368.2
+        "x": 760.4,
+        "y": 451.4
       }
     },
     {
@@ -630,11 +636,11 @@
       "label": "Loans in the Long Game: How Student Debt Affects Financial Stress Post-Graduation",
       "type": "literature",
       "cluster": 2,
-      "centrality": 0.001294,
+      "centrality": 0.001919,
       "degree": 14,
       "position": {
-        "x": 696.0,
-        "y": 412.2
+        "x": 833.2,
+        "y": 426.7
       }
     }
   ],
@@ -652,6 +658,21 @@
     {
       "source": "academic-resilience",
       "target": "financial-self-efficacy",
+      "weight": 1
+    },
+    {
+      "source": "academic-resilience",
+      "target": "deficit-models",
+      "weight": 1
+    },
+    {
+      "source": "academic-resilience",
+      "target": "engagement-causality-and-timing",
+      "weight": 1
+    },
+    {
+      "source": "academic-resilience",
+      "target": "post-failure-academic-recovery",
       "weight": 1
     },
     {
@@ -676,17 +697,7 @@
     },
     {
       "source": "academic-resilience",
-      "target": "deficit-models",
-      "weight": 1
-    },
-    {
-      "source": "academic-resilience",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "academic-resilience",
-      "target": "post-failure-academic-recovery",
+      "target": "self-determination-theory",
       "weight": 1
     },
     {
@@ -706,17 +717,17 @@
     },
     {
       "source": "advising-as-education",
+      "target": "self-determination-theory",
+      "weight": 1
+    },
+    {
+      "source": "advising-as-education",
       "target": "deficit-models",
       "weight": 1
     },
     {
       "source": "advising-as-education",
       "target": "theoretical-framework-map",
-      "weight": 1
-    },
-    {
-      "source": "advising-as-education",
-      "target": "bobcats-bounce-back-notes",
       "weight": 1
     },
     {
@@ -730,231 +741,6 @@
       "weight": 3
     },
     {
-      "source": "b3-cds-cma-study",
-      "target": "deficit-models",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "self-authorship",
-      "weight": 2
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "retention-theory",
-      "weight": 2
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "bobcats-bounce-back-notes",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "ecological-systems-theory",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "b3-ideas-and-questions",
-      "weight": 2
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "b3-research-hub",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "b3-research-questions",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "deficit-labeling-and-institutional-framing",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "individual-vs-aggregate-measurement",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "llm-qualitative-coding-reliability",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "post-failure-academic-recovery",
-      "weight": 1
-    },
-    {
-      "source": "b3-cds-cma-study",
-      "target": "student-meaning-making-about-difficulty",
-      "weight": 1
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "b3-research-questions",
-      "weight": 2
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "b3-research-hub",
-      "weight": 2
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "ecological-systems-theory",
-      "weight": 4
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "post-failure-academic-recovery",
-      "weight": 6
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "retention-theory",
-      "weight": 4
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "engagement-causality-and-timing",
-      "weight": 8
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "systems-thinking",
-      "weight": 1
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "individual-vs-aggregate-measurement",
-      "weight": 5
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "deficit-models",
-      "weight": 4
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "b3-research-questions",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "ecological-systems-theory",
-      "weight": 2
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "financial-self-efficacy",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "deficit-models",
-      "weight": 2
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "retention-theory",
-      "weight": 2
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "systems-thinking",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "bobcats-bounce-back-notes",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "deficit-labeling-and-institutional-framing",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "emergency-aid-and-holistic-support",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "post-failure-academic-recovery",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "ecological-systems-theory",
-      "weight": 3
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "retention-theory",
-      "weight": 3
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "systems-thinking",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "financial-self-efficacy",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "deficit-models",
-      "weight": 2
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "bobcats-bounce-back-notes",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "enrollment-patterns-as-adaptation",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "individual-vs-aggregate-measurement",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "post-failure-academic-recovery",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "student-meaning-making-about-difficulty",
-      "weight": 1
-    },
-    {
       "source": "basic-needs-insecurity",
       "target": "mullainathan2014",
       "weight": 1
@@ -962,11 +748,6 @@
     {
       "source": "basic-needs-insecurity",
       "target": "goldrick-rab-cadynd",
-      "weight": 1
-    },
-    {
-      "source": "basic-needs-insecurity",
-      "target": "goldrick-rab2023",
       "weight": 1
     },
     {
@@ -1006,17 +787,7 @@
     },
     {
       "source": "basic-needs-insecurity",
-      "target": "bobcats-bounce-back-notes",
-      "weight": 1
-    },
-    {
-      "source": "basic-needs-insecurity",
       "target": "deficit-models",
-      "weight": 1
-    },
-    {
-      "source": "basic-needs-insecurity",
-      "target": "ecological-systems-theory",
       "weight": 1
     },
     {
@@ -1050,56 +821,6 @@
       "weight": 4
     },
     {
-      "source": "bobcats-bounce-back-notes",
-      "target": "retention-theory",
-      "weight": 2
-    },
-    {
-      "source": "bobcats-bounce-back-notes",
-      "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "bobcats-bounce-back-notes",
-      "target": "financial-self-efficacy",
-      "weight": 1
-    },
-    {
-      "source": "bobcats-bounce-back-notes",
-      "target": "peer-mentoring",
-      "weight": 1
-    },
-    {
-      "source": "bobcats-bounce-back-notes",
-      "target": "deficit-labeling-and-institutional-framing",
-      "weight": 1
-    },
-    {
-      "source": "bobcats-bounce-back-notes",
-      "target": "emergency-aid-and-holistic-support",
-      "weight": 1
-    },
-    {
-      "source": "bobcats-bounce-back-notes",
-      "target": "peer-mentoring-effectiveness",
-      "weight": 1
-    },
-    {
-      "source": "bobcats-bounce-back-notes",
-      "target": "student-meaning-making-about-difficulty",
-      "weight": 1
-    },
-    {
-      "source": "bobcats-bounce-back-notes",
-      "target": "systems-thinking-and-epistemic-justice",
-      "weight": 1
-    },
-    {
-      "source": "bobcats-bounce-back-notes",
-      "target": "vault-graph-analysis",
-      "weight": 1
-    },
-    {
       "source": "deficit-labeling-and-institutional-framing",
       "target": "deficit-models",
       "weight": 1
@@ -1107,6 +828,16 @@
     {
       "source": "deficit-labeling-and-institutional-framing",
       "target": "self-authorship",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "deficit-labeling-and-institutional-framing",
+      "target": "b3-cds-cma-study",
       "weight": 1
     },
     {
@@ -1136,6 +867,26 @@
     },
     {
       "source": "deficit-models",
+      "target": "b3-cds-cma-study",
+      "weight": 1
+    },
+    {
+      "source": "deficit-models",
+      "target": "b3-ideas-and-questions",
+      "weight": 4
+    },
+    {
+      "source": "deficit-models",
+      "target": "b3-research-hub",
+      "weight": 2
+    },
+    {
+      "source": "deficit-models",
+      "target": "b3-research-questions",
+      "weight": 2
+    },
+    {
+      "source": "deficit-models",
       "target": "student-meaning-making-about-difficulty",
       "weight": 1
     },
@@ -1155,46 +906,6 @@
       "weight": 1
     },
     {
-      "source": "ecological-systems-theory",
-      "target": "retention-theory",
-      "weight": 1
-    },
-    {
-      "source": "ecological-systems-theory",
-      "target": "systems-thinking",
-      "weight": 1
-    },
-    {
-      "source": "ecological-systems-theory",
-      "target": "emergency-aid-and-holistic-support",
-      "weight": 1
-    },
-    {
-      "source": "ecological-systems-theory",
-      "target": "enrollment-patterns-as-adaptation",
-      "weight": 1
-    },
-    {
-      "source": "ecological-systems-theory",
-      "target": "individual-vs-aggregate-measurement",
-      "weight": 1
-    },
-    {
-      "source": "ecological-systems-theory",
-      "target": "systems-thinking-and-epistemic-justice",
-      "weight": 1
-    },
-    {
-      "source": "ecological-systems-theory",
-      "target": "theoretical-framework-map",
-      "weight": 1
-    },
-    {
-      "source": "emergency-aid-and-holistic-support",
-      "target": "goldrick-rab2023",
-      "weight": 1
-    },
-    {
       "source": "emergency-aid-and-holistic-support",
       "target": "curs-harpernd",
       "weight": 1
@@ -1240,9 +951,39 @@
       "weight": 1
     },
     {
+      "source": "emergency-aid-and-holistic-support",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "self-determination-theory",
+      "weight": 1
+    },
+    {
       "source": "engagement-causality-and-timing",
       "target": "retention-theory",
       "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "b3-cds-cma-study",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "b3-ideas-and-questions",
+      "weight": 8
     },
     {
       "source": "engagement-causality-and-timing",
@@ -1261,12 +1002,22 @@
     },
     {
       "source": "enrollment-patterns-as-adaptation",
+      "target": "naspa-2026-enrollment-intensity",
+      "weight": 1
+    },
+    {
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "enrollment-patterns-as-adaptation",
       "target": "vault-graph-analysis",
       "weight": 1
     },
     {
       "source": "financial-education-under-scarcity",
-      "target": "coggin2025",
+      "target": "henager2025",
       "weight": 1
     },
     {
@@ -1277,11 +1028,6 @@
     {
       "source": "financial-education-under-scarcity",
       "target": "zimmerman2025",
-      "weight": 1
-    },
-    {
-      "source": "financial-education-under-scarcity",
-      "target": "goldrick-rab2023",
       "weight": 1
     },
     {
@@ -1371,11 +1117,6 @@
     },
     {
       "source": "financial-literacy",
-      "target": "coggin2025",
-      "weight": 1
-    },
-    {
-      "source": "financial-literacy",
       "target": "human-capital-theory",
       "weight": 1
     },
@@ -1392,6 +1133,11 @@
     {
       "source": "financial-literacy",
       "target": "durband2012",
+      "weight": 1
+    },
+    {
+      "source": "financial-literacy",
+      "target": "henager2025",
       "weight": 1
     },
     {
@@ -1441,12 +1187,12 @@
     },
     {
       "source": "financial-self-efficacy",
-      "target": "coggin2025",
+      "target": "gatti2024",
       "weight": 1
     },
     {
       "source": "financial-self-efficacy",
-      "target": "gatti2024",
+      "target": "henager2025",
       "weight": 1
     },
     {
@@ -1456,7 +1202,22 @@
     },
     {
       "source": "financial-self-efficacy",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "financial-self-efficacy",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "financial-self-efficacy",
       "target": "self-authorship",
+      "weight": 1
+    },
+    {
+      "source": "financial-self-efficacy",
+      "target": "self-determination-theory",
       "weight": 1
     },
     {
@@ -1467,11 +1228,6 @@
     {
       "source": "human-capital-theory",
       "target": "moorend",
-      "weight": 1
-    },
-    {
-      "source": "human-capital-theory",
-      "target": "coggin2025",
       "weight": 1
     },
     {
@@ -1535,74 +1291,24 @@
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
-      "target": "coggin2025",
+      "source": "individual-vs-aggregate-measurement",
+      "target": "naspa-2026-enrollment-intensity",
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
-      "target": "gatti2024",
+      "source": "individual-vs-aggregate-measurement",
+      "target": "b3-research-questions",
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
-      "target": "goldrick-rab2023",
+      "source": "individual-vs-aggregate-measurement",
+      "target": "b3-cds-cma-study",
       "weight": 1
     },
     {
-      "source": "lit-review-matrix",
-      "target": "curs-harpernd",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "zimmerman2025",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "taylor2025",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "schuman-nd",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "goldrick-rab-cadynd",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "moorend",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "mullainathan2014",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "adams2014",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "durband2012",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "theoretical-framework-map",
-      "weight": 1
-    },
-    {
-      "source": "lit-review-matrix",
-      "target": "peer-mentoring-effectiveness",
-      "weight": 1
+      "source": "individual-vs-aggregate-measurement",
+      "target": "b3-ideas-and-questions",
+      "weight": 5
     },
     {
       "source": "adams2014",
@@ -1641,23 +1347,13 @@
     },
     {
       "source": "adams2014",
+      "target": "lit-review-matrix",
+      "weight": 1
+    },
+    {
+      "source": "adams2014",
       "target": "scarcity-theory",
       "weight": 1
-    },
-    {
-      "source": "coggin2025",
-      "target": "gatti2024",
-      "weight": 1
-    },
-    {
-      "source": "coggin2025",
-      "target": "durband2012",
-      "weight": 1
-    },
-    {
-      "source": "coggin2025",
-      "target": "theoretical-framework-map",
-      "weight": 2
     },
     {
       "source": "curs-harpernd",
@@ -1667,11 +1363,6 @@
     {
       "source": "curs-harpernd",
       "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "curs-harpernd",
-      "target": "goldrick-rab2023",
       "weight": 1
     },
     {
@@ -1691,12 +1382,22 @@
     },
     {
       "source": "curs-harpernd",
+      "target": "lit-review-matrix",
+      "weight": 1
+    },
+    {
+      "source": "curs-harpernd",
       "target": "theoretical-framework-map",
       "weight": 2
     },
     {
       "source": "durband2012",
       "target": "peer-mentoring",
+      "weight": 1
+    },
+    {
+      "source": "durband2012",
+      "target": "henager2025",
       "weight": 1
     },
     {
@@ -1721,6 +1422,11 @@
     },
     {
       "source": "durband2012",
+      "target": "lit-review-matrix",
+      "weight": 1
+    },
+    {
+      "source": "durband2012",
       "target": "theoretical-framework-map",
       "weight": 1
     },
@@ -1731,6 +1437,11 @@
     },
     {
       "source": "gatti2024",
+      "target": "lit-review-matrix",
+      "weight": 1
+    },
+    {
+      "source": "gatti2024",
       "target": "theoretical-framework-map",
       "weight": 1
     },
@@ -1742,11 +1453,6 @@
     {
       "source": "goldrick-rab-cadynd",
       "target": "scarcity-theory",
-      "weight": 1
-    },
-    {
-      "source": "goldrick-rab-cadynd",
-      "target": "goldrick-rab2023",
       "weight": 1
     },
     {
@@ -1761,32 +1467,47 @@
     },
     {
       "source": "goldrick-rab-cadynd",
+      "target": "lit-review-matrix",
+      "weight": 1
+    },
+    {
+      "source": "goldrick-rab-cadynd",
       "target": "theoretical-framework-map",
       "weight": 3
     },
     {
-      "source": "goldrick-rab2023",
-      "target": "retention-theory",
+      "source": "henager2025",
+      "target": "peer-mentoring",
       "weight": 1
     },
     {
-      "source": "goldrick-rab2023",
-      "target": "scarcity-theory",
+      "source": "henager2025",
+      "target": "schuman-nd",
       "weight": 1
     },
     {
-      "source": "goldrick-rab2023",
-      "target": "zimmerman2025",
+      "source": "henager2025",
+      "target": "taylor2025",
       "weight": 1
     },
     {
-      "source": "goldrick-rab2023",
-      "target": "theoretical-framework-map",
-      "weight": 3
+      "source": "henager2025",
+      "target": "peer-mentoring-effectiveness",
+      "weight": 1
+    },
+    {
+      "source": "henager2025",
+      "target": "lit-review-matrix",
+      "weight": 1
     },
     {
       "source": "moorend",
       "target": "mullainathan2014",
+      "weight": 1
+    },
+    {
+      "source": "moorend",
+      "target": "lit-review-matrix",
       "weight": 1
     },
     {
@@ -1812,6 +1533,11 @@
     {
       "source": "mullainathan2014",
       "target": "taylor2025",
+      "weight": 1
+    },
+    {
+      "source": "mullainathan2014",
+      "target": "lit-review-matrix",
       "weight": 1
     },
     {
@@ -1836,6 +1562,11 @@
     },
     {
       "source": "schuman-nd",
+      "target": "lit-review-matrix",
+      "weight": 1
+    },
+    {
+      "source": "schuman-nd",
       "target": "theoretical-framework-map",
       "weight": 3
     },
@@ -1857,6 +1588,11 @@
     {
       "source": "taylor2025",
       "target": "peer-mentoring-effectiveness",
+      "weight": 1
+    },
+    {
+      "source": "taylor2025",
+      "target": "lit-review-matrix",
       "weight": 1
     },
     {
@@ -1871,7 +1607,17 @@
     },
     {
       "source": "zimmerman2025",
+      "target": "lit-review-matrix",
+      "weight": 1
+    },
+    {
+      "source": "zimmerman2025",
       "target": "theoretical-framework-map",
+      "weight": 1
+    },
+    {
+      "source": "llm-qualitative-coding-reliability",
+      "target": "b3-cds-cma-study",
       "weight": 1
     },
     {
@@ -1887,6 +1633,11 @@
     {
       "source": "peer-mentoring-effectiveness",
       "target": "theoretical-framework-map",
+      "weight": 1
+    },
+    {
+      "source": "peer-mentoring-effectiveness",
+      "target": "lit-review-matrix",
       "weight": 1
     },
     {
@@ -1906,8 +1657,133 @@
     },
     {
       "source": "post-failure-academic-recovery",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "b3-cds-cma-study",
+      "weight": 1
+    },
+    {
+      "source": "post-failure-academic-recovery",
+      "target": "b3-ideas-and-questions",
+      "weight": 6
+    },
+    {
+      "source": "post-failure-academic-recovery",
       "target": "vault-graph-analysis",
       "weight": 3
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "self-authorship",
+      "weight": 2
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "retention-theory",
+      "weight": 2
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "b3-ideas-and-questions",
+      "weight": 2
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "b3-ideas-and-questions",
+      "target": "b3-research-questions",
+      "weight": 2
+    },
+    {
+      "source": "b3-ideas-and-questions",
+      "target": "b3-research-hub",
+      "weight": 2
+    },
+    {
+      "source": "b3-ideas-and-questions",
+      "target": "retention-theory",
+      "weight": 4
+    },
+    {
+      "source": "b3-ideas-and-questions",
+      "target": "self-determination-theory",
+      "weight": 4
+    },
+    {
+      "source": "b3-ideas-and-questions",
+      "target": "systems-thinking",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "self-determination-theory",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "retention-theory",
+      "weight": 2
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "systems-thinking",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "naspa-2026-enrollment-intensity",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-questions",
+      "target": "retention-theory",
+      "weight": 3
+    },
+    {
+      "source": "b3-research-questions",
+      "target": "self-determination-theory",
+      "weight": 3
+    },
+    {
+      "source": "b3-research-questions",
+      "target": "systems-thinking",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-questions",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "lit-review-matrix",
+      "target": "theoretical-framework-map",
+      "weight": 1
     },
     {
       "source": "retention-theory",
@@ -1936,11 +1812,21 @@
     },
     {
       "source": "self-authorship",
+      "target": "self-determination-theory",
+      "weight": 1
+    },
+    {
+      "source": "self-authorship",
       "target": "student-meaning-making-about-difficulty",
       "weight": 1
     },
     {
       "source": "self-authorship",
+      "target": "theoretical-framework-map",
+      "weight": 1
+    },
+    {
+      "source": "self-determination-theory",
       "target": "theoretical-framework-map",
       "weight": 1
     },

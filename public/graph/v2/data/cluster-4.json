@@ -4,146 +4,283 @@
   "color": "#B48EAD",
   "nodes": [
     {
-      "id": "adelman2006",
-      "label": "The toolbox revisited: Paths to degree completion from high school through college",
+      "id": "ajjawi2020",
+      "label": "Persisting students' explanations of and emotional responses to academic failure",
       "type": "literature",
       "cluster": 4,
-      "centrality": 0.0,
-      "degree": 1,
+      "centrality": 0.000504,
+      "degree": 2,
       "position": {
-        "x": 459.3,
-        "y": 650.2
+        "x": 539.5,
+        "y": 717.8
       },
       "connections": [
-        "enrollment-patterns-as-adaptation"
+        "post-failure-academic-recovery",
+        "student-meaning-making-about-difficulty"
       ],
-      "isBridge": false,
-      "bridgesTo": []
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
     },
     {
-      "id": "attewell2016",
-      "label": "How many credits should an undergraduate take?",
+      "id": "b3-cds-cma-findings",
+      "label": "B3 CDS/CMA Study -- Detailed Findings",
+      "type": "general",
+      "cluster": 4,
+      "centrality": 0.000381,
+      "degree": 5,
+      "position": {
+        "x": 737.0,
+        "y": 364.9
+      },
+      "connections": [
+        "llm-qualitative-coding-reliability",
+        "b3-cds-cma-study",
+        "conceptual-metaphor-theory",
+        "discourse-analysis",
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "baxter magolda2009",
+      "label": "The activity of meaning making: A holistic perspective on college student development",
       "type": "literature",
       "cluster": 4,
       "centrality": 0.0,
       "degree": 1,
       "position": {
         "x": 60.0,
-        "y": 397.7
+        "y": 415.2
       },
       "connections": [
-        "enrollment-patterns-as-adaptation"
+        "student-meaning-making-about-difficulty"
       ],
       "isBridge": false,
       "bridgesTo": []
     },
     {
-      "id": "blekic2020",
-      "label": "Continuing and transfer students: Exploring retention and second-year success",
+      "id": "bledsoe2024",
+      "label": "From setback to success: A restorative momentum model of success for students returning from academic dismissal",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.000504,
+      "degree": 2,
+      "position": {
+        "x": 188.5,
+        "y": 684.0
+      },
+      "connections": [
+        "post-failure-academic-recovery",
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "ci-7151-overview",
+      "label": "CI 7151 - Research Apprenticeship",
+      "type": "course",
+      "cluster": 4,
+      "centrality": 6e-06,
+      "degree": 3,
+      "position": {
+        "x": 737.1,
+        "y": 60.0
+      },
+      "connections": [
+        "academic-resilience",
+        "conceptual-metaphor-theory",
+        "discourse-analysis"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "conceptual-metaphor-theory",
+      "label": "Conceptual Metaphor Theory",
+      "type": "general",
+      "cluster": 4,
+      "centrality": 0.003425,
+      "degree": 9,
+      "position": {
+        "x": 670.6,
+        "y": 245.3
+      },
+      "connections": [
+        "discourse-analysis",
+        "b3-cds-cma-study",
+        "academic-resilience",
+        "deficit-models",
+        "self-authorship",
+        "ci-7151-overview",
+        "llm-qualitative-coding-reliability",
+        "b3-cds-cma-findings",
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "de-7301-overview",
+      "label": "DE 7301 - Understanding Learners in Developmental Education Contexts",
+      "type": "course",
+      "cluster": 4,
+      "centrality": 0.000238,
+      "degree": 4,
+      "position": {
+        "x": 940.0,
+        "y": 462.5
+      },
+      "connections": [
+        "academic-resilience",
+        "discourse-analysis",
+        "self-authorship",
+        "theoretical-framework-map"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "discourse-analysis",
+      "label": "Discourse Analysis",
+      "type": "general",
+      "cluster": 4,
+      "centrality": 0.006919,
+      "degree": 11,
+      "position": {
+        "x": 659.2,
+        "y": 317.6
+      },
+      "connections": [
+        "conceptual-metaphor-theory",
+        "student-meaning-making-about-difficulty",
+        "deficit-labeling-and-institutional-framing",
+        "b3-cds-cma-study",
+        "deficit-models",
+        "epistemic-injustice",
+        "academic-resilience",
+        "de-7301-overview",
+        "ci-7151-overview",
+        "llm-qualitative-coding-reliability"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Student Success & Resilience",
+        "Financial Literacy & Scarcity"
+      ]
+    },
+    {
+      "id": "gilar-corbi2020",
+      "label": "Academic achievement and failure in university studies: Motivational and emotional factors",
       "type": "literature",
       "cluster": 4,
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 933.9,
-        "y": 330.8
+        "x": 124.7,
+        "y": 273.0
       },
       "connections": [
-        "enrollment-patterns-as-adaptation"
+        "student-meaning-making-about-difficulty"
       ],
       "isBridge": false,
       "bridgesTo": []
     },
     {
-      "id": "boumi2021",
-      "label": "Quantifying the impact of student enrollment patterns using a Hidden Markov Model",
-      "type": "literature",
-      "cluster": 4,
-      "centrality": 0.0,
-      "degree": 1,
-      "position": {
-        "x": 664.8,
-        "y": 114.2
-      },
-      "connections": [
-        "enrollment-patterns-as-adaptation"
-      ],
-      "isBridge": false,
-      "bridgesTo": []
-    },
-    {
-      "id": "chan2022",
-      "label": "Do credit momentum policies through the 15 to Finish improve academic progression and completion of low-income, first-generation students? Evidence from a college promise program",
-      "type": "literature",
-      "cluster": 4,
-      "centrality": 0.0,
-      "degree": 1,
-      "position": {
-        "x": 860.0,
-        "y": 178.1
-      },
-      "connections": [
-        "enrollment-patterns-as-adaptation"
-      ],
-      "isBridge": false,
-      "bridgesTo": []
-    },
-    {
-      "id": "crosta2014",
-      "label": "Intensity and attachment: How the chaotic enrollment patterns of community college students relate to educational outcomes",
-      "type": "literature",
-      "cluster": 4,
-      "centrality": 0.0,
-      "degree": 1,
-      "position": {
-        "x": 821.6,
-        "y": 627.1
-      },
-      "connections": [
-        "enrollment-patterns-as-adaptation"
-      ],
-      "isBridge": false,
-      "bridgesTo": []
-    },
-    {
-      "id": "engel2025",
-      "label": "Grasp all, lose all: The impact of multiple enrollments and above-full-time study loads on course completion",
-      "type": "literature",
-      "cluster": 4,
-      "centrality": 0.0,
-      "degree": 1,
-      "position": {
-        "x": 266.7,
-        "y": 129.0
-      },
-      "connections": [
-        "enrollment-patterns-as-adaptation"
-      ],
-      "isBridge": false,
-      "bridgesTo": []
-    },
-    {
-      "id": "enrollment-patterns-as-adaptation",
-      "label": "enrollment-patterns-as-adaptation",
+      "id": "llm-qualitative-coding-reliability",
+      "label": "llm-qualitative-coding-reliability",
       "type": "inquiry",
       "cluster": 4,
-      "centrality": 0.125302,
-      "degree": 24,
+      "centrality": 0.005624,
+      "degree": 6,
       "position": {
-        "x": 507.7,
-        "y": 399.2
+        "x": 884.8,
+        "y": 218.1
       },
       "connections": [
-        "attewell2016",
-        "chan2022",
-        "knox2022",
-        "engel2025",
-        "crosta2014",
-        "boumi2021",
-        "tompkins2015",
-        "adelman2006",
-        "heil2014",
-        "blekic2020"
+        "creswell2018",
+        "miles2014",
+        "discourse-analysis",
+        "conceptual-metaphor-theory",
+        "b3-cds-cma-study",
+        "b3-cds-cma-findings"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity",
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "lundell1999",
+      "label": "Toward a theory of developmental education: The centrality of discourse",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 87.5,
+        "y": 562.1
+      },
+      "connections": [
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "lundell2007",
+      "label": "Student standpoints about access programs in higher education",
+      "type": "literature",
+      "cluster": 4,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 279.2,
+        "y": 181.9
+      },
+      "connections": [
+        "student-meaning-making-about-difficulty"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "self-authorship",
+      "label": "Self-Authorship",
+      "type": "general",
+      "cluster": 4,
+      "centrality": 0.028107,
+      "degree": 13,
+      "position": {
+        "x": 711.0,
+        "y": 487.1
+      },
+      "connections": [
+        "b3-cds-cma-study",
+        "advising-as-education",
+        "vault-audit-report",
+        "conceptual-metaphor-theory",
+        "deficit-labeling-and-institutional-framing",
+        "home",
+        "post-failure-academic-recovery",
+        "de-7301-overview",
+        "human-capital-theory",
+        "financial-self-efficacy"
       ],
       "isBridge": true,
       "bridgesTo": [
@@ -153,104 +290,47 @@
       ]
     },
     {
-      "id": "heil2014",
-      "label": "College selectivity and degree completion",
-      "type": "literature",
+      "id": "student-meaning-making-about-difficulty",
+      "label": "student-meaning-making-about-difficulty",
+      "type": "inquiry",
       "cluster": 4,
-      "centrality": 0.0,
-      "degree": 1,
+      "centrality": 0.045682,
+      "degree": 15,
       "position": {
-        "x": 253.6,
-        "y": 699.5
+        "x": 406.9,
+        "y": 447.4
       },
       "connections": [
-        "enrollment-patterns-as-adaptation"
+        "discourse-analysis",
+        "baxter magolda2009",
+        "lundell1999",
+        "lundell2007",
+        "ajjawi2020",
+        "wilson2019",
+        "bledsoe2024",
+        "gilar-corbi2020",
+        "conceptual-metaphor-theory",
+        "self-authorship"
       ],
-      "isBridge": false,
-      "bridgesTo": []
+      "isBridge": true,
+      "bridgesTo": [
+        "Financial Literacy & Scarcity"
+      ]
     },
     {
-      "id": "jenkins2022",
-      "label": "Stop stifling entering students' talent and drive and help them build momentum on a path to college and career success",
+      "id": "wilson2019",
+      "label": "Sinking or swimming in an academic pool",
       "type": "literature",
       "cluster": 4,
-      "centrality": 0.0,
-      "degree": 1,
+      "centrality": 0.000504,
+      "degree": 2,
       "position": {
-        "x": 117.7,
-        "y": 242.8
-      },
-      "connections": [
-        "enrollment-patterns-as-adaptation"
-      ],
-      "isBridge": false,
-      "bridgesTo": []
-    },
-    {
-      "id": "knox2022",
-      "label": "The influence of academic momentum and associate degree credit requirements on community college student degree completion",
-      "type": "literature",
-      "cluster": 4,
-      "centrality": 0.0,
-      "degree": 1,
-      "position": {
-        "x": 464.7,
-        "y": 60.0
-      },
-      "connections": [
-        "enrollment-patterns-as-adaptation"
-      ],
-      "isBridge": false,
-      "bridgesTo": []
-    },
-    {
-      "id": "monaghan2015",
-      "label": "The community college route to the bachelor's degree",
-      "type": "literature",
-      "cluster": 4,
-      "centrality": 0.0,
-      "degree": 1,
-      "position": {
-        "x": 638.9,
+        "x": 354.3,
         "y": 740.0
       },
       "connections": [
-        "enrollment-patterns-as-adaptation"
-      ],
-      "isBridge": false,
-      "bridgesTo": []
-    },
-    {
-      "id": "tompkins2015",
-      "label": "A comprehensive review and synthesis of the literature on late registration",
-      "type": "literature",
-      "cluster": 4,
-      "centrality": 0.0,
-      "degree": 1,
-      "position": {
-        "x": 940.0,
-        "y": 490.6
-      },
-      "connections": [
-        "enrollment-patterns-as-adaptation"
-      ],
-      "isBridge": false,
-      "bridgesTo": []
-    },
-    {
-      "id": "workflow-improvements",
-      "label": "Knowledge Management Workflow Improvements",
-      "type": "general",
-      "cluster": 4,
-      "centrality": 0.002274,
-      "degree": 2,
-      "position": {
-        "x": 120.9,
-        "y": 553.1
-      },
-      "connections": [
         "post-failure-academic-recovery",
-        "enrollment-patterns-as-adaptation"
+        "student-meaning-making-about-difficulty"
       ],
       "isBridge": true,
       "bridgesTo": [
@@ -260,78 +340,132 @@
   ],
   "edges": [
     {
-      "source": "monaghan2015",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "ajjawi2020",
+      "target": "student-meaning-making-about-difficulty",
       "weight": 1
     },
     {
-      "source": "tompkins2015",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "b3-cds-cma-findings",
+      "target": "llm-qualitative-coding-reliability",
       "weight": 1
     },
     {
-      "source": "engel2025",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "b3-cds-cma-findings",
+      "target": "conceptual-metaphor-theory",
       "weight": 1
     },
     {
-      "source": "workflow-improvements",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "b3-cds-cma-findings",
+      "target": "discourse-analysis",
       "weight": 1
     },
     {
-      "source": "crosta2014",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "b3-cds-cma-findings",
+      "target": "student-meaning-making-about-difficulty",
       "weight": 1
     },
     {
-      "source": "heil2014",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "gilar-corbi2020",
+      "target": "student-meaning-making-about-difficulty",
       "weight": 1
     },
     {
-      "source": "blekic2020",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "lundell1999",
+      "target": "student-meaning-making-about-difficulty",
       "weight": 1
     },
     {
-      "source": "knox2022",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "self-authorship",
+      "target": "conceptual-metaphor-theory",
       "weight": 1
     },
     {
-      "source": "adelman2006",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "self-authorship",
+      "target": "de-7301-overview",
       "weight": 1
     },
     {
-      "source": "boumi2021",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "self-authorship",
+      "target": "student-meaning-making-about-difficulty",
       "weight": 1
     },
     {
-      "source": "chan2022",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "bledsoe2024",
+      "target": "student-meaning-making-about-difficulty",
       "weight": 1
     },
     {
-      "source": "jenkins2022",
-      "target": "enrollment-patterns-as-adaptation",
+      "source": "conceptual-metaphor-theory",
+      "target": "discourse-analysis",
+      "weight": 2
+    },
+    {
+      "source": "conceptual-metaphor-theory",
+      "target": "ci-7151-overview",
       "weight": 1
     },
     {
-      "source": "enrollment-patterns-as-adaptation",
-      "target": "attewell2016",
+      "source": "conceptual-metaphor-theory",
+      "target": "llm-qualitative-coding-reliability",
       "weight": 1
+    },
+    {
+      "source": "conceptual-metaphor-theory",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "ci-7151-overview",
+      "target": "discourse-analysis",
+      "weight": 1
+    },
+    {
+      "source": "wilson2019",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "llm-qualitative-coding-reliability",
+      "target": "discourse-analysis",
+      "weight": 1
+    },
+    {
+      "source": "lundell2007",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "baxter magolda2009",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 1
+    },
+    {
+      "source": "discourse-analysis",
+      "target": "de-7301-overview",
+      "weight": 1
+    },
+    {
+      "source": "discourse-analysis",
+      "target": "student-meaning-making-about-difficulty",
+      "weight": 2
     }
   ],
   "stats": {
-    "nodeCount": 14,
-    "edgeCount": 13,
-    "density": 0.1429,
+    "nodeCount": 15,
+    "edgeCount": 22,
+    "density": 0.2095,
     "bridgeNodes": [
-      "enrollment-patterns-as-adaptation",
-      "workflow-improvements"
+      "ajjawi2020",
+      "b3-cds-cma-findings",
+      "bledsoe2024",
+      "ci-7151-overview",
+      "conceptual-metaphor-theory",
+      "de-7301-overview",
+      "discourse-analysis",
+      "llm-qualitative-coding-reliability",
+      "self-authorship",
+      "student-meaning-making-about-difficulty",
+      "wilson2019"
     ],
     "gaps": [
       {
@@ -351,28 +485,36 @@
         "density": 0.0
       },
       {
-        "communityA": 2,
-        "communityB": 4,
-        "labelA": "Post-Failure Recovery & Deficit Framing",
-        "labelB": "Advising as Education & Critical Pedagogy",
-        "crossEdges": 1,
-        "density": 0.001742
+        "communityA": 4,
+        "communityB": 6,
+        "labelA": "Advising as Education & Critical Pedagogy",
+        "labelB": "Cluster 6",
+        "crossEdges": 0,
+        "density": 0.0
       },
       {
         "communityA": 0,
         "communityB": 4,
         "labelA": "Student Success & Resilience",
         "labelB": "Advising as Education & Critical Pedagogy",
-        "crossEdges": 2,
-        "density": 0.001931
+        "crossEdges": 6,
+        "density": 0.006061
+      },
+      {
+        "communityA": 2,
+        "communityB": 4,
+        "labelA": "Post-Failure Recovery & Deficit Framing",
+        "labelB": "Advising as Education & Critical Pedagogy",
+        "crossEdges": 6,
+        "density": 0.009091
       },
       {
         "communityA": 1,
         "communityB": 4,
         "labelA": "Financial Literacy & Scarcity",
         "labelB": "Advising as Education & Critical Pedagogy",
-        "crossEdges": 9,
-        "density": 0.01312
+        "crossEdges": 20,
+        "density": 0.024242
       }
     ]
   }

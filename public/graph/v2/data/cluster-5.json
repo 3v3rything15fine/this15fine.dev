@@ -4,181 +4,208 @@
   "color": "#D08770",
   "nodes": [
     {
-      "id": "bronfenbrenner-ecological-systems",
-      "label": "bronfenbrenner-ecological-systems",
-      "type": "general",
+      "id": "ai-agents-as-co-teachers",
+      "label": "ai-agents-as-co-teachers",
+      "type": "inquiry",
       "cluster": 5,
-      "centrality": 0.015127,
-      "degree": 6,
+      "centrality": 0.063595,
+      "degree": 8,
       "position": {
-        "x": 456.0,
-        "y": 278.0
+        "x": 510.4,
+        "y": 390.8
       },
       "connections": [
-        "ci-7355-overview",
-        "de-7303-overview",
-        "final-paper",
-        "literature-review",
-        "systems-thinking-and-epistemic-justice",
-        "vault-audit-report"
+        "domain-1-theoretical-foundations",
+        "domain-2-philosophical-ethical",
+        "domain-3-its-lineage",
+        "domain-4-current-agentic-ai",
+        "domain-5-effectiveness-outcomes",
+        "domain-6-developmental-neuroscience",
+        "domain-7-practitioner-implementation",
+        "2026-03-24-vb-1on1"
       ],
       "isBridge": true,
       "bridgesTo": [
-        "Student Success & Resilience",
         "Financial Literacy & Scarcity"
       ]
     },
     {
-      "id": "ci-7355-overview",
-      "label": "CI 7355 - Mixed Methods Research",
-      "type": "course",
-      "cluster": 5,
-      "centrality": 0.002915,
-      "degree": 3,
-      "position": {
-        "x": 228.7,
-        "y": 60.0
-      },
-      "connections": [
-        "bronfenbrenner-ecological-systems",
-        "home",
-        "theoretical-framework-map"
-      ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Student Success & Resilience",
-        "Post-Failure Recovery & Deficit Framing"
-      ]
-    },
-    {
-      "id": "citations-to-import",
-      "label": "Citations to Import to Zotero",
+      "id": "domain-1-theoretical-foundations",
+      "label": "domain-1-theoretical-foundations",
       "type": "general",
       "cluster": 5,
-      "centrality": 0.006385,
-      "degree": 2,
+      "centrality": 0.0,
+      "degree": 1,
       "position": {
         "x": 940.0,
+        "y": 278.2
+      },
+      "connections": [
+        "ai-agents-as-co-teachers"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "domain-2-philosophical-ethical",
+      "label": "domain-2-philosophical-ethical",
+      "type": "general",
+      "cluster": 5,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 185.7,
+        "y": 636.4
+      },
+      "connections": [
+        "ai-agents-as-co-teachers"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "domain-3-its-lineage",
+      "label": "domain-3-its-lineage",
+      "type": "general",
+      "cluster": 5,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 272.6,
+        "y": 90.3
+      },
+      "connections": [
+        "ai-agents-as-co-teachers"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "domain-4-current-agentic-ai",
+      "label": "domain-4-current-agentic-ai",
+      "type": "general",
+      "cluster": 5,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 891.6,
+        "y": 581.2
+      },
+      "connections": [
+        "ai-agents-as-co-teachers"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "domain-5-effectiveness-outcomes",
+      "label": "domain-5-effectiveness-outcomes",
+      "type": "general",
+      "cluster": 5,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 555.6,
         "y": 740.0
       },
       "connections": [
-        "home",
-        "literature-review"
+        "ai-agents-as-co-teachers"
       ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Student Success & Resilience"
-      ]
+      "isBridge": false,
+      "bridgesTo": []
     },
     {
-      "id": "final-paper",
-      "label": "Student Experiences of Institutional Labeling: A Sequential Explanatory Mixed-methods Study",
-      "type": "course",
+      "id": "domain-6-developmental-neuroscience",
+      "label": "domain-6-developmental-neuroscience",
+      "type": "general",
       "cluster": 5,
       "centrality": 0.0,
       "degree": 1,
       "position": {
         "x": 60.0,
-        "y": 363.8
+        "y": 347.4
       },
       "connections": [
-        "bronfenbrenner-ecological-systems"
+        "ai-agents-as-co-teachers"
       ],
       "isBridge": false,
       "bridgesTo": []
     },
     {
-      "id": "literature-review",
-      "label": "An Ecological Framing for Academic Resilience Research",
-      "type": "course",
-      "cluster": 5,
-      "centrality": 0.000177,
-      "degree": 2,
-      "position": {
-        "x": 721.5,
-        "y": 531.9
-      },
-      "connections": [
-        "bronfenbrenner-ecological-systems",
-        "citations-to-import"
-      ],
-      "isBridge": false,
-      "bridgesTo": []
-    },
-    {
-      "id": "vault-audit-report",
-      "label": "Vault Quality Audit",
+      "id": "domain-7-practitioner-implementation",
+      "label": "domain-7-practitioner-implementation",
       "type": "general",
       "cluster": 5,
-      "centrality": 0.012435,
-      "degree": 11,
+      "centrality": 0.0,
+      "degree": 1,
       "position": {
-        "x": 759.8,
-        "y": 104.2
+        "x": 664.8,
+        "y": 60.0
       },
       "connections": [
-        "mullainathan2014",
-        "academic-resilience",
-        "bobcats-bounce-back-notes",
-        "bronfenbrenner-ecological-systems",
-        "adams2014",
-        "deficit-models",
-        "epistemic-injustice",
-        "price2017",
-        "self-authorship",
-        "self-determination-theory"
+        "ai-agents-as-co-teachers"
       ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Student Success & Resilience",
-        "Financial Literacy & Scarcity",
-        "Post-Failure Recovery & Deficit Framing",
-        "Systems Thinking & Epistemic Justice"
-      ]
+      "isBridge": false,
+      "bridgesTo": []
     }
   ],
   "edges": [
     {
-      "source": "literature-review",
-      "target": "bronfenbrenner-ecological-systems",
-      "weight": 1
+      "source": "domain-5-effectiveness-outcomes",
+      "target": "ai-agents-as-co-teachers",
+      "weight": 2
     },
     {
-      "source": "literature-review",
-      "target": "citations-to-import",
-      "weight": 1
+      "source": "ai-agents-as-co-teachers",
+      "target": "domain-1-theoretical-foundations",
+      "weight": 2
     },
     {
-      "source": "vault-audit-report",
-      "target": "bronfenbrenner-ecological-systems",
-      "weight": 1
+      "source": "ai-agents-as-co-teachers",
+      "target": "domain-2-philosophical-ethical",
+      "weight": 2
     },
     {
-      "source": "ci-7355-overview",
-      "target": "bronfenbrenner-ecological-systems",
-      "weight": 1
+      "source": "ai-agents-as-co-teachers",
+      "target": "domain-3-its-lineage",
+      "weight": 2
     },
     {
-      "source": "final-paper",
-      "target": "bronfenbrenner-ecological-systems",
-      "weight": 1
+      "source": "ai-agents-as-co-teachers",
+      "target": "domain-4-current-agentic-ai",
+      "weight": 2
+    },
+    {
+      "source": "ai-agents-as-co-teachers",
+      "target": "domain-6-developmental-neuroscience",
+      "weight": 2
+    },
+    {
+      "source": "ai-agents-as-co-teachers",
+      "target": "domain-7-practitioner-implementation",
+      "weight": 2
     }
   ],
   "stats": {
-    "nodeCount": 6,
-    "edgeCount": 5,
-    "density": 0.3333,
+    "nodeCount": 8,
+    "edgeCount": 7,
+    "density": 0.25,
     "bridgeNodes": [
-      "bronfenbrenner-ecological-systems",
-      "ci-7355-overview",
-      "citations-to-import",
-      "vault-audit-report"
+      "ai-agents-as-co-teachers"
     ],
     "gaps": [
       {
-        "communityA": 4,
+        "communityA": 0,
         "communityB": 5,
-        "labelA": "Advising as Education & Critical Pedagogy",
+        "labelA": "Student Success & Resilience",
+        "labelB": "Coursework",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
+        "communityA": 2,
+        "communityB": 5,
+        "labelA": "Post-Failure Recovery & Deficit Framing",
         "labelB": "Coursework",
         "crossEdges": 0,
         "density": 0.0
@@ -188,32 +215,32 @@
         "communityB": 5,
         "labelA": "Systems Thinking & Epistemic Justice",
         "labelB": "Coursework",
-        "crossEdges": 1,
-        "density": 0.011111
+        "crossEdges": 0,
+        "density": 0.0
       },
       {
-        "communityA": 0,
+        "communityA": 4,
         "communityB": 5,
-        "labelA": "Student Success & Resilience",
+        "labelA": "Advising as Education & Critical Pedagogy",
         "labelB": "Coursework",
-        "crossEdges": 5,
-        "density": 0.011261
+        "crossEdges": 0,
+        "density": 0.0
       },
       {
-        "communityA": 2,
-        "communityB": 5,
-        "labelA": "Post-Failure Recovery & Deficit Framing",
-        "labelB": "Coursework",
-        "crossEdges": 4,
-        "density": 0.01626
+        "communityA": 5,
+        "communityB": 6,
+        "labelA": "Coursework",
+        "labelB": "Cluster 6",
+        "crossEdges": 0,
+        "density": 0.0
       },
       {
         "communityA": 1,
         "communityB": 5,
         "labelA": "Financial Literacy & Scarcity",
         "labelB": "Coursework",
-        "crossEdges": 5,
-        "density": 0.017007
+        "crossEdges": 1,
+        "density": 0.002273
       }
     ]
   }

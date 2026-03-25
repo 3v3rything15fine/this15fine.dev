@@ -1,0 +1,104 @@
+{
+  "clusterId": 6,
+  "label": "Cluster 6",
+  "color": "#8FBCBB",
+  "nodes": [
+    {
+      "id": "oced-5361-dialogue-intergenerational",
+      "label": "Out of the Shadows: Dialogue for Improving Intergenerational Conversations",
+      "type": "course",
+      "cluster": 6,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 940.0,
+        "y": 60.0
+      },
+      "connections": [
+        "oced-5361-overview"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "oced-5361-overview",
+      "label": "OCED 5361: Human Systems in the Workplace",
+      "type": "course",
+      "cluster": 6,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 60.0,
+        "y": 740.0
+      },
+      "connections": [
+        "oced-5361-dialogue-intergenerational"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    }
+  ],
+  "edges": [
+    {
+      "source": "oced-5361-overview",
+      "target": "oced-5361-dialogue-intergenerational",
+      "weight": 1
+    }
+  ],
+  "stats": {
+    "nodeCount": 2,
+    "edgeCount": 1,
+    "density": 1.0,
+    "bridgeNodes": [],
+    "gaps": [
+      {
+        "communityA": 0,
+        "communityB": 6,
+        "labelA": "Student Success & Resilience",
+        "labelB": "Cluster 6",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
+        "communityA": 1,
+        "communityB": 6,
+        "labelA": "Financial Literacy & Scarcity",
+        "labelB": "Cluster 6",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
+        "communityA": 2,
+        "communityB": 6,
+        "labelA": "Post-Failure Recovery & Deficit Framing",
+        "labelB": "Cluster 6",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
+        "communityA": 3,
+        "communityB": 6,
+        "labelA": "Systems Thinking & Epistemic Justice",
+        "labelB": "Cluster 6",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
+        "communityA": 4,
+        "communityB": 6,
+        "labelA": "Advising as Education & Critical Pedagogy",
+        "labelB": "Cluster 6",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
+        "communityA": 5,
+        "communityB": 6,
+        "labelA": "Coursework",
+        "labelB": "Cluster 6",
+        "crossEdges": 0,
+        "density": 0.0
+      }
+    ]
+  }
+}

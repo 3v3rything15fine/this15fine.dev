@@ -4,340 +4,543 @@
   "color": "#EBCB8B",
   "nodes": [
     {
-      "id": "ajjawi2020",
-      "label": "Persisting students' explanations of and emotional responses to academic failure",
+      "id": "adelman2006",
+      "label": "The toolbox revisited: Paths to degree completion from high school through college",
       "type": "literature",
       "cluster": 3,
-      "centrality": 0.000544,
-      "degree": 2,
-      "position": {
-        "x": 121.2,
-        "y": 324.1
-      },
-      "connections": [
-        "post-failure-academic-recovery",
-        "student-meaning-making-about-difficulty"
-      ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Financial Literacy & Scarcity"
-      ]
-    },
-    {
-      "id": "b3-cds-cma-findings",
-      "label": "B3 CDS/CMA Study -- Detailed Findings",
-      "type": "general",
-      "cluster": 3,
-      "centrality": 0.00045,
+      "centrality": 0.000571,
       "degree": 5,
       "position": {
-        "x": 413.9,
-        "y": 223.1
+        "x": 677.3,
+        "y": 358.8
       },
       "connections": [
-        "b3-cds-cma-study",
-        "conceptual-metaphor-theory",
-        "discourse-analysis",
-        "llm-qualitative-coding-reliability",
-        "student-meaning-making-about-difficulty"
-      ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Financial Literacy & Scarcity"
-      ]
-    },
-    {
-      "id": "baxter magolda2009",
-      "label": "The activity of meaning making: A holistic perspective on college student development",
-      "type": "literature",
-      "cluster": 3,
-      "centrality": 0.0,
-      "degree": 1,
-      "position": {
-        "x": 60.0,
-        "y": 463.7
-      },
-      "connections": [
-        "student-meaning-making-about-difficulty"
+        "enrollment-patterns-as-adaptation",
+        "naspa-2026-enrollment-intensity",
+        "attewell2016",
+        "belfield2016",
+        "crosta2014"
       ],
       "isBridge": false,
       "bridgesTo": []
     },
     {
-      "id": "bledsoe2024",
-      "label": "From setback to success: A restorative momentum model of success for students returning from academic dismissal",
+      "id": "attewell2016",
+      "label": "How many credits should an undergraduate take?",
       "type": "literature",
       "cluster": 3,
-      "centrality": 0.000544,
-      "degree": 2,
+      "centrality": 0.002381,
+      "degree": 10,
       "position": {
-        "x": 724.8,
-        "y": 609.5
+        "x": 540.9,
+        "y": 353.7
       },
       "connections": [
-        "post-failure-academic-recovery",
-        "student-meaning-making-about-difficulty"
+        "enrollment-patterns-as-adaptation",
+        "adelman2006",
+        "naspa-2026-enrollment-intensity",
+        "belfield2016",
+        "chan2022",
+        "phipps2023",
+        "lee-mckinney2024",
+        "crosta2014",
+        "huntington-klein2021",
+        "shapiro2014"
       ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Financial Literacy & Scarcity"
-      ]
+      "isBridge": false,
+      "bridgesTo": []
     },
     {
-      "id": "ci-7151-overview",
-      "label": "CI 7151 - Research Apprenticeship",
-      "type": "course",
+      "id": "bahr2009",
+      "label": "College hopping: Exploring the occurrence, frequency, and consequences of lateral transfer",
+      "type": "literature",
       "cluster": 3,
-      "centrality": 0.001075,
-      "degree": 5,
+      "centrality": 0.0,
+      "degree": 4,
       "position": {
-        "x": 758.9,
-        "y": 60.0
+        "x": 704.7,
+        "y": 475.0
       },
       "connections": [
-        "academic-resilience",
-        "bobcats-bounce-back-notes",
-        "conceptual-metaphor-theory",
-        "discourse-analysis",
-        "home"
+        "enrollment-patterns-as-adaptation",
+        "crosta2014",
+        "shapiro2014",
+        "naspa-2026-enrollment-intensity"
       ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Student Success & Resilience",
-        "Financial Literacy & Scarcity"
-      ]
+      "isBridge": false,
+      "bridgesTo": []
     },
     {
-      "id": "conceptual-metaphor-theory",
-      "label": "Conceptual Metaphor Theory",
-      "type": "general",
+      "id": "belfield2016",
+      "label": "Momentum: The academic and economic value of a 15-credit first-semester course load for college students in Tennessee",
+      "type": "literature",
       "cluster": 3,
-      "centrality": 0.002898,
-      "degree": 9,
+      "centrality": 0.00039,
+      "degree": 6,
       "position": {
-        "x": 585.1,
-        "y": 202.6
+        "x": 570.7,
+        "y": 255.7
       },
       "connections": [
-        "discourse-analysis",
-        "b3-cds-cma-findings",
-        "b3-cds-cma-study",
-        "academic-resilience",
-        "deficit-models",
-        "self-authorship",
-        "ci-7151-overview",
-        "llm-qualitative-coding-reliability",
-        "student-meaning-making-about-difficulty"
+        "adelman2006",
+        "attewell2016",
+        "naspa-2026-enrollment-intensity",
+        "chan2022",
+        "phipps2023",
+        "lee-mckinney2024"
       ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Financial Literacy & Scarcity"
-      ]
+      "isBridge": false,
+      "bridgesTo": []
     },
     {
-      "id": "de-7301-overview",
-      "label": "DE 7301 - Understanding Learners in Developmental Education Contexts",
-      "type": "course",
-      "cluster": 3,
-      "centrality": 0.00062,
-      "degree": 5,
-      "position": {
-        "x": 940.0,
-        "y": 268.3
-      },
-      "connections": [
-        "academic-resilience",
-        "self-authorship",
-        "discourse-analysis",
-        "home",
-        "theoretical-framework-map"
-      ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Student Success & Resilience",
-        "Financial Literacy & Scarcity",
-        "Post-Failure Recovery & Deficit Framing"
-      ]
-    },
-    {
-      "id": "discourse-analysis",
-      "label": "Discourse Analysis",
-      "type": "general",
-      "cluster": 3,
-      "centrality": 0.005362,
-      "degree": 11,
-      "position": {
-        "x": 614.9,
-        "y": 266.9
-      },
-      "connections": [
-        "conceptual-metaphor-theory",
-        "student-meaning-making-about-difficulty",
-        "b3-cds-cma-findings",
-        "b3-cds-cma-study",
-        "deficit-labeling-and-institutional-framing",
-        "deficit-models",
-        "epistemic-injustice",
-        "academic-resilience",
-        "de-7301-overview",
-        "ci-7151-overview"
-      ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Student Success & Resilience",
-        "Financial Literacy & Scarcity"
-      ]
-    },
-    {
-      "id": "gilar-corbi2020",
-      "label": "Academic achievement and failure in university studies: Motivational and emotional factors",
+      "id": "blekic2020",
+      "label": "Continuing and transfer students: Exploring retention and second-year success",
       "type": "literature",
       "cluster": 3,
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 404.9,
+        "x": 940.0,
+        "y": 554.0
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "boumi2021",
+      "label": "Quantifying the impact of student enrollment patterns using a Hidden Markov Model",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 596.2,
         "y": 740.0
       },
       "connections": [
-        "student-meaning-making-about-difficulty"
+        "enrollment-patterns-as-adaptation"
       ],
       "isBridge": false,
       "bridgesTo": []
     },
     {
-      "id": "llm-qualitative-coding-reliability",
-      "label": "llm-qualitative-coding-reliability",
-      "type": "inquiry",
+      "id": "cca2022",
+      "label": "Part-time students must be a full-time priority",
+      "type": "literature",
       "cluster": 3,
-      "centrality": 0.005663,
-      "degree": 6,
+      "centrality": 0.000175,
+      "degree": 3,
       "position": {
-        "x": 493.3,
-        "y": 64.4
+        "x": 223.4,
+        "y": 194.1
       },
       "connections": [
-        "creswell2018",
-        "miles2014",
-        "discourse-analysis",
-        "conceptual-metaphor-theory",
-        "b3-cds-cma-study",
-        "b3-cds-cma-findings"
+        "chan2022",
+        "mckinney-burridge2022",
+        "naspa-2026-enrollment-intensity"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "chan2022",
+      "label": "Do credit momentum policies through the 15 to Finish improve academic progression and completion of low-income, first-generation students? Evidence from a college promise program",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.01238,
+      "degree": 9,
+      "position": {
+        "x": 353.8,
+        "y": 268.6
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation",
+        "attewell2016",
+        "belfield2016",
+        "cca2022",
+        "naspa-2026-enrollment-intensity",
+        "mckinney-burridge2022",
+        "scott-clayton2016",
+        "mckinney2022",
+        "phipps2023"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "crosta2014",
+      "label": "Intensity and attachment: How the chaotic enrollment patterns of community college students relate to educational outcomes",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 4.1e-05,
+      "degree": 6,
+      "position": {
+        "x": 609.4,
+        "y": 434.7
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation",
+        "adelman2006",
+        "bahr2009",
+        "naspa-2026-enrollment-intensity",
+        "shapiro2014",
+        "attewell2016"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "engel2025",
+      "label": "Grasp all, lose all: The impact of multiple enrollments and above-full-time study loads on course completion",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 472.0,
+        "y": 710.0
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "enrollment-patterns-as-adaptation",
+      "label": "enrollment-patterns-as-adaptation",
+      "type": "inquiry",
+      "cluster": 3,
+      "centrality": 0.139645,
+      "degree": 28,
+      "position": {
+        "x": 532.7,
+        "y": 535.3
+      },
+      "connections": [
+        "attewell2016",
+        "chan2022",
+        "knox2022",
+        "engel2025",
+        "crosta2014",
+        "boumi2021",
+        "tompkins2015",
+        "adelman2006",
+        "heil2014",
+        "blekic2020"
       ],
       "isBridge": true,
       "bridgesTo": [
+        "Student Success & Resilience",
         "Financial Literacy & Scarcity",
         "Post-Failure Recovery & Deficit Framing"
       ]
     },
     {
-      "id": "lundell1999",
-      "label": "Toward a theory of developmental education: The centrality of discourse",
+      "id": "heil2014",
+      "label": "College selectivity and degree completion",
       "type": "literature",
       "cluster": 3,
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 107.4,
-        "y": 598.7
+        "x": 338.3,
+        "y": 725.5
       },
       "connections": [
-        "student-meaning-making-about-difficulty"
+        "enrollment-patterns-as-adaptation"
       ],
       "isBridge": false,
       "bridgesTo": []
     },
     {
-      "id": "lundell2007",
-      "label": "Student standpoints about access programs in higher education",
+      "id": "huntington-klein2021",
+      "label": "Semester course load and student performance",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.002014,
+      "degree": 6,
+      "position": {
+        "x": 375.8,
+        "y": 401.9
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation",
+        "naspa-2026-enrollment-intensity",
+        "attewell2016",
+        "phipps2023",
+        "mckinney2024",
+        "lee-mckinney2024"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "jenkins2022",
+      "label": "Stop stifling entering students' talent and drive and help them build momentum on a path to college and career success",
       "type": "literature",
       "cluster": 3,
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 230.1,
-        "y": 700.4
+        "x": 744.5,
+        "y": 654.2
       },
       "connections": [
-        "student-meaning-making-about-difficulty"
+        "enrollment-patterns-as-adaptation"
       ],
       "isBridge": false,
       "bridgesTo": []
     },
     {
-      "id": "self-authorship",
-      "label": "Self-Authorship",
-      "type": "general",
+      "id": "knox2022",
+      "label": "The influence of academic momentum and associate degree credit requirements on community college student degree completion",
+      "type": "literature",
       "cluster": 3,
-      "centrality": 0.030108,
-      "degree": 13,
+      "centrality": 0.0,
+      "degree": 1,
       "position": {
-        "x": 743.5,
-        "y": 362.3
+        "x": 900.7,
+        "y": 638.3
       },
       "connections": [
-        "b3-cds-cma-study",
-        "advising-as-education",
-        "conceptual-metaphor-theory",
-        "de-7301-overview",
-        "deficit-labeling-and-institutional-framing",
-        "home",
-        "post-failure-academic-recovery",
-        "human-capital-theory",
-        "financial-self-efficacy",
-        "self-determination-theory"
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "lee-mckinney2024",
+      "label": "The power of one more course: How different first semester credit loads affect community college student persistence",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.000456,
+      "degree": 6,
+      "position": {
+        "x": 320.8,
+        "y": 317.0
+      },
+      "connections": [
+        "attewell2016",
+        "naspa-2026-enrollment-intensity",
+        "mckinney2022",
+        "mckinney2024",
+        "belfield2016",
+        "huntington-klein2021"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "mckinney-burridge2022",
+      "label": "Hidden costs: Understanding the financial implications of incentivizing full-time enrollment among community college students",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.007841,
+      "degree": 6,
+      "position": {
+        "x": 60.0,
+        "y": 244.9
+      },
+      "connections": [
+        "cca2022",
+        "chan2022",
+        "scarcity-theory",
+        "basic-needs-insecurity",
+        "mckinney2022",
+        "mckinney2024"
       ],
       "isBridge": true,
       "bridgesTo": [
-        "Student Success & Resilience",
-        "Financial Literacy & Scarcity",
-        "Post-Failure Recovery & Deficit Framing",
-        "Coursework"
+        "Post-Failure Recovery & Deficit Framing"
       ]
     },
     {
-      "id": "student-meaning-making-about-difficulty",
-      "label": "student-meaning-making-about-difficulty",
-      "type": "inquiry",
+      "id": "mckinney2022",
+      "label": "Incentivizing full-time enrollment at community colleges: What influences students' decision to take more courses?",
+      "type": "literature",
       "cluster": 3,
-      "centrality": 0.053107,
-      "degree": 16,
+      "centrality": 0.000556,
+      "degree": 5,
       "position": {
-        "x": 425.5,
-        "y": 466.0
+        "x": 149.1,
+        "y": 302.4
       },
       "connections": [
-        "discourse-analysis",
-        "baxter magolda2009",
-        "lundell1999",
-        "lundell2007",
-        "ajjawi2020",
-        "wilson2019",
-        "bledsoe2024",
-        "gilar-corbi2020",
-        "conceptual-metaphor-theory",
-        "self-authorship"
+        "lee-mckinney2024",
+        "mckinney-burridge2022",
+        "naspa-2026-enrollment-intensity",
+        "mckinney2024",
+        "chan2022"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "mckinney2024",
+      "label": "\"I advise, you decide\": How academic advisors shape community college students' enrollment and credit load decisions",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.015072,
+      "degree": 7,
+      "position": {
+        "x": 218.2,
+        "y": 391.7
+      },
+      "connections": [
+        "advising-as-education",
+        "enrollment-patterns-as-adaptation",
+        "huntington-klein2021",
+        "lee-mckinney2024",
+        "mckinney-burridge2022",
+        "mckinney2022",
+        "naspa-2026-enrollment-intensity"
       ],
       "isBridge": true,
       "bridgesTo": [
-        "Student Success & Resilience",
+        "Student Success & Resilience"
+      ]
+    },
+    {
+      "id": "monaghan2015",
+      "label": "The community college route to the bachelor's degree",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 172.4,
+        "y": 601.9
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "naspa-2026-enrollment-intensity",
+      "label": "naspa-2026-enrollment-intensity",
+      "type": "general",
+      "cluster": 3,
+      "centrality": 0.045966,
+      "degree": 17,
+      "position": {
+        "x": 451.0,
+        "y": 359.2
+      },
+      "connections": [
+        "2026-03-24-vb-1on1",
+        "enrollment-patterns-as-adaptation",
+        "individual-vs-aggregate-measurement",
+        "adelman2006",
+        "attewell2016",
+        "bahr2009",
+        "belfield2016",
+        "cca2022",
+        "chan2022",
+        "crosta2014"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
         "Financial Literacy & Scarcity"
       ]
     },
     {
-      "id": "wilson2019",
-      "label": "Sinking or swimming in an academic pool",
+      "id": "phipps2023",
+      "label": "Are students time constrained? Course load, GPA, and failing",
       "type": "literature",
       "cluster": 3,
-      "centrality": 0.000544,
+      "centrality": 0.003733,
+      "degree": 5,
+      "position": {
+        "x": 473.3,
+        "y": 249.8
+      },
+      "connections": [
+        "attewell2016",
+        "belfield2016",
+        "huntington-klein2021",
+        "scarcity-theory",
+        "chan2022"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
+      "id": "scott-clayton2016",
+      "label": "Performance standards in need-based student aid",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 310.5,
+        "y": 60.0
+      },
+      "connections": [
+        "chan2022"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "shapiro2014",
+      "label": "Some college, no degree: A national view of students with some college enrollment, but no completion",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 1.6e-05,
+      "degree": 5,
+      "position": {
+        "x": 719.6,
+        "y": 416.0
+      },
+      "connections": [
+        "bahr2009",
+        "crosta2014",
+        "enrollment-patterns-as-adaptation",
+        "naspa-2026-enrollment-intensity",
+        "attewell2016"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "tompkins2015",
+      "label": "A comprehensive review and synthesis of the literature on late registration",
+      "type": "literature",
+      "cluster": 3,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 251.3,
+        "y": 665.5
+      },
+      "connections": [
+        "enrollment-patterns-as-adaptation"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "workflow-improvements",
+      "label": "Knowledge Management Workflow Improvements",
+      "type": "general",
+      "cluster": 3,
+      "centrality": 0.002455,
       "degree": 2,
       "position": {
-        "x": 587.0,
-        "y": 712.9
+        "x": 751.2,
+        "y": 724.9
       },
       "connections": [
         "post-failure-academic-recovery",
-        "student-meaning-making-about-difficulty"
+        "enrollment-patterns-as-adaptation"
       ],
       "isBridge": true,
       "bridgesTo": [
@@ -347,132 +550,317 @@
   ],
   "edges": [
     {
-      "source": "lundell2007",
-      "target": "student-meaning-making-about-difficulty",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "attewell2016",
       "weight": 1
     },
     {
-      "source": "wilson2019",
-      "target": "student-meaning-making-about-difficulty",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "chan2022",
       "weight": 1
     },
     {
-      "source": "discourse-analysis",
-      "target": "b3-cds-cma-findings",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "knox2022",
       "weight": 1
     },
     {
-      "source": "discourse-analysis",
-      "target": "conceptual-metaphor-theory",
-      "weight": 2
-    },
-    {
-      "source": "discourse-analysis",
-      "target": "de-7301-overview",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "engel2025",
       "weight": 1
     },
     {
-      "source": "discourse-analysis",
-      "target": "ci-7151-overview",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "crosta2014",
       "weight": 1
     },
     {
-      "source": "discourse-analysis",
-      "target": "llm-qualitative-coding-reliability",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "boumi2021",
       "weight": 1
     },
     {
-      "source": "discourse-analysis",
-      "target": "student-meaning-making-about-difficulty",
-      "weight": 2
-    },
-    {
-      "source": "student-meaning-making-about-difficulty",
-      "target": "baxter magolda2009",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "tompkins2015",
       "weight": 1
     },
     {
-      "source": "student-meaning-making-about-difficulty",
-      "target": "lundell1999",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "adelman2006",
       "weight": 1
     },
     {
-      "source": "student-meaning-making-about-difficulty",
-      "target": "ajjawi2020",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "heil2014",
       "weight": 1
     },
     {
-      "source": "student-meaning-making-about-difficulty",
-      "target": "bledsoe2024",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "blekic2020",
       "weight": 1
     },
     {
-      "source": "student-meaning-making-about-difficulty",
-      "target": "gilar-corbi2020",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "jenkins2022",
       "weight": 1
     },
     {
-      "source": "student-meaning-making-about-difficulty",
-      "target": "conceptual-metaphor-theory",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "mckinney2024",
       "weight": 1
     },
     {
-      "source": "student-meaning-making-about-difficulty",
-      "target": "self-authorship",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "monaghan2015",
       "weight": 1
     },
     {
-      "source": "student-meaning-making-about-difficulty",
-      "target": "b3-cds-cma-findings",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "naspa-2026-enrollment-intensity",
       "weight": 1
     },
     {
-      "source": "self-authorship",
-      "target": "conceptual-metaphor-theory",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "bahr2009",
       "weight": 1
     },
     {
-      "source": "self-authorship",
-      "target": "de-7301-overview",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "huntington-klein2021",
       "weight": 1
     },
     {
-      "source": "llm-qualitative-coding-reliability",
-      "target": "conceptual-metaphor-theory",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "shapiro2014",
       "weight": 1
     },
     {
-      "source": "llm-qualitative-coding-reliability",
-      "target": "b3-cds-cma-findings",
+      "source": "enrollment-patterns-as-adaptation",
+      "target": "workflow-improvements",
       "weight": 1
     },
     {
-      "source": "conceptual-metaphor-theory",
-      "target": "b3-cds-cma-findings",
+      "source": "phipps2023",
+      "target": "attewell2016",
       "weight": 1
     },
     {
-      "source": "conceptual-metaphor-theory",
-      "target": "ci-7151-overview",
+      "source": "phipps2023",
+      "target": "belfield2016",
+      "weight": 1
+    },
+    {
+      "source": "phipps2023",
+      "target": "huntington-klein2021",
+      "weight": 1
+    },
+    {
+      "source": "phipps2023",
+      "target": "chan2022",
+      "weight": 1
+    },
+    {
+      "source": "mckinney-burridge2022",
+      "target": "cca2022",
+      "weight": 1
+    },
+    {
+      "source": "mckinney-burridge2022",
+      "target": "chan2022",
+      "weight": 1
+    },
+    {
+      "source": "mckinney-burridge2022",
+      "target": "mckinney2022",
+      "weight": 1
+    },
+    {
+      "source": "mckinney-burridge2022",
+      "target": "mckinney2024",
+      "weight": 1
+    },
+    {
+      "source": "adelman2006",
+      "target": "naspa-2026-enrollment-intensity",
+      "weight": 1
+    },
+    {
+      "source": "adelman2006",
+      "target": "attewell2016",
+      "weight": 1
+    },
+    {
+      "source": "adelman2006",
+      "target": "belfield2016",
+      "weight": 1
+    },
+    {
+      "source": "adelman2006",
+      "target": "crosta2014",
+      "weight": 1
+    },
+    {
+      "source": "mckinney2024",
+      "target": "huntington-klein2021",
+      "weight": 1
+    },
+    {
+      "source": "mckinney2024",
+      "target": "lee-mckinney2024",
+      "weight": 1
+    },
+    {
+      "source": "mckinney2024",
+      "target": "mckinney2022",
+      "weight": 1
+    },
+    {
+      "source": "mckinney2024",
+      "target": "naspa-2026-enrollment-intensity",
+      "weight": 1
+    },
+    {
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "attewell2016",
+      "weight": 1
+    },
+    {
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "bahr2009",
+      "weight": 1
+    },
+    {
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "belfield2016",
+      "weight": 1
+    },
+    {
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "cca2022",
+      "weight": 1
+    },
+    {
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "chan2022",
+      "weight": 1
+    },
+    {
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "crosta2014",
+      "weight": 1
+    },
+    {
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "huntington-klein2021",
+      "weight": 1
+    },
+    {
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "lee-mckinney2024",
+      "weight": 1
+    },
+    {
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "mckinney2022",
+      "weight": 1
+    },
+    {
+      "source": "naspa-2026-enrollment-intensity",
+      "target": "shapiro2014",
+      "weight": 1
+    },
+    {
+      "source": "cca2022",
+      "target": "chan2022",
+      "weight": 1
+    },
+    {
+      "source": "attewell2016",
+      "target": "belfield2016",
+      "weight": 1
+    },
+    {
+      "source": "attewell2016",
+      "target": "chan2022",
+      "weight": 1
+    },
+    {
+      "source": "attewell2016",
+      "target": "lee-mckinney2024",
+      "weight": 1
+    },
+    {
+      "source": "attewell2016",
+      "target": "crosta2014",
+      "weight": 1
+    },
+    {
+      "source": "attewell2016",
+      "target": "huntington-klein2021",
+      "weight": 1
+    },
+    {
+      "source": "attewell2016",
+      "target": "shapiro2014",
+      "weight": 1
+    },
+    {
+      "source": "chan2022",
+      "target": "belfield2016",
+      "weight": 1
+    },
+    {
+      "source": "chan2022",
+      "target": "scott-clayton2016",
+      "weight": 1
+    },
+    {
+      "source": "chan2022",
+      "target": "mckinney2022",
+      "weight": 1
+    },
+    {
+      "source": "belfield2016",
+      "target": "lee-mckinney2024",
+      "weight": 1
+    },
+    {
+      "source": "huntington-klein2021",
+      "target": "lee-mckinney2024",
+      "weight": 1
+    },
+    {
+      "source": "bahr2009",
+      "target": "crosta2014",
+      "weight": 1
+    },
+    {
+      "source": "bahr2009",
+      "target": "shapiro2014",
+      "weight": 1
+    },
+    {
+      "source": "shapiro2014",
+      "target": "crosta2014",
+      "weight": 1
+    },
+    {
+      "source": "mckinney2022",
+      "target": "lee-mckinney2024",
       "weight": 1
     }
   ],
   "stats": {
-    "nodeCount": 15,
-    "edgeCount": 22,
-    "density": 0.2095,
+    "nodeCount": 26,
+    "edgeCount": 60,
+    "density": 0.1846,
     "bridgeNodes": [
-      "ajjawi2020",
-      "b3-cds-cma-findings",
-      "bledsoe2024",
-      "ci-7151-overview",
-      "conceptual-metaphor-theory",
-      "de-7301-overview",
-      "discourse-analysis",
-      "llm-qualitative-coding-reliability",
-      "self-authorship",
-      "student-meaning-making-about-difficulty",
-      "wilson2019"
+      "enrollment-patterns-as-adaptation",
+      "mckinney-burridge2022",
+      "mckinney2024",
+      "naspa-2026-enrollment-intensity",
+      "phipps2023",
+      "workflow-improvements"
     ],
     "gaps": [
       {
@@ -484,36 +872,44 @@
         "density": 0.0
       },
       {
+        "communityA": 3,
+        "communityB": 5,
+        "labelA": "Systems Thinking & Epistemic Justice",
+        "labelB": "Coursework",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
+        "communityA": 3,
+        "communityB": 6,
+        "labelA": "Systems Thinking & Epistemic Justice",
+        "labelB": "Cluster 6",
+        "crossEdges": 0,
+        "density": 0.0
+      },
+      {
         "communityA": 0,
         "communityB": 3,
         "labelA": "Student Success & Resilience",
         "labelB": "Systems Thinking & Epistemic Justice",
-        "crossEdges": 9,
-        "density": 0.008108
+        "crossEdges": 3,
+        "density": 0.001748
       },
       {
         "communityA": 2,
         "communityB": 3,
         "labelA": "Post-Failure Recovery & Deficit Framing",
         "labelB": "Systems Thinking & Epistemic Justice",
-        "crossEdges": 6,
-        "density": 0.009756
-      },
-      {
-        "communityA": 3,
-        "communityB": 5,
-        "labelA": "Systems Thinking & Epistemic Justice",
-        "labelB": "Coursework",
-        "crossEdges": 1,
-        "density": 0.011111
+        "crossEdges": 4,
+        "density": 0.003497
       },
       {
         "communityA": 1,
         "communityB": 3,
         "labelA": "Financial Literacy & Scarcity",
         "labelB": "Systems Thinking & Epistemic Justice",
-        "crossEdges": 20,
-        "density": 0.027211
+        "crossEdges": 12,
+        "density": 0.008392
       }
     ]
   }

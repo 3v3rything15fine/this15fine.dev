@@ -4,15 +4,56 @@
   "color": "#A3BE8C",
   "nodes": [
     {
+      "id": "2026-03-24-vb-1on1",
+      "label": "VB 1:1 — 2026-03-24",
+      "type": "general",
+      "cluster": 1,
+      "centrality": 0.074768,
+      "degree": 5,
+      "position": {
+        "x": 609.2,
+        "y": 462.9
+      },
+      "connections": [
+        "naspa-2026-enrollment-intensity",
+        "b3-website-resources",
+        "ai-agents-as-co-teachers",
+        "b3-ideas-and-questions",
+        "b3-research-hub"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Systems Thinking & Epistemic Justice",
+        "Coursework"
+      ]
+    },
+    {
+      "id": "field-note-2",
+      "label": "Field Note: First Two Weeks Check-In",
+      "type": "general",
+      "cluster": 1,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 940.0,
+        "y": 359.5
+      },
+      "connections": [
+        "retention-theory"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
       "id": "academic-resilience",
       "label": "Academic Resilience",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.035758,
-      "degree": 20,
+      "centrality": 0.0446,
+      "degree": 21,
       "position": {
-        "x": 495.3,
-        "y": 477.9
+        "x": 526.7,
+        "y": 349.4
       },
       "connections": [
         "b3-research-questions",
@@ -24,53 +65,13 @@
         "de-7303-overview",
         "de-7301-overview",
         "ci-7151-overview",
-        "b3-cds-cma-study"
+        "vault-audit-report"
       ],
       "isBridge": true,
       "bridgesTo": [
         "Student Success & Resilience",
         "Post-Failure Recovery & Deficit Framing",
-        "Systems Thinking & Epistemic Justice",
-        "Coursework"
-      ]
-    },
-    {
-      "id": "aded-5314-inclusive-systems-thinking",
-      "label": "Inclusive Systems Thinking",
-      "type": "course",
-      "cluster": 1,
-      "centrality": 0.0,
-      "degree": 1,
-      "position": {
-        "x": 180.7,
-        "y": 60.0
-      },
-      "connections": [
-        "aded-5314-overview"
-      ],
-      "isBridge": false,
-      "bridgesTo": []
-    },
-    {
-      "id": "aded-5314-overview",
-      "label": "ADED 5314: Community Development for Educators",
-      "type": "course",
-      "cluster": 1,
-      "centrality": 0.010108,
-      "degree": 4,
-      "position": {
-        "x": 311.9,
-        "y": 204.8
-      },
-      "connections": [
-        "aded-5314-inclusive-systems-thinking",
-        "deficit-models",
-        "home",
-        "systems-thinking"
-      ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Student Success & Resilience"
+        "Advising as Education & Critical Pedagogy"
       ]
     },
     {
@@ -78,28 +79,28 @@
       "label": "B3 Critical Discourse / Conceptual Metaphor Analysis Study",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.029708,
+      "centrality": 0.032866,
       "degree": 18,
       "position": {
-        "x": 508.8,
-        "y": 431.1
+        "x": 589.8,
+        "y": 346.3
       },
       "connections": [
         "self-authorship",
         "retention-theory",
         "b3-ideas-and-questions",
-        "b3-cds-cma-findings",
         "conceptual-metaphor-theory",
+        "deficit-labeling-and-institutional-framing",
         "discourse-analysis",
-        "academic-resilience",
-        "deficit-models",
-        "bobcats-bounce-back-notes",
-        "ecological-systems-theory"
+        "engagement-causality-and-timing",
+        "individual-vs-aggregate-measurement",
+        "llm-qualitative-coding-reliability",
+        "post-failure-academic-recovery"
       ],
       "isBridge": true,
       "bridgesTo": [
         "Student Success & Resilience",
-        "Systems Thinking & Epistemic Justice"
+        "Advising as Education & Critical Pedagogy"
       ]
     },
     {
@@ -107,11 +108,11 @@
       "label": "B3 Ideas and Questions",
       "type": "general",
       "cluster": 1,
-      "centrality": 4e-05,
+      "centrality": 0.006681,
       "degree": 15,
       "position": {
-        "x": 470.4,
-        "y": 449.0
+        "x": 559.0,
+        "y": 324.0
       },
       "connections": [
         "engagement-causality-and-timing",
@@ -131,15 +132,43 @@
       ]
     },
     {
+      "id": "b3-program-overview",
+      "label": "Bobcats Bounce Back -- Program Overview & DOS Presentation Notes",
+      "type": "general",
+      "cluster": 1,
+      "centrality": 0.005594,
+      "degree": 11,
+      "position": {
+        "x": 729.0,
+        "y": 360.2
+      },
+      "connections": [
+        "retention-theory",
+        "basic-needs-insecurity",
+        "scarcity-theory",
+        "financial-self-efficacy",
+        "b3-research-hub",
+        "b3-research-questions",
+        "b3-cds-cma-study",
+        "sxsw-edu-2026",
+        "elevate-student-success-260223",
+        "peer-mentoring"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Post-Failure Recovery & Deficit Framing"
+      ]
+    },
+    {
       "id": "b3-research-hub",
       "label": "B3 Research Hub",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.030988,
-      "degree": 21,
+      "centrality": 0.107036,
+      "degree": 23,
       "position": {
-        "x": 414.0,
-        "y": 433.8
+        "x": 595.2,
+        "y": 322.7
       },
       "connections": [
         "chi-square",
@@ -148,15 +177,16 @@
         "academic-resilience",
         "deficit-models",
         "retention-theory",
-        "b3-research-questions",
-        "propensity-score-matching",
-        "survival-analysis",
-        "financial-self-efficacy"
+        "2026-03-24-vb-1on1",
+        "deficit-labeling-and-institutional-framing",
+        "emergency-aid-and-holistic-support",
+        "engagement-causality-and-timing"
       ],
       "isBridge": true,
       "bridgesTo": [
         "Student Success & Resilience",
-        "Post-Failure Recovery & Deficit Framing"
+        "Post-Failure Recovery & Deficit Framing",
+        "Systems Thinking & Epistemic Justice"
       ]
     },
     {
@@ -164,23 +194,23 @@
       "label": "B3 Research Questions Catalog",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.038617,
-      "degree": 22,
+      "centrality": 0.030453,
+      "degree": 21,
       "position": {
-        "x": 443.5,
-        "y": 435.5
+        "x": 562.2,
+        "y": 306.7
       },
       "connections": [
         "academic-resilience",
+        "chi-square",
         "ecological-systems-theory",
         "retention-theory",
         "self-determination-theory",
         "b3-ideas-and-questions",
         "deficit-models",
-        "b3-research-hub",
-        "systems-thinking",
-        "propensity-score-matching",
-        "survival-analysis"
+        "difference-in-differences",
+        "engagement-causality-and-timing",
+        "enrollment-patterns-as-adaptation"
       ],
       "isBridge": true,
       "bridgesTo": [
@@ -191,6 +221,24 @@
       ]
     },
     {
+      "id": "b3-website-resources",
+      "label": "b3-website-resources",
+      "type": "general",
+      "cluster": 1,
+      "centrality": 0.000806,
+      "degree": 2,
+      "position": {
+        "x": 587.9,
+        "y": 580.9
+      },
+      "connections": [
+        "2026-03-24-vb-1on1",
+        "person-first-framing-in-student-success"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
       "id": "barbera2020",
       "label": "Review of undergraduate student retention and graduation since 2010",
       "type": "literature",
@@ -198,8 +246,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 453.2,
-        "y": 128.9
+        "x": 878.4,
+        "y": 510.6
       },
       "connections": [
         "individual-vs-aggregate-measurement"
@@ -215,8 +263,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 855.1,
-        "y": 432.9
+        "x": 60.0,
+        "y": 301.0
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -229,11 +277,11 @@
       "label": "Facing academic dismissal: An adaptive organizational approach",
       "type": "literature",
       "cluster": 1,
-      "centrality": 0.001328,
+      "centrality": 0.001212,
       "degree": 2,
       "position": {
-        "x": 777.2,
-        "y": 614.8
+        "x": 145.1,
+        "y": 431.3
       },
       "connections": [
         "emergency-aid-and-holistic-support",
@@ -245,6 +293,24 @@
       ]
     },
     {
+      "id": "boko-local-ai",
+      "label": "boko-local-ai",
+      "type": "general",
+      "cluster": 1,
+      "centrality": 0.0,
+      "degree": 2,
+      "position": {
+        "x": 770.0,
+        "y": 423.3
+      },
+      "connections": [
+        "b3-research-hub",
+        "b3-program-overview"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
       "id": "boretz2012",
       "label": "Midsemester academic interventions in a student-centered research university",
       "type": "literature",
@@ -252,8 +318,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 102.4,
-        "y": 669.2
+        "x": 886.4,
+        "y": 171.6
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -269,8 +335,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 301.7,
-        "y": 740.0
+        "x": 828.3,
+        "y": 126.6
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -283,11 +349,11 @@
       "label": "What is the purpose of academic probation? Its substantial negative effects on four-year graduation",
       "type": "literature",
       "cluster": 1,
-      "centrality": 0.000913,
+      "centrality": 0.000836,
       "degree": 2,
       "position": {
-        "x": 683.1,
-        "y": 315.3
+        "x": 416.5,
+        "y": 430.4
       },
       "connections": [
         "individual-vs-aggregate-measurement",
@@ -304,8 +370,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 616.6,
-        "y": 149.5
+        "x": 746.7,
+        "y": 568.8
       },
       "connections": [
         "individual-vs-aggregate-measurement"
@@ -321,8 +387,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 875.3,
-        "y": 591.6
+        "x": 115.5,
+        "y": 274.5
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -335,15 +401,15 @@
       "label": "Chi-Square Test of Independence",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.006856,
+      "centrality": 0.004249,
       "degree": 6,
       "position": {
-        "x": 407.7,
-        "y": 488.9
+        "x": 513.1,
+        "y": 261.9
       },
       "connections": [
-        "b3-research-hub",
         "b3-research-questions",
+        "b3-research-hub",
         "regression-assumptions",
         "engagement-causality-and-timing",
         "home",
@@ -362,11 +428,46 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 838.8,
-        "y": 638.5
+        "x": 168.6,
+        "y": 378.3
       },
       "connections": [
         "post-failure-academic-recovery"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "cte-5303-overview",
+      "label": "CTE 5303: Career and Technical Education",
+      "type": "course",
+      "cluster": 1,
+      "centrality": 0.009215,
+      "degree": 2,
+      "position": {
+        "x": 426.3,
+        "y": 601.0
+      },
+      "connections": [
+        "deficit-models",
+        "cte-5303-retention-community-effort"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "cte-5303-retention-community-effort",
+      "label": "Retention Should Be a Community Effort",
+      "type": "course",
+      "cluster": 1,
+      "centrality": 0.0,
+      "degree": 1,
+      "position": {
+        "x": 367.5,
+        "y": 740.0
+      },
+      "connections": [
+        "cte-5303-overview"
       ],
       "isBridge": false,
       "bridgesTo": []
@@ -379,8 +480,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 182.4,
-        "y": 660.0
+        "x": 737.9,
+        "y": 103.5
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -393,25 +494,21 @@
       "label": "DE 7303 - Teaching and Learning in Developmental Education",
       "type": "course",
       "cluster": 1,
-      "centrality": 0.005801,
-      "degree": 6,
+      "centrality": 8.4e-05,
+      "degree": 4,
       "position": {
-        "x": 570.8,
-        "y": 528.1
+        "x": 474.1,
+        "y": 455.3
       },
       "connections": [
         "academic-resilience",
-        "bronfenbrenner-ecological-systems",
-        "self-determination-theory",
         "deficit-models",
-        "home",
+        "self-determination-theory",
         "theoretical-framework-map"
       ],
       "isBridge": true,
       "bridgesTo": [
-        "Student Success & Resilience",
-        "Post-Failure Recovery & Deficit Framing",
-        "Coursework"
+        "Post-Failure Recovery & Deficit Framing"
       ]
     },
     {
@@ -419,11 +516,11 @@
       "label": "Deficit Models",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.119595,
-      "degree": 26,
+      "centrality": 0.152087,
+      "degree": 27,
       "position": {
-        "x": 492.8,
-        "y": 385.3
+        "x": 522.0,
+        "y": 396.7
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -431,19 +528,18 @@
         "b3-research-questions",
         "advising-as-education",
         "appreciative-inquiry",
-        "b3-cds-cma-study",
+        "vault-audit-report",
         "conceptual-metaphor-theory",
-        "de-7303-overview",
         "deficit-labeling-and-institutional-framing",
-        "academic-resilience"
+        "academic-resilience",
+        "basic-needs-insecurity"
       ],
       "isBridge": true,
       "bridgesTo": [
         "Student Success & Resilience",
         "Post-Failure Recovery & Deficit Framing",
         "Systems Thinking & Epistemic Justice",
-        "Advising as Education & Critical Pedagogy",
-        "Coursework"
+        "Advising as Education & Critical Pedagogy"
       ]
     },
     {
@@ -451,11 +547,11 @@
       "label": "Difference-in-Differences",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.000405,
+      "centrality": 0.000348,
       "degree": 4,
       "position": {
-        "x": 228.4,
-        "y": 366.4
+        "x": 546.3,
+        "y": 168.5
       },
       "connections": [
         "propensity-score-matching",
@@ -474,50 +570,70 @@
       "label": "dss-innovation-award",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.000513,
-      "degree": 3,
+      "centrality": 0.0,
+      "degree": 2,
       "position": {
-        "x": 214.1,
-        "y": 516.3
+        "x": 772.7,
+        "y": 247.6
       },
       "connections": [
-        "b3-research-hub",
-        "bobcats-bounce-back-notes",
-        "engagement-causality-and-timing"
+        "engagement-causality-and-timing",
+        "b3-research-hub"
       ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Student Success & Resilience"
-      ]
+      "isBridge": false,
+      "bridgesTo": []
     },
     {
       "id": "ecological-systems-theory",
       "label": "Ecological Systems Theory",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.019656,
+      "centrality": 0.021959,
       "degree": 13,
       "position": {
-        "x": 432.7,
-        "y": 375.0
+        "x": 639.0,
+        "y": 328.3
       },
       "connections": [
         "b3-ideas-and-questions",
         "b3-research-questions",
         "b3-research-hub",
-        "b3-cds-cma-study",
         "retention-theory",
         "basic-needs-insecurity",
         "systems-thinking",
         "emergency-aid-and-holistic-support",
         "enrollment-patterns-as-adaptation",
-        "home"
+        "home",
+        "individual-vs-aggregate-measurement"
       ],
       "isBridge": true,
       "bridgesTo": [
         "Student Success & Resilience",
         "Post-Failure Recovery & Deficit Framing",
-        "Advising as Education & Critical Pedagogy"
+        "Systems Thinking & Epistemic Justice"
+      ]
+    },
+    {
+      "id": "elevate-student-success-260223",
+      "label": "Elevate Student Success Event Notes",
+      "type": "literature",
+      "cluster": 1,
+      "centrality": 0.000379,
+      "degree": 5,
+      "position": {
+        "x": 830.6,
+        "y": 408.5
+      },
+      "connections": [
+        "retention-theory",
+        "peer-mentoring",
+        "sxsw-edu-2026",
+        "individual-vs-aggregate-measurement",
+        "b3-program-overview"
+      ],
+      "isBridge": true,
+      "bridgesTo": [
+        "Post-Failure Recovery & Deficit Framing"
       ]
     },
     {
@@ -525,11 +641,11 @@
       "label": "engagement-causality-and-timing",
       "type": "inquiry",
       "cluster": 1,
-      "centrality": 0.091681,
+      "centrality": 0.086762,
       "degree": 21,
       "position": {
-        "x": 325.7,
-        "y": 546.4
+        "x": 665.9,
+        "y": 227.0
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -556,8 +672,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 844.0,
-        "y": 530.3
+        "x": 155.0,
+        "y": 196.5
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -573,8 +689,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 537.8,
-        "y": 127.9
+        "x": 818.8,
+        "y": 546.6
       },
       "connections": [
         "individual-vs-aggregate-measurement"
@@ -590,8 +706,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 825.3,
-        "y": 333.2
+        "x": 96.8,
+        "y": 232.9
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -604,11 +720,11 @@
       "label": "The bounce back retention program: One-year follow-up study",
       "type": "literature",
       "cluster": 1,
-      "centrality": 0.001328,
+      "centrality": 0.001212,
       "degree": 2,
       "position": {
-        "x": 928.7,
-        "y": 504.5
+        "x": 226.3,
+        "y": 184.7
       },
       "connections": [
         "emergency-aid-and-holistic-support",
@@ -627,8 +743,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 66.3,
-        "y": 515.1
+        "x": 924.9,
+        "y": 207.7
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -641,11 +757,11 @@
       "label": "individual-vs-aggregate-measurement",
       "type": "inquiry",
       "cluster": 1,
-      "centrality": 0.036925,
+      "centrality": 0.038285,
       "degree": 14,
       "position": {
-        "x": 499.4,
-        "y": 313.6
+        "x": 660.8,
+        "y": 413.5
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -661,7 +777,8 @@
       ],
       "isBridge": true,
       "bridgesTo": [
-        "Student Success & Resilience"
+        "Student Success & Resilience",
+        "Systems Thinking & Epistemic Justice"
       ]
     },
     {
@@ -672,8 +789,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 94.3,
-        "y": 616.6
+        "x": 900.1,
+        "y": 129.1
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -689,8 +806,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 60.0,
-        "y": 572.9
+        "x": 824.3,
+        "y": 82.7
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -703,25 +820,25 @@
       "label": "Logistic Regression",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.014152,
+      "centrality": 0.011648,
       "degree": 7,
       "position": {
-        "x": 400.3,
-        "y": 523.6
+        "x": 467.6,
+        "y": 216.5
       },
       "connections": [
-        "b3-research-questions",
         "engagement-causality-and-timing",
         "enrollment-patterns-as-adaptation",
         "home",
         "regression-assumptions",
         "propensity-score-matching",
+        "b3-research-questions",
         "post-failure-academic-recovery"
       ],
       "isBridge": true,
       "bridgesTo": [
         "Student Success & Resilience",
-        "Advising as Education & Critical Pedagogy"
+        "Systems Thinking & Epistemic Justice"
       ]
     },
     {
@@ -732,8 +849,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 883.9,
-        "y": 361.4
+        "x": 140.4,
+        "y": 323.3
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -749,8 +866,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 242.8,
-        "y": 716.9
+        "x": 675.1,
+        "y": 60.8
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -766,37 +883,14 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 930.8,
-        "y": 403.5
+        "x": 95.9,
+        "y": 394.9
       },
       "connections": [
         "post-failure-academic-recovery"
       ],
       "isBridge": false,
       "bridgesTo": []
-    },
-    {
-      "id": "naspa-2026-enrollment-intensity",
-      "label": "naspa-2026-enrollment-intensity",
-      "type": "general",
-      "cluster": 1,
-      "centrality": 0.000867,
-      "degree": 4,
-      "position": {
-        "x": 381.2,
-        "y": 262.1
-      },
-      "connections": [
-        "enrollment-patterns-as-adaptation",
-        "individual-vs-aggregate-measurement",
-        "b3-research-hub",
-        "sxsw-edu-2026"
-      ],
-      "isBridge": true,
-      "bridgesTo": [
-        "Student Success & Resilience",
-        "Advising as Education & Critical Pedagogy"
-      ]
     },
     {
       "id": "newcomb-anjo2022",
@@ -806,11 +900,31 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 931.3,
-        "y": 556.5
+        "x": 184.7,
+        "y": 243.2
       },
       "connections": [
         "post-failure-academic-recovery"
+      ],
+      "isBridge": false,
+      "bridgesTo": []
+    },
+    {
+      "id": "person-first-framing-in-student-success",
+      "label": "person-first-framing-in-student-success",
+      "type": "general",
+      "cluster": 1,
+      "centrality": 0.006281,
+      "degree": 4,
+      "position": {
+        "x": 545.0,
+        "y": 470.1
+      },
+      "connections": [
+        "self-determination-theory",
+        "academic-resilience",
+        "deficit-models",
+        "b3-website-resources"
       ],
       "isBridge": false,
       "bridgesTo": []
@@ -820,23 +934,23 @@
       "label": "post-failure-academic-recovery",
       "type": "inquiry",
       "cluster": 1,
-      "centrality": 0.150535,
+      "centrality": 0.150396,
       "degree": 32,
       "position": {
-        "x": 672.3,
-        "y": 474.7
+        "x": 338.8,
+        "y": 319.3
       },
       "connections": [
         "b3-ideas-and-questions",
         "vault-graph-analysis",
         "advising-as-education",
-        "phil-5322-overview",
         "ajjawi2020",
         "bledsoe2018",
         "bledsoe2024",
         "friedman2022",
         "hanger2011",
-        "tovar2006"
+        "tovar2006",
+        "wilson2019"
       ],
       "isBridge": true,
       "bridgesTo": [
@@ -850,21 +964,21 @@
       "label": "Propensity Score Matching / Weighting",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.003638,
+      "centrality": 0.003007,
       "degree": 8,
       "position": {
-        "x": 323.5,
-        "y": 448.0
+        "x": 571.5,
+        "y": 237.2
       },
       "connections": [
         "b3-ideas-and-questions",
-        "b3-research-hub",
-        "b3-research-questions",
         "difference-in-differences",
         "emergency-aid-and-holistic-support",
         "engagement-causality-and-timing",
         "home",
-        "logistic-regression"
+        "logistic-regression",
+        "b3-research-hub",
+        "b3-research-questions"
       ],
       "isBridge": true,
       "bridgesTo": [
@@ -877,11 +991,11 @@
       "label": "Regression Assumptions Notes",
       "type": "general",
       "cluster": 1,
-      "centrality": 1e-05,
+      "centrality": 5.1e-05,
       "degree": 3,
       "position": {
-        "x": 231.9,
-        "y": 479.2
+        "x": 414.8,
+        "y": 138.4
       },
       "connections": [
         "chi-square",
@@ -898,11 +1012,11 @@
       "label": "Retention Theory",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.079706,
+      "centrality": 0.08357,
       "degree": 37,
       "position": {
-        "x": 440.0,
-        "y": 406.1
+        "x": 672.1,
+        "y": 343.3
       },
       "connections": [
         "b3-ideas-and-questions",
@@ -910,17 +1024,17 @@
         "sxsw-edu-2026",
         "theoretical-framework-map",
         "b3-cds-cma-study",
+        "b3-program-overview",
         "b3-research-hub",
-        "bobcats-bounce-back-notes",
-        "260313-1on1-jeanette",
-        "260313-1on1-tina",
-        "academic-resilience"
+        "academic-resilience",
+        "field-note-1",
+        "field-note-2"
       ],
       "isBridge": true,
       "bridgesTo": [
         "Student Success & Resilience",
         "Post-Failure Recovery & Deficit Framing",
-        "Advising as Education & Critical Pedagogy"
+        "Systems Thinking & Epistemic Justice"
       ]
     },
     {
@@ -928,30 +1042,29 @@
       "label": "Self-Determination Theory",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.015919,
-      "degree": 12,
+      "centrality": 0.017443,
+      "degree": 13,
       "position": {
-        "x": 461.4,
-        "y": 512.0
+        "x": 565.7,
+        "y": 372.8
       },
       "connections": [
         "b3-ideas-and-questions",
         "b3-research-questions",
+        "person-first-framing-in-student-success",
         "advising-as-education",
-        "b3-research-hub",
-        "de-7303-overview",
+        "vault-audit-report",
         "engagement-causality-and-timing",
         "home",
-        "self-authorship",
-        "academic-resilience",
-        "financial-self-efficacy"
+        "b3-research-hub",
+        "de-7303-overview",
+        "self-authorship"
       ],
       "isBridge": true,
       "bridgesTo": [
         "Student Success & Resilience",
         "Post-Failure Recovery & Deficit Framing",
-        "Systems Thinking & Epistemic Justice",
-        "Coursework"
+        "Advising as Education & Critical Pedagogy"
       ]
     },
     {
@@ -959,56 +1072,55 @@
       "label": "Survival Analysis",
       "type": "general",
       "cluster": 1,
-      "centrality": 0.009794,
+      "centrality": 0.010251,
       "degree": 7,
       "position": {
-        "x": 572.2,
-        "y": 412.3
+        "x": 472.3,
+        "y": 315.9
       },
       "connections": [
-        "b3-ideas-and-questions",
-        "b3-research-hub",
-        "b3-research-questions",
         "enrollment-patterns-as-adaptation",
         "home",
         "post-failure-academic-recovery",
+        "b3-ideas-and-questions",
+        "b3-research-hub",
+        "b3-research-questions",
         "retention-theory"
       ],
       "isBridge": true,
       "bridgesTo": [
         "Student Success & Resilience",
-        "Advising as Education & Critical Pedagogy"
+        "Systems Thinking & Epistemic Justice"
       ]
     },
     {
-      "id": "systems-thinking",
-      "label": "Systems Thinking",
-      "type": "general",
+      "id": "sxsw-edu-2026",
+      "label": "SXSW EDU 2026 Conference Notes",
+      "type": "literature",
       "cluster": 1,
-      "centrality": 0.039678,
-      "degree": 18,
+      "centrality": 0.014675,
+      "degree": 11,
       "position": {
-        "x": 386.1,
-        "y": 327.6
+        "x": 792.2,
+        "y": 373.4
       },
       "connections": [
-        "appreciative-inquiry",
-        "b3-ideas-and-questions",
-        "b3-research-hub",
-        "b3-research-questions",
-        "ecological-systems-theory",
-        "emergency-aid-and-holistic-support",
+        "financial-self-efficacy",
+        "retention-theory",
+        "basic-needs-insecurity",
+        "elevate-student-success-260223",
+        "deficit-labeling-and-institutional-framing",
         "enrollment-patterns-as-adaptation",
-        "epistemic-injustice",
-        "home",
-        "individual-vs-aggregate-measurement"
+        "individual-vs-aggregate-measurement",
+        "b3-program-overview",
+        "naspa-2026-enrollment-intensity",
+        "peer-mentoring"
       ],
       "isBridge": true,
       "bridgesTo": [
         "Student Success & Resilience",
         "Post-Failure Recovery & Deficit Framing",
-        "Advising as Education & Critical Pedagogy",
-        "Coursework"
+        "Systems Thinking & Epistemic Justice"
       ]
     },
     {
@@ -1019,8 +1131,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 726.4,
-        "y": 655.6
+        "x": 70.7,
+        "y": 350.9
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -1036,8 +1148,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 169.5,
-        "y": 717.0
+        "x": 750.4,
+        "y": 60.0
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -1053,8 +1165,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 371.1,
-        "y": 722.1
+        "x": 608.1,
+        "y": 71.7
       },
       "connections": [
         "engagement-causality-and-timing"
@@ -1070,8 +1182,8 @@
       "centrality": 0.0,
       "degree": 1,
       "position": {
-        "x": 940.0,
-        "y": 457.2
+        "x": 210.7,
+        "y": 446.4
       },
       "connections": [
         "post-failure-academic-recovery"
@@ -1081,6 +1193,81 @@
     }
   ],
   "edges": [
+    {
+      "source": "2026-03-24-vb-1on1",
+      "target": "b3-website-resources",
+      "weight": 1
+    },
+    {
+      "source": "2026-03-24-vb-1on1",
+      "target": "b3-ideas-and-questions",
+      "weight": 1
+    },
+    {
+      "source": "2026-03-24-vb-1on1",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "gilstrap2020",
+      "target": "individual-vs-aggregate-measurement",
+      "weight": 1
+    },
+    {
+      "source": "kay2023",
+      "target": "engagement-causality-and-timing",
+      "weight": 1
+    },
+    {
+      "source": "chi-square",
+      "target": "regression-assumptions",
+      "weight": 1
+    },
+    {
+      "source": "chi-square",
+      "target": "b3-research-questions",
+      "weight": 4
+    },
+    {
+      "source": "chi-square",
+      "target": "engagement-causality-and-timing",
+      "weight": 1
+    },
+    {
+      "source": "chi-square",
+      "target": "post-failure-academic-recovery",
+      "weight": 1
+    },
+    {
+      "source": "chi-square",
+      "target": "b3-research-hub",
+      "weight": 4
+    },
+    {
+      "source": "newcomb-anjo2022",
+      "target": "post-failure-academic-recovery",
+      "weight": 1
+    },
+    {
+      "source": "wong2022",
+      "target": "engagement-causality-and-timing",
+      "weight": 1
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "engagement-causality-and-timing",
+      "weight": 1
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "individual-vs-aggregate-measurement",
+      "weight": 1
+    },
+    {
+      "source": "b3-cds-cma-study",
+      "target": "post-failure-academic-recovery",
+      "weight": 1
+    },
     {
       "source": "b3-cds-cma-study",
       "target": "academic-resilience",
@@ -1108,6 +1295,11 @@
     },
     {
       "source": "b3-cds-cma-study",
+      "target": "b3-program-overview",
+      "weight": 1
+    },
+    {
+      "source": "b3-cds-cma-study",
       "target": "b3-research-hub",
       "weight": 1
     },
@@ -1117,33 +1309,113 @@
       "weight": 1
     },
     {
-      "source": "b3-cds-cma-study",
-      "target": "engagement-causality-and-timing",
+      "source": "elevate-student-success-260223",
+      "target": "retention-theory",
       "weight": 1
     },
     {
-      "source": "b3-cds-cma-study",
+      "source": "elevate-student-success-260223",
+      "target": "sxsw-edu-2026",
+      "weight": 1
+    },
+    {
+      "source": "elevate-student-success-260223",
       "target": "individual-vs-aggregate-measurement",
       "weight": 1
     },
     {
-      "source": "b3-cds-cma-study",
-      "target": "post-failure-academic-recovery",
+      "source": "elevate-student-success-260223",
+      "target": "b3-program-overview",
       "weight": 1
     },
     {
-      "source": "valentine2011",
+      "source": "propensity-score-matching",
+      "target": "difference-in-differences",
+      "weight": 1
+    },
+    {
+      "source": "propensity-score-matching",
       "target": "engagement-causality-and-timing",
       "weight": 1
     },
     {
-      "source": "beri2018",
-      "target": "post-failure-academic-recovery",
+      "source": "propensity-score-matching",
+      "target": "logistic-regression",
       "weight": 1
     },
     {
-      "source": "logistic-regression",
+      "source": "propensity-score-matching",
+      "target": "b3-ideas-and-questions",
+      "weight": 2
+    },
+    {
+      "source": "propensity-score-matching",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "propensity-score-matching",
       "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "self-determination-theory",
+      "target": "engagement-causality-and-timing",
+      "weight": 1
+    },
+    {
+      "source": "self-determination-theory",
+      "target": "person-first-framing-in-student-success",
+      "weight": 2
+    },
+    {
+      "source": "self-determination-theory",
+      "target": "b3-ideas-and-questions",
+      "weight": 4
+    },
+    {
+      "source": "self-determination-theory",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "self-determination-theory",
+      "target": "b3-research-questions",
+      "weight": 3
+    },
+    {
+      "source": "self-determination-theory",
+      "target": "de-7303-overview",
+      "weight": 1
+    },
+    {
+      "source": "self-determination-theory",
+      "target": "academic-resilience",
+      "weight": 1
+    },
+    {
+      "source": "sxsw-edu-2026",
+      "target": "individual-vs-aggregate-measurement",
+      "weight": 1
+    },
+    {
+      "source": "sxsw-edu-2026",
+      "target": "b3-program-overview",
+      "weight": 1
+    },
+    {
+      "source": "sxsw-edu-2026",
+      "target": "retention-theory",
+      "weight": 3
+    },
+    {
+      "source": "difference-in-differences",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "bledsoe2018",
+      "target": "post-failure-academic-recovery",
       "weight": 1
     },
     {
@@ -1158,7 +1430,7 @@
     },
     {
       "source": "logistic-regression",
-      "target": "propensity-score-matching",
+      "target": "b3-research-questions",
       "weight": 1
     },
     {
@@ -1167,53 +1439,83 @@
       "weight": 1
     },
     {
-      "source": "boretz2012",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "jagielo-manion2025",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "campbell2012",
-      "target": "individual-vs-aggregate-measurement",
-      "weight": 1
-    },
-    {
-      "source": "haktanir2021",
+      "source": "caporale-berkowitz2022",
       "target": "post-failure-academic-recovery",
       "weight": 1
     },
     {
-      "source": "bowman2022",
-      "target": "individual-vs-aggregate-measurement",
+      "source": "bowman2019",
+      "target": "engagement-causality-and-timing",
       "weight": 1
     },
     {
-      "source": "bowman2022",
+      "source": "person-first-framing-in-student-success",
+      "target": "academic-resilience",
+      "weight": 1
+    },
+    {
+      "source": "person-first-framing-in-student-success",
+      "target": "deficit-models",
+      "weight": 1
+    },
+    {
+      "source": "person-first-framing-in-student-success",
+      "target": "b3-website-resources",
+      "weight": 1
+    },
+    {
+      "source": "survival-analysis",
       "target": "post-failure-academic-recovery",
       "weight": 1
     },
     {
-      "source": "hattie2007",
-      "target": "engagement-causality-and-timing",
+      "source": "survival-analysis",
+      "target": "b3-ideas-and-questions",
       "weight": 1
     },
     {
-      "source": "wong2022",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "dss-innovation-award",
+      "source": "survival-analysis",
       "target": "b3-research-hub",
       "weight": 1
     },
     {
-      "source": "dss-innovation-award",
-      "target": "engagement-causality-and-timing",
+      "source": "survival-analysis",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "survival-analysis",
+      "target": "retention-theory",
+      "weight": 1
+    },
+    {
+      "source": "b3-program-overview",
+      "target": "retention-theory",
+      "weight": 2
+    },
+    {
+      "source": "b3-program-overview",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "b3-program-overview",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "b3-program-overview",
+      "target": "boko-local-ai",
+      "weight": 1
+    },
+    {
+      "source": "ecological-systems-theory",
+      "target": "retention-theory",
+      "weight": 1
+    },
+    {
+      "source": "ecological-systems-theory",
+      "target": "individual-vs-aggregate-measurement",
       "weight": 1
     },
     {
@@ -1232,122 +1534,157 @@
       "weight": 3
     },
     {
-      "source": "ecological-systems-theory",
-      "target": "retention-theory",
+      "source": "tovar2006",
+      "target": "post-failure-academic-recovery",
       "weight": 1
     },
     {
-      "source": "ecological-systems-theory",
-      "target": "systems-thinking",
-      "weight": 1
-    },
-    {
-      "source": "ecological-systems-theory",
-      "target": "individual-vs-aggregate-measurement",
-      "weight": 1
-    },
-    {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "b3-ideas-and-questions",
-      "weight": 5
-    },
-    {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "barbera2020",
-      "weight": 1
-    },
-    {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "gilstrap2020",
-      "weight": 1
-    },
-    {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "retention-theory",
-      "weight": 1
-    },
-    {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "deficit-models",
-      "weight": 1
-    },
-    {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "systems-thinking",
-      "weight": 1
-    },
-    {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "naspa-2026-enrollment-intensity",
-      "weight": 1
-    },
-    {
-      "source": "individual-vs-aggregate-measurement",
-      "target": "b3-research-questions",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "b3-ideas-and-questions",
-      "weight": 2
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "b3-research-hub",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "academic-resilience",
-      "weight": 5
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "retention-theory",
-      "weight": 3
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "self-determination-theory",
-      "weight": 3
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "systems-thinking",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "propensity-score-matching",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "survival-analysis",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "chi-square",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "deficit-models",
-      "weight": 2
-    },
-    {
-      "source": "b3-research-questions",
-      "target": "difference-in-differences",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-questions",
+      "source": "damgaard2018",
       "target": "engagement-causality-and-timing",
       "weight": 1
     },
     {
-      "source": "b3-research-questions",
+      "source": "academic-resilience",
+      "target": "retention-theory",
+      "weight": 1
+    },
+    {
+      "source": "academic-resilience",
+      "target": "de-7303-overview",
+      "weight": 1
+    },
+    {
+      "source": "academic-resilience",
+      "target": "deficit-models",
+      "weight": 1
+    },
+    {
+      "source": "academic-resilience",
+      "target": "engagement-causality-and-timing",
+      "weight": 1
+    },
+    {
+      "source": "academic-resilience",
+      "target": "post-failure-academic-recovery",
+      "weight": 1
+    },
+    {
+      "source": "academic-resilience",
+      "target": "b3-ideas-and-questions",
+      "weight": 3
+    },
+    {
+      "source": "academic-resilience",
+      "target": "b3-research-hub",
+      "weight": 2
+    },
+    {
+      "source": "academic-resilience",
+      "target": "b3-research-questions",
+      "weight": 5
+    },
+    {
+      "source": "cte-5303-overview",
+      "target": "deficit-models",
+      "weight": 1
+    },
+    {
+      "source": "cte-5303-overview",
+      "target": "cte-5303-retention-community-effort",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "boretz2012",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "hattie2007",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "matz2024",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "valentine2011",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "jagielo-manion2025",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "retention-theory",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "dss-innovation-award",
+      "weight": 1
+    },
+    {
+      "source": "engagement-causality-and-timing",
+      "target": "b3-ideas-and-questions",
+      "weight": 8
+    },
+    {
+      "source": "campbell2012",
+      "target": "individual-vs-aggregate-measurement",
+      "weight": 1
+    },
+    {
+      "source": "wu2024",
+      "target": "post-failure-academic-recovery",
+      "weight": 1
+    },
+    {
+      "source": "b3-ideas-and-questions",
+      "target": "b3-research-questions",
+      "weight": 2
+    },
+    {
+      "source": "b3-ideas-and-questions",
+      "target": "b3-research-hub",
+      "weight": 2
+    },
+    {
+      "source": "b3-ideas-and-questions",
+      "target": "post-failure-academic-recovery",
+      "weight": 6
+    },
+    {
+      "source": "b3-ideas-and-questions",
+      "target": "retention-theory",
+      "weight": 4
+    },
+    {
+      "source": "b3-ideas-and-questions",
+      "target": "individual-vs-aggregate-measurement",
+      "weight": 5
+    },
+    {
+      "source": "b3-ideas-and-questions",
+      "target": "deficit-models",
+      "weight": 4
+    },
+    {
+      "source": "hanger2011",
       "target": "post-failure-academic-recovery",
       "weight": 1
     },
@@ -1357,28 +1694,93 @@
       "weight": 1
     },
     {
-      "source": "self-determination-theory",
-      "target": "b3-ideas-and-questions",
-      "weight": 4
-    },
-    {
-      "source": "self-determination-theory",
+      "source": "boko-local-ai",
       "target": "b3-research-hub",
       "weight": 1
     },
     {
-      "source": "self-determination-theory",
+      "source": "deficit-models",
+      "target": "retention-theory",
+      "weight": 1
+    },
+    {
+      "source": "deficit-models",
       "target": "de-7303-overview",
       "weight": 1
     },
     {
-      "source": "self-determination-theory",
-      "target": "engagement-causality-and-timing",
+      "source": "deficit-models",
+      "target": "individual-vs-aggregate-measurement",
       "weight": 1
     },
     {
-      "source": "self-determination-theory",
-      "target": "academic-resilience",
+      "source": "deficit-models",
+      "target": "post-failure-academic-recovery",
+      "weight": 1
+    },
+    {
+      "source": "deficit-models",
+      "target": "b3-research-hub",
+      "weight": 2
+    },
+    {
+      "source": "deficit-models",
+      "target": "b3-research-questions",
+      "weight": 2
+    },
+    {
+      "source": "retention-theory",
+      "target": "field-note-2",
+      "weight": 1
+    },
+    {
+      "source": "retention-theory",
+      "target": "individual-vs-aggregate-measurement",
+      "weight": 1
+    },
+    {
+      "source": "retention-theory",
+      "target": "b3-research-hub",
+      "weight": 2
+    },
+    {
+      "source": "retention-theory",
+      "target": "b3-research-questions",
+      "weight": 3
+    },
+    {
+      "source": "cooper2025",
+      "target": "post-failure-academic-recovery",
+      "weight": 1
+    },
+    {
+      "source": "dss-innovation-award",
+      "target": "b3-research-hub",
+      "weight": 1
+    },
+    {
+      "source": "barbera2020",
+      "target": "individual-vs-aggregate-measurement",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "post-failure-academic-recovery",
+      "weight": 1
+    },
+    {
+      "source": "b3-research-hub",
+      "target": "b3-research-questions",
+      "weight": 1
+    },
+    {
+      "source": "beri2018",
+      "target": "post-failure-academic-recovery",
+      "weight": 1
+    },
+    {
+      "source": "haktanir2021",
+      "target": "post-failure-academic-recovery",
       "weight": 1
     },
     {
@@ -1387,270 +1789,41 @@
       "weight": 1
     },
     {
-      "source": "survival-analysis",
-      "target": "b3-ideas-and-questions",
+      "source": "b3-research-questions",
+      "target": "individual-vs-aggregate-measurement",
       "weight": 1
     },
     {
-      "source": "survival-analysis",
-      "target": "b3-research-hub",
-      "weight": 1
-    },
-    {
-      "source": "survival-analysis",
+      "source": "b3-research-questions",
       "target": "post-failure-academic-recovery",
       "weight": 1
     },
     {
-      "source": "survival-analysis",
-      "target": "retention-theory",
-      "weight": 1
-    },
-    {
-      "source": "propensity-score-matching",
-      "target": "b3-ideas-and-questions",
-      "weight": 2
-    },
-    {
-      "source": "propensity-score-matching",
-      "target": "b3-research-hub",
-      "weight": 1
-    },
-    {
-      "source": "propensity-score-matching",
-      "target": "difference-in-differences",
-      "weight": 1
-    },
-    {
-      "source": "propensity-score-matching",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "academic-resilience",
-      "target": "retention-theory",
-      "weight": 1
-    },
-    {
-      "source": "academic-resilience",
-      "target": "de-7303-overview",
-      "weight": 1
-    },
-    {
-      "source": "academic-resilience",
-      "target": "b3-ideas-and-questions",
-      "weight": 3
-    },
-    {
-      "source": "academic-resilience",
-      "target": "b3-research-hub",
-      "weight": 2
-    },
-    {
-      "source": "academic-resilience",
-      "target": "deficit-models",
-      "weight": 1
-    },
-    {
-      "source": "academic-resilience",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "academic-resilience",
+      "source": "morales2014",
       "target": "post-failure-academic-recovery",
       "weight": 1
     },
     {
-      "source": "aded-5314-inclusive-systems-thinking",
-      "target": "aded-5314-overview",
+      "source": "individual-vs-aggregate-measurement",
+      "target": "bowman2022",
       "weight": 1
     },
     {
-      "source": "aded-5314-overview",
-      "target": "deficit-models",
-      "weight": 1
-    },
-    {
-      "source": "aded-5314-overview",
-      "target": "systems-thinking",
-      "weight": 1
-    },
-    {
-      "source": "damgaard2018",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "kay2023",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "b3-ideas-and-questions",
-      "weight": 6
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "bledsoe2018",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "hanger2011",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "tovar2006",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "wu2024",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "newcomb-anjo2022",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "caporale-berkowitz2022",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "cooper2025",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "morales2014",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "deficit-models",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "b3-research-hub",
-      "weight": 1
-    },
-    {
-      "source": "post-failure-academic-recovery",
-      "target": "chi-square",
-      "weight": 1
-    },
-    {
-      "source": "systems-thinking",
-      "target": "b3-ideas-and-questions",
-      "weight": 1
-    },
-    {
-      "source": "systems-thinking",
-      "target": "b3-research-hub",
-      "weight": 1
-    },
-    {
-      "source": "systems-thinking",
-      "target": "retention-theory",
-      "weight": 1
-    },
-    {
-      "source": "bowman2019",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "b3-ideas-and-questions",
-      "weight": 2
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "chi-square",
-      "weight": 4
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "deficit-models",
-      "weight": 2
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "retention-theory",
-      "weight": 2
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "engagement-causality-and-timing",
-      "weight": 1
-    },
-    {
-      "source": "b3-research-hub",
-      "target": "naspa-2026-enrollment-intensity",
-      "weight": 1
-    },
-    {
-      "source": "engagement-causality-and-timing",
-      "target": "b3-ideas-and-questions",
-      "weight": 8
-    },
-    {
-      "source": "engagement-causality-and-timing",
-      "target": "matz2024",
-      "weight": 1
-    },
-    {
-      "source": "engagement-causality-and-timing",
-      "target": "retention-theory",
-      "weight": 1
-    },
-    {
-      "source": "engagement-causality-and-timing",
-      "target": "chi-square",
-      "weight": 1
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "retention-theory",
-      "weight": 4
-    },
-    {
-      "source": "b3-ideas-and-questions",
-      "target": "deficit-models",
-      "weight": 4
-    },
-    {
-      "source": "regression-assumptions",
-      "target": "chi-square",
-      "weight": 1
-    },
-    {
-      "source": "retention-theory",
-      "target": "deficit-models",
-      "weight": 1
-    },
-    {
-      "source": "de-7303-overview",
-      "target": "deficit-models",
+      "source": "bowman2022",
+      "target": "post-failure-academic-recovery",
       "weight": 1
     }
   ],
   "stats": {
-    "nodeCount": 49,
-    "edgeCount": 112,
-    "density": 0.0952,
+    "nodeCount": 55,
+    "edgeCount": 124,
+    "density": 0.0835,
     "bridgeNodes": [
+      "2026-03-24-vb-1on1",
       "academic-resilience",
-      "aded-5314-overview",
       "b3-cds-cma-study",
       "b3-ideas-and-questions",
+      "b3-program-overview",
       "b3-research-hub",
       "b3-research-questions",
       "bledsoe2018",
@@ -1658,61 +1831,68 @@
       "de-7303-overview",
       "deficit-models",
       "difference-in-differences",
-      "dss-innovation-award",
       "ecological-systems-theory",
+      "elevate-student-success-260223",
       "engagement-causality-and-timing",
       "hanger2011",
       "individual-vs-aggregate-measurement",
       "logistic-regression",
-      "naspa-2026-enrollment-intensity",
       "post-failure-academic-recovery",
       "propensity-score-matching",
       "regression-assumptions",
       "retention-theory",
       "self-determination-theory",
       "survival-analysis",
-      "systems-thinking"
+      "sxsw-edu-2026"
     ],
     "gaps": [
       {
         "communityA": 1,
-        "communityB": 4,
+        "communityB": 6,
         "labelA": "Financial Literacy & Scarcity",
-        "labelB": "Advising as Education & Critical Pedagogy",
-        "crossEdges": 9,
-        "density": 0.01312
-      },
-      {
-        "communityA": 0,
-        "communityB": 1,
-        "labelA": "Student Success & Resilience",
-        "labelB": "Financial Literacy & Scarcity",
-        "crossEdges": 54,
-        "density": 0.014892
+        "labelB": "Cluster 6",
+        "crossEdges": 0,
+        "density": 0.0
       },
       {
         "communityA": 1,
         "communityB": 5,
         "labelA": "Financial Literacy & Scarcity",
         "labelB": "Coursework",
-        "crossEdges": 5,
-        "density": 0.017007
-      },
-      {
-        "communityA": 1,
-        "communityB": 2,
-        "labelA": "Financial Literacy & Scarcity",
-        "labelB": "Post-Failure Recovery & Deficit Framing",
-        "crossEdges": 38,
-        "density": 0.018915
+        "crossEdges": 1,
+        "density": 0.002273
       },
       {
         "communityA": 1,
         "communityB": 3,
         "labelA": "Financial Literacy & Scarcity",
         "labelB": "Systems Thinking & Epistemic Justice",
+        "crossEdges": 12,
+        "density": 0.008392
+      },
+      {
+        "communityA": 0,
+        "communityB": 1,
+        "labelA": "Student Success & Resilience",
+        "labelB": "Financial Literacy & Scarcity",
+        "crossEdges": 43,
+        "density": 0.011846
+      },
+      {
+        "communityA": 1,
+        "communityB": 2,
+        "labelA": "Financial Literacy & Scarcity",
+        "labelB": "Post-Failure Recovery & Deficit Framing",
+        "crossEdges": 44,
+        "density": 0.018182
+      },
+      {
+        "communityA": 1,
+        "communityB": 4,
+        "labelA": "Financial Literacy & Scarcity",
+        "labelB": "Advising as Education & Critical Pedagogy",
         "crossEdges": 20,
-        "density": 0.027211
+        "density": 0.024242
       }
     ]
   }

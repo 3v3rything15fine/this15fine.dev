@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CI 7303 Week 10 — Norms, Equating, and Survey Quality</title>
+<meta name="description" content="Interactive reading session: Norms, Equating, and Survey Quality — CI 7303 Psychometric Methods, Week 10.">
+<meta name="theme-color" content="#2E3440">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --nord0: #2E3440; --nord0-deep: #1e2430; --nord1: #3B4252; --nord2: #434C5E;
+  --nord3: #4C566A; --nord4: #D8DEE9; --nord5: #E5E9F0; --nord6: #ECEFF4;
+  --frost: #88C0D0; --frost-deep: #5E81AC; --frost-warm: #8FBCBB;
+  --aurora-green: #A3BE8C; --aurora-yellow: #EBCB8B; --aurora-red: #BF616A;
+  --aurora-magenta: #B48EAD;
+  --transition: 200ms ease;
+  --radius: 6px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--nord0-deep);
+  color: var(--nord4);
+  font-family: 'JetBrains Mono', 'Liberation Mono', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.7;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  -webkit-text-size-adjust: 100%;
+}
+
+a { color: var(--frost); text-decoration: none; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px; }
+::selection { background: var(--frost-deep); color: var(--nord6); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* ── Shell ─────────────────────────────────────────── */
+.shell {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Header ────────────────────────────────────────── */
+.top-bar {
+  padding: 16px 0 12px;
+  border-bottom: 1px solid var(--nord2);
+}
+
+.back-link {
+  font-size: 12px;
+  color: var(--nord3);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.back-link:hover { color: var(--frost); }
+
+.course-badge {
+  display: inline-block;
+  background: var(--frost-deep);
+  color: var(--nord6);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-top: 12px;
+  letter-spacing: 0.5px;
+}
+
+.page-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--nord6);
+  margin-top: 8px;
+  line-height: 1.3;
+}
+
+.page-subtitle {
+  font-size: 12px;
+  color: var(--nord3);
+  margin-top: 2px;
+}
+
+/* ── Progress Bar ──────────────────────────────────── */
+.progress-bar {
+  height: 3px;
+  background: var(--nord1);
+  border-radius: 2px;
+  margin-top: 12px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--frost);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+/* ── Tab Navigation ────────────────────────────────── */
+.tab-bar {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--nord2);
+  margin-top: 8px;
+  position: sticky;
+  top: 0;
+  background: var(--nord0-deep);
+  z-index: 10;
+}
+
+.tab-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--nord3);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 12px 8px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+  min-height: 44px;
+}
+
+.tab-btn:hover { color: var(--nord4); }
+.tab-btn[aria-selected="true"] {
+  color: var(--frost);
+  border-bottom-color: var(--frost);
+}
+
+/* ── View Panels ───────────────────────────────────── */
+.view-panel {
+  display: none;
+  flex: 1;
+  padding: 16px 0 120px;
+}
+
+.view-panel.active { display: block; }
+
+/* ── Accordion ─────────────────────────────────────── */
+.accordion-item {
+  border: 1px solid var(--nord2);
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  background: var(--nord1);
+  border: none;
+  color: var(--nord5);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 14px 16px;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  transition: background var(--transition);
+}
+
+.accordion-header:hover { background: var(--nord2); }
+
+.accordion-header[aria-expanded="true"] {
+  background: var(--nord2);
+  border-bottom: 1px solid var(--nord2);
+}
+
+.accordion-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--frost-deep);
+  color: var(--nord6);
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-num {
+  background: var(--frost);
+  color: var(--nord0);
+}
+
+.accordion-chevron {
+  margin-left: auto;
+  transition: transform var(--transition);
+  flex-shrink: 0;
+  color: var(--nord3);
+}
+
+.accordion-header[aria-expanded="true"] .accordion-chevron {
+  transform: rotate(180deg);
+  color: var(--frost);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.accordion-body.open {
+  max-height: 3000px;
+}
+
+.accordion-content {
+  padding: 16px;
+  font-size: 13px;
+  color: var(--nord4);
+}
+
+.accordion-content p { margin-bottom: 12px; }
+
+.accordion-content strong {
+  color: var(--nord6);
+  font-weight: 600;
+}
+
+.accordion-content ol,
+.accordion-content ul {
+  margin: 8px 0 12px 20px;
+}
+
+.accordion-content li {
+  margin-bottom: 6px;
+}
+
+.formula {
+  display: block;
+  background: var(--nord0);
+  border: 1px solid var(--nord2);
+  border-left: 3px solid var(--frost-deep);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 12px;
+  color: var(--aurora-yellow);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.def-term {
+  color: var(--frost);
+  font-weight: 600;
+}
+
+.section-read-marker {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--nord2);
+}
+
+.mark-read-btn {
+  background: none;
+  border: 1px solid var(--nord3);
+  color: var(--nord3);
+  font-family: inherit;
+  font-size: 11px;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  min-height: 44px;
+  min-width: 44px;
+  transition: all var(--transition);
+}
+
+.mark-read-btn:hover {
+  border-color: var(--aurora-green);
+  color: var(--aurora-green);
+}
+
+.mark-read-btn.done {
+  border-color: var(--aurora-green);
+  color: var(--aurora-green);
+  background: rgba(163, 190, 140, 0.1);
+}
+
+/* ── Flashcards ────────────────────────────────────── */
+.card-stage {
+  perspective: 800px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.card-counter {
+  text-align: center;
+  font-size: 12px;
+  color: var(--nord3);
+  margin-bottom: 12px;
+}
+
+.card-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 65%;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.card-inner.flipped { transform: rotateY(180deg); }
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.card-front {
+  background: var(--nord1);
+  border: 1px solid var(--nord2);
+  color: var(--nord6);
+  font-weight: 600;
+}
+
+.card-back {
+  background: var(--nord2);
+  border: 1px solid var(--nord3);
+  color: var(--nord4);
+  transform: rotateY(180deg);
+  font-weight: 400;
+  font-size: 13px;
+}
+
+.card-hint {
+  font-size: 11px;
+  color: var(--nord3);
+  text-align: center;
+  margin-top: 10px;
+}
+
+.card-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.card-nav-btn {
+  background: var(--nord1);
+  border: 1px solid var(--nord2);
+  color: var(--nord4);
+  font-family: inherit;
+  font-size: 18px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.card-nav-btn:hover {
+  background: var(--nord2);
+  border-color: var(--frost);
+  color: var(--frost);
+}
+
+.shuffle-btn {
+  background: none;
+  border: 1px solid var(--nord3);
+  color: var(--nord3);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  min-height: 44px;
+  display: block;
+  margin: 16px auto 0;
+  transition: all var(--transition);
+}
+
+.shuffle-btn:hover {
+  border-color: var(--aurora-magenta);
+  color: var(--aurora-magenta);
+}
+
+/* ── Quiz ──────────────────────────────────────────── */
+.quiz-intro {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.quiz-intro p {
+  font-size: 13px;
+  color: var(--nord3);
+  margin-bottom: 16px;
+}
+
+.start-quiz-btn, .restart-quiz-btn {
+  background: var(--frost-deep);
+  border: none;
+  color: var(--nord6);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  min-height: 44px;
+  transition: background var(--transition);
+}
+
+.start-quiz-btn:hover, .restart-quiz-btn:hover { background: var(--frost); color: var(--nord0); }
+
+.quiz-question {
+  display: none;
+}
+
+.quiz-question.active { display: block; }
+
+.quiz-q-num {
+  font-size: 11px;
+  color: var(--nord3);
+  margin-bottom: 8px;
+}
+
+.quiz-q-text {
+  font-size: 14px;
+  color: var(--nord6);
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.quiz-option {
+  display: block;
+  width: 100%;
+  background: var(--nord1);
+  border: 1px solid var(--nord2);
+  color: var(--nord4);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: 8px;
+  min-height: 44px;
+  transition: all var(--transition);
+  line-height: 1.4;
+}
+
+.quiz-option:hover:not(.chosen) { background: var(--nord2); border-color: var(--frost); }
+
+.quiz-option.correct {
+  border-color: var(--aurora-green);
+  background: rgba(163, 190, 140, 0.12);
+  color: var(--aurora-green);
+}
+
+.quiz-option.incorrect {
+  border-color: var(--aurora-red);
+  background: rgba(191, 97, 106, 0.12);
+  color: var(--aurora-red);
+}
+
+.quiz-option.reveal-correct {
+  border-color: var(--aurora-green);
+  color: var(--aurora-green);
+}
+
+.quiz-explanation {
+  display: none;
+  font-size: 12px;
+  color: var(--nord3);
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: var(--nord0);
+  border-radius: var(--radius);
+  border-left: 3px solid var(--frost-deep);
+  line-height: 1.5;
+}
+
+.quiz-explanation.show { display: block; }
+
+.quiz-next-btn {
+  display: none;
+  margin-top: 16px;
+  background: var(--nord1);
+  border: 1px solid var(--frost-deep);
+  color: var(--frost);
+  font-family: inherit;
+  font-size: 13px;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  min-height: 44px;
+  transition: all var(--transition);
+}
+
+.quiz-next-btn.show { display: inline-block; }
+.quiz-next-btn:hover { background: var(--frost-deep); color: var(--nord6); }
+
+.quiz-results {
+  display: none;
+  text-align: center;
+  padding: 24px 0;
+}
+
+.quiz-results.active { display: block; }
+
+.quiz-score {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--frost);
+  margin-bottom: 4px;
+}
+
+.quiz-score-label {
+  font-size: 13px;
+  color: var(--nord3);
+  margin-bottom: 20px;
+}
+
+/* ── Mobile bottom nav ─────────────────────────────── */
+@media (max-width: 600px) {
+  .tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    border-bottom: none;
+    border-top: 1px solid var(--nord2);
+    background: var(--nord0-deep);
+    z-index: 20;
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+
+  .view-panel { padding-bottom: 80px; }
+
+  .shell { padding: 0 12px; }
+}
+
+@media (min-width: 601px) {
+  .shell { padding: 0 24px; }
+  .page-title { font-size: 20px; }
+}
+
+/* ── Utilities ─────────────────────────────────────── */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- Header -->
+  <header class="top-bar">
+    <a href="/readings/" class="back-link" aria-label="Back to readings">&larr; readings</a>
+    <div class="course-badge">CI 7303</div>
+    <h1 class="page-title">Norms, Equating, and Survey Quality</h1>
+    <p class="page-subtitle">Week 10 &middot; Psychometric Methods</p>
+    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Session progress">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </header>
+
+  <!-- Tabs -->
+  <nav class="tab-bar" role="tablist" aria-label="Content views">
+    <button class="tab-btn" role="tab" aria-selected="true" aria-controls="panel-read" id="tab-read">Read</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-cards" id="tab-cards">Cards</button>
+    <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-quiz" id="tab-quiz">Quiz</button>
+  </nav>
+
+  <!-- ════════════ READ PANEL ════════════ -->
+  <main class="view-panel active" id="panel-read" role="tabpanel" aria-labelledby="tab-read">
+
+    <!-- Section 1 -->
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false" aria-controls="acc-1" id="acc-btn-1">
+        <span class="accordion-num">1</span>
+        <span>Norms and the Norming Process</span>
+        <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="accordion-body" id="acc-1" role="region" aria-labelledby="acc-btn-1">
+        <div class="accordion-content">
+          <p><span class="def-term">Norms</span> are test performance data collected from a reference group, used to contextualize individual scores. Without norms, a raw score carries no interpretive meaning.</p>
+          <p><span class="def-term">Normative Sample</span> is the specific reference group whose performance data forms the basis for score interpretation. Representativeness of this sample determines the validity of normative comparisons.</p>
+          <p><span class="def-term">Standard Score</span> is a raw score converted to a scale with an arbitrary mean and standard deviation, allowing cross-test comparison.</p>
+          <p><strong>The 9 steps of a norming study:</strong></p>
+          <ol>
+            <li>Define the target population</li>
+            <li>Select a sampling strategy (probability sampling preferred over convenience)</li>
+            <li>Select statistics to compute: mean, SD, variance, skewness, kurtosis, percentile ranks</li>
+            <li>Determine acceptable sampling error</li>
+            <li>Acquire the sample and screen data for quality</li>
+            <li>Compute group-level statistics</li>
+            <li>Select normative scores (build raw-to-standard conversion tables)</li>
+            <li>Prepare written documentation</li>
+            <li>Produce the technical manual</li>
+          </ol>
+          <div class="section-read-marker">
+            <button class="mark-read-btn" data-section="1" aria-label="Mark section 1 as read">Mark as read</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false" aria-controls="acc-2" id="acc-btn-2">
+        <span class="accordion-num">2</span>
+        <span>Scaling and Score Transformations</span>
+        <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="accordion-body" id="acc-2" role="region" aria-labelledby="acc-btn-2">
+        <div class="accordion-content">
+          <p>Raw scores are restrictive. They lack a common metric and cannot be compared across tests or forms. Score transformations solve this problem.</p>
+
+          <p><span class="def-term">Linear Z-Score Transformation</span> changes only the mean and standard deviation (the first two moments of the distribution). It does <strong>not</strong> affect skewness or kurtosis. The distribution shape stays the same.</p>
+          <code class="formula">T = AX + B
+where A = SD_target / SD_raw
+      B = Mean_target - (A x Mean_raw)</code>
+
+          <p><span class="def-term">Percentile Ranks</span> indicate the percentage of the normative sample scoring at or below a given value.</p>
+          <code class="formula">PR = (cf_lower + 0.5 * f_i) / N x 100</code>
+          <p>Shortcoming: percentile ranks distort the scale nonlinearly. A one-point difference near the median corresponds to a larger percentile-rank shift than the same difference at the extremes. This makes percentile ranks unsuitable as an equal-interval scale.</p>
+
+          <p><span class="def-term">Normalized Z-Scores</span> are a nonlinear transformation that forces the distribution to approximate normality. The procedure uses the inverse of the standard normal CDF. Common in IQ and achievement testing where normal distributions are assumed.</p>
+
+          <div class="section-read-marker">
+            <button class="mark-read-btn" data-section="2" aria-label="Mark section 2 as read">Mark as read</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false" aria-controls="acc-3" id="acc-btn-3">
+        <span class="accordion-num">3</span>
+        <span>Linking vs. Equating</span>
+        <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="accordion-body" id="acc-3" role="region" aria-labelledby="acc-btn-3">
+        <div class="accordion-content">
+          <p><span class="def-term">Linking</span> is the broad term for any transformation that maps scores from one test to another. It encompasses a range of procedures varying in strength.</p>
+          <p><span class="def-term">Equating</span> is the strongest form of linking. It produces scores that are truly interchangeable between test forms.</p>
+          <p><strong>The 5 Rules of Exchangeability:</strong></p>
+          <ol>
+            <li><strong>Same construct</strong> &mdash; both forms must measure the same thing</li>
+            <li><strong>Equal reliability</strong> &mdash; both forms must have comparable measurement precision</li>
+            <li><strong>Symmetric function</strong> &mdash; the equating from X to Y must be the inverse of Y to X</li>
+            <li><strong>Examinee indifference</strong> &mdash; it should not matter which form a person takes</li>
+            <li><strong>Population independence</strong> &mdash; the equating function should hold across different groups</li>
+          </ol>
+          <p><span class="def-term">Horizontal Equating</span> links alternate forms at the same difficulty level.</p>
+          <p><span class="def-term">Vertical Equating</span> links forms across different developmental or grade levels (different difficulty).</p>
+          <div class="section-read-marker">
+            <button class="mark-read-btn" data-section="3" aria-label="Mark section 3 as read">Mark as read</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false" aria-controls="acc-4" id="acc-btn-4">
+        <span class="accordion-num">4</span>
+        <span>Equating Designs</span>
+        <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="accordion-body" id="acc-4" role="region" aria-labelledby="acc-btn-4">
+        <div class="accordion-content">
+          <p><span class="def-term">Design I (Random Groups)</span> &mdash; Examinees are randomly assigned to either Form X or Form Y. Randomization ensures the groups are equivalent on average. Simple but requires large samples.</p>
+          <p><span class="def-term">Design II (Counterbalanced)</span> &mdash; All examinees take both forms in random order. This controls for individual differences but introduces practice and fatigue effects.</p>
+          <p><span class="def-term">Design III (Anchor Test)</span> &mdash; Different groups take different forms, but both forms contain a shared set of anchor items (typically about 30% of the test). The anchor items allow statistical adjustment for any group differences.</p>
+          <p>Design III is the most commonly used in large-scale testing programs because it does not require every examinee to take multiple forms and can adjust for non-equivalent groups.</p>
+          <div class="section-read-marker">
+            <button class="mark-read-btn" data-section="4" aria-label="Mark section 4 as read">Mark as read</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="accordion-item">
+      <button class="accordion-header" aria-expanded="false" aria-controls="acc-5" id="acc-btn-5">
+        <span class="accordion-num">5</span>
+        <span>Equating Techniques</span>
+        <svg class="accordion-chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="accordion-body" id="acc-5" role="region" aria-labelledby="acc-btn-5">
+        <div class="accordion-content">
+          <p><span class="def-term">Linear Equating</span> matches z-scores between forms. The conversion formula preserves the linear relationship.</p>
+          <code class="formula">Y = (s_y / s_x) * X + [M_y - (s_y / s_x) * M_x]</code>
+          <p>The Standard Error of Equating (SEE) measures the accuracy of the equating function at each score point.</p>
+
+          <p><span class="def-term">Equipercentile Equating</span> is nonlinear: it matches scores with identical percentile ranks across forms. Because raw percentile-rank distributions are jagged, smoothing is required.</p>
+          <ul>
+            <li><strong>Pre-smoothing</strong> (loglinear models) smooths the score distributions before equating</li>
+            <li><strong>Post-smoothing</strong> (cubic-spline interpolation) smooths the equating function after computation</li>
+          </ul>
+
+          <p><span class="def-term">IRT Equating</span> bypasses traditional equating by modeling item responses directly on a latent ability scale. Its key advantage is <strong>invariance</strong>: the ability estimate is independent of the particular items administered and the particular sample tested.</p>
+          <p>Anchor test procedure for IRT:</p>
+          <ol>
+            <li>Estimate item difficulty for anchor items in both groups</li>
+            <li>Compute the mean difference: m = b_group1 - b_group2</li>
+            <li>Average across all anchor items</li>
+            <li>Apply the adjustment to place both forms on a common scale</li>
+          </ol>
+          <div class="section-read-marker">
+            <button class="mark-read-btn" data-section="5" aria-label="Mark section 5 as read">Mark as read</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ════════════ CARDS PANEL ════════════ -->
+  <section class="view-panel" id="panel-cards" role="tabpanel" aria-labelledby="tab-cards">
+    <div class="card-stage">
+      <div class="card-counter" id="cardCounter" aria-live="polite">1 / 20</div>
+      <div class="card-wrapper" id="cardWrapper" role="button" tabindex="0" aria-label="Flashcard. Tap to flip.">
+        <div class="card-inner" id="cardInner">
+          <div class="card-face card-front" id="cardFront" aria-hidden="false"></div>
+          <div class="card-face card-back" id="cardBack" aria-hidden="true"></div>
+        </div>
+      </div>
+      <p class="card-hint" id="cardHint">Tap to flip</p>
+      <nav class="card-nav" aria-label="Flashcard navigation">
+        <button class="card-nav-btn" id="cardPrev" aria-label="Previous card">&larr;</button>
+        <button class="card-nav-btn" id="cardNext" aria-label="Next card">&rarr;</button>
+      </nav>
+      <button class="shuffle-btn" id="shuffleBtn">Shuffle deck</button>
+    </div>
+  </section>
+
+  <!-- ════════════ QUIZ PANEL ════════════ -->
+  <section class="view-panel" id="panel-quiz" role="tabpanel" aria-labelledby="tab-quiz">
+    <div class="quiz-intro" id="quizIntro">
+      <p>10 questions testing conceptual understanding of norms, equating, and survey quality.</p>
+      <button class="start-quiz-btn" id="startQuizBtn">Start quiz</button>
+    </div>
+    <div id="quizBody"></div>
+    <div class="quiz-results" id="quizResults">
+      <div class="quiz-score" id="quizScore">0 / 10</div>
+      <p class="quiz-score-label">Correct answers</p>
+      <button class="restart-quiz-btn" id="restartQuizBtn">Try again</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  // ── Storage ──────────────────────────────────────
+  var STORAGE_KEY = 'ci7303-week10-progress';
+  function loadState() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e) { return {}; }
+  }
+  function saveState(s) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch(e) {}
+  }
+  var state = loadState();
+  if (!state.sectionsRead) state.sectionsRead = {};
+  if (!state.quizBest) state.quizBest = 0;
+  if (!state.cardIndex) state.cardIndex = 0;
+
+  // ── Progress ─────────────────────────────────────
+  var progressFill = document.getElementById('progressFill');
+  function updateProgress() {
+    var readCount = Object.keys(state.sectionsRead).length;
+    var cardsDone = state.cardsSeen ? 1 : 0;
+    var quizDone = state.quizBest > 0 ? 1 : 0;
+    var pct = Math.round(((readCount / 5) * 0.5 + cardsDone * 0.25 + quizDone * 0.25) * 100);
+    progressFill.style.width = pct + '%';
+    progressFill.parentElement.setAttribute('aria-valuenow', pct);
+  }
+
+  // ── Tabs ─────────────────────────────────────────
+  var tabs = document.querySelectorAll('.tab-btn');
+  var panels = document.querySelectorAll('.view-panel');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      tabs.forEach(function(t) { t.setAttribute('aria-selected', 'false'); });
+      panels.forEach(function(p) { p.classList.remove('active'); });
+      tab.setAttribute('aria-selected', 'true');
+      document.getElementById(tab.getAttribute('aria-controls')).classList.add('active');
+    });
+  });
+
+  // ── Accordion ────────────────────────────────────
+  var accHeaders = document.querySelectorAll('.accordion-header');
+  accHeaders.forEach(function(header) {
+    header.addEventListener('click', function() {
+      var expanded = header.getAttribute('aria-expanded') === 'true';
+      // Close all on mobile (single-open behavior under 601px)
+      if (window.innerWidth <= 600) {
+        accHeaders.forEach(function(h) {
+          h.setAttribute('aria-expanded', 'false');
+          document.getElementById(h.getAttribute('aria-controls')).classList.remove('open');
+        });
+      }
+      if (!expanded) {
+        header.setAttribute('aria-expanded', 'true');
+        document.getElementById(header.getAttribute('aria-controls')).classList.add('open');
+      } else {
+        header.setAttribute('aria-expanded', 'false');
+        document.getElementById(header.getAttribute('aria-controls')).classList.remove('open');
+      }
+    });
+  });
+
+  // ── Mark as Read ─────────────────────────────────
+  var readBtns = document.querySelectorAll('.mark-read-btn');
+  readBtns.forEach(function(btn) {
+    var sec = btn.getAttribute('data-section');
+    if (state.sectionsRead[sec]) {
+      btn.classList.add('done');
+      btn.textContent = 'Read';
+    }
+    btn.addEventListener('click', function() {
+      state.sectionsRead[sec] = true;
+      btn.classList.add('done');
+      btn.textContent = 'Read';
+      saveState(state);
+      updateProgress();
+    });
+  });
+
+  // ── Flashcards ───────────────────────────────────
+  var cards = [
+    { q: 'Norms', a: 'Test performance data from a reference group, used to contextualize individual scores.' },
+    { q: 'Normative Sample', a: 'The specific reference group whose data provides the basis for score interpretation.' },
+    { q: 'Standard Score', a: 'A raw score converted to a scale with arbitrary mean and SD for cross-test comparison.' },
+    { q: 'Linear Z-Score Transformation', a: 'Changes only mean and SD (first two moments). Does not affect skewness or kurtosis.' },
+    { q: 'Percentile Rank', a: 'Percentage of the normative sample scoring at or below a given value. Nonlinear distortion at extremes.' },
+    { q: 'Normalized Z-Score', a: 'Nonlinear transformation forcing a distribution to approximate normality via inverse standard normal CDF.' },
+    { q: 'Linking', a: 'Any transformation that maps scores from one test to another. Broad umbrella term.' },
+    { q: 'Equating', a: 'Strongest form of linking, producing truly interchangeable scores between test forms.' },
+    { q: 'The 5 Rules of Exchangeability', a: '(1) Same construct, (2) Equal reliability, (3) Symmetric function, (4) Examinee indifference, (5) Population independence.' },
+    { q: 'Horizontal Equating', a: 'Linking alternate forms at the same difficulty level.' },
+    { q: 'Vertical Equating', a: 'Linking forms across different developmental or grade levels (different difficulty).' },
+    { q: 'Design I (Random Groups)', a: 'Examinees randomly assigned to Form X or Y. Simple but needs large samples.' },
+    { q: 'Design II (Counterbalanced)', a: 'All examinees take both forms in random order. Controls individual differences but introduces practice/fatigue effects.' },
+    { q: 'Design III (Anchor Test)', a: 'Different forms share ~30% anchor items. Most common in large-scale testing; adjusts for non-equivalent groups.' },
+    { q: 'Linear Equating', a: 'Matches z-scores between forms. Y = (s_y/s_x)*X + [M_y - (s_y/s_x)*M_x].' },
+    { q: 'Equipercentile Equating', a: 'Nonlinear method matching scores at identical percentile ranks. Requires pre- or post-smoothing.' },
+    { q: 'IRT Equating', a: 'Models item responses on a latent ability scale. Key property: invariance across items and samples.' },
+    { q: 'Invariance (IRT)', a: 'Ability estimates are independent of the particular items administered and the particular sample tested.' },
+    { q: 'Pre-smoothing vs. Post-smoothing', a: 'Pre-smoothing (loglinear) smooths score distributions before equating. Post-smoothing (cubic-spline) smooths the equating function after.' },
+    { q: 'Norming Study Steps (count)', a: '9 steps: define population, sampling strategy, select statistics, acceptable error, acquire/screen data, compute stats, normative scores, documentation, technical manual.' }
+  ];
+
+  var cardIdx = Math.min(state.cardIndex || 0, cards.length - 1);
+  var cardFlipped = false;
+  var cardInner = document.getElementById('cardInner');
+  var cardFront = document.getElementById('cardFront');
+  var cardBack = document.getElementById('cardBack');
+  var cardCounter = document.getElementById('cardCounter');
+  var cardHint = document.getElementById('cardHint');
+
+  function renderCard() {
+    cardFlipped = false;
+    cardInner.classList.remove('flipped');
+    cardFront.textContent = cards[cardIdx].q;
+    cardBack.textContent = cards[cardIdx].a;
+    cardFront.setAttribute('aria-hidden', 'false');
+    cardBack.setAttribute('aria-hidden', 'true');
+    cardCounter.textContent = (cardIdx + 1) + ' / ' + cards.length;
+    cardHint.textContent = 'Tap to flip';
+    state.cardIndex = cardIdx;
+    state.cardsSeen = true;
+    saveState(state);
+    updateProgress();
+  }
+
+  function flipCard() {
+    cardFlipped = !cardFlipped;
+    cardInner.classList.toggle('flipped', cardFlipped);
+    cardFront.setAttribute('aria-hidden', cardFlipped ? 'true' : 'false');
+    cardBack.setAttribute('aria-hidden', cardFlipped ? 'false' : 'true');
+    cardHint.textContent = cardFlipped ? 'Tap to flip back' : 'Tap to flip';
+  }
+
+  document.getElementById('cardWrapper').addEventListener('click', flipCard);
+  document.getElementById('cardWrapper').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); flipCard(); }
+  });
+
+  document.getElementById('cardPrev').addEventListener('click', function() {
+    cardIdx = (cardIdx - 1 + cards.length) % cards.length;
+    renderCard();
+  });
+
+  document.getElementById('cardNext').addEventListener('click', function() {
+    cardIdx = (cardIdx + 1) % cards.length;
+    renderCard();
+  });
+
+  document.getElementById('shuffleBtn').addEventListener('click', function() {
+    for (var i = cards.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = cards[i]; cards[i] = cards[j]; cards[j] = tmp;
+    }
+    cardIdx = 0;
+    renderCard();
+  });
+
+  // Touch swipe for cards
+  (function() {
+    var wrapper = document.getElementById('cardWrapper');
+    var startX = 0;
+    var startY = 0;
+    wrapper.addEventListener('touchstart', function(e) {
+      startX = e.changedTouches[0].clientX;
+      startY = e.changedTouches[0].clientY;
+    }, { passive: true });
+    wrapper.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].clientX - startX;
+      var dy = e.changedTouches[0].clientY - startY;
+      if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+        e.preventDefault();
+        if (dx < 0) {
+          cardIdx = (cardIdx + 1) % cards.length;
+        } else {
+          cardIdx = (cardIdx - 1 + cards.length) % cards.length;
+        }
+        renderCard();
+      }
+    });
+  })();
+
+  // Keyboard nav for cards
+  document.addEventListener('keydown', function(e) {
+    var cardsPanel = document.getElementById('panel-cards');
+    if (!cardsPanel.classList.contains('active')) return;
+    if (e.key === 'ArrowLeft') { cardIdx = (cardIdx - 1 + cards.length) % cards.length; renderCard(); }
+    if (e.key === 'ArrowRight') { cardIdx = (cardIdx + 1) % cards.length; renderCard(); }
+    if (e.key === ' ' || e.key === 'Enter') { /* handled by wrapper */ }
+  });
+
+  renderCard();
+
+  // ── Quiz ─────────────────────────────────────────
+  var questions = [
+    {
+      q: 'What happens to the skewness of a distribution when you apply a linear z-score transformation?',
+      opts: ['It becomes zero', 'It stays the same', 'It increases', 'It reverses sign'],
+      correct: 1,
+      explain: 'Linear transformations change only the mean and SD (first two moments). Skewness (third moment) and kurtosis (fourth moment) remain unchanged.'
+    },
+    {
+      q: 'Which equating design uses a shared set of items administered to both groups?',
+      opts: ['Design I (Random Groups)', 'Design II (Counterbalanced)', 'Design III (Anchor Test)', 'All three designs'],
+      correct: 2,
+      explain: 'Design III uses anchor items (typically ~30% of the test) shared across forms to statistically adjust for group differences.'
+    },
+    {
+      q: 'Why are percentile ranks considered a problematic scale for measurement?',
+      opts: ['They require a normal distribution', 'They cannot be computed for small samples', 'They distort the scale nonlinearly, compressing differences at extremes', 'They ignore item difficulty'],
+      correct: 2,
+      explain: 'Percentile ranks are nonlinear. A one-point raw score difference near the median produces a larger PR shift than the same difference at the extremes, making them unsuitable as an equal-interval scale.'
+    },
+    {
+      q: 'What does the "invariance" property of IRT mean?',
+      opts: ['Item difficulty never changes across administrations', 'All examinees receive the same ability estimate', 'Ability estimates are independent of the particular items and sample', 'Test forms must have equal reliability'],
+      correct: 2,
+      explain: 'IRT invariance means the latent ability estimate does not depend on which specific items were administered or which specific sample was tested.'
+    },
+    {
+      q: 'What percentage of items should an anchor test typically contain?',
+      opts: ['About 10%', 'About 20%', 'About 30%', 'About 50%'],
+      correct: 2,
+      explain: 'The standard recommendation is that anchor items should comprise approximately 30% of the total test length to provide adequate linking information.'
+    },
+    {
+      q: 'Which step in the norming process comes first?',
+      opts: ['Compute group-level statistics', 'Determine acceptable sampling error', 'Define the target population', 'Select normative scores'],
+      correct: 2,
+      explain: 'The first step is always to define the target population. Every subsequent decision (sampling strategy, sample size, acceptable error) depends on this definition.'
+    },
+    {
+      q: 'What distinguishes equating from linking?',
+      opts: ['Equating uses IRT; linking does not', 'Equating produces interchangeable scores; linking is a broader term for any score mapping', 'Linking requires anchor items; equating does not', 'There is no meaningful difference'],
+      correct: 1,
+      explain: 'Linking is the umbrella term for any procedure mapping scores from one test to another. Equating is the strongest form, producing scores that are truly interchangeable.'
+    },
+    {
+      q: 'In the counterbalanced design (Design II), what is the primary threat to validity?',
+      opts: ['Non-equivalent groups', 'Insufficient sample size', 'Practice and fatigue effects from taking both forms', 'Lack of anchor items'],
+      correct: 2,
+      explain: 'Because every examinee takes both forms, the order of administration can introduce practice effects (boosting performance on the second form) or fatigue effects (lowering it).'
+    },
+    {
+      q: 'What type of smoothing uses loglinear models applied before the equating function is computed?',
+      opts: ['Post-smoothing', 'Pre-smoothing', 'Kernel smoothing', 'Bayesian smoothing'],
+      correct: 1,
+      explain: 'Pre-smoothing applies loglinear models to the raw score distributions before the equating function is derived. Post-smoothing (cubic-spline) is applied after.'
+    },
+    {
+      q: 'Which of the following is NOT one of the 5 Rules of Exchangeability for equating?',
+      opts: ['Same construct measured', 'Equal sample sizes', 'Symmetric equating function', 'Population independence'],
+      correct: 1,
+      explain: 'The five rules are: same construct, equal reliability, symmetric function, examinee indifference, and population independence. Equal sample sizes is not a requirement for exchangeability.'
+    }
+  ];
+
+  var quizBody = document.getElementById('quizBody');
+  var quizIntro = document.getElementById('quizIntro');
+  var quizResults = document.getElementById('quizResults');
+  var quizScoreEl = document.getElementById('quizScore');
+  var quizCurrent = 0;
+  var quizCorrect = 0;
+
+  function buildQuiz() {
+    quizBody.innerHTML = '';
+    questions.forEach(function(qObj, qi) {
+      var div = document.createElement('div');
+      div.className = 'quiz-question';
+      div.id = 'quiz-q-' + qi;
+      div.setAttribute('role', 'group');
+      div.setAttribute('aria-label', 'Question ' + (qi + 1));
+
+      var numP = document.createElement('div');
+      numP.className = 'quiz-q-num';
+      numP.textContent = 'Question ' + (qi + 1) + ' of ' + questions.length;
+      div.appendChild(numP);
+
+      var textP = document.createElement('p');
+      textP.className = 'quiz-q-text';
+      textP.textContent = qObj.q;
+      div.appendChild(textP);
+
+      qObj.opts.forEach(function(opt, oi) {
+        var btn = document.createElement('button');
+        btn.className = 'quiz-option';
+        btn.textContent = opt;
+        btn.setAttribute('data-qi', qi);
+        btn.setAttribute('data-oi', oi);
+        btn.addEventListener('click', handleAnswer);
+        div.appendChild(btn);
+      });
+
+      var expl = document.createElement('div');
+      expl.className = 'quiz-explanation';
+      expl.id = 'quiz-expl-' + qi;
+      expl.textContent = qObj.explain;
+      div.appendChild(expl);
+
+      var nextBtn = document.createElement('button');
+      nextBtn.className = 'quiz-next-btn';
+      nextBtn.textContent = qi < questions.length - 1 ? 'Next question' : 'See results';
+      nextBtn.addEventListener('click', function() {
+        div.classList.remove('active');
+        if (qi < questions.length - 1) {
+          document.getElementById('quiz-q-' + (qi + 1)).classList.add('active');
+          quizCurrent = qi + 1;
+        } else {
+          showResults();
+        }
+      });
+      div.appendChild(nextBtn);
+
+      quizBody.appendChild(div);
+    });
+  }
+
+  function handleAnswer(e) {
+    var btn = e.currentTarget;
+    var qi = parseInt(btn.getAttribute('data-qi'));
+    var oi = parseInt(btn.getAttribute('data-oi'));
+    var qDiv = document.getElementById('quiz-q-' + qi);
+    var allOpts = qDiv.querySelectorAll('.quiz-option');
+
+    // Prevent double-answering
+    allOpts.forEach(function(o) {
+      o.classList.add('chosen');
+      o.style.pointerEvents = 'none';
+    });
+
+    if (oi === questions[qi].correct) {
+      btn.classList.add('correct');
+      quizCorrect++;
+    } else {
+      btn.classList.add('incorrect');
+      allOpts[questions[qi].correct].classList.add('reveal-correct');
+    }
+
+    document.getElementById('quiz-expl-' + qi).classList.add('show');
+    qDiv.querySelector('.quiz-next-btn').classList.add('show');
+  }
+
+  function showResults() {
+    quizResults.classList.add('active');
+    quizScoreEl.textContent = quizCorrect + ' / ' + questions.length;
+    if (quizCorrect > state.quizBest) {
+      state.quizBest = quizCorrect;
+      saveState(state);
+    }
+    updateProgress();
+  }
+
+  function startQuiz() {
+    quizIntro.style.display = 'none';
+    quizResults.classList.remove('active');
+    quizCurrent = 0;
+    quizCorrect = 0;
+    buildQuiz();
+    document.getElementById('quiz-q-0').classList.add('active');
+  }
+
+  document.getElementById('startQuizBtn').addEventListener('click', startQuiz);
+  document.getElementById('restartQuizBtn').addEventListener('click', startQuiz);
+
+  // Show best score if exists
+  if (state.quizBest > 0) {
+    var hint = document.createElement('p');
+    hint.style.cssText = 'font-size:11px; color:var(--nord3); margin-top:8px;';
+    hint.textContent = 'Best score: ' + state.quizBest + ' / ' + questions.length;
+    quizIntro.appendChild(hint);
+  }
+
+  // ── Init Progress ────────────────────────────────
+  updateProgress();
+
+})();
+</script>
+</body>
+</html>

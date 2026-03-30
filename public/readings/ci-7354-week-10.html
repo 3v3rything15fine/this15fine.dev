@@ -329,6 +329,28 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
   .compare-table-wrap { display: none; }
   .compare-stack { display: block; }
 }
+
+/* ── Source Citations ──────────────────────────────── */
+.section-source {
+  font-size: 12px;
+  color: var(--nord3);
+  margin-bottom: 12px;
+}
+.source-quote {
+  border-left: 3px solid var(--frost-deep);
+  padding: 8px 16px;
+  margin: 12px 0;
+  font-size: 13px;
+  color: var(--nord5);
+  font-style: italic;
+}
+.source-quote cite {
+  display: block;
+  font-size: 11px;
+  color: var(--nord3);
+  margin-top: 4px;
+  font-style: normal;
+}
 </style>
 </head>
 <body>
@@ -380,6 +402,7 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
     <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <div class="acc-panel" id="sec1" role="region" hidden>
+    <p class="section-source"><em>Source: Creswell &amp; Poth (2018), Ch. 4</em></p>
     <h3>Shared Process</h3>
     <p>All five approaches follow a common sequence:</p>
     <ol>
@@ -390,7 +413,7 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
       <li>Research Report</li>
     </ol>
     <h3>Selection Criteria</h3>
-    <p>The approach you choose depends on what you want to study:</p>
+    <p>The approach you choose depends on what you want to study (Creswell &amp; Poth, 2018, Ch. 4):</p>
     <ul>
       <li><span class="highlight">Narrative</span> &mdash; stories of individual experience</li>
       <li><span class="highlight">Phenomenology</span> &mdash; essence of a lived experience</li>
@@ -408,6 +431,7 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
     <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <div class="acc-panel" id="sec2" role="region" hidden>
+    <p class="section-source"><em>Source: Creswell &amp; Poth (2018), Ch. 4</em></p>
     <div class="def">Exploring the life of an individual through chronologically connected stories.</div>
     <h3>Origins</h3>
     <p>Humanities, anthropology, psychology, sociology.</p>
@@ -425,6 +449,9 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
       <span class="type-label">Life History</span>
       <span class="type-label">Oral History</span>
     </p>
+    <blockquote class="source-quote">Narrative researchers collect stories from individuals and restory or retell the individual's story through a chronological sequence.
+      <cite>— Creswell &amp; Poth (2018, Ch. 4), paraphrased</cite>
+    </blockquote>
     <h3>7 Procedures</h3>
     <ol>
       <li>Determine if narrative is suitable for the research problem</li>
@@ -451,6 +478,7 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
     <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <div class="acc-panel" id="sec3" role="region" hidden>
+    <p class="section-source"><em>Source: Creswell &amp; Poth (2018), Ch. 4</em></p>
     <div class="def">Describes the common meaning of a lived experience for several individuals, reducing it to a central phenomenon (the "essence").</div>
     <h3>Philosophical Roots</h3>
     <ul>
@@ -459,6 +487,9 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
       <li>Suspend judgments (bracketing / epoch&eacute;)</li>
       <li>Refuse the subject-object dichotomy</li>
     </ul>
+    <blockquote class="source-quote">The phenomenologist brackets, or sets aside, their own experiences in order to understand the experiences of participants in the study.
+      <cite>— Creswell &amp; Poth (2018, Ch. 4), paraphrased</cite>
+    </blockquote>
     <h3>Key Features</h3>
     <ul>
       <li>Single concept or phenomenon (e.g., "grief")</li>
@@ -493,6 +524,7 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
     <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <div class="acc-panel" id="sec4" role="region" hidden>
+    <p class="section-source"><em>Source: Creswell &amp; Poth (2018), Ch. 4</em></p>
     <div class="def">Systematic generation of a theory &mdash; a "unified theoretical explanation" &mdash; grounded in participant data rather than pre-existing frameworks.</div>
     <h3>Origins</h3>
     <p>Sociology (Glaser &amp; Strauss, 1967).</p>
@@ -507,6 +539,7 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
     <p><span class="type-label">Systematic</span> (Strauss &amp; Corbin) &mdash; structured coding sequence, conditional matrix, theoretical sampling.</p>
     <p><span class="type-label">Constructivist</span> (Charmaz) &mdash; flexible, acknowledges multiple realities, active codes using gerunds (e.g., "negotiating," "adapting").</p>
     <h3>Coding Phases</h3>
+    <p style="font-size:12px;color:var(--nord3);margin-bottom:6px;">Systematic (Strauss &amp; Corbin) model, as presented in Creswell &amp; Poth (2018, Ch. 4):</p>
     <ol>
       <li><span class="highlight">Open coding</span> &mdash; identify main categories from the data</li>
       <li><span class="highlight">Axial coding</span> &mdash; relate categories around a core phenomenon: causal conditions, strategies, intervening conditions, consequences</li>
@@ -527,6 +560,7 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
     <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <div class="acc-panel" id="sec5" role="region" hidden>
+    <p class="section-source"><em>Source: Creswell &amp; Poth (2018), Ch. 4</em></p>
     <div class="def">Describing and interpreting the values, behaviors, beliefs, and language of a culture-sharing group.</div>
     <h3>Origins</h3>
     <p>Anthropology, sociology.</p>
@@ -540,6 +574,9 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
     </ul>
     <h3>Understanding Culture</h3>
     <p>Culture is inferred from words and actions. It encompasses behaviors, language, and the tension between what people say <em>is</em> and what they believe <em>ought</em> to be.</p>
+    <blockquote class="source-quote">The ethnographer reports the views of participants (emic) but also interprets and presents an outsider perspective (etic) on the culture.
+      <cite>— Creswell &amp; Poth (2018, Ch. 4), paraphrased</cite>
+    </blockquote>
     <h3>Types</h3>
     <p><span class="type-label">Realist</span> &mdash; objective, third-person account using standard categories of cultural description.</p>
     <p><span class="type-label">Critical</span> &mdash; focused on emancipation of marginalized groups; addresses power, control, and social inequity.</p>
@@ -570,13 +607,14 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
     <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <div class="acc-panel" id="sec6" role="region" hidden>
+    <p class="section-source"><em>Source: Creswell &amp; Poth (2018), Ch. 4</em></p>
     <div class="def">In-depth analysis of one or more bounded systems in a real-life contemporary context, using multiple sources of information.</div>
     <h3>Origins</h3>
     <p>Psychology, law, political science, medicine.</p>
     <h3>Key Features</h3>
     <ul>
       <li>Multiple sources of information (interviews, documents, observation, artifacts)</li>
-      <li>Bounded system &mdash; defined by time, place, or context</li>
+      <li>Bounded system &mdash; defined by time, place, or context (Creswell &amp; Poth, 2018, Ch. 4)</li>
       <li>Can be multisite or within-site</li>
     </ul>
     <h3>Three Intents</h3>
@@ -607,6 +645,7 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
     <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <div class="acc-panel" id="sec7" role="region" hidden>
+    <p class="section-source"><em>Source: Creswell &amp; Poth (2018), Ch. 4</em></p>
     <h3>Unit of Analysis</h3>
     <ul>
       <li><span class="highlight">Narrative</span> &mdash; 1+ individuals</li>
@@ -635,6 +674,7 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
     <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
   </button>
   <div class="acc-panel" id="sec8" role="region" hidden>
+    <p class="section-source"><em>Source: Creswell &amp; Poth (2018), Ch. 4</em></p>
     <h3>Creswell's Framework</h3>
     <ol>
       <li>Identify the research topic</li>

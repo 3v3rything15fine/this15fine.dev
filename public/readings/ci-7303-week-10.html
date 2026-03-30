@@ -655,7 +655,7 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
       </button>
       <div class="accordion-body" id="acc-1" role="region" aria-labelledby="acc-btn-1">
         <div class="accordion-content">
-          <p class="section-source"><em>Source: Price (2017), Chapter on Norms and Standardization</em></p>
+          <p class="section-source"><em>Source: Price (2017)</em></p>
           <p><span class="def-term">Norms</span> are test performance data collected from a reference group, used to contextualize individual scores. Without norms, a raw score carries no interpretive meaning.</p>
           <p><span class="def-term">Normative Sample</span> is the specific reference group whose performance data forms the basis for score interpretation. Representativeness of this sample determines the validity of normative comparisons.</p>
           <p><span class="def-term">Standard Score</span> is a raw score converted to a scale with an arbitrary mean and standard deviation, allowing cross-test comparison.</p>
@@ -687,7 +687,7 @@ a:focus-visible { outline: 2px solid var(--aurora-magenta); outline-offset: 2px;
       </button>
       <div class="accordion-body" id="acc-2" role="region" aria-labelledby="acc-btn-2">
         <div class="accordion-content">
-          <p class="section-source"><em>Source: Price (2017), Chapter on Norms and Standardization</em></p>
+          <p class="section-source"><em>Source: Price (2017)</em></p>
           <p>Raw scores are restrictive. They lack a common metric and cannot be compared across tests or forms. Score transformations solve this problem.</p>
 
           <p><span class="def-term">Linear Z-Score Transformation</span> changes only the mean and standard deviation (the first two moments of the distribution). It does <strong>not</strong> affect skewness or kurtosis. The distribution shape stays the same.</p>
@@ -717,7 +717,7 @@ where A = SD_target / SD_raw
       </button>
       <div class="accordion-body" id="acc-3" role="region" aria-labelledby="acc-btn-3">
         <div class="accordion-content">
-          <p class="section-source"><em>Source: Price (2017), Chapter on Equating and Linking</em></p>
+          <p class="section-source"><em>Source: Price (2017)</em></p>
           <p><span class="def-term">Linking</span> is the broad term for any transformation that maps scores from one test to another. It encompasses a range of procedures varying in strength.</p>
           <p><span class="def-term">Equating</span> is the strongest form of linking. It produces scores that are truly interchangeable between test forms.</p>
           <p><strong>The 5 Rules of Exchangeability</strong> (Price, 2017):</p>
@@ -746,7 +746,7 @@ where A = SD_target / SD_raw
       </button>
       <div class="accordion-body" id="acc-4" role="region" aria-labelledby="acc-btn-4">
         <div class="accordion-content">
-          <p class="section-source"><em>Source: Price (2017), Chapter on Equating and Linking</em></p>
+          <p class="section-source"><em>Source: Price (2017)</em></p>
           <p><span class="def-term">Design I (Random Groups)</span> &mdash; Examinees are randomly assigned to either Form X or Form Y. Randomization ensures the groups are equivalent on average. Simple but requires large samples.</p>
           <p><span class="def-term">Design II (Counterbalanced)</span> &mdash; All examinees take both forms in random order. This controls for individual differences but introduces practice and fatigue effects.</p>
           <p><span class="def-term">Design III (Anchor Test)</span> &mdash; Different groups take different forms, but both forms contain a shared set of anchor items (typically about 30% of the test). The anchor items allow statistical adjustment for any group differences.</p>
@@ -767,7 +767,7 @@ where A = SD_target / SD_raw
       </button>
       <div class="accordion-body" id="acc-5" role="region" aria-labelledby="acc-btn-5">
         <div class="accordion-content">
-          <p class="section-source"><em>Source: Price (2017), Chapter on Equating and Linking</em></p>
+          <p class="section-source"><em>Source: Price (2017)</em></p>
           <p><span class="def-term">Linear Equating</span> matches z-scores between forms. The conversion formula preserves the linear relationship.</p>
           <code class="formula">Y = (s_y / s_x) * X + [M_y - (s_y / s_x) * M_x]</code>
           <p>The Standard Error of Equating (SEE) measures the accuracy of the equating function at each score point.</p>
@@ -807,9 +807,7 @@ where A = SD_target / SD_raw
           <p><span class="def-term">Stimulus-Centered Scaling</span> locates <strong>stimuli</strong> on a continuum. The goal is to order or space items (e.g., how offensive is each statement on a scale?).</p>
           <p><span class="def-term">Response-Centered Scaling</span> locates <strong>people</strong> on a psychological continuum based on their pattern of responses. The items serve as anchors; the person's position is inferred.</p>
           <p><span class="def-term">Subject-Centered Scaling</span> produces index scores from summed or averaged item responses. This is the most common model in educational measurement. Likert-type instruments are subject-centered scales.</p>
-          <blockquote class="source-quote">The three families differ in what is being placed on the scale: the stimuli themselves, the respondents, or a composite index score derived from summed item responses.
-            <cite>— Price (2017, Ch. 5), paraphrased</cite>
-          </blockquote>
+          <p>In summary, the three families differ in what is being placed on the scale: the stimuli themselves, the respondents, or a composite index score derived from summed item responses (Price, 2017, Ch. 5).</p>
           <div class="section-read-marker">
             <button class="mark-read-btn" data-section="6" aria-label="Mark section 6 as read">Mark as read</button>
           </div>
@@ -849,7 +847,7 @@ where A = SD_target / SD_raw
           <p class="section-source"><em>Source: Price (2017), Ch. 5; Stevens (1946)</em></p>
           <p>Stevens (1946) defined four levels: <strong>nominal</strong> (categories), <strong>ordinal</strong> (rank order), <strong>interval</strong> (equal distances, no true zero), and <strong>ratio</strong> (equal distances, true zero).</p>
           <blockquote class="source-quote">The appropriateness of statistical treatment of data depends upon the scales on which measurements are made.
-            <cite>— Stevens (1946, p. 677), as discussed in Price (2017, Ch. 5)</cite>
+            <cite>— Stevens (1946), as discussed in Price (2017, Ch. 5)</cite>
           </blockquote>
           <p>Likert-type scales are ordinal by construction but routinely analyzed with parametric methods that assume interval properties. Is this justified?</p>
           <p><span class="def-term">Lord and Novick (1968) Position</span> (as discussed in Price, 2017, Ch. 5): Pragmatic. If treating ordinal scores as interval produces more useful information for placement or prediction, treat them as interval. If it does not improve usefulness, use only rank-order information. Whether to treat scores as interval is an <strong>empirical question about specific data</strong>, not a philosophical commitment.</p>

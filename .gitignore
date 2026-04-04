@@ -5,3 +5,4 @@ node_modules/
 assets/b3_*.json
 assets/B3_*.md
 assets/b3_db_*.md
+.superpowers/

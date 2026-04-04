@@ -1,1 +1,558 @@
-<!DOCTYPE html><html><body><h1>{{TITLE}}</h1><script>const NODES={{NODES_JSON}};{{DIAGRAM_JS}}</script>{{SECTIONS}}</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>docs :: this15fine.dev</title>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── Nord Theme Variables ─────────────────────────────────── */
+    :root {
+      --nord0: #2E3440;
+      --nord1: #3B4252;
+      --nord2: #434C5E;
+      --nord3: #4C566A;
+      --nord4: #D8DEE9;
+      --nord5: #E5E9F0;
+      --nord6: #ECEFF4;
+      --frost: #88C0D0;
+      --frost-deep: #5E81AC;
+      --frost-warm: #8FBCBB;
+      --aurora-green: #A3BE8C;
+      --aurora-yellow: #EBCB8B;
+      --aurora-red: #BF616A;
+      --aurora-magenta: #B48EAD;
+      --burgundy: #6B3040;
+      --magenta-bright: #B048A8;
+      --font: 'JetBrains Mono', 'Liberation Mono', 'Courier New', monospace;
+    }
+
+    /* ── Base ─────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--nord0);
+      color: var(--nord4);
+      font-family: var(--font);
+      font-size: 14px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--frost);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    a:visited {
+      color: var(--frost-deep);
+    }
+
+    ::selection {
+      background: var(--frost-deep);
+      color: var(--nord6);
+    }
+
+    /* ── Page Container ──────────────────────────────────────── */
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 48px 64px;
+    }
+
+    /* ── Hero / Header ───────────────────────────────────────── */
+    .hero pre {
+      color: var(--frost);
+      font-size: 10px;
+      line-height: 1.2;
+      margin: 0 0 16px 0;
+      overflow-x: auto;
+    }
+
+    .hero .subtitle {
+      color: var(--nord3);
+      font-size: 13px;
+      margin-bottom: 32px;
+    }
+    .hero .subtitle span {
+      color: var(--aurora-green);
+    }
+
+    /* ── Details / Summary (Sections) ────────────────────────── */
+    details {
+      border: 1px solid var(--nord3);
+      border-radius: 6px;
+      margin-bottom: 8px;
+      background: var(--nord1);
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 12px 16px;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--nord6);
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    summary::-webkit-details-marker { display: none; }
+
+    summary::before {
+      content: '$ cat ';
+      color: var(--aurora-green);
+      font-weight: 400;
+    }
+    summary::after {
+      content: '▸';
+      color: var(--nord3);
+      margin-left: auto;
+      transition: transform 200ms ease;
+    }
+    details[open] > summary::after {
+      transform: rotate(90deg);
+    }
+
+    .detail-body {
+      padding: 0 16px 16px;
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--nord4);
+    }
+    .detail-body h3 {
+      color: var(--nord6);
+      font-size: 14px;
+      font-weight: 600;
+      margin: 16px 0 8px;
+    }
+    .detail-body p {
+      margin: 0 0 10px;
+    }
+    .detail-body ul, .detail-body ol {
+      padding-left: 20px;
+      margin: 0 0 10px;
+    }
+    .detail-body li {
+      margin-bottom: 4px;
+    }
+
+    /* ── Inline Code ─────────────────────────────────────────── */
+    code {
+      font-family: var(--font);
+      background: var(--nord2);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 12px;
+      color: var(--frost);
+    }
+    pre code {
+      display: block;
+      background: var(--nord1);
+      border: 1px solid var(--nord3);
+      border-radius: 6px;
+      padding: 12px 16px;
+      overflow-x: auto;
+      color: var(--nord4);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* ── Callouts ────────────────────────────────────────────── */
+    .callout {
+      border-left: 3px solid;
+      padding: 10px 14px;
+      margin: 12px 0;
+      border-radius: 0 6px 6px 0;
+      background: var(--nord1);
+      font-size: 13px;
+    }
+    .callout.green  { border-color: var(--aurora-green); }
+    .callout.yellow { border-color: var(--aurora-yellow); }
+    .callout.red    { border-color: var(--aurora-red); }
+
+    /* ── Reference Table ─────────────────────────────────────── */
+    .ref-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 12px 0;
+    }
+    .ref-table th {
+      text-align: left;
+      color: var(--nord6);
+      font-weight: 600;
+      padding: 8px 10px;
+      border-bottom: 2px solid var(--nord3);
+    }
+    .ref-table td {
+      padding: 6px 10px;
+      border-bottom: 1px solid var(--nord2);
+      color: var(--nord4);
+    }
+    .ref-table tr:hover td {
+      background: var(--nord1);
+    }
+
+    /* ── Tool Grid ───────────────────────────────────────────── */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+      margin: 12px 0;
+    }
+    .tool {
+      background: var(--nord1);
+      border: 1px solid var(--nord3);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 13px;
+    }
+    .tool strong {
+      color: var(--nord6);
+      display: block;
+      margin-bottom: 4px;
+    }
+    .tool span {
+      color: var(--nord3);
+      font-size: 11px;
+    }
+
+    /* ── Diagram Container ───────────────────────────────────── */
+    .diagram {
+      position: relative;
+      width: 100%;
+      background: #1e2430;
+      border: 1px solid var(--nord2);
+      border-radius: 6px;
+      padding: 24px;
+      margin-bottom: 16px;
+    }
+
+    .diagram svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+    .diagram svg line {
+      stroke: var(--nord3);
+      stroke-width: 1;
+      transition: stroke 300ms, stroke-opacity 300ms;
+    }
+    .diagram svg line.active {
+      stroke: var(--frost);
+      stroke-opacity: 0.8;
+    }
+
+    /* ── Diagram Rows ────────────────────────────────────────── */
+    .diagram-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .diagram-label {
+      font-size: 10px;
+      color: var(--frost);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    /* ── Nodes ────────────────────────────────────────────────── */
+    .node {
+      background: var(--nord1);
+      border: 2px solid var(--nord2);
+      border-radius: 6px;
+      padding: 10px 16px;
+      cursor: pointer;
+      transition: border-color 200ms, box-shadow 200ms;
+      min-width: 120px;
+      text-align: center;
+    }
+    .node:hover {
+      border-color: var(--frost);
+    }
+    .node.selected {
+      border-color: var(--frost);
+      box-shadow: 0 0 12px rgba(136, 192, 208, 0.2);
+    }
+
+    .node-icon {
+      font-size: 20px;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .node-title {
+      color: var(--nord6);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .node-sub {
+      color: var(--nord3);
+      font-size: 10px;
+    }
+    .node-type-label {
+      color: var(--frost);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Pipeline ────────────────────────────────────────────── */
+    .pipeline {
+      display: flex;
+      flex-direction: row;
+      gap: 4px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--nord2);
+    }
+
+    .pipeline-stage {
+      background: var(--nord2);
+      border: 1px solid var(--frost-deep);
+      color: var(--nord4);
+      padding: 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 11px;
+      font-family: var(--font);
+      transition: all 200ms;
+    }
+    .pipeline-stage:hover {
+      background: var(--nord3);
+    }
+    .pipeline-stage.endpoint {
+      background: var(--aurora-green);
+      color: var(--nord0);
+      font-weight: 600;
+      border-color: var(--aurora-green);
+    }
+
+    .pipeline-arrow {
+      color: var(--nord3);
+      font-size: 14px;
+      user-select: none;
+    }
+
+    @keyframes pipeline-sweep {
+      0%   { box-shadow: none; }
+      50%  { box-shadow: 0 0 8px var(--frost); }
+      100% { box-shadow: none; }
+    }
+    .pipeline-stage.sweep {
+      animation: pipeline-sweep 0.4s ease;
+    }
+
+    /* ── Automated Strip ─────────────────────────────────────── */
+    .automated-strip {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--nord2);
+    }
+
+    .auto-badge {
+      background: var(--nord1);
+      border: 1px solid var(--nord2);
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-family: var(--font);
+      color: var(--nord4);
+      cursor: pointer;
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--aurora-green);
+      margin-right: 4px;
+    }
+
+    /* ── Detail Panel ────────────────────────────────────────── */
+    .detail-panel {
+      background: var(--nord1);
+      border: 2px solid var(--frost);
+      border-radius: 6px;
+      padding: 0 16px;
+      margin-bottom: 24px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 300ms ease, padding 300ms ease, opacity 200ms ease;
+      opacity: 0;
+    }
+    .detail-panel.open {
+      max-height: 600px;
+      padding: 16px;
+      opacity: 1;
+    }
+
+    .detail-panel-title {
+      color: var(--nord6);
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .detail-panel-desc {
+      color: var(--nord4);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .detail-panel-commands {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid var(--nord2);
+    }
+    .detail-panel-commands code {
+      display: block;
+      background: var(--nord2);
+      padding: 6px 10px;
+      border-radius: 4px;
+      color: var(--aurora-green);
+      font-size: 12px;
+      margin-bottom: 4px;
+      position: relative;
+    }
+
+    /* ── Copy Button ─────────────────────────────────────────── */
+    .copy-btn {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      background: none;
+      border: 1px solid var(--nord3);
+      color: var(--nord3);
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 3px;
+      cursor: pointer;
+      font-family: var(--font);
+    }
+    .copy-btn:hover {
+      border-color: var(--frost);
+      color: var(--frost);
+    }
+    .copy-btn.copied {
+      color: var(--aurora-green);
+      border-color: var(--aurora-green);
+    }
+
+    /* ── Sections Header ─────────────────────────────────────── */
+    .sections-header {
+      color: var(--nord3);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      margin-top: 24px;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────── */
+    .footer {
+      margin-top: 48px;
+      padding-top: 16px;
+      border-top: 1px solid var(--nord2);
+      font-size: 11px;
+      color: var(--nord3);
+    }
+    .footer span {
+      color: var(--frost);
+    }
+
+    /* ── Responsive (< 600px) ────────────────────────────────── */
+    @media (max-width: 600px) {
+      .page {
+        padding: 24px;
+      }
+      .hero pre {
+        font-size: 6px;
+      }
+      .diagram-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .node {
+        min-width: unset;
+        width: 100%;
+      }
+      .pipeline {
+        flex-wrap: wrap;
+      }
+      .automated-strip {
+        flex-wrap: wrap;
+      }
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Reduced Motion ──────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="hero">
+      <pre>
+     _   _     _     _ ____   __ _                _
+    | | | |__ (_)___/ | ___|/ _(_)_ __   ___  __| | _____   __
+    | |_| '_ \| / __| |___ \ |_| | '_ \ / _ \/ _` |/ _ \ \ / /
+    |  _| | | | \__ \ |___) |  _| | | | |  __/ (_| |  __/\ V /
+    |_| |_| |_|_|___/_|____/|_| |_|_| |_|\___|\__,_|\___| \_/
+                                                  /docs
+      </pre>
+      <div class="subtitle"><span>$</span> {{TITLE}}</div>
+    </div>
+
+    <div class="diagram" id="diagram">
+      <!-- Populated by diagram.js -->
+    </div>
+
+    <div class="detail-panel" id="detail-panel">
+      <!-- Populated by diagram.js on node click -->
+    </div>
+
+    <div class="sections-header">FULL REFERENCE</div>
+    <div class="sections">
+      {{SECTIONS}}
+    </div>
+
+    <div class="footer">
+      <p>last updated: <span>2026-04-04</span> // generated from docs/manual.md</p>
+      <p style="margin-top: 0.35rem;">python3 build-docs.py // <span>EOF</span></p>
+    </div>
+  </div>
+
+  <script>
+    const NODES = {{NODES_JSON}};
+    {{DIAGRAM_JS}}
+  </script>
+</body>
+</html>

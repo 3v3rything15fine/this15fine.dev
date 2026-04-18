@@ -58,6 +58,9 @@ a:focus-visible { outline: 2px solid var(--magenta-bright); outline-offset: 2px;
 @media (min-width: 768px) {
   .page { padding: 48px 48px 64px; }
 }
+@media (max-width: 600px) {
+  .page { padding: 20px 10px 40px; }
+}
 
 header.site {
   border-bottom: 1px solid var(--nord2);
@@ -133,6 +136,14 @@ p { margin-bottom: 14px; }
   border-radius: 6px;
 }
 
+@media (max-width: 600px) {
+  .layer { padding: 10px; margin-top: 14px; }
+  h2 { margin-top: 32px; font-size: 17px; }
+  h3 { margin-top: 20px; }
+  .legend { font-size: 11px; }
+  .legend p { margin-bottom: 4px; }
+}
+
 .layer-head {
   display: flex;
   flex-wrap: wrap;
@@ -166,10 +177,6 @@ p { margin-bottom: 14px; }
   margin-bottom: 10px;
 }
 
-@media (max-width: 600px) {
-  .halves { grid-template-columns: 1fr; gap: 12px; }
-}
-
 .half {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -184,10 +191,6 @@ p { margin-bottom: 14px; }
   margin-top: 4px;
 }
 
-@media (max-width: 600px) {
-  .thumbs { grid-template-columns: 1fr; gap: 12px; }
-}
-
 .thumb-half {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -198,8 +201,15 @@ p { margin-bottom: 14px; }
 .thumb-left  { padding-left: 40%; }
 .thumb-right { padding-right: 40%; }
 
+/* Mobile: keep halves side-by-side to preserve physical-board mental model.
+   Tighten everything so a full layer fits without runaway scroll. */
 @media (max-width: 600px) {
-  .thumb-left, .thumb-right { padding-left: 0; padding-right: 0; }
+  .halves { gap: 6px; }
+  .thumbs { gap: 6px; }
+  .half { gap: 2px; }
+  .thumb-half { gap: 2px; }
+  .thumb-left  { padding-left: 20%; }
+  .thumb-right { padding-right: 20%; }
 }
 
 /* Key cell */
@@ -244,6 +254,17 @@ p { margin-bottom: 14px; }
 }
 
 .key.thumb { min-height: 48px; }
+
+@media (max-width: 600px) {
+  .key {
+    font-size: 10px;
+    padding: 4px 1px;
+    min-height: 32px;
+    line-height: 1.05;
+  }
+  .key .sub { font-size: 8px; margin-top: 1px; letter-spacing: 0; }
+  .key.thumb { min-height: 36px; }
+}
 
 /* Pairing table */
 table.profile {
@@ -526,10 +547,10 @@ footer.site .disclosure strong { color: var(--nord4); font-style: normal; }
         <div class="key"><span class="label">&rarr;</span></div>
         <div class="key"><span class="label">INS</span></div>
 
-        <div class="key blank">&nbsp;</div>
-        <div class="key blank">&nbsp;</div>
-        <div class="key blank">&nbsp;</div>
-        <div class="key blank">&nbsp;</div>
+        <div class="key"><span class="label">WS &uarr;</span><span class="sub">desktop</span></div>
+        <div class="key"><span class="label">APP &larr;</span><span class="sub">prev</span></div>
+        <div class="key"><span class="label">APP &rarr;</span><span class="sub">next</span></div>
+        <div class="key"><span class="label">WS &darr;</span><span class="sub">desktop</span></div>
         <div class="key blank">&nbsp;</div>
       </div>
     </div>
@@ -551,6 +572,7 @@ footer.site .disclosure strong { color: var(--nord4); font-style: normal; }
       <p>Arrows on right home row (HJKL-ish — vim muscle memory applies, but mapped as PgDn / &larr; / &darr; / &rarr;).</p>
       <p>Left home row: hold for raw modifier (GUI / Alt / Ctrl / Shift) while the right hand drives the cursor.</p>
       <p><b>CUT / COPY / PASTE / UNDO</b> = Ctrl+X, Ctrl+C, Ctrl+V, Ctrl+Z. One-hand clipboard.</p>
+      <p><b>APP &larr; / APP &rarr;</b> = app switcher prev / next (Alt+Shift+Tab / Alt+Tab). <b>WS &uarr; / WS &darr;</b> = GNOME workspace up / down (Ctrl+Super+Up/Down). Inner pair switches apps (mirrors the arrows one row above), outer pair switches workspaces.</p>
     </div>
   </div>
 
